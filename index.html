@@ -1,0 +1,1396 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubayer Ahamed · Founder @ Be Smart With AI</title>
+  <meta name="description" content="Founder-led AI Automation and Software Solutions agency helping businesses scale through Autonomous Multi-Agent Systems, GEO, and sovereign cloud infrastructure.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Google Fonts: Anton (Display), Fraunces (Serif), Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#ffffff',
+            'paper-deep': '#f2f5fa',
+            ink: '#1e3a6e',
+            'ink-soft': '#5b7cb8',
+            'ink-faint': '#a9bddd',
+            wave: '#3d6bb5',
+            gold: '#e9b85c',
+            abyss: '#0e1f4a',
+            coral: '#fb2c36',
+          },
+          fontFamily: {
+            display: ['Anton', 'sans-serif'],
+            serif: ['Fraunces', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'blob-float': 'blobFloat 12s ease-in-out infinite',
+            'marquee-slow': 'marquee 45s linear infinite',
+            'marquee-reverse': 'marqueeRev 40s linear infinite',
+          },
+          keyframes: {
+            blobFloat: {
+              '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(25px, -30px) scale(1.08)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.94)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            marqueeRev: {
+              '0%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(0%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f2f5fa; }
+    ::-webkit-scrollbar-thumb { background: #a9bddd; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #5b7cb8; }
+
+    /* Scroll Margin for Sticky Header Navigation */
+    section {
+      scroll-margin-top: 5rem;
+    }
+
+    
+    /* Article Modal & Typography Styling */
+    .article-prose h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0e1f4a;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      line-height: 1.3;
+    }
+    .article-prose h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #3d6bb5;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+    .article-prose p {
+      margin-bottom: 1.25rem;
+      color: #1e3a6e;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+    .article-prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-prose li {
+      margin-bottom: 0.5rem;
+      color: #1e3a6e;
+      line-height: 1.75;
+    }
+    .article-prose strong {
+      color: #0e1f4a;
+      font-weight: 700;
+    }
+    .article-prose a {
+      color: #fb2c36;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .article-prose a:hover {
+      color: #0e1f4a;
+    }
+    .article-prose blockquote {
+      border-left: 4px solid #fb2c36;
+      background-color: #f2f5fa;
+      padding: 1rem 1.25rem;
+      border-radius: 0 0.75rem 0.75rem 0;
+      font-style: italic;
+      color: #0e1f4a;
+      margin: 1.5rem 0;
+    }
+    .article-prose table, .article-table {
+      width: 100%;
+      margin: 2rem 0;
+      border-collapse: collapse;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+    .article-prose th, .article-table th {
+      background-color: #f2f5fa;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 700;
+      color: #0e1f4a;
+      border: 1px solid #e2e8f0;
+      font-size: 0.875rem;
+    }
+    .article-prose td, .article-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e2e8f0;
+      color: #1e3a6e;
+      font-size: 0.875rem;
+    }
+
+    /* Floating Blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(52px);
+      pointer-events: none;
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    /* Press Chips hover transition */
+    .press-chip {
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .press-chip:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -10px rgba(14, 31, 74, 0.15);
+    }
+
+    /* Mask linear gradient for marquee fade edges */
+    .marquee-mask {
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    /* Line Clamp */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white">
+
+  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink-faint/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-abyss to-ink flex items-center justify-center shadow-md shadow-abyss/15 group-hover:scale-105 transition-transform">
+          <i data-lucide="bot" class="w-6 h-6 text-gold"></i>
+        </div>
+        <div>
+          <span class="font-display tracking-wider text-xl text-abyss block leading-none">BE SMART WITH AI</span>
+          <span class="text-[11px] font-semibold tracking-widest text-ink-soft uppercase block mt-1">Jubayer Ahamed</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink">
+        <a href="#services" class="hover:text-coral transition-colors">Services</a>
+        <a href="#work" class="hover:text-coral transition-colors">Work</a>
+        <a href="#agency" class="hover:text-coral transition-colors">The Agency</a>
+        <a href="#insights" class="hover:text-coral transition-colors">Insights</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-abyss text-white text-sm font-semibold hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
+          <span>Get Free AI Audit</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-ink hover:bg-paper-deep focus:outline-none" aria-label="Toggle navigation menu">
+        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper border-b border-ink-faint/30 shadow-xl space-y-4">
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Services</a>
+      <a href="#work" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Work</a>
+      <a href="#agency" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">The Agency</a>
+      <a href="#insights" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Insights</a>
+      <div class="pt-2">
+        <button onclick="openAuditModal(); toggleMobileMenu()" class="w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-coral">
+          Get Free AI Audit →
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== SECTION 1: HOMEPAGE HERO ==================== -->
+  <section class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper">
+    <!-- Animated Ambient Blobs -->
+    <div class="hero-blob w-80 h-80 bg-ink-faint top-12 right-10 animate-blob-float"></div>
+    <div class="hero-blob w-64 h-64 bg-wave bottom-16 right-1/4 animate-blob-float" style="animation-delay: 2s;"></div>
+    <div class="hero-blob w-48 h-48 bg-gold top-1/2 left-8 animate-blob-float" style="animation-delay: 4s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        <!-- Live Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-deep border border-ink-faint/40 mb-8 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-medium text-ink-soft">Dhaka · Bangladesh — Engineering Globally</span>
+        </div>
+
+        <!-- Giant Display Headline -->
+        <h1 class="font-display tracking-tight text-abyss text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase leading-[0.92] mb-8">
+          <span class="block">We're your</span>
+          <span class="block">partners in</span>
+          <span class="block text-coral">Growth</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="max-w-2xl text-lg sm:text-xl text-ink-soft font-normal leading-relaxed mb-10">
+          A founder-led AI & Automation agency built on engineering excellence. Autonomous Multi-Agent Systems, sovereign cloud, and full-stack AI integrations for ambitious businesses across the globe.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
+            <span>Get a Free Audit</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          <a href="#agency" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep text-ink font-semibold text-base hover:bg-ink-faint/30 border border-ink-faint/40 transition-all hover:-translate-y-0.5">
+            <i data-lucide="play-circle" class="w-5 h-5 text-wave"></i>
+            <span>Meet Jubayer & Team</span>
+          </a>
+        </div>
+
+        <!-- Metric Badges below CTA -->
+        <div class="mt-16 pt-8 border-t border-ink-faint/30 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full max-w-3xl">
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss">50+</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">Autonomous Workflows</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss">12+</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">Countries Served</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss">99.9%</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">System Reliability</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss">24/7</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">AI Agent Uptime</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 2: PRESS & CREDIBILITY MARQUEE ==================== -->
+  <section class="py-12 bg-abyss text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <span class="w-2 h-2 rounded-full bg-gold"></span>
+        <span class="text-xs font-semibold tracking-widest uppercase text-ink-faint">As Featured In</span>
+        <span class="w-2 h-2 rounded-full bg-gold"></span>
+      </div>
+      <p class="text-sm text-ink-faint/80">Trusted coverage across national & international press and tech media</p>
+    </div>
+
+    <!-- Infinite Marquee -->
+    <div class="marquee-mask relative w-full overflow-hidden py-4">
+      <div class="flex gap-8 w-max animate-marquee-slow">
+        <!-- Chip Items -->
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">PROTHOM ALO</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">THE DAILY STAR</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">JAMUNA TV</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">CHANNEL I</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">NEW AGE</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">TECH IN ASIA</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">NICHE PURSUITS</span>
+        </div>
+
+        <!-- Clone set for infinite animation loop -->
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">PROTHOM ALO</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">THE DAILY STAR</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">JAMUNA TV</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">CHANNEL I</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">NEW AGE</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">TECH IN ASIA</span>
+        </div>
+        <div class="press-chip flex items-center justify-center h-16 min-w-[200px] px-8 bg-paper rounded-xl shadow-md">
+          <span class="font-bold text-abyss text-lg tracking-wider">NICHE PURSUITS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 3: 01 / THE AGENCY ==================== -->
+  <section id="agency" class="py-24 bg-paper-deep relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Label -->
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xs font-bold tracking-widest uppercase text-wave">01 / THE AGENCY</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Story & Pitch -->
+        <div class="lg:col-span-7">
+          <h2 class="font-serif text-3xl sm:text-5xl text-abyss font-normal leading-tight mb-8">
+            Me and my team can help you automate and get more customers.
+          </h2>
+          <div class="space-y-6 text-base sm:text-lg text-ink-soft leading-relaxed font-normal">
+            <p>
+              We’re a founder-led AI automation and software solutions agency based in Dhaka, Bangladesh. We don’t outsource offshore, we don’t sell you what you don’t need, and we don’t hide behind vanity dashboards.
+            </p>
+            <p>
+              You work directly with experienced AI engineers, DevOps architects, and growth specialists who are invested in your business growth. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), we engineer systems that produce measurable ROI.
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-ink-faint/30">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm font-medium text-ink">Zero offshore handoffs — work directly with builders</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm font-medium text-ink">Hardened Linux & Sovereign Cloud Infrastructure</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm font-medium text-ink">Multi-Agent AI Orchestration (WhatsApp, CRM, Web)</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm font-medium text-ink">Transparent, performance-driven milestone pricing</span>
+            </div>
+          </div>
+
+          <div class="mt-10 flex items-center gap-4">
+            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
+              <span>Explore Services</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-paper text-ink border border-ink-faint/40 font-semibold text-sm hover:bg-paper-deep transition-colors">
+              <span>Book Architecture Call</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Modernized Founder Showcase Card (UI/UX Pro Max Spec) -->
+        <div class="lg:col-span-5">
+          <div class="bg-paper rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 relative overflow-hidden group hover:shadow-abyss/10 transition-all">
+            
+            <!-- Floating Active Status Badge -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Active Founder & Architect</span>
+              </span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft">Be Smart With AI</span>
+            </div>
+
+            <!-- Full-Face High-Resolution Portrait Display -->
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-abyss shadow-inner border border-ink-faint/20 group-hover:scale-[1.01] transition-transform duration-300">
+              <img 
+                src="assets/jubayer.jpg" 
+                alt="Jubayer Ahamed - AI Automation & Software Solutions Specialist" 
+                class="w-full h-full object-cover object-top"
+              >
+              <!-- Gradient Overlay on Bottom of Image -->
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-abyss/80 via-abyss/30 to-transparent pointer-events-none"></div>
+              
+              <!-- Bottom Pill on Image -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-medium">
+                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">AI Automation</span>
+                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">Software & Web Dev</span>
+              </div>
+            </div>
+
+            <!-- Founder Bio Details -->
+            <div class="text-center">
+              <div class="flex items-center justify-center gap-2">
+                <h3 class="font-display tracking-wide text-2xl sm:text-3xl text-abyss uppercase">JUBAYER AHAMED</h3>
+                <div class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0" title="Verified AI Engineer">
+                  <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+                </div>
+              </div>
+
+              <p class="text-sm font-semibold text-coral uppercase tracking-wider mt-1.5">Founder & Lead AI Solutions Architect</p>
+              <p class="text-xs text-ink-soft mt-1">Be Smart With AI · Dhaka, Bangladesh 🇧🇩</p>
+              
+              <blockquote class="text-sm text-ink-soft/90 italic mt-4 px-2 leading-relaxed bg-paper-deep/70 p-4 rounded-xl border border-ink-faint/20">
+                "We don't build software that adds more work to your plate. We engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy."
+              </blockquote>
+
+              <!-- Crisp Vector Social & Contact Icons (Inline SVG for 100% Reliable Render) -->
+              <div class="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-ink-faint/20">
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#0077b5] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="LinkedIn Profile">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801610594042" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#25d366] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="WhatsApp Direct">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-abyss text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="GitHub Repository">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/besmartwithaipro" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#1877f2] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Facebook Page">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+
+                <!-- Direct Email -->
+                <a href="mailto:jubayer@besmartwithai.com" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-coral text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Direct Email">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 4: 02 / SERVICES ==================== -->
+  <section id="services" class="py-24 bg-paper relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-wave block mb-3">02 / SERVICES</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight">What We Do</h2>
+        </div>
+        <button onclick="openAuditModal()" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-abyss transition-colors">
+          <span>Schedule an architecture call</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- 9 Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">01</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Autonomous Multi-Agent Systems</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Deploy 24/7 autonomous AI orchestrators for sales prospecting, client onboarding, support triaging, and real-time CRM updates.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Learn Architecture</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">02</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Generative Engine Optimisation (GEO)</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Get cited and recommended by ChatGPT, Perplexity, Claude, and Google AI Overviews, not just traditional blue links.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Learn GEO Strategy</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">03</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="search" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Search Engine Optimisation (SEO)</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Build sustainable organic search authority that drives qualified, high-intent traffic and compounds over years.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>View Case Studies</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">04</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="server" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Sovereign DevOps & Self-Hosting</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Cut massive SaaS subscription costs. We build private Linux VPS clouds with Docker, Coolify PaaS, and self-hosted private LLMs.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Calculate Savings</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">05</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Omnichannel AI Sales Bots</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Turn WhatsApp, Telegram, and Messenger into tireless 24/7 closing machines. Voice memos, order syncing, and payment gateways.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Demo Live Bot</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">06</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="code" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Production Web & SaaS Engineering</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              High-performance web apps built with Next.js, FastAPI, PostgreSQL, and Tailwind. Fast, secure, and engineered to convert visitors.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Explore Stack</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">07</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="target" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Meta & Google Performance Ads</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Performance Max and paid media campaigns built for measurable, bottom-line return on ad spend (ROAS).
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>View ROAS Metrics</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">08</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Conversion Rate Optimisation (CRO)</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Systematic UX audits and landing page redesigns that squeeze maximum sales from existing traffic without raising ad spend.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>Request CRO Audit</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Service 9 -->
+        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">09</span>
+              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+                <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Server-Side Tracking & Telemetry</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              Clean, first-party data pipelines that bypass iOS privacy blocks, giving ad algorithms 100% accurate conversion signals.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+            <span>View Architecture</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 5: 03 / WORK (CASE STUDIES) ==================== -->
+  <section id="work" class="py-24 bg-paper-deep relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-wave block mb-3">03 / WORK</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight">Results That Speak</h2>
+        </div>
+        <p class="text-sm text-ink-soft max-w-md mt-4 md:mt-0">
+          Real business transformations driven by AI architecture, search visibility, and autonomous sales workflows.
+        </p>
+      </div>
+
+      <!-- 3 Case Study Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Case Study 1 -->
+        <div class="bg-paper rounded-3xl p-8 border border-ink-faint/30 shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-wave bg-paper-deep px-3 py-1 rounded-full inline-block mb-6">Hospitality & Booking</span>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-6">From invisible to fully booked through autonomous pipelines</h3>
+            
+            <div class="space-y-4 my-8">
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-coral">+180%</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Organic Search & AI Discovery</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-abyss">Page 1</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">For 14 High-Intent Target Keywords</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-emerald-600">-22%</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Reduction in Third-Party Commission Fees</div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-ink-faint/20 flex items-center justify-between text-sm font-semibold text-abyss hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
+            <span>Read full case study</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="bg-paper rounded-3xl p-8 border border-ink-faint/30 shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-wave bg-paper-deep px-3 py-1 rounded-full inline-block mb-6">Education & EdTech</span>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-6">From empty batches to a 6-month waiting list</h3>
+            
+            <div class="space-y-4 my-8">
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-coral">+213%</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Qualified Lead Flow in 9 Months</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-abyss">#1 AI Ranking</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Top recommendation on ChatGPT & Perplexity</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-emerald-600">Waiting List</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">For All Premium Cohorts</div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-ink-faint/20 flex items-center justify-between text-sm font-semibold text-abyss hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
+            <span>Read full case study</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="bg-paper rounded-3xl p-8 border border-ink-faint/30 shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-wave bg-paper-deep px-3 py-1 rounded-full inline-block mb-6">B2B Financial Services</span>
+            <h3 class="font-serif text-2xl text-abyss font-semibold mb-6">High-value enterprise contracts at 40% lower acquisition cost</h3>
+            
+            <div class="space-y-4 my-8">
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-emerald-600">-40%</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Cost Per Qualified Lead (CPL)</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-abyss">+60%</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Automated Lead Score & Velocity</div>
+              </div>
+              <div class="p-4 rounded-xl bg-paper-deep">
+                <div class="font-display text-3xl text-coral">3.4x</div>
+                <div class="text-xs text-ink-soft font-medium uppercase mt-0.5">Verified Return on Ad Spend (ROAS)</div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-ink-faint/20 flex items-center justify-between text-sm font-semibold text-abyss hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
+            <span>Read full case study</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 6: CLIENT BRANDS MARQUEE ==================== -->
+  <section class="py-12 bg-paper border-y border-ink-faint/20 overflow-hidden">
+    <div class="marquee-mask w-full">
+      <div class="flex items-center gap-12 w-max animate-marquee-reverse text-ink-soft font-semibold text-xl tracking-wider">
+        <span>ARAGLEN HOUSE</span>
+        <span>•</span>
+        <span>LENDORSE FINANCIAL</span>
+        <span>•</span>
+        <span>TEMPO ACADEMY</span>
+        <span>•</span>
+        <span>RIVORE TECHNOLOGIES</span>
+        <span>•</span>
+        <span>INSTASD DIGITAL</span>
+        <span>•</span>
+        <span>ABLE TOOL</span>
+        <span>•</span>
+        <span>POSITIVE ATTITUDE MEDIA</span>
+        <span>•</span>
+        <span>FMCO CAPITAL</span>
+        <span>•</span>
+        <!-- Duplicated for loop -->
+        <span>ARAGLEN HOUSE</span>
+        <span>•</span>
+        <span>LENDORSE FINANCIAL</span>
+        <span>•</span>
+        <span>TEMPO ACADEMY</span>
+        <span>•</span>
+        <span>RIVORE TECHNOLOGIES</span>
+        <span>•</span>
+        <span>INSTASD DIGITAL</span>
+        <span>•</span>
+        <span>ABLE TOOL</span>
+        <span>•</span>
+        <span>POSITIVE ATTITUDE MEDIA</span>
+        <span>•</span>
+        <span>FMCO CAPITAL</span>
+      </div>
+    </div>
+  </section>
+
+<!-- ==================== SECTION 7: 04 / INSIGHTS & ARTICLES ==================== -->
+  <section id="insights" class="py-24 bg-paper-deep relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-wave block mb-3">04 / INSIGHTS</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight">Engineering Articles</h2>
+        </div>
+        <a href="#newsletter" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-abyss transition-colors">
+          <span>Browse all articles</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- 3 Article Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Article 1 -->
+        <article onclick="openArticle('geo')" class="bg-paper p-8 rounded-3xl border border-ink-faint/30 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-coral mb-4">
+              <span>GEO & AI Search</span>
+              <span>•</span>
+              <span class="text-ink-soft">8 min read</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-abyss font-semibold mb-3 group-hover:text-coral transition-colors">
+              What Is Generative Engine Optimisation (GEO) And Why It Matters in 2026
+            </h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              GEO is the single most critical paradigm shift in online discovery. Here is how modern answer engines rank authority and how to adapt your entity architecture.
+            </p>
+          </div>
+          <div class="pt-6 mt-8 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-ink-soft">
+            <span class="text-ink font-medium">By Jubayer Ahamed</span>
+            <span class="text-coral font-bold group-hover:translate-x-1.5 transition-transform flex items-center gap-1">Read Article →</span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article onclick="openArticle('agency_guide')" class="bg-paper p-8 rounded-3xl border border-ink-faint/30 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-wave mb-4">
+              <span>Agency & Strategy</span>
+              <span>•</span>
+              <span class="text-ink-soft">12 min read</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-abyss font-semibold mb-3 group-hover:text-coral transition-colors">
+              How to Choose an SEO & AI Growth Agency (Without Getting Burned)
+            </h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              The digital market is flooded with agencies making huge promises. Here is exactly what to look for, what red flags to avoid, and the questions to ask before you sign.
+            </p>
+          </div>
+          <div class="pt-6 mt-8 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-ink-soft">
+            <span class="text-ink font-medium">By Jubayer Ahamed</span>
+            <span class="text-wave font-bold group-hover:translate-x-1.5 transition-transform flex items-center gap-1">Read Article →</span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article onclick="openArticle('ads_mistakes')" class="bg-paper p-8 rounded-3xl border border-ink-faint/30 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-4">
+              <span>Paid Ads & Scaling</span>
+              <span>•</span>
+              <span class="text-ink-soft">10 min read</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-abyss font-semibold mb-3 group-hover:text-coral transition-colors">
+              7 Google Ads Mistakes Businesses Make (And How to Fix Them)
+            </h3>
+            <p class="text-sm text-ink-soft leading-relaxed">
+              After auditing dozens of advertising and acquisition funnels, these are the seven costly mistakes seen over and over again. If you're running ads, check these first.
+            </p>
+          </div>
+          <div class="pt-6 mt-8 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-ink-soft">
+            <span class="text-ink font-medium">By Jubayer Ahamed</span>
+            <span class="text-emerald-600 font-bold group-hover:translate-x-1.5 transition-transform flex items-center gap-1">Read Article →</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 8: FIELD INSIGHTS & TOPIC PILLS ==================== --> FIELD INSIGHTS & TOPIC PILLS ==================== -->
+  <section id="newsletter" class="py-16 bg-paper border-b border-ink-faint/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-2xl sm:text-4xl text-abyss mb-4">
+        AI & Marketing insights, straight from the field.
+      </h2>
+      <p class="text-sm sm:text-base text-ink-soft max-w-2xl mx-auto mb-8">
+        Follow along for daily engineering insights across Agentic AI, GEO, cloud architecture, and building sovereign businesses in public.
+      </p>
+
+      <!-- Topic Pills -->
+      <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-8">
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Autonomous AI</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Agentic Systems</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">GEO & AI Search</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">DevOps & Linux VPS</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">B2B Sales Automation</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">FastAPI & Next.js</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Life in Tech</span>
+      </div>
+
+      <div>
+        <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          <span>Follow on LinkedIn →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 10: CONVERSATION & AUDIT BANNER ==================== -->
+  <section class="py-24 bg-paper-deep relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <div class="w-16 h-16 rounded-2xl bg-coral/10 text-coral flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="messages-square" class="w-8 h-8"></i>
+      </div>
+
+      <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight mb-6">
+        Let's Start a Conversation.
+      </h2>
+      
+      <p class="text-base sm:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed mb-10">
+        Ready to replace fragile, manual tasks with high-ROI autonomous AI pipelines? Request a comprehensive audit of your current tech stack and growth bottlenecks.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-xl shadow-abyss/20 hover:-translate-y-0.5">
+          <span>Book a Free Audit</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <a href="https://wa.me/8801610594042" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-emerald-600 text-white font-semibold text-base hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20 hover:-translate-y-0.5">
+          <i data-lucide="phone-call" class="w-5 h-5"></i>
+          <span>WhatsApp Direct</span>
+        </a>
+      </div>
+
+      <p class="text-xs text-ink-faint mt-6">
+        No sales pitch. You'll receive a detailed architectural blueprint identifying your highest-ROI automation opportunities.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-abyss text-white pt-20 pb-12 border-t border-ink/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Pitch in Footer -->
+      <div class="pb-16 border-b border-ink-soft/20 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div>
+          <h2 class="font-serif text-2xl sm:text-3xl text-white font-medium max-w-xl">
+            Ready to turn manual workflows into a steady stream of customers?
+          </h2>
+          <p class="text-sm text-ink-faint mt-2">
+            Founder-led AI agency helping businesses scale through Agentic Systems, GEO, and cloud engineering.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <button onclick="openAuditModal()" class="px-6 py-3 rounded-full bg-coral text-white font-semibold text-sm hover:bg-white hover:text-abyss transition-all">
+            Book a Free Audit →
+          </button>
+          <a href="mailto:jubayer@besmartwithai.com" class="text-sm font-semibold text-ink-faint hover:text-white transition-colors">
+            Or email jubayer@besmartwithai.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-sm">
+        
+        <!-- Col 1: About & Locations -->
+        <div class="col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-9 h-9 rounded-xl bg-ink flex items-center justify-center">
+              <i data-lucide="bot" class="w-5 h-5 text-gold"></i>
+            </div>
+            <span class="font-display tracking-wider text-xl text-white">BE SMART WITH AI</span>
+          </div>
+          <p class="text-sm text-ink-faint leading-relaxed max-w-sm mb-6">
+            Headquartered in Dhaka, Bangladesh. Designing and deploying autonomous multi-agent intelligence and production-grade cloud solutions globally.
+          </p>
+          <div class="flex items-center gap-4 text-ink-faint">
+            <span class="inline-flex items-center gap-1.5 text-xs bg-ink/50 px-3 py-1.5 rounded-full border border-ink-soft/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Google Cloud Partner
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-xs bg-ink/50 px-3 py-1.5 rounded-full border border-ink-soft/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span> Meta Business Partner
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Core Services -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Services</h4>
+          <ul class="space-y-2.5 text-ink-faint">
+            <li><a href="#services" class="hover:text-coral transition-colors">Autonomous Multi-Agent</a></li>
+            <li><a href="#services" class="hover:text-coral transition-colors">Generative Engine (GEO)</a></li>
+            <li><a href="#services" class="hover:text-coral transition-colors">Search Engine (SEO)</a></li>
+            <li><a href="#services" class="hover:text-coral transition-colors">Sovereign DevOps</a></li>
+            <li><a href="#services" class="hover:text-coral transition-colors">WhatsApp AI Bots</a></li>
+            <li><a href="#services" class="hover:text-coral transition-colors">Web Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Company</h4>
+          <ul class="space-y-2.5 text-ink-faint">
+            <li><a href="#agency" class="hover:text-coral transition-colors">About Jubayer</a></li>
+            <li><a href="#work" class="hover:text-coral transition-colors">Case Studies</a></li>
+            <li><a href="#insights" class="hover:text-coral transition-colors">Engineering Insights</a></li>
+            <li><a href="#" onclick="openAuditModal()" class="hover:text-coral transition-colors">Free AI Audit</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Social -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-2.5 text-ink-faint">
+            <li><a href="https://wa.me/8801610594042" target="_blank" class="hover:text-coral transition-colors">WhatsApp Direct</a></li>
+            <li><a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="hover:text-coral transition-colors">LinkedIn Profile</a></li>
+            <li><a href="https://facebook.com/besmartwithaipro" target="_blank" class="hover:text-coral transition-colors">Be Smart With AI Page</a></li>
+            <li><a href="https://github.com/Jubayer-ahamed42" target="_blank" class="hover:text-coral transition-colors">GitHub Repository</a></li>
+            <li><a href="mailto:jubayer@besmartwithai.com" class="hover:text-coral transition-colors">Direct Developer Email</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-ink-soft/20 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-faint gap-4">
+        <div>
+          © 2026 Be Smart With AI. All rights reserved. Reconstructed by Jubayer Ahamed.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Security Architecture</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+  <!-- ==================== ARTICLE FULL READER MODAL ==================== -->
+  <div id="article-modal" class="fixed inset-0 z-50 overflow-y-auto bg-abyss/80 backdrop-blur-md hidden transition-opacity duration-300" role="dialog" aria-modal="true">
+    <div class="min-h-screen px-3 sm:px-6 py-6 sm:py-12 flex justify-center items-start">
+      
+      <!-- Modal Backdrop Click -->
+      <div class="fixed inset-0" aria-hidden="true" onclick="closeArticleModal()"></div>
+
+      <!-- Modal Card Container -->
+      <div class="relative bg-paper rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all max-w-4xl w-full border border-ink-faint/30 z-10">
+        
+        <!-- Sticky Top Navigation Bar -->
+        <div class="sticky top-0 z-30 bg-paper/95 backdrop-blur-md px-6 sm:px-8 py-4 border-b border-ink-faint/20 flex items-center justify-between">
+          <button onclick="closeArticleModal()" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-ink-soft hover:text-coral transition-colors py-1.5 px-3 rounded-full hover:bg-paper-deep">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to Site</span>
+          </button>
+          
+          <div class="flex items-center gap-3">
+            <span id="article-modal-category" class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-paper-deep text-wave border border-ink-faint/30">GEO & AI Search</span>
+            <span id="article-modal-readtime" class="text-xs font-medium text-ink-soft hidden sm:inline-block">8 min read</span>
+            <button onclick="closeArticleModal()" class="w-8 h-8 rounded-full bg-paper-deep flex items-center justify-center text-ink-soft hover:text-coral hover:bg-coral/10 transition-colors" aria-label="Close modal">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="px-6 sm:px-12 py-8 sm:py-12">
+          
+          <!-- Article Header -->
+          <div class="mb-10 pb-8 border-b border-ink-faint/20">
+            <h1 id="article-modal-title" class="font-serif text-3xl sm:text-5xl font-bold text-abyss tracking-tight leading-tight mb-6">
+              What Is Generative Engine Optimisation (GEO) And Why It Matters in 2026
+            </h1>
+            <p id="article-modal-subtitle" class="text-base sm:text-xl text-ink-soft leading-relaxed font-sans mb-8 italic border-l-4 border-coral pl-4">
+              GEO is the most important marketing concept most businesses haven't heard of.
+            </p>
+            
+            <!-- Author Meta Row -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink-faint/20">
+              <div class="flex items-center gap-3.5">
+                <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" class="w-12 h-12 rounded-full object-cover border-2 border-coral shadow-sm">
+                <div>
+                  <h3 class="font-bold text-sm text-abyss">Jubayer Ahamed</h3>
+                  <p class="text-xs text-ink-soft">Founder & AI Architect, Be Smart With AI</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-ink-soft font-medium">
+                <span id="article-modal-date">Published 2026</span>
+                <span>•</span>
+                <span>Verified Insight</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Injected Article Body -->
+          <div id="article-modal-body" class="article-prose text-ink text-base sm:text-lg leading-relaxed">
+            <!-- Article text loaded dynamically -->
+          </div>
+
+          <!-- Author Bio Box Footer -->
+          <div class="mt-12 pt-8 border-t border-ink-faint/20 bg-paper-deep rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" class="w-20 h-20 rounded-2xl object-cover border-2 border-coral shadow-md flex-shrink-0">
+            <div class="text-center sm:text-left flex-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-coral">Written by</span>
+              <h4 class="font-serif text-xl font-bold text-abyss mt-1">Jubayer Ahamed</h4>
+              <p class="text-xs sm:text-sm text-ink-soft mt-2 leading-relaxed">
+                Founder & Lead AI Architect at Be Smart With AI. Jubayer designs autonomous multi-agent systems, GEO optimization pipelines, and high-performance digital automation architectures for growth-focused brands worldwide.
+              </p>
+              <div class="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                <button onclick="closeArticleModal(); openAuditModal();" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-abyss text-white text-xs font-semibold hover:bg-coral transition-colors">
+                  <span>Request Free Audit</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+                <a href="https://wa.me/8801610594042" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper border border-ink-faint/30 text-ink text-xs font-semibold hover:border-coral transition-colors">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-500"></i>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Close Action at Bottom -->
+          <div class="mt-8 text-center">
+            <button onclick="closeArticleModal()" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-paper-deep text-ink-soft hover:text-abyss text-xs font-semibold hover:bg-paper transition-all border border-ink-faint/30">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span>Close Article & Return to Site</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== INTERACTIVE AUDIT MODAL ==================== -->
+  <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-paper rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 relative animate-in fade-in zoom-in duration-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors" aria-label="Close modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
+          <span>100% Free Architectural Audit</span>
+        </div>
+        <h3 class="font-serif text-2xl sm:text-3xl text-abyss font-semibold">Get Your Growth Audit</h3>
+        <p class="text-sm text-ink-soft mt-1">We’ll analyze your website, search authority, and AI automation opportunities.</p>
+      </div>
+
+      <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Your Name</label>
+          <input type="text" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Work Email</label>
+          <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Website or Current Stack</label>
+          <input type="text" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Primary Growth Focus</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss bg-paper">
+            <option>Autonomous Multi-Agent AI System</option>
+            <option>Generative Engine Optimisation (GEO) & SEO</option>
+            <option>Sovereign DevOps (Cut SaaS Costs)</option>
+            <option>WhatsApp / Telegram AI Sales Bot</option>
+            <option>High-Converting Web / SaaS Application</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4">
+          Request Free Audit Blueprint →
+        </button>
+      </form>
+
+      <div id="modal-success" class="hidden text-center py-6">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="check-circle" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-serif text-xl text-abyss font-semibold">Audit Request Received!</h4>
+        <p class="text-sm text-ink-soft mt-1">Our engineering team will review your domain and email your blueprint within 24 hours.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    
+    // Articles Database
+    const articlesData = {"geo": {"id": "geo", "slug": "what-is-generative-engine-optimisation", "category": "GEO & AI Search", "readTime": "8 min read", "date": "October 2026", "title": "What Is Generative Engine Optimisation (GEO) And Why It Matters in 2026", "subtitle": "GEO is the single most important marketing concept most businesses haven't heard of. Here's what it is, why it matters, and how to start doing it in 2026.", "author": "Jubayer Ahamed", "authorRole": "Founder & AI Architect, Be Smart With AI", "authorBio": "Jubayer Ahamed is the founder of Be Smart With AI. He architects autonomous multi-agent pipelines, AI systems, and generative engine optimization strategies for global businesses.", "content": "<p>A few years ago, if someone wanted to find an accountant in Dublin, they'd open Google, type \"accountant Dublin\", scan the results, and click a link. That journey still happens millions of times a day. But increasingly, it doesn't. Instead, they open ChatGPT and ask \"who are good accountants in Dublin?\" or they use Perplexity to research \"what should I look for in a small business accountant?\" and get a direct answer, with sources, no clicking required.</p>\n\n<p>This shift is what Generative Engine Optimisation is about. GEO is the practice of optimising your content and your online presence so that AI answer engines cite you, reference you, and recommend you, not just so that Google ranks your page.</p>\n\n<p>It is not a replacement for SEO. It is what you now need to do in addition to SEO if you want to be found by the people using AI tools to make decisions.</p>\n\n<h2>What Exactly Are \"Generative Engines\"?</h2>\n\n<p>The term covers any AI system that generates a direct answer to a query rather than simply returning a list of links. The main ones worth caring about in 2026 are:</p>\n\n<ul>\n<li><strong>ChatGPT</strong> (OpenAI) - still the most used AI assistant globally, with Browse mode that can search the live web</li>\n<li><strong>Perplexity AI</strong> - built specifically as a search replacement, using retrieval-augmented generation to pull real-time sources</li>\n<li><strong>Google AI Overviews</strong> - what used to be called SGE, now showing at the top of Google results for a wide range of queries</li>\n<li><strong>Gemini</strong> (Google) - the standalone assistant that increasingly integrates with Google Search</li>\n<li><strong>Claude</strong> (Anthropic) - used by developers, professionals, and increasingly enterprises</li>\n<li><strong>Microsoft Copilot</strong> - integrated into Edge and Windows, using Bing's index as its backbone</li>\n</ul>\n\n<p>Each one works slightly differently. But they all share a core behaviour: they synthesise information from multiple sources and present a confident, direct answer. Whether your brand gets included in that answer, or whether a competitor does, is what GEO is about.</p>\n\n<h2>How AI Systems Pick Their Sources (And Why It's Different From Google)</h2>\n\n<p>Google's traditional ranking algorithm evaluates hundreds of signals: backlinks, page speed, keyword relevance, click-through rate, user behaviour, and more. The output is a ranked list of pages, and users choose which ones to visit. Your goal with SEO is to get on that list, ideally in the top three positions.</p>\n\n<p>Generative engines work differently. They don't return a list and let the user choose. They synthesise an answer and may cite a handful of sources that informed it. The selection process favours:</p>\n\n<ul>\n<li><strong>Authority and credibility signals</strong> - Is this source referenced by other authoritative sources? Does it have genuine expertise signals?</li>\n<li><strong>Clarity and directness</strong> - Does the content directly answer the type of question being asked? Content that is vague or padded gets passed over in favour of content that is specific and precise.</li>\n<li><strong>Structured, parseable content</strong> - AI systems parse content more easily when it is well-structured. Clear headings, numbered lists, defined terms, FAQ formats.</li>\n<li><strong>Factual density</strong> - Content with specific data points, statistics, named examples, and cited research is preferred over generic commentary.</li>\n<li><strong>Freshness</strong> - Particularly for tools like Perplexity that search live, recent content matters.</li>\n</ul>\n\n<p>The big difference from traditional SEO: a page can rank position one on Google and never be cited by an AI, because the content is too vague, too padded, or structured in a way that AI systems can't extract clean, citable information from.</p>\n\n<h2>Why Traditional SEO Alone Is No Longer Enough</h2>\n\n<p>This is not an argument that SEO is dead. It isn't. Organic search still drives the majority of web traffic. But the shape of that traffic is changing.</p>\n\n<p>In 2024, Google reported that AI Overviews appeared in a significant percentage of search results. Studies have shown that when an AI Overview appears, click-through rates to organic results drop substantially, in some cases by 30-60% for informational queries. People get their answer without visiting your site.</p>\n\n<p>At the same time, Perplexity has grown rapidly as a search alternative. ChatGPT's Browse mode is used regularly by tens of millions of users for research and purchasing decisions. If someone asks an AI whether they should hire your agency, or which accountant in Cork is reputable, or which Irish solicitor handles commercial leases, and your name doesn't come up, you've lost a potential client without ever knowing they were looking.</p>\n\n<p>The businesses winning in 2026 are treating GEO as a parallel discipline alongside SEO, not something separate, but something that requires its own attention and its own content strategy.</p>\n\n<h2>Practical GEO Tactics: What Actually Works</h2>\n\n<h3>1. Build genuine authority signals</h3>\n\n<p>AI systems, particularly those with access to the web, heavily weight what I'd call \"authority by association\". If reputable publications, industry directories, and established websites reference your brand or cite your content, the AI systems that index those sources will develop a more confident picture of who you are and what you know.</p>\n\n<p>This means: get featured in Irish business press. Get quoted in industry articles. Contribute to legitimate industry publications. Appear on podcasts. Be mentioned in Wikipedia-adjacent pages if your niche allows it. These aren't just backlinks for Google, they're proof of existence and credibility for AI systems that are building a world model.</p>\n\n<h3>2. Write with direct answers first</h3>\n\n<p>AI systems extract content by finding the most direct answer to a query. If someone asks \"how long does planning permission take in Ireland?\" and your page about planning services buries the answer in paragraph eight after four paragraphs of scene-setting, the AI skips it. If your page says in paragraph one: \"In Ireland, planning permission typically takes 8 to 10 weeks after a valid application is submitted, though this varies by local authority,\" the AI can extract and cite that.</p>\n\n<p>This is a real shift in how to write. The classic SEO approach of building up to the answer has less value in a GEO world. State the core fact or answer first, then add the nuance, context, and depth below it.</p>\n\n<h3>3. Create FAQ sections for every important topic</h3>\n\n<p>FAQ format is extraordinarily well-suited to how AI answer engines process content. Each question-answer pair is self-contained. The AI can pull a specific Q&amp;A and attribute it cleanly. FAQ schema markup (more on that in a moment) makes this even more effective.</p>\n\n<p>For every service page and every important content piece, add a FAQ section with five to ten specific, genuine questions your customers ask. Write the answers in plain, direct language. Avoid corporate filler. This is one of the highest-leverage GEO tactics available right now.</p>\n\n<h3>4. Use schema markup, particularly FAQ and Article schema</h3>\n\n<p>Schema markup tells search engines and AI crawlers the type of content on a page. <code>FAQPage</code> schema tells an AI crawler that here are structured question-answer pairs. <code>Article</code> schema with proper author information and publication date signals credibility and freshness. <code>Organization</code> schema establishes your business's identity clearly.</p>\n\n<p>JSON-LD format, which Google recommends, is the cleanest way to implement this. It doesn't pollute your HTML and is easy to add in a CMS or directly in your page templates. Every serious page on your site should have appropriate schema.</p>\n\n<h3>5. Publish original research and data</h3>\n\n<p>This is one of the most powerful GEO tactics, and also one of the hardest. AI systems love data. When they're answering a question that has a quantitative dimension, they look for sources that have actual numbers, not just general commentary.</p>\n\n<p>If you can publish original research, even small-scale surveys of your customer base, or analysis of data you have access to through your work, this becomes highly citable content. \"According to a 2026 survey by [your agency]...\" is the kind of phrase that appears in AI-generated answers, because AI systems cite quantitative claims.</p>\n\n<p>You don't need to commission a major research study. Analyse your own client data (anonymised). Survey 50 business owners in your niche. Track a metric in your industry for six months and publish the results. The bar for original data is lower than most people think.</p>\n\n<h3>6. Get cited on high-authority domains that AI systems index</h3>\n\n<p>Certain domains carry more weight in AI training data and in real-time AI search. Wikipedia, government sites, established news publications, well-known industry bodies. If you can get mentioned or cited on these types of sites, the signal carries through to how AI systems perceive your authority.</p>\n\n<p>For Irish businesses: getting a mention in The Irish Times, Irish Examiner, SiliconRepublic, The Currency, or similar publications matters far more for GEO than a link in a directory no one reads.</p>\n\n<h2>How to Check if AI Tools Currently Cite Your Brand</h2>\n\n<p>The simplest method: go to ChatGPT, Perplexity, and Claude and ask the questions your target customers would ask. See if your brand comes up.</p>\n\n<p>For example: \"Who are the best digital marketing agencies in Ireland?\" or \"What are the top SEO agencies in Dublin?\" or more specific: \"Who should I hire for Google Ads in Ireland?\" Note what comes up, who gets cited, and what content seems to be driving those citations.</p>\n\n<p>For Perplexity specifically, you can see exactly which sources it's pulling from in real time. This is invaluable. If a competitor keeps appearing as a cited source, go to that source and understand what they've published that's getting picked up.</p>\n\n<p>Do this monthly. The AI landscape changes fast, and what gets cited shifts as new content is published and indexed.</p>\n\n<h2>Real Examples of Businesses Winning at GEO</h2>\n\n<p>I've seen a pattern in the businesses that appear consistently in AI answers: they have invested heavily in genuinely useful, specific, expert content. Not content written by a generic AI tool, but content written by or under the close direction of someone who actually knows the subject.</p>\n\n<p>A financial advisory firm that published a series of very specific guides to Irish pension rules, naming specific Revenue guidance and legislation, finds itself cited regularly by AI tools when people ask pension questions. The specificity and accuracy are what make it citable.</p>\n\n<p>A B2B software company that surveyed their customer base and published the results gets cited in AI answers about industry benchmarks. Original data, even from a modest survey, punches far above its weight.</p>\n\n<p>A law firm that wrote detailed explainers of Irish commercial law topics, with specific examples and case references, appears regularly in Perplexity answers for legal research queries. The professional credential combined with specific content is a powerful combination.</p>\n\n<h2>Your GEO Starting Checklist</h2>\n\n<p>If you want to start improving your GEO performance today, here is where to begin:</p>\n\n<ul>\n<li><strong>Audit your current presence:</strong> Ask ChatGPT and Perplexity the questions your customers would ask. Document what comes up and what doesn't.</li>\n<li><strong>Add FAQ sections:</strong> Every service page and key blog post should have five to ten specific, clearly-answered FAQs.</li>\n<li><strong>Implement schema markup:</strong> At minimum: Organization, LocalBusiness (if relevant), Article on blog posts, and FAQPage on FAQ content.</li>\n<li><strong>Write with the answer first:</strong> Restructure any important pages so the direct answer to the main question appears in the first two paragraphs.</li>\n<li><strong>Plan one piece of original research:</strong> Survey your customers, analyse your client data, or track an industry metric. Publish the findings as a standalone piece.</li>\n<li><strong>Pursue high-authority mentions:</strong> Identify three to five publications or platforms in your industry that AI systems demonstrably cite. Create a plan to get mentioned there.</li>\n<li><strong>Maintain consistency:</strong> Your business name, address, description, and areas of expertise should be identical across your website, Google Business Profile, LinkedIn, and any press mentions. Inconsistency confuses AI systems building a picture of your brand.</li>\n</ul>\n\n<p>GEO is early enough that businesses who start now will have a meaningful head start. In two years, it will be as table-stakes as having a Google Business Profile. The businesses building these foundations now will be the ones the AI recommends when your next potential customer asks.</p>\n\n<p>If you want help auditing your current GEO presence and building a strategy to improve it, <a href=\"javascript:void(0)\" onclick=\"openAuditModal()\">get in touch for a free audit</a>. This is something we're working on for clients right now, and the early results are genuinely exciting.</p>"}, "agency_guide": {"id": "agency_guide", "slug": "seo-agency-how-to-choose", "category": "Agency & Strategy", "readTime": "12 min read", "date": "October 2026", "title": "How to Choose an SEO & AI Growth Agency (Without Getting Burned)", "subtitle": "The digital market is flooded with agencies making huge promises. Here is exactly what to look for, what red flags to avoid, and the questions to ask before you sign.", "author": "Jubayer Ahamed", "authorRole": "Founder & AI Architect, Be Smart With AI", "authorBio": "Jubayer Ahamed is the founder of Be Smart With AI. He architects autonomous multi-agent pipelines, AI systems, and generative engine optimization strategies for global businesses.", "content": "<p>I've spoken to more business owners than I can count who have been burned by an SEO agency. Paid thousands of euros over six or twelve months. Got a report every month that they didn't fully understand. Rankings didn't move. Business didn't grow. Then the agency blamed the algorithm or said they needed more time or more budget.</p>\n\n<p>The modern digital agency market has a real problem. The barrier to calling yourself an SEO agency is zero. Anyone with a Hostinger account and a Canva logo can pitch for your business. And the promises sound identical whether you're talking to someone who genuinely knows what they're doing or someone who is going to take your money and deliver very little.</p>\n\n<p>This guide is for business owners who are thinking about hiring an SEO or AI agency and want to make a genuinely informed decision. Not a decision based on the shiniest pitch or the cheapest quote, but one based on what actually matters.</p>\n\n<h2>The Red Flags: What to Walk Away From</h2>\n\n<h3>Guaranteed rankings</h3>\n\n<p>If an agency guarantees you a position one ranking for any keyword, leave. No one can guarantee a Google ranking. Google's algorithm is not within any agency's control. What a good agency can guarantee is the quality of the work they'll do. Rankings are an outcome of that work, not something that can be promised.</p>\n\n<p>The agencies that make ranking guarantees either have very low confidence in the keywords they're planning to rank you for (they'll go after terms no one searches for) or they're saying whatever it takes to get you to sign. Neither is a good sign.</p>\n\n<h3>Very cheap pricing</h3>\n\n<p>Good SEO in Ireland costs money because it takes time. Real keyword research, technical audits, content creation, link building outreach - these are hours of skilled work. If an agency is quoting you €200 or €300 a month, ask yourself: what are they actually doing for that? The answer is usually: very little. Automated reports, maybe some basic on-page tweaks, no real content strategy, no real link building.</p>\n\n<p>There are legitimate lower-budget engagements, but they come with honest limitations. An agency that quotes €250/month and promises comprehensive SEO is misleading you about what comprehensive SEO requires.</p>\n\n<h3>No transparency about what they're doing</h3>\n\n<p>You should always know what an SEO agency is doing with your money, every month. If they can't explain clearly, in plain English, what work was done in the last 30 days and why it matters, that's a problem. \"We worked on your SEO this month\" is not reporting. \"We published two pieces of content targeting [specific keywords], built three links from [specific sources], and fixed [specific technical issues] which should improve crawl efficiency\" - that's reporting.</p>\n\n<h3>No real case studies or references</h3>\n\n<p>Every agency has a portfolio page. But case studies that show actual before-and-after traffic data, with the client named and verifiable, are rare. If an agency can't show you a single real example of SEO results they've delivered for an Irish business in a comparable industry, ask why. If the answer is \"all our clients are confidential,\" push back. Some can be. All of them? Unlikely.</p>\n\n<h3>Vanity metric reporting</h3>\n\n<p>Domain Authority, Moz metrics, number of keywords tracked, number of backlinks in their tool - these are not business outcomes. If your monthly report is full of these numbers but doesn't connect to actual organic traffic from Google Search Console, actual leads or sales attributed to organic search, actual keyword position changes for terms that real customers search, you're getting distracted from what matters. A good agency will show you the metrics that tie to revenue.</p>\n\n<h3>No knowledge of the Irish market</h3>\n\n<p>Ireland is a small, specific market. Search volumes in Ireland are lower than in the UK. Competition for certain keywords is genuinely different. Local signals matter enormously for many Irish businesses. An agency that treats Ireland as just a smaller version of the UK, without understanding the specific dynamics of Irish search behaviour, Irish link opportunities, and Irish Google Business Profile nuances, will miss important opportunities and waste effort on wrong priorities.</p>\n\n<h2>The Green Flags: What Good Looks Like</h2>\n\n<p>A good SEO or AI agency will be honest about timelines. They'll tell you that real results take six to twelve months and that anyone promising results in six weeks is misleading you. They'll be specific about what work will be done and why. They'll show you reports that connect to Google Search Console data. They'll have at least a few case studies they can share, even if some details are kept private.</p>\n\n<p>They'll also talk about your business goals before they talk about keywords. The best SEO conversations start with: what does your business need more of? More enquiries? More product sales? More local walk-in customers? The SEO strategy should flow from that, not start with a list of keywords disconnected from how you actually make money.</p>\n\n<h2>The 10 Questions to Ask Before You Sign</h2>\n\n<ol>\n<li><strong>\"Can you show me a case study from an Irish business in a similar industry to mine?\"</strong> You want to see real traffic data, not just logos.</li>\n<li><strong>\"Who specifically will be working on my account?\"</strong> Not just who presents in the sales meeting, but who does the actual work. Is it a senior person or a junior who joined three months ago?</li>\n<li><strong>\"What will the first 90 days look like, specifically?\"</strong> A good agency can describe their onboarding and initial strategy process in concrete terms.</li>\n<li><strong>\"How do you build links and what does a typical link look like for a business like mine?\"</strong> Link building is one of the most important and most abused areas of SEO. You want to hear about real, editorially-earned links, not spam directories.</li>\n<li><strong>\"What reporting will I receive and how do you measure success?\"</strong> Push for metrics that connect to business outcomes, not just keyword rankings.</li>\n<li><strong>\"What would be a realistic outcome at 6 months? At 12 months?\"</strong> Not a guarantee, but an honest projection based on your starting point and competition level.</li>\n<li><strong>\"What do you need from me to do this well?\"</strong> A good agency will have an answer to this. SEO requires collaboration. If they say \"nothing, we handle everything,\" be cautious.</li>\n<li><strong>\"What happens if I'm not happy with progress after six months?\"</strong> Understand the contract terms, notice periods, and what the off-ramp looks like if things aren't working.</li>\n<li><strong>\"Do you have a minimum contract term? Why?\"</strong> A 12-month lock-in is common in SEO because results take time. That's legitimate. But a 24-month lock-in with no performance benchmarks is not in your interest.</li>\n<li><strong>\"Can I speak to one of your current clients?\"</strong> References should be available. If an agency has no client willing to take a reference call, that tells you something.</li>\n</ol>\n\n<h2>What Good SEO Reporting Looks Like</h2>\n\n<p>Monthly reporting from a good SEO agency should include, at minimum:</p>\n\n<ul>\n<li>Organic sessions from Google Search Console (not just Google Analytics, which can misattribute traffic)</li>\n<li>Keyword position changes for the specific terms you're targeting, with search volume context</li>\n<li>New links acquired that month, with the referring domains named</li>\n<li>Content published or updated, with the target keywords</li>\n<li>Technical issues found and fixed</li>\n<li>A clear summary of what was done and what's planned next month</li>\n</ul>\n\n<p>What good reporting doesn't do: fill pages with Domain Authority metrics, Moz scores, or tool-generated data that doesn't connect to actual Google performance. It also doesn't hide under data. If the results aren't coming yet, a good agency will explain honestly why and what they're changing.</p>\n\n<h2>Realistic Pricing in Ireland</h2>\n\n<p>Here's what different budget levels buy you in the Irish market in 2026:</p>\n\n<ul>\n<li><strong>Under €500/month:</strong> You can get basic technical SEO maintenance, some on-page optimisation, and limited reporting. Don't expect significant content creation or link building at this level. For a local business with minimal competition, this might be enough to maintain a foundation. For growth, it's rarely sufficient.</li>\n<li><strong>€500 to €1,500/month:</strong> This is where you can start getting meaningful work done. At the upper end of this range, you'd expect some content creation (one or two pieces per month), ongoing technical work, and basic link building outreach. Results should start to become visible in months six to twelve.</li>\n<li><strong>€1,500 to €3,000/month:</strong> Meaningful content production, active link building, technical depth, and strategic input. For competitive industries, this is where you need to be to see real movement against established competitors.</li>\n<li><strong>€3,000 and above:</strong> For highly competitive sectors (financial services, legal, e-commerce at scale), this is where serious campaigns operate. Dedicated resource, substantial content programmes, proactive PR-style link acquisition.</li>\n</ul>\n\n<h2>The Cost of Getting It Wrong</h2>\n\n<p>I've seen businesses come to us after 18 months with an agency that delivered almost nothing, having spent €20,000 or more. That's the direct cost. The indirect cost is worse: time lost that competitors used to build authority you now have to overcome, sometimes penalties from low-quality link building that the previous agency did, and often a website that was technically neglected while the agency focused only on surface-level work.</p>\n\n<p>Bad SEO can actually damage your site's ability to rank. Black-hat link building, keyword stuffing, or thin content produced at scale to look busy can all create problems that take significant work to undo. When you evaluate agencies, you're not just evaluating the potential upside. You're also evaluating the risk of the downside.</p>\n\n<h2>What the First Three Months Should Look Like</h2>\n\n<p>A legitimate SEO engagement for an Irish business should roughly follow this pattern in the first quarter:</p>\n\n<p><strong>Month 1:</strong> Thorough technical audit of your website. Baseline measurement of current organic traffic, keyword positions, and backlink profile. Competitor analysis. Keyword research specific to your market and goals. A written strategy document that lays out the plan for the next six to twelve months.</p>\n\n<p><strong>Month 2:</strong> Technical fixes implemented (or handed to your developer if the agency doesn't do development). First content pieces commissioned or published. On-page optimisation of key existing pages. Initial outreach for links begins.</p>\n\n<p><strong>Month 3:</strong> Content programme in full swing. Link building producing first results. Technical health confirmed clean. First ranking movements visible in Search Console (even if small). A clear 90-day review meeting with honest assessment of what's working and what needs to change.</p>\n\n<p>If by month three you still don't have a clear strategy document, if you can't see any content being produced, if no technical issues have been identified and addressed, and if no link building activity has started, something is wrong.</p>\n\n<p>Choosing an SEO agency is one of the more consequential marketing decisions an Irish business owner makes. Take your time, ask hard questions, and don't let a polished pitch substitute for proof of results. If you want a second opinion on any agency proposal, or want to understand what a proper SEO engagement would look like for your specific business, <a href=\"javascript:void(0)\" onclick=\"openAuditModal()\">get in touch</a>. Honest assessment is something I'm always happy to give.</p>"}, "ads_mistakes": {"id": "ads_mistakes", "slug": "google-ads-mistakes", "category": "Paid Ads & Scaling", "readTime": "10 min read", "date": "October 2026", "title": "7 Google Ads Mistakes Businesses Make (And How to Fix Them)", "subtitle": "After auditing dozens of advertising and acquisition funnels, these are the seven mistakes seen over and over again. If you're running ads, check these first.", "author": "Jubayer Ahamed", "authorRole": "Founder & AI Architect, Be Smart With AI", "authorBio": "Jubayer Ahamed is the founder of Be Smart With AI. He architects autonomous multi-agent pipelines, AI systems, and generative engine optimization strategies for global businesses.", "content": "<p>When I audit a Google Ads account, I can usually identify within ten minutes whether it has been actively managed or whether it has been largely set up and left to run. Most accounts I see from scaling SMEs and startups fall into the second category. Money is leaving the account every month. The results are mediocre at best. And usually, the business owner has no idea why.</p>\n\n<p>These are the seven mistakes I see most often, with specific context for the Irish market where it's relevant.</p>\n\n<h2>Mistake 1: Sending All Traffic to the Homepage</h2>\n\n<p>This is probably the single most expensive mistake in Google Ads, and I see it in the majority of small business accounts. Someone searches \"emergency plumber Dublin 24 hours.\" They click your ad. They land on your homepage, which talks about your company history, your full range of services, and your commitment to quality. They leave.</p>\n\n<p>Your homepage is designed to explain who you are. A landing page for an ad should be designed to convert one specific type of visitor who arrived with one specific intent.</p>\n\n<p><strong>Why it happens:</strong> Building dedicated landing pages takes time and sometimes budget. It feels easier to just point the ad at the website that already exists.</p>\n\n<p><strong>The cost:</strong> In competitive sectors, CPCs for service-based keywords can range from €2 to €20 or more depending on the industry. A legal services keyword might cost €15 per click. If your homepage converts at 1% instead of a dedicated landing page converting at 5%, you're paying five times as much per lead. On a €1,500/month budget, that's the difference between 10 leads and 50 leads from the same spend.</p>\n\n<p><strong>The fix:</strong> For each distinct service or product you're advertising, create a specific landing page that matches the intent of the ad. The headline on the landing page should directly reflect what the ad promised. The page should have one clear call to action. Everything on the page should serve one purpose: getting the visitor to take that action.</p>\n\n<h2>Mistake 2: Not Using Negative Keywords</h2>\n\n<p>Negative keywords are the words or phrases you tell Google you don't want your ads to show for. Without them, your ad budget gets eaten by irrelevant searches.</p>\n\n<p><strong>A real example:</strong> A solicitor's firm in Cork was running ads for \"commercial property solicitor Cork.\" Without negative keywords, their ads were showing for \"commercial property solicitor Cork salary,\" \"commercial property solicitor Cork jobs,\" \"commercial property law degree Cork,\" and various other searches from people who had absolutely no intention of hiring them. They were paying for every click.</p>\n\n<p><strong>Why it happens:</strong> Setting up negative keywords requires actively looking at the search terms report and making decisions. It's not exciting work. Many campaign managers, particularly those managing many accounts, skip it or only do it occasionally.</p>\n\n<p><strong>The cost:</strong> In competitive Irish markets like financial services, legal, and property, even 20-30% of your budget going to irrelevant clicks is a substantial waste. I've seen accounts where over 40% of spend was going to searches with no commercial intent whatsoever.</p>\n\n<p><strong>The fix:</strong> Check your search terms report every week, particularly in the first few months of a campaign. Any search that your ad showed for that is clearly not from a potential customer should be added as a negative keyword. Build a negative keyword list specific to your business. At minimum, add general irrelevants: jobs, salary, careers, free, DIY, course, how to (if you're not a tutorial business), and any competitor names you don't want to appear for.</p>\n\n<h2>Mistake 3: Using Broad Match Keywords Without Managing Them Properly</h2>\n\n<p>Google's broad match keyword type has changed significantly. Where it used to match fairly closely to variations of your keyword, it now uses machine learning to match to what Google considers \"semantically related\" searches, which can be very loosely related indeed.</p>\n\n<p><strong>Why it happens:</strong> Google actively recommends broad match, particularly in Smart Bidding campaigns. The recommendation is presented as a way to \"find more customers.\" What it can actually do is find many irrelevant customers.</p>\n\n<p><strong>The cost:</strong> I've seen broad match campaigns spending significant budget on searches that were conceptually in the same category as the intended keyword but were targeting a completely different intent. An insurance broker running broad match on \"business insurance Ireland\" might find their ad showing for \"business insurance Ireland explained,\" \"what is business insurance,\" or various informational queries from students or researchers, not buyers.</p>\n\n<p><strong>The fix:</strong> If you use broad match, you must commit to weekly search term reviews and a robust negative keyword list. Alternatively, use phrase match as your primary match type, which gives Google some flexibility while keeping you in control of the core intent. For smaller budgets, exact match for your most important keywords is often the most efficient approach, particularly when CPCs are high and every click counts.</p>\n\n<h2>Mistake 4: Running Ads Without Conversion Tracking</h2>\n\n<p>This is the most fundamental mistake and it's alarmingly common. If you don't have conversion tracking set up properly, you genuinely do not know which clicks are turning into leads or sales. You can see clicks, impressions, and spend. But you cannot see what those clicks produced.</p>\n\n<p><strong>Why it happens:</strong> Conversion tracking requires either setting up Google tag properly on a \"thank you\" page, or using enhanced conversions, or connecting a phone call tracking system. It requires some technical work and clear thinking about what a \"conversion\" means for your business.</p>\n\n<p><strong>The cost:</strong> Without conversion data, every bidding and budget decision you make is based on incomplete information. You can't tell if campaign A is outperforming campaign B because you don't know which one is generating leads. You can't use Smart Bidding effectively (it needs conversion data to optimise). You're essentially driving blind.</p>\n\n<p><strong>The fix:</strong> Before spending a single euro on Google Ads, make sure you have conversion tracking in place. For a service business, this typically means: tracking form submissions (fire a conversion when someone reaches the thank-you page after submitting your contact form), tracking phone calls (Google has a phone call tracking feature that counts calls from ads), and potentially tracking specific page visits that indicate high intent (e.g., visiting your pricing page). Test the tracking before you launch. This is non-negotiable.</p>\n\n<h2>Mistake 5: Ignoring Quality Score</h2>\n\n<p>Quality Score is Google's rating of the relevance and quality of your keywords, ads, and landing pages. It's scored from 1 to 10. A higher Quality Score means you pay less per click and can achieve higher ad positions than competitors who bid more but have lower quality.</p>\n\n<p><strong>Why it happens:</strong> Quality Score is not the most visible metric in Google Ads. Many account managers don't monitor it or don't understand its impact on costs.</p>\n\n<p><strong>The cost:</strong> The relationship between Quality Score and CPC is significant. A Quality Score of 10 versus a Quality Score of 5 can mean paying 50% less per click for the same position. In competitive Irish markets where CPCs are already high, this is a meaningful cost difference over a year.</p>\n\n<p><strong>What drives Quality Score:</strong> Three factors. Expected click-through rate (does your ad text compel people to click?). Ad relevance (does your ad match what someone searched for?). Landing page experience (does the page you send people to match what the ad promised, load quickly, and provide a good experience on mobile?).</p>\n\n<p><strong>The fix:</strong> Write ad copy that closely reflects the exact search terms you're bidding on. Use the keyword in your headline. Make sure the landing page headline matches the ad promise. Improve your landing page load speed. These are the three levers that move Quality Score.</p>\n\n<h2>Mistake 6: Letting Google's \"Recommendations\" Run Unchecked</h2>\n\n<p>Google Ads has a Recommendations tab that regularly suggests changes to your campaigns. These can include: adding more keywords (often broad match), increasing your budget, switching to Smart Bidding, enabling more ad types, and various other suggestions. Google also has an \"Optimisation Score\" that goes up when you accept recommendations and down when you dismiss them.</p>\n\n<p>Here is the thing: Google's recommendations are not made in your interest. They are made to increase Google's revenue from your account. Accepting them uncritically often results in broader targeting, higher spend, and lower efficiency.</p>\n\n<p><strong>A specific example:</strong> Google regularly recommends adding broad match versions of your existing keywords. For a small Irish business with a €800/month budget, accepting this recommendation can cause the budget to be spread across far more irrelevant searches and reduce the efficiency of your spend significantly.</p>\n\n<p><strong>The fix:</strong> Review recommendations critically. Never accept anything without understanding exactly what it will do and why it might benefit you specifically. Some recommendations are genuinely useful. Many are not. The Optimisation Score is a Google metric, not a measure of how well your campaign performs for your business. Dismiss it as a performance indicator.</p>\n\n<h2>Mistake 7: Not Separating Branded and Non-Branded Campaigns</h2>\n\n<p>Branded keywords are people searching for your company by name: \"Murphy Solicitors Dublin,\" \"Brennan Accountants Cork.\" Non-branded keywords are people searching for what you do without knowing your name: \"solicitor Dublin commercial property,\" \"accountant Cork small business.\"</p>\n\n<p>These two types of searches behave completely differently. Branded searches have extremely high intent and very high conversion rates, because the person already knows who you are and is actively looking for you. Non-branded searches are where you're competing for new customers.</p>\n\n<p><strong>Why it matters:</strong> If you run both in the same campaign, your overall numbers look better than they are, because the branded traffic is converting well and masking poor performance from non-branded spend. You also can't optimise bids separately, and you lose clarity on what your actual customer acquisition cost is for genuinely new customers.</p>\n\n<p><strong>The fix:</strong> Run branded and non-branded keywords in completely separate campaigns. Use your branded campaign to protect your own name in search results (competitors can and do bid on your brand name in Ireland). Use your non-branded campaigns to understand your true cost of customer acquisition and optimise accordingly. Report on them separately so you have a clear picture of performance.</p>\n\n<h2>A Final Note on the Irish Context</h2>\n\n<p>CPCs in Ireland for service-based keywords are notably higher than in the UK in many categories, partly because the market is smaller and competition is concentrated among fewer advertisers fighting over fewer searches. This makes efficiency even more important. In a market where a B2B services click can cost €8 to €15, these seven mistakes compound quickly. A well-managed account at €1,500/month should significantly outperform a poorly-managed account at €3,000/month.</p>\n\n<p>If you're running Google Ads and haven't had an independent audit done recently, it's worth doing. In my experience, almost every account I review has at least three of these seven issues present, and fixing them meaningfully improves performance without increasing spend. <a href=\"javascript:void(0)\" onclick=\"openAuditModal()\">We offer a free Google Ads audit</a> if you want an honest assessment of your current account.</p>"}};
+
+    // Article Modal Controls
+    function openArticle(articleId) {
+      const article = articlesData[articleId];
+      if (!article) return;
+
+      document.getElementById('article-modal-category').innerText = article.category;
+      document.getElementById('article-modal-readtime').innerText = article.readTime;
+      document.getElementById('article-modal-title').innerText = article.title;
+      document.getElementById('article-modal-subtitle').innerText = article.subtitle;
+      document.getElementById('article-modal-body').innerHTML = article.content;
+      document.getElementById('article-modal-date').innerText = 'Published ' + (article.date || '2026');
+
+      const modal = document.getElementById('article-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      if (window.lucide) lucide.createIcons();
+      window.history.pushState(null, '', '#article-' + articleId);
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById('article-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      if (window.location.hash.startsWith('#article-')) {
+        window.history.pushState(null, '', window.location.pathname);
+      }
+    }
+
+    // Check URL hash on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#article-')) {
+        const id = hash.replace('#article-', '');
+        if (articlesData[id]) {
+          setTimeout(() => openArticle(id), 250);
+        }
+      }
+    });
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Audit Modal Controls
+    function openAuditModal() {
+      const modal = document.getElementById('audit-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeAuditModal() {
+      const modal = document.getElementById('audit-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleAuditSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      form.classList.add('hidden');
+      const success = document.getElementById('modal-success');
+      success.classList.remove('hidden');
+      lucide.createIcons();
+      setTimeout(() => {
+        closeAuditModal();
+        form.reset();
+        form.classList.remove('hidden');
+        success.classList.add('hidden');
+      }, 3500);
+    }
+
+    // Close on Escape or click backdrop
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeAuditModal(); closeArticleModal(); }
+    });
+
+    document.getElementById('audit-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'audit-modal') closeAuditModal();
+    });
+  </script>
+
+</body>
+</html>
+

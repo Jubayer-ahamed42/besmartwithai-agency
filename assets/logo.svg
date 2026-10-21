@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1f4a" />
+      <stop offset="100%" stop-color="#1e3a6e" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb2c36" />
+      <stop offset="100%" stop-color="#e9b85c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Mark -->
+  <rect x="8" y="14" width="52" height="52" rx="14" fill="url(#logoGrad)" />
+  <circle cx="34" cy="40" r="14" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="3 3" />
+  <circle cx="34" cy="40" r="6" fill="url(#accentGrad)" />
+  <circle cx="22" cy="28" r="3" fill="#a9bddd" />
+  <circle cx="46" cy="28" r="3" fill="#a9bddd" />
+  <circle cx="46" cy="52" r="3" fill="#a9bddd" />
+  <path d="M22 28L34 40M46 28L34 40M46 52L34 40" stroke="#a9bddd" stroke-width="1.5" stroke-opacity="0.8" />
+  
+  <!-- Wordmark -->
+  <text x="74" y="38" font-family="'Anton', sans-serif" font-size="24" letter-spacing="0.5" fill="#0e1f4a">BE SMART WITH AI</text>
+  <text x="75" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#5b7cb8">JUBAYER AHAMED</text>
+</svg>
