@@ -92,6 +92,22 @@
       scroll-margin-top: 5rem;
     }
 
+    /* Dynamic Green Active Indicator Styling (Fail-Safe & High Contrast) */
+    .nav-link.active-nav, .mobile-nav-link.active-nav {
+      color: #059669 !important; /* emerald-600 */
+      background-color: rgba(16, 185, 129, 0.12) !important;
+      font-weight: 700 !important;
+      border-color: rgba(16, 185, 129, 0.25) !important;
+    }
+    .dark .nav-link.active-nav, .dark .mobile-nav-link.active-nav {
+      color: #34d399 !important; /* emerald-400 */
+      background-color: rgba(16, 185, 129, 0.22) !important;
+      border-color: rgba(16, 185, 129, 0.35) !important;
+    }
+    .nav-link.active-nav .nav-dot, .mobile-nav-link.active-nav .mobile-nav-dot {
+      display: inline-flex !important;
+    }
+
     
     /* Article Modal & Typography Styling */
     .article-prose h2 {
@@ -256,7 +272,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo -->
-      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' ');" class="flex items-center gap-3 group">
+      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home');" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-abyss to-ink flex items-center justify-center shadow-md shadow-abyss/15 group-hover:scale-105 transition-transform">
           <i data-lucide="bot" class="w-6 h-6 text-gold"></i>
         </div>
@@ -267,13 +283,31 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-ink dark:text-dark-text">
-        <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' ');" class="hover:text-coral transition-colors">Home</a>
-        <a href="#projects" class="hover:text-coral transition-colors">14 Systems</a>
-        <a href="#services" class="hover:text-coral transition-colors">Capabilities</a>
-        <a href="#agency" class="hover:text-coral transition-colors">About</a>
-        <a href="#insights" class="hover:text-coral transition-colors">Insights</a>
-        <a href="#contact" class="hover:text-coral transition-colors font-semibold text-coral">Contact</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-1.5 lg:gap-2.5 text-sm font-medium">
+        <a href="#home" data-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home');" class="nav-link active-nav px-3.5 py-1.5 rounded-full text-sm font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 transition-all duration-200 inline-flex items-center gap-2 shadow-xs" aria-current="page">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Home</span>
+        </a>
+        <a href="#projects" data-nav="projects" onclick="if (window.setActiveNav) setActiveNav('projects')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
+          <span>14 Systems</span>
+        </a>
+        <a href="#services" data-nav="services" onclick="if (window.setActiveNav) setActiveNav('services')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
+          <span>Capabilities</span>
+        </a>
+        <a href="#agency" data-nav="agency" onclick="if (window.setActiveNav) setActiveNav('agency')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
+          <span>About</span>
+        </a>
+        <a href="#insights" data-nav="insights" onclick="if (window.setActiveNav) setActiveNav('insights')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
+          <span>Insights</span>
+        </a>
+        <a href="#contact" data-nav="contact" onclick="if (window.setActiveNav) setActiveNav('contact')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
+          <span>Contact</span>
+        </a>
       </nav>
 
       <!-- Header Actions: Theme Toggle & CTA Button -->
@@ -298,13 +332,49 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-4">
-      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu();" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Home</a>
-      <a href="#projects" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">14 Systems</a>
-      <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Capabilities</a>
-      <a href="#agency" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">About</a>
-      <a href="#insights" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Insights</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral font-semibold text-coral">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-2">
+      <a href="#home" data-mobile-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu(); if (window.setActiveNav) setActiveNav('home');" class="mobile-nav-link active-nav flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 transition-colors" aria-current="page">
+        <span>Home</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
+      <a href="#projects" data-mobile-nav="projects" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('projects');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+        <span>14 Systems</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
+      <a href="#services" data-mobile-nav="services" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('services');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+        <span>Capabilities</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
+      <a href="#agency" data-mobile-nav="agency" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('agency');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+        <span>About</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
+      <a href="#insights" data-mobile-nav="insights" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('insights');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+        <span>Insights</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
+      <a href="#contact" data-mobile-nav="contact" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('contact');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+        <span>Contact</span>
+        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
+          <span>Current</span>
+        </span>
+      </a>
       <div class="pt-2">
         <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-coral">
           Audit Your Business →
@@ -2484,7 +2554,128 @@ ${bottleneck}
         }
       });
     }
+
+    // 4. Intelligent Dynamic Green Active ScrollSpy Engine
+    const scrollSpySections = [
+      { id: 'home', target: 'home' },
+      { id: 'agency', target: 'agency' },
+      { id: 'services', target: 'services' },
+      { id: 'projects', target: 'projects' },
+      { id: 'work', target: 'projects' },
+      { id: 'insights', target: 'insights' },
+      { id: 'newsletter', target: 'insights' },
+      { id: 'contact', target: 'contact' }
+    ];
+
+    const activeDesktopClasses = ['active-nav', 'font-bold', 'text-emerald-600', 'dark:text-emerald-400', 'bg-emerald-500/10', 'dark:bg-emerald-500/20', 'border-emerald-500/20', 'dark:border-emerald-500/30', 'shadow-xs'];
+    const inactiveDesktopClasses = ['font-medium', 'text-ink-soft', 'dark:text-slate-400', 'border-transparent'];
+
+    const activeMobileClasses = ['active-nav', 'font-bold', 'text-emerald-600', 'dark:text-emerald-400', 'bg-emerald-500/10', 'dark:bg-emerald-500/20', 'border-emerald-500/20', 'dark:border-emerald-500/30'];
+    const inactiveMobileClasses = ['font-medium', 'text-ink-soft', 'dark:text-slate-400', 'border-transparent'];
+
+    let activeNavTarget = 'home';
+
+    window.setActiveNav = function(targetId) {
+      if (!targetId) return;
+      activeNavTarget = targetId;
+
+      // Update Desktop Nav
+      document.querySelectorAll('[data-nav]').forEach((link) => {
+        const isMatch = link.getAttribute('data-nav') === targetId;
+        const dot = link.querySelector('.nav-dot');
+        if (isMatch) {
+          link.classList.remove(...inactiveDesktopClasses);
+          link.classList.add(...activeDesktopClasses);
+          link.setAttribute('aria-current', 'page');
+          if (dot) {
+            dot.classList.remove('hidden');
+            dot.classList.add('inline-block');
+          }
+        } else {
+          link.classList.remove(...activeDesktopClasses);
+          link.classList.add(...inactiveDesktopClasses);
+          link.removeAttribute('aria-current');
+          if (dot) {
+            dot.classList.add('hidden');
+            dot.classList.remove('inline-block');
+          }
+        }
+      });
+
+      // Update Mobile Drawer Nav
+      document.querySelectorAll('[data-mobile-nav]').forEach((link) => {
+        const isMatch = link.getAttribute('data-mobile-nav') === targetId;
+        const dot = link.querySelector('.mobile-nav-dot');
+        if (isMatch) {
+          link.classList.remove(...inactiveMobileClasses);
+          link.classList.add(...activeMobileClasses);
+          link.setAttribute('aria-current', 'page');
+          if (dot) dot.classList.remove('hidden');
+        } else {
+          link.classList.remove(...activeMobileClasses);
+          link.classList.add(...inactiveMobileClasses);
+          link.removeAttribute('aria-current');
+          if (dot) dot.classList.add('hidden');
+        }
+      });
+    };
+
+    function calculateScrollSpy() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      // 1. Bottom boundary: always highlight contact when near or at bottom
+      if (scrollY + windowHeight >= docHeight - 70) {
+        window.setActiveNav('contact');
+        return;
+      }
+
+      // 2. Top boundary: always highlight home
+      if (scrollY < 120) {
+        window.setActiveNav('home');
+        return;
+      }
+
+      // 3. Section boundary scanning
+      const headerOffset = 140;
+      let detectedTarget = 'home';
+      for (let i = 0; i < scrollSpySections.length; i++) {
+        const sec = scrollSpySections[i];
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const top = el.offsetTop - headerOffset;
+          if (scrollY >= top) {
+            detectedTarget = sec.target;
+          }
+        }
+      }
+      window.setActiveNav(detectedTarget);
+    }
+
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          calculateScrollSpy();
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', calculateScrollSpy, { passive: true });
+    window.addEventListener('hashchange', calculateScrollSpy, { passive: true });
+    window.addEventListener('load', calculateScrollSpy, { passive: true });
+
+    // Initial check
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', calculateScrollSpy);
+    } else {
+      calculateScrollSpy();
+    }
   </script>
+
 
 </body>
 </html>
