@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -26,15 +26,6 @@
       theme: {
         extend: {
           colors: {
-            'dark-bg': '#070b14',
-            'dark-surface': '#0e1726',
-            'dark-card': '#141f36',
-            'dark-border': '#1e2d4d',
-            'dark-text': '#f1f5f9',
-            'dark-muted': '#94a3b8',
-      theme: {
-        extend: {
-          colors: {
             paper: '#ffffff',
             'paper-deep': '#f2f5fa',
             ink: '#1e3a6e',
@@ -44,35 +35,41 @@
             gold: '#e9b85c',
             abyss: '#0e1f4a',
             coral: '#fb2c36',
+            'dark-bg': '#070b14',
+            'dark-surface': '#0e1726',
+            'dark-card': '#141f36',
+            'dark-border': '#1e2d4d',
+            'dark-text': '#f1f5f9',
+            'dark-muted': '#94a3b8'
           },
           fontFamily: {
             display: ['Anton', 'sans-serif'],
             serif: ['Fraunces', 'serif'],
-            sans: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
           },
           animation: {
             'blob-float': 'blobFloat 12s ease-in-out infinite',
             'marquee-slow': 'marquee 45s linear infinite',
-            'marquee-reverse': 'marqueeRev 40s linear infinite',
+            'marquee-reverse': 'marqueeRev 40s linear infinite'
           },
           keyframes: {
             blobFloat: {
               '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
               '33%': { transform: 'translate(25px, -30px) scale(1.08)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.94)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.94)' }
             },
             marquee: {
               '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(-50%)' }
             },
             marqueeRev: {
               '0%': { transform: 'translateX(-50%)' },
-              '100%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(0%)' }
             }
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
@@ -177,6 +174,14 @@
       font-size: 0.875rem;
     }
 
+    /* Dark Mode Article Prose Overrides */
+    .dark .article-prose h2, .dark .article-prose strong, .dark .article-prose th { color: #f1f5f9; border-color: #1e2d4d; }
+    .dark .article-prose h3 { color: #5b7cb8; }
+    .dark .article-prose p, .dark .article-prose li, .dark .article-prose td { color: #cbd5e1; border-color: #1e2d4d; }
+    .dark .article-prose blockquote { background-color: #0e1726; color: #f1f5f9; border-color: #fb2c36; }
+    .dark .article-prose table, .dark .article-table { border-color: #1e2d4d; }
+    .dark .article-prose th, .dark .article-table th { background-color: #0e1726; }
+
     /* Floating Blobs */
     .hero-blob {
       position: absolute;
@@ -221,10 +226,10 @@
   </script>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
 
   <!-- ==================== STICKY NAVIGATION ==================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink-faint/30 transition-all duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-paper/85 dark:bg-dark-bg/85 backdrop-blur-md border-b border-ink-faint/30 dark:border-dark-border transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo -->
@@ -233,42 +238,48 @@
           <i data-lucide="bot" class="w-6 h-6 text-gold"></i>
         </div>
         <div>
-          <span class="font-display tracking-wider text-xl text-abyss block leading-none">BE SMART WITH AI</span>
-          <span class="text-[11px] font-semibold tracking-widest text-ink-soft uppercase block mt-1">Jubayer Ahamed</span>
+          <span class="font-display tracking-wider text-xl text-abyss dark:text-dark-text block leading-none">BE SMART WITH AI</span>
+          <span class="text-[11px] font-semibold tracking-widest text-ink-soft dark:text-dark-muted uppercase block mt-1">Jubayer Ahamed</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink">
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink dark:text-dark-text">
         <a href="#services" class="hover:text-coral transition-colors">Services</a>
-        <a href="#work" class="hover:text-coral transition-colors">Work</a>
-        <a href="#agency" class="hover:text-coral transition-colors">The Agency</a>
+        <a href="#projects" class="hover:text-coral transition-colors">14 Systems</a>
+        <a href="#agency" class="hover:text-coral transition-colors">About</a>
         <a href="#insights" class="hover:text-coral transition-colors">Insights</a>
       </nav>
 
-      <!-- CTA Button -->
-      <div class="hidden sm:flex items-center gap-4">
-        <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-abyss text-white text-sm font-semibold hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
+      <!-- Header Actions: Theme Toggle & CTA Button -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 rounded-full flex items-center justify-center text-ink dark:text-dark-text bg-paper-deep/80 dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border hover:bg-ink-faint/20 dark:hover:bg-dark-surface transition-all cursor-pointer">
+          <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-4 h-4"></i>
+          <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4 hidden"></i>
+        </button>
+
+        <button onclick="openAuditModal()" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0e1f4a] bg-abyss text-white text-sm font-semibold hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
           <span>Get Free AI Audit</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-ink hover:bg-paper-deep focus:outline-none" aria-label="Toggle navigation menu">
-        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-      </button>
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-ink dark:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-card focus:outline-none" aria-label="Toggle navigation menu">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
 
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper border-b border-ink-faint/30 shadow-xl space-y-4">
-      <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Services</a>
-      <a href="#work" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Work</a>
-      <a href="#agency" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">The Agency</a>
-      <a href="#insights" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink hover:text-coral">Insights</a>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-4">
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Services</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">14 Systems</a>
+      <a href="#agency" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">About</a>
+      <a href="#insights" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Insights</a>
       <div class="pt-2">
-        <button onclick="openAuditModal(); toggleMobileMenu()" class="w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-coral">
+        <button onclick="openAuditModal(); toggleMobileMenu()" class="w-full text-center px-5 py-3 rounded-xl bg-[#0e1f4a] bg-abyss text-white text-sm font-semibold hover:bg-[#fb2c36] hover:bg-coral">
           Get Free AI Audit →
         </button>
       </div>
@@ -277,7 +288,7 @@
 
 
   <!-- ==================== SECTION 1: HOMEPAGE HERO ==================== -->
-  <section class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper">
+  <section class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
     <!-- Animated Ambient Blobs -->
     <div class="hero-blob w-80 h-80 bg-ink-faint top-12 right-10 animate-blob-float"></div>
     <div class="hero-blob w-64 h-64 bg-wave bottom-16 right-1/4 animate-blob-float" style="animation-delay: 2s;"></div>
@@ -287,52 +298,52 @@
       <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
         
         <!-- Live Status Pill -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-deep border border-ink-faint/40 mb-8 shadow-sm">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border mb-8 shadow-sm">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-xs sm:text-sm font-medium text-ink-soft">Dhaka · Bangladesh — Engineering Globally</span>
+          <span class="text-xs sm:text-sm font-medium text-ink-soft dark:text-dark-muted">Dhaka · Bangladesh — Engineering Globally</span>
         </div>
 
         <!-- Giant Display Headline -->
-        <h1 class="font-display tracking-tight text-abyss text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase leading-[0.92] mb-8">
+        <h1 class="font-display tracking-tight text-abyss dark:text-dark-text text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase leading-[0.92] mb-8">
           <span class="block">We're your</span>
           <span class="block">partners in</span>
           <span class="block text-coral">Growth</span>
         </h1>
 
         <!-- Subheadline -->
-        <p class="max-w-2xl text-lg sm:text-xl text-ink-soft font-normal leading-relaxed mb-10">
+        <p class="max-w-2xl text-lg sm:text-xl text-ink-soft dark:text-dark-muted font-normal leading-relaxed mb-10">
           A founder-led AI & Automation agency built on engineering excellence. Autonomous Multi-Agent Systems, sovereign cloud, and full-stack AI integrations for ambitious businesses across the globe.
         </p>
 
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
+          <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-base hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
             <span>Get a Free Audit</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
-          <a href="#agency" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep text-ink font-semibold text-base hover:bg-ink-faint/30 border border-ink-faint/40 transition-all hover:-translate-y-0.5">
+          <a href="#agency" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-base hover:bg-ink-faint/30 dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-sm">
             <i data-lucide="play-circle" class="w-5 h-5 text-wave"></i>
             <span>Jubayer Ahamed &middot; Architect</span>
           </a>
         </div>
 
         <!-- Metric Badges below CTA -->
-        <div class="mt-16 pt-8 border-t border-ink-faint/30 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full max-w-3xl">
+        <div class="mt-16 pt-8 border-t border-ink-faint/30 dark:border-dark-border grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full max-w-3xl">
           <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss">50+</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">Autonomous Workflows</div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">50+</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">Autonomous Workflows</div>
           </div>
           <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss">12+</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">Countries Served</div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">12+</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">Countries Served</div>
           </div>
           <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss">99.9%</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">System Reliability</div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">99.9%</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">System Reliability</div>
           </div>
           <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss">24/7</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft mt-1">AI Agent Uptime</div>
+            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">24/7</div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">AI Agent Uptime</div>
           </div>
         </div>
 
@@ -405,65 +416,65 @@
   </section>
 
 
-  <!-- ==================== SECTION 3: 01 / THE AGENCY ==================== -->
-  <section id="agency" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
+  <!-- ==================== SECTION 3: 01 / ABOUT JUBAYER ==================== -->
+  <section id="agency" class="py-24 bg-paper-deep dark:bg-dark-surface relative transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Label -->
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-xs font-bold tracking-widest uppercase text-wave">01 / THE AGENCY</span>
+        <span class="text-xs font-bold tracking-widest uppercase text-wave">01 / ABOUT JUBAYER</span>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left: Story & Pitch -->
         <div class="lg:col-span-7">
-          <h2 class="font-serif text-3xl sm:text-5xl text-abyss font-normal leading-tight mb-8">
+          <h2 class="font-serif text-3xl sm:text-5xl text-abyss dark:text-dark-text font-normal leading-tight mb-8">
             I engineer autonomous AI systems to automate workflows and scale business operations.
           </h2>
-          <div class="space-y-6 text-base sm:text-lg text-ink-soft leading-relaxed font-normal">
+          <div class="space-y-6 text-base sm:text-lg text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
             <p>
-              We’re a founder-led AI automation and software solutions agency based in Dhaka, Bangladesh. We don’t outsource offshore, we don’t sell you what you don’t need, and we don’t hide behind vanity dashboards.
+              I lead a founder-led AI automation and software solutions practice based in Dhaka, Bangladesh. I don’t outsource offshore, I don’t sell you what you don’t need, and I don’t hide behind vanity dashboards.
             </p>
             <p>
-              You work directly with an experienced AI Systems Architect, Full-Stack Engineer and Educator who is directly invested in your business ROI and automation success. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), we engineer systems that produce measurable ROI.
+              You work directly with me—an experienced AI Systems Architect, Full-Stack Engineer and Educator who is directly invested in your business ROI and automation success. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), I engineer systems that produce measurable ROI.
             </p>
           </div>
 
           <!-- Feature Bullets -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-ink-faint/30">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-ink-faint/30 dark:border-dark-border">
             <div class="flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="check" class="w-4 h-4"></i>
               </div>
-              <span class="text-sm font-medium text-ink">Zero offshore handoffs — work directly with builders</span>
+              <span class="text-sm font-medium text-ink dark:text-dark-text">Zero offshore handoffs — work directly with me</span>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="check" class="w-4 h-4"></i>
               </div>
-              <span class="text-sm font-medium text-ink">Hardened Linux & Sovereign Cloud Infrastructure</span>
+              <span class="text-sm font-medium text-ink dark:text-dark-text">Hardened Linux & Sovereign Cloud Infrastructure</span>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="check" class="w-4 h-4"></i>
               </div>
-              <span class="text-sm font-medium text-ink">Multi-Agent AI Orchestration (WhatsApp, CRM, Web)</span>
+              <span class="text-sm font-medium text-ink dark:text-dark-text">Multi-Agent AI Orchestration (WhatsApp, CRM, Web)</span>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="check" class="w-4 h-4"></i>
               </div>
-              <span class="text-sm font-medium text-ink">Transparent, performance-driven milestone pricing</span>
+              <span class="text-sm font-medium text-ink dark:text-dark-text">Transparent, performance-driven milestone pricing</span>
             </div>
           </div>
 
           <div class="mt-10 flex items-center gap-4">
-            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
+            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-md">
               <span>Explore Services</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-paper text-ink border border-ink-faint/40 font-semibold text-sm hover:bg-paper-deep transition-colors">
+            <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-paper dark:bg-dark-card text-ink dark:text-dark-text border border-ink-faint/40 dark:border-dark-border font-semibold text-sm hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors shadow-sm">
               <span>Book Architecture Call</span>
             </button>
           </div>
@@ -471,19 +482,19 @@
 
         <!-- Right: Modernized Founder Showcase Card (UI/UX Pro Max Spec) -->
         <div class="lg:col-span-5">
-          <div class="bg-paper rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 relative overflow-hidden group hover:shadow-abyss/10 transition-all">
+          <div class="bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all">
             
             <!-- Floating Active Status Badge -->
             <div class="flex items-center justify-between mb-6">
-              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Active Founder & Architect</span>
               </span>
-              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft">Be Smart With AI</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted">Be Smart With AI</span>
             </div>
 
             <!-- Full-Face High-Resolution Portrait Display -->
-            <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-abyss shadow-inner border border-ink-faint/20 group-hover:scale-[1.01] transition-transform duration-300">
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300">
               <img 
                 src="assets/jubayer.jpg" 
                 alt="Jubayer Ahamed - AI Automation & Software Solutions Specialist" 
@@ -502,44 +513,44 @@
             <!-- Founder Bio Details -->
             <div class="text-center">
               <div class="flex items-center justify-center gap-2">
-                <h3 class="font-display tracking-wide text-2xl sm:text-3xl text-abyss uppercase">JUBAYER AHAMED</h3>
+                <h3 class="font-display tracking-wide text-2xl sm:text-3xl text-abyss dark:text-dark-text uppercase">JUBAYER AHAMED</h3>
                 <div class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0" title="Verified AI Engineer">
                   <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
                 </div>
               </div>
 
               <p class="text-sm font-semibold text-coral uppercase tracking-wider mt-1.5">Founder & Lead AI Solutions Architect</p>
-              <p class="text-xs text-ink-soft mt-1">Be Smart With AI · Dhaka, Bangladesh 🇧🇩</p>
+              <p class="text-xs text-ink-soft dark:text-dark-muted mt-1">Be Smart With AI · Dhaka, Bangladesh 🇧🇩</p>
               
-              <blockquote class="text-sm text-ink-soft/90 italic mt-4 px-2 leading-relaxed bg-paper-deep/70 p-4 rounded-xl border border-ink-faint/20">
-                "We don't build software that adds more work to your plate. We engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy."
+              <blockquote class="text-sm text-ink-soft/90 dark:text-dark-muted italic mt-4 px-2 leading-relaxed bg-paper-deep/70 dark:bg-dark-surface/70 p-4 rounded-xl border border-ink-faint/20 dark:border-dark-border">
+                "I don't build software that adds more work to your plate. I engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy."
               </blockquote>
 
               <!-- Crisp Vector Social & Contact Icons (Inline SVG for 100% Reliable Render) -->
-              <div class="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-ink-faint/20">
+              <div class="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-ink-faint/20 dark:border-dark-border">
                 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#0077b5] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#0077b5] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="LinkedIn Profile">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/8801610594042" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#25d366] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="WhatsApp Direct">
+                <a href="https://wa.me/8801610594042" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#25d366] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="WhatsApp Direct">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-abyss text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="GitHub Repository">
+                <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-abyss text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="GitHub Repository">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://facebook.com/besmartwithaipro" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-[#1877f2] text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Facebook Page">
+                <a href="https://facebook.com/besmartwithaipro" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#1877f2] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Facebook Page">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
 
                 <!-- Direct Email -->
-                <a href="mailto:jubayer@besmartwithai.com" class="w-10 h-10 rounded-xl bg-paper-deep hover:bg-coral text-ink hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Direct Email">
+                <a href="mailto:jubayer@besmartwithai.com" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-coral text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Direct Email">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
                 </a>
 
@@ -555,16 +566,16 @@
 
 
   <!-- ==================== SECTION 4: 02 / SERVICES ==================== -->
-  <section id="services" class="py-24 bg-paper relative">
+  <section id="services" class="py-24 bg-paper dark:bg-dark-bg relative transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
         <div>
           <span class="text-xs font-bold tracking-widest uppercase text-wave block mb-3">02 / SERVICES</span>
-          <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight">What We Do</h2>
+          <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-dark-text uppercase tracking-tight">What I Build</h2>
         </div>
-        <button onclick="openAuditModal()" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-abyss transition-colors">
+        <button onclick="openAuditModal()" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-abyss dark:hover:text-gold transition-colors">
           <span>Schedule an architecture call</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
@@ -574,180 +585,180 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- Service 1 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">01</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">01</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="bot" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Autonomous Multi-Agent Systems</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Autonomous Multi-Agent Systems</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Deploy 24/7 autonomous AI orchestrators for sales prospecting, client onboarding, support triaging, and real-time CRM updates.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Learn Architecture</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 2 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">02</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">02</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Generative Engine Optimisation (GEO)</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Generative Engine Optimisation (GEO)</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Get cited and recommended by ChatGPT, Perplexity, Claude, and Google AI Overviews, not just traditional blue links.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Learn GEO Strategy</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 3 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">03</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">03</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="search" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Search Engine Optimisation (SEO)</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Search Engine Optimisation (SEO)</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Build sustainable organic search authority that drives qualified, high-intent traffic and compounds over years.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>View Case Studies</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 4 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">04</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">04</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="server" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Sovereign DevOps & Self-Hosting</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
-              Cut massive SaaS subscription costs. We build private Linux VPS clouds with Docker, Coolify PaaS, and self-hosted private LLMs.
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Sovereign DevOps & Self-Hosting</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
+              Cut massive SaaS subscription costs. I build private Linux VPS clouds with Docker, Coolify PaaS, and self-hosted private LLMs.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Calculate Savings</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 5 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">05</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">05</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="message-square" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Omnichannel AI Sales Bots</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Omnichannel AI Sales Bots</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Turn WhatsApp, Telegram, and Messenger into tireless 24/7 closing machines. Voice memos, order syncing, and payment gateways.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Demo Live Bot</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 6 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">06</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">06</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="code" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Production Web & SaaS Engineering</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Production Web & SaaS Engineering</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               High-performance web apps built with Next.js, FastAPI, PostgreSQL, and Tailwind. Fast, secure, and engineered to convert visitors.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Explore Stack</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 7 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">07</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">07</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="target" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Meta & Google Performance Ads</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Meta & Google Performance Ads</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Performance Max and paid media campaigns built for measurable, bottom-line return on ad spend (ROAS).
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>View ROAS Metrics</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 8 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">08</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">08</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="trending-up" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Conversion Rate Optimisation (CRO)</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Conversion Rate Optimisation (CRO)</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Systematic UX audits and landing page redesigns that squeeze maximum sales from existing traffic without raising ad spend.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>Request CRO Audit</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
         </div>
 
         <!-- Service 9 -->
-        <div class="p-8 rounded-2xl bg-paper-deep border border-ink-faint/30 hover:border-wave hover:shadow-xl transition-all group flex flex-col justify-between">
+        <div class="p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint group-hover:text-coral transition-colors">09</span>
-              <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-wave shadow-sm">
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">09</span>
+              <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="font-serif text-2xl text-abyss font-semibold mb-3">Server-Side Tracking & Telemetry</h3>
-            <p class="text-sm text-ink-soft leading-relaxed">
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-3">Server-Side Tracking & Telemetry</h3>
+            <p class="text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
               Clean, first-party data pipelines that bypass iOS privacy blocks, giving ad algorithms 100% accurate conversion signals.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
             <span>View Architecture</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </div>
@@ -1396,29 +1407,29 @@
   </section>
 
 
-  <!-- ==================== SECTION 8: FIELD INSIGHTS & TOPIC PILLS ==================== --> FIELD INSIGHTS & TOPIC PILLS ==================== -->
-  <section id="newsletter" class="py-16 bg-paper border-b border-ink-faint/20">
+  <!-- ==================== SECTION 8: FIELD INSIGHTS & TOPIC PILLS ==================== -->
+  <section id="newsletter" class="py-16 bg-paper dark:bg-dark-bg border-b border-ink-faint/20 dark:border-dark-border transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-serif text-2xl sm:text-4xl text-abyss mb-4">
+      <h2 class="font-serif text-2xl sm:text-4xl text-abyss dark:text-dark-text mb-4">
         AI & Marketing insights, straight from the field.
       </h2>
-      <p class="text-sm sm:text-base text-ink-soft max-w-2xl mx-auto mb-8">
+      <p class="text-sm sm:text-base text-ink-soft dark:text-dark-muted max-w-2xl mx-auto mb-8">
         Follow along for daily engineering insights across Agentic AI, GEO, cloud architecture, and building sovereign businesses in public.
       </p>
 
       <!-- Topic Pills -->
       <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-8">
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Autonomous AI</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Agentic Systems</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">GEO & AI Search</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">DevOps & Linux VPS</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">B2B Sales Automation</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">FastAPI & Next.js</span>
-        <span class="px-4 py-2 rounded-full bg-paper-deep text-ink text-xs font-semibold hover:bg-abyss hover:text-white transition-colors cursor-pointer border border-ink-faint/30">Life in Tech</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">Autonomous AI</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">Agentic Systems</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">GEO & AI Search</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">DevOps & Linux VPS</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">B2B Sales Automation</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">FastAPI & Next.js</span>
+        <span class="px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text text-xs font-semibold hover:bg-abyss hover:text-white dark:hover:bg-coral dark:hover:text-white transition-colors cursor-pointer border border-ink-faint/30 dark:border-dark-border">Life in Tech</span>
       </div>
 
       <div>
-        <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
+        <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-md">
           <i data-lucide="linkedin" class="w-4 h-4"></i>
           <span>Follow on LinkedIn →</span>
         </a>
@@ -1428,23 +1439,23 @@
 
 
   <!-- ==================== SECTION 10: CONVERSATION & AUDIT BANNER ==================== -->
-  <section class="py-24 bg-paper-deep relative overflow-hidden">
+  <section class="py-24 bg-paper-deep dark:bg-dark-surface relative overflow-hidden transition-colors duration-300">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       
       <div class="w-16 h-16 rounded-2xl bg-coral/10 text-coral flex items-center justify-center mx-auto mb-6">
         <i data-lucide="messages-square" class="w-8 h-8"></i>
       </div>
 
-      <h2 class="font-display text-4xl sm:text-6xl text-abyss uppercase tracking-tight mb-6">
+      <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-dark-text uppercase tracking-tight mb-6">
         Let's Start a Conversation.
       </h2>
       
-      <p class="text-base sm:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed mb-10">
+      <p class="text-base sm:text-xl text-ink-soft dark:text-dark-muted max-w-2xl mx-auto leading-relaxed mb-10">
         Ready to replace fragile, manual tasks with high-ROI autonomous AI pipelines? Request a comprehensive audit of your current tech stack and growth bottlenecks.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-xl shadow-abyss/20 hover:-translate-y-0.5">
+        <button onclick="openAuditModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-base hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-xl shadow-abyss/20 hover:-translate-y-0.5">
           <span>Book a Free Audit</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
@@ -1664,10 +1675,10 @@
 
   <!-- ==================== INTERACTIVE AUDIT MODAL ==================== -->
   <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-paper rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 relative animate-in fade-in zoom-in duration-200">
+    <div class="bg-paper dark:bg-dark-surface rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative animate-in fade-in zoom-in duration-200">
       
       <!-- Close Button -->
-      <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors" aria-label="Close modal">
+      <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft dark:text-dark-muted hover:text-coral transition-colors" aria-label="Close modal">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
@@ -1675,29 +1686,29 @@
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
           <span>100% Free Architectural Audit</span>
         </div>
-        <h3 class="font-serif text-2xl sm:text-3xl text-abyss font-semibold">Get Your Growth Audit</h3>
-        <p class="text-sm text-ink-soft mt-1">We’ll analyze your website, search authority, and AI automation opportunities.</p>
+        <h3 class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-semibold">Get Your Growth Audit</h3>
+        <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I’ll analyze your website, search authority, and AI automation opportunities.</p>
       </div>
 
       <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Your Name</label>
-          <input type="text" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name</label>
+          <input type="text" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Work Email</label>
-          <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email</label>
+          <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Website or Current Stack</label>
-          <input type="text" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Website or Current Stack</label>
+          <input type="text" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink mb-1">Primary Growth Focus</label>
-          <select class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 text-ink text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss bg-paper">
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Primary Growth Focus</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral bg-paper dark:bg-dark-card">
             <option>Autonomous Multi-Agent AI System</option>
             <option>Generative Engine Optimisation (GEO) & SEO</option>
             <option>Sovereign DevOps (Cut SaaS Costs)</option>
@@ -1706,7 +1717,7 @@
           </select>
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4">
+        <button type="submit" class="w-full py-4 rounded-xl bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
           Request Free Audit Blueprint →
         </button>
       </form>
@@ -1715,8 +1726,8 @@
         <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
           <i data-lucide="check-circle" class="w-6 h-6"></i>
         </div>
-        <h4 class="font-serif text-xl text-abyss font-semibold">Audit Request Received!</h4>
-        <p class="text-sm text-ink-soft mt-1">Our engineering team will review your domain and email your blueprint within 24 hours.</p>
+        <h4 class="font-serif text-xl text-abyss dark:text-dark-text font-semibold">Audit Request Received!</h4>
+        <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I will personally review your domain and email your architectural blueprint within 24 hours.</p>
       </div>
 
     </div>
@@ -1832,15 +1843,20 @@
       if (dIcon && lIcon) {
         if (isDark) {
           dIcon.style.display = 'none';
+          dIcon.classList.add('hidden');
           lIcon.style.display = 'inline-block';
+          lIcon.classList.remove('hidden');
         } else {
           dIcon.style.display = 'inline-block';
+          dIcon.classList.remove('hidden');
           lIcon.style.display = 'none';
+          lIcon.classList.add('hidden');
         }
       }
       if (window.lucide) lucide.createIcons();
     }
     updateThemeIcons();
+    window.addEventListener('DOMContentLoaded', updateThemeIcons);
 
     if (themeToggleBtn) {
       themeToggleBtn.addEventListener('click', () => {
