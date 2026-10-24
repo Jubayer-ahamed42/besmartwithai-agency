@@ -73,7 +73,15 @@
   </script>
 
   <style>
-    /* Custom Scrollbar */
+        /* Color Scheme for Native Form Controls */
+    html.dark {
+      color-scheme: dark;
+    }
+    html:not(.dark) {
+      color-scheme: light;
+    }
+
+/* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #f2f5fa; }
     ::-webkit-scrollbar-thumb { background: #a9bddd; border-radius: 4px; }
@@ -248,7 +256,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo -->
-      <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });" class="flex items-center gap-3 group">
+      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' ');" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-abyss to-ink flex items-center justify-center shadow-md shadow-abyss/15 group-hover:scale-105 transition-transform">
           <i data-lucide="bot" class="w-6 h-6 text-gold"></i>
         </div>
@@ -260,7 +268,7 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-ink dark:text-dark-text">
-        <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });" class="hover:text-coral transition-colors">Home</a>
+        <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' ');" class="hover:text-coral transition-colors">Home</a>
         <a href="#projects" class="hover:text-coral transition-colors">14 Systems</a>
         <a href="#services" class="hover:text-coral transition-colors">Capabilities</a>
         <a href="#agency" class="hover:text-coral transition-colors">About</a>
@@ -276,7 +284,7 @@
           <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4 hidden"></i>
         </button>
 
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0e1f4a] bg-abyss text-white text-sm font-semibold hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-abyss text-white text-sm font-semibold hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
           <span>Audit Your Business</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -291,14 +299,14 @@
 
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-4">
-      <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); toggleMobileMenu();" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Home</a>
+      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu();" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Home</a>
       <a href="#projects" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">14 Systems</a>
       <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Capabilities</a>
       <a href="#agency" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">About</a>
       <a href="#insights" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral">Insights</a>
       <a href="#contact" onclick="toggleMobileMenu()" class="block text-base font-medium text-ink dark:text-dark-text hover:text-coral font-semibold text-coral">Contact</a>
       <div class="pt-2">
-        <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-5 py-3 rounded-xl bg-[#0e1f4a] bg-abyss text-white text-sm font-semibold hover:bg-[#fb2c36] hover:bg-coral">
+        <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-coral">
           Audit Your Business →
         </a>
       </div>
@@ -307,7 +315,7 @@
 
 
   <!-- ==================== SECTION 1: HOMEPAGE HERO ==================== -->
-  <section class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
+  <section id="home" class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
     <!-- Animated Ambient Blobs -->
     <div class="hero-blob w-80 h-80 bg-ink-faint top-12 right-10 animate-blob-float"></div>
     <div class="hero-blob w-64 h-64 bg-wave bottom-16 right-1/4 animate-blob-float" style="animation-delay: 2s;"></div>
@@ -358,7 +366,7 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-base hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
+          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
             <span>Explore 14 Systems ↓</span>
           </a>
           <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-base hover:bg-ink-faint/30 dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-sm">
@@ -514,7 +522,7 @@
           </div>
 
           <div class="mt-10 flex items-center gap-4">
-            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-md">
+            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
               <span>Explore Services</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
@@ -1473,7 +1481,7 @@
       </div>
 
       <div>
-        <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-md">
+        <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
           <i data-lucide="linkedin" class="w-4 h-4"></i>
           <span>Follow on LinkedIn →</span>
         </a>
@@ -1494,7 +1502,7 @@
       <div class="max-w-3xl mx-auto text-center mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-4 border border-coral/20">
           <span class="w-2 h-2 rounded-full bg-coral animate-ping"></span>
-          <span>Founder Direct Access · Business Problem Solving</span>
+          <span>Partner In Your Growth · Direct Founder Access · Problem Solving</span>
         </div>
         <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-dark-text uppercase tracking-tight mb-4">
           Let's Solve Your Business Bottlenecks &amp; Scale with AI
@@ -1657,12 +1665,12 @@
                   Primary Solution Requirement
                 </label>
                 <select id="contact-service" name="service_need" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral bg-paper-deep/60 dark:bg-dark-surface">
-                  <option value="Autonomous Multi-Agent AI System">Autonomous Multi-Agent AI System (Workflow Automation)</option>
-                  <option value="Generative Engine Optimisation (GEO) & SEO">Generative Engine Optimisation (GEO) &amp; AI Search Authority</option>
-                  <option value="Full-Stack Web Development & High-ROI Portal">Full-Stack Web Application / SaaS Portal Development</option>
-                  <option value="Sovereign DevOps & Cloud Cost Reduction">Sovereign Cloud DevOps (Eliminate Expensive SaaS Subscriptions)</option>
-                  <option value="WhatsApp / Telegram Conversational AI Bot">WhatsApp / Telegram AI Sales &amp; Customer Support Bot</option>
-                  <option value="Complete Business Architecture Audit">Comprehensive End-to-End Business Systems Audit</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Autonomous Multi-Agent AI System">Autonomous Multi-Agent AI System (Workflow Automation)</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Generative Engine Optimisation (GEO) & SEO">Generative Engine Optimisation (GEO) &amp; AI Search Authority</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Full-Stack Web Development & High-ROI Portal">Full-Stack Web Application / SaaS Portal Development</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Sovereign DevOps & Cloud Cost Reduction">Sovereign Cloud DevOps (Eliminate Expensive SaaS Subscriptions)</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="WhatsApp / Telegram Conversational AI Bot">WhatsApp / Telegram AI Sales &amp; Customer Support Bot</option>
+                  <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Complete Business Architecture Audit">Comprehensive End-to-End Business Systems Audit</option>
                 </select>
               </div>
 
@@ -1673,7 +1681,7 @@
                 <textarea id="contact-bottleneck" name="bottleneck" rows="4" required placeholder="What manual tasks are costing your team time? What business outcome or software do you need built? What is your timeline?" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"></textarea>
               </div>
 
-              <button type="submit" id="contact-submit-btn" class="w-full py-4 rounded-xl bg-[#0e1f4a] bg-abyss text-white font-semibold text-base hover:bg-[#fb2c36] hover:bg-coral transition-all shadow-lg shadow-abyss/20 flex items-center justify-center gap-2.5 cursor-pointer">
+              <button type="submit" id="contact-submit-btn" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 flex items-center justify-center gap-2.5 cursor-pointer">
                 <i data-lucide="send" class="w-4 h-4"></i>
                 <span id="contact-btn-text">Audit Your Business &amp; Dispatch Brief →</span>
               </button>
@@ -1931,46 +1939,46 @@
         <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I’ll analyze your website, search authority, and AI automation opportunities.</p>
       </div>
 
-      <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
+            <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name</label>
-          <input type="text" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
+          <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name</label>
+          <input type="text" id="audit-name" name="name" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email</label>
-          <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
+          <label for="audit-email" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email</label>
+          <input type="email" id="audit-email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Website or Current Stack</label>
-          <input type="text" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
+          <label for="audit-stack" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Website or Current Stack</label>
+          <input type="text" id="audit-stack" name="stack" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-card text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral">
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Primary Growth Focus</label>
-          <select class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral bg-paper dark:bg-dark-card">
-            <option>Autonomous Multi-Agent AI System</option>
-            <option>Generative Engine Optimisation (GEO) & SEO</option>
-            <option>Sovereign DevOps (Cut SaaS Costs)</option>
-            <option>WhatsApp / Telegram AI Sales Bot</option>
-            <option>High-Converting Web / SaaS Application</option>
+          <label for="audit-focus" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Primary Growth Focus</label>
+          <select id="audit-focus" name="focus" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral bg-paper dark:bg-dark-card">
+            <option class="bg-paper dark:bg-dark-card text-ink dark:text-dark-text" value="Autonomous Multi-Agent AI System">Autonomous Multi-Agent AI System</option>
+            <option class="bg-paper dark:bg-dark-card text-ink dark:text-dark-text" value="Generative Engine Optimisation (GEO) & SEO">Generative Engine Optimisation (GEO) &amp; SEO</option>
+            <option class="bg-paper dark:bg-dark-card text-ink dark:text-dark-text" value="Sovereign DevOps (Cut SaaS Costs)">Sovereign DevOps (Cut SaaS Costs)</option>
+            <option class="bg-paper dark:bg-dark-card text-ink dark:text-dark-text" value="WhatsApp / Telegram AI Sales Bot">WhatsApp / Telegram AI Sales Bot</option>
+            <option class="bg-paper dark:bg-dark-card text-ink dark:text-dark-text" value="High-Converting Web / SaaS Application">High-Converting Web / SaaS Application</option>
           </select>
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-xl bg-[#0e1f4a] bg-abyss text-white font-semibold text-sm hover:bg-[#fb2c36] hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
+        <button type="submit" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
           Request Free Audit Blueprint →
         </button>
       </form>
 
       <div id="modal-success" class="hidden text-center py-6">
-        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+        <div id="modal-success-icon" class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
           <i data-lucide="check-circle" class="w-6 h-6"></i>
         </div>
-        <h4 class="font-serif text-xl text-abyss dark:text-dark-text font-semibold">Audit Request Received!</h4>
-        <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I will personally review your domain and email your architectural blueprint within 24 hours.</p>
+        <h4 id="modal-success-title" class="font-serif text-xl text-abyss dark:text-dark-text font-semibold">Audit Request Received!</h4>
+        <p id="modal-success-desc" class="text-sm text-ink-soft dark:text-dark-muted mt-1">I will personally review your domain and email your architectural blueprint within 24 hours.</p>
+        <div id="modal-success-actions" class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2"></div>
       </div>
-
     </div>
   </div>
 
@@ -2024,10 +2032,15 @@
     // Initialize Lucide Icons
     if (window.lucide) lucide.createIcons();
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with dynamic icon switch
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      const icon = document.getElementById('menu-icon');
+      const isClosed = menu.classList.toggle('hidden');
+      if (icon) {
+        icon.setAttribute('data-lucide', isClosed ? 'menu' : 'x');
+        if (window.lucide) lucide.createIcons();
+      }
     }
 
     // Audit Modal Controls
@@ -2044,10 +2057,10 @@
       document.body.style.overflow = 'auto';
     }
 
-    // Copy Email to Clipboard with Tooltip Feedback
+    // Copy Email to Clipboard with Tooltip & Mobile Support
     function copyEmailToClipboard(button) {
       const email = 'jubayerahamed.dev@gmail.com';
-      const tooltip = button.querySelector('.copy-tooltip');
+      const tooltip = button ? button.querySelector('.copy-tooltip') : null;
       const showTooltip = () => {
         if (tooltip) {
           tooltip.classList.remove('hidden');
@@ -2057,45 +2070,55 @@
 
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(email).then(showTooltip).catch(() => {
-          prompt('Copy founder direct email:', email);
+          fallbackCopy(email);
         });
       } else {
+        fallbackCopy(email);
+      }
+
+      function fallbackCopy(text) {
         const tempInput = document.createElement('input');
-        tempInput.value = email;
+        tempInput.setAttribute('value', text);
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'absolute';
+        tempInput.style.left = '-9999px';
         document.body.appendChild(tempInput);
         tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
         try {
           document.execCommand('copy');
           showTooltip();
         } catch (err) {
-          prompt('Copy founder direct email:', email);
+          prompt('Founder Direct Email:', text);
         }
         document.body.removeChild(tempInput);
       }
     }
 
-    // Interactive Solutions Hub Form Handler (dispatches directly to jubayerahamed.dev@gmail.com)
+    // Interactive Solutions Hub Form Handler (Dispatches to FormSubmit + Bulletproof Mailto & WhatsApp Fallback)
     async function handleContactSolutionsSubmit(e) {
       e.preventDefault();
       const form = e.target;
       const submitBtn = document.getElementById('contact-submit-btn');
       const btnText = document.getElementById('contact-btn-text');
-      const originalText = btnText.innerHTML;
+      const originalText = btnText ? btnText.innerHTML : 'Submit Brief';
 
-      const name = form.name ? form.name.value : '';
-      const contact = form.contact ? form.contact.value : '';
-      const company_stack = form.company_stack ? form.company_stack.value : '';
+      const name = form.name ? form.name.value.trim() : '';
+      const contact = form.contact ? form.contact.value.trim() : '';
+      const company_stack = form.company_stack ? form.company_stack.value.trim() : '';
       const service_need = form.service_need ? form.service_need.value : 'General Business Architecture';
-      const bottleneck = form.bottleneck ? form.bottleneck.value : '';
+      const bottleneck = form.bottleneck ? form.bottleneck.value.trim() : '';
 
-      submitBtn.disabled = true;
-      btnText.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
-      if (window.lucide) lucide.createIcons();
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) {
+        btnText.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
+        if (window.lucide) lucide.createIcons();
+      }
 
       const payload = {
         name: name,
         contact_channel: contact,
-        company_and_stack: company_stack,
+        company_and_stack: company_stack || 'Not specified',
         solution_requirement: service_need,
         bottleneck_scope: bottleneck,
         _subject: `⚡ Urgent Business Brief: ${name} (${service_need})`,
@@ -2103,6 +2126,37 @@
         _captcha: 'false'
       };
 
+      // Construct mailto & WhatsApp links for immediate delivery assurance
+      const mailSubject = encodeURIComponent(`⚡ Urgent Business Brief: ${name} (${service_need})`);
+      const mailBody = encodeURIComponent(
+        `Hi Jubayer,
+
+` +
+        `Here is my project brief and business bottleneck requirements:
+` +
+        `• Name: ${name}
+` +
+        `• Contact Channel: ${contact}
+` +
+        `• Company & Current Stack: ${company_stack || 'Not specified'}
+` +
+        `• Solution Requirement: ${service_need}
+
+` +
+        `• Bottlenecks & Project Scope:
+${bottleneck}
+
+` +
+        `Please review and let me know your recommended architecture and implementation plan.`
+      );
+      const mailtoUrl = `mailto:jubayerahamed.dev@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+      const waText = encodeURIComponent(
+        `Hi Jubayer! I'm ${name}${company_stack ? ' from ' + company_stack : ''}. I need your help with: ${service_need}. Bottleneck: ${bottleneck}`
+      );
+      const waUrl = `https://wa.me/8801610594042?text=${waText}`;
+
+      let isDelivered = false;
       try {
         const response = await fetch('https://formsubmit.co/ajax/jubayerahamed.dev@gmail.com', {
           method: 'POST',
@@ -2113,20 +2167,46 @@
           body: JSON.stringify(payload)
         });
 
-        if (!response.ok) {
-          throw new Error('Endpoint returned HTTP ' + response.status);
+        if (response.ok) {
+          const data = await response.json().catch(() => ({}));
+          if (data.success === 'true' || data.success === true) {
+            isDelivered = true;
+          } else {
+            console.warn('FormSubmit responded with non-success status:', data.message);
+          }
         }
       } catch (err) {
-        console.warn('FormSubmit fetch completed or fallback active:', err);
+        console.warn('FormSubmit fetch failed (offline, adblock, or network):', err);
       }
 
       form.classList.add('hidden');
-      const success = document.getElementById('contact-form-success');
-      if (success) {
-        success.classList.remove('hidden');
+      const successContainer = document.getElementById('contact-form-success');
+      const waBtn = document.getElementById('contact-success-wa-btn');
+      const emailBtn = document.getElementById('contact-success-email-btn');
+      const statusTitle = document.getElementById('contact-success-title');
+      const statusDesc = document.getElementById('contact-success-desc');
+      const statusIcon = document.getElementById('contact-success-icon');
+
+      if (waBtn) waBtn.href = waUrl;
+      if (emailBtn) emailBtn.href = mailtoUrl;
+
+      if (isDelivered) {
+        if (statusIcon) statusIcon.innerHTML = '<i data-lucide="check" class="w-8 h-8 text-emerald-600"></i>';
+        if (statusTitle) statusTitle.textContent = 'Brief Dispatched Directly to Jubayer!';
+        if (statusDesc) statusDesc.innerHTML = "Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class=\"font-mono text-coral\">jubayerahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.";
+      } else {
+        // Fallback state: FormSubmit activation pending or network block; zero data lost
+        if (statusIcon) statusIcon.innerHTML = '<i data-lucide="mail" class="w-8 h-8 text-coral"></i>';
+        if (statusTitle) statusTitle.textContent = 'Brief Prepared for Instant Delivery!';
+        if (statusDesc) statusDesc.innerHTML = "Your project brief is compiled! To guarantee 100% direct delivery to Jubayer's personal inbox (<span class=\"font-mono text-coral\">jubayerahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
+        setTimeout(() => {
+          window.location.href = mailtoUrl;
+        }, 500);
       }
-      submitBtn.disabled = false;
-      btnText.innerHTML = originalText;
+
+      if (successContainer) successContainer.classList.remove('hidden');
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.innerHTML = originalText;
       if (window.lucide) lucide.createIcons();
     }
 
@@ -2143,7 +2223,7 @@
       if (window.lucide) lucide.createIcons();
     }
 
-    // Audit Modal Form Handler
+    // Audit Modal Form Handler (Dispatches to FormSubmit + Mailto & WhatsApp Fallback)
     async function handleAuditSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -2154,19 +2234,46 @@
         submitBtn.textContent = 'Sending Audit Request...';
       }
 
-      const inputs = form.querySelectorAll('input, select');
+      const name = (form.querySelector('[name="name"]') || form.querySelectorAll('input')[0])?.value.trim() || 'Client';
+      const email = (form.querySelector('[name="email"]') || form.querySelectorAll('input')[1])?.value.trim() || '';
+      const stack = (form.querySelector('[name="stack"]') || form.querySelectorAll('input')[2])?.value.trim() || 'Not specified';
+      const focus = (form.querySelector('[name="focus"]') || form.querySelector('select'))?.value || 'Autonomous Multi-Agent AI System';
+
       const payload = {
-        name: inputs[0] ? inputs[0].value : 'Client',
-        email: inputs[1] ? inputs[1].value : '',
-        website_or_stack: inputs[2] ? inputs[2].value : '',
-        primary_growth_focus: inputs[3] ? inputs[3].value : 'AI Automation',
-        _subject: `⚡ Free Growth Audit Request from ${inputs[0] ? inputs[0].value : 'Client'}`,
+        name: name,
+        email: email,
+        website_or_stack: stack,
+        primary_growth_focus: focus,
+        _subject: `⚡ Free Growth Audit Request from ${name}`,
         _template: 'table',
         _captcha: 'false'
       };
 
+      const mailSubject = encodeURIComponent(`⚡ Free Growth Audit Request from ${name}`);
+      const mailBody = encodeURIComponent(
+        `Hi Jubayer,
+
+` +
+        `I would like to request a Free Growth Audit Blueprint:
+` +
+        `• Name: ${name}
+` +
+        `• Email: ${email}
+` +
+        `• Website / Tech Stack: ${stack}
+` +
+        `• Primary Growth Focus: ${focus}
+
+` +
+        `Looking forward to receiving the audit blueprint.`
+      );
+      const mailtoUrl = `mailto:jubayerahamed.dev@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+      const waText = encodeURIComponent(`Hi Jubayer, I'm ${name}. I requested a Free Growth Audit for: ${focus} (${stack}). My email: ${email}`);
+      const waUrl = `https://wa.me/8801610594042?text=${waText}`;
+
+      let isDelivered = false;
       try {
-        await fetch('https://formsubmit.co/ajax/jubayerahamed.dev@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/jubayerahamed.dev@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -2174,14 +2281,50 @@
           },
           body: JSON.stringify(payload)
         });
+        if (response.ok) {
+          const data = await response.json().catch(() => ({}));
+          if (data.success === 'true' || data.success === true) {
+            isDelivered = true;
+          }
+        }
       } catch (err) {
         console.warn('Modal form dispatch warning:', err);
       }
 
       form.classList.add('hidden');
       const success = document.getElementById('modal-success');
+      const title = document.getElementById('modal-success-title');
+      const desc = document.getElementById('modal-success-desc');
+      const actions = document.getElementById('modal-success-actions');
+
+      if (isDelivered) {
+        if (title) title.textContent = 'Audit Request Received!';
+        if (desc) desc.textContent = 'I will personally review your domain and email your architectural blueprint within 24 hours.';
+        if (actions) actions.innerHTML = `
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Ping on WhatsApp</span>
+          </a>
+        `;
+      } else {
+        if (title) title.textContent = 'Audit Request Ready to Send!';
+        if (desc) desc.textContent = "Click below to dispatch directly to Jubayer's inbox or message on WhatsApp:";
+        if (actions) actions.innerHTML = `
+          <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-coral text-white text-xs font-semibold hover:bg-white hover:text-abyss transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Send Email Direct</span>
+          </a>
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp Direct</span>
+          </a>
+        `;
+        setTimeout(() => { window.location.href = mailtoUrl; }, 600);
+      }
+
       if (success) success.classList.remove('hidden');
       if (window.lucide) lucide.createIcons();
+
       setTimeout(() => {
         closeAuditModal();
         form.reset();
@@ -2191,7 +2334,7 @@
         }
         form.classList.remove('hidden');
         if (success) success.classList.add('hidden');
-      }, 4000);
+      }, isDelivered ? 4000 : 9000);
     }
 
     // Close on Escape or click backdrop
