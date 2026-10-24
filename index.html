@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jubayer Ahamed · Founder @ Be Smart With AI</title>
+  <title>Jubayer Ahamed · AI Automation Architect, Educator & Full-Stack Solutions</title>
   <meta name="description" content="Founder-led AI Automation and Software Solutions agency helping businesses scale through Autonomous Multi-Agent Systems, GEO, and sovereign cloud infrastructure.">
   
   <!-- Favicon -->
@@ -22,6 +22,16 @@
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'dark-bg': '#070b14',
+            'dark-surface': '#0e1726',
+            'dark-card': '#141f36',
+            'dark-border': '#1e2d4d',
+            'dark-text': '#f1f5f9',
+            'dark-muted': '#94a3b8',
       theme: {
         extend: {
           colors: {
@@ -200,6 +210,15 @@
       overflow: hidden;
     }
   </style>
+
+  <script>
+    // Theme toggle init
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white">
@@ -293,7 +312,7 @@
           </button>
           <a href="#agency" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep text-ink font-semibold text-base hover:bg-ink-faint/30 border border-ink-faint/40 transition-all hover:-translate-y-0.5">
             <i data-lucide="play-circle" class="w-5 h-5 text-wave"></i>
-            <span>Meet Jubayer & Team</span>
+            <span>Jubayer Ahamed &middot; Architect</span>
           </a>
         </div>
 
@@ -387,7 +406,7 @@
 
 
   <!-- ==================== SECTION 3: 01 / THE AGENCY ==================== -->
-  <section id="agency" class="py-24 bg-paper-deep relative">
+  <section id="agency" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Label -->
@@ -400,14 +419,14 @@
         <!-- Left: Story & Pitch -->
         <div class="lg:col-span-7">
           <h2 class="font-serif text-3xl sm:text-5xl text-abyss font-normal leading-tight mb-8">
-            Me and my team can help you automate and get more customers.
+            I engineer autonomous AI systems to automate workflows and scale business operations.
           </h2>
           <div class="space-y-6 text-base sm:text-lg text-ink-soft leading-relaxed font-normal">
             <p>
               We’re a founder-led AI automation and software solutions agency based in Dhaka, Bangladesh. We don’t outsource offshore, we don’t sell you what you don’t need, and we don’t hide behind vanity dashboards.
             </p>
             <p>
-              You work directly with experienced AI engineers, DevOps architects, and growth specialists who are invested in your business growth. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), we engineer systems that produce measurable ROI.
+              You work directly with an experienced AI Systems Architect, Full-Stack Engineer and Educator who is directly invested in your business ROI and automation success. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), we engineer systems that produce measurable ROI.
             </p>
           </div>
 
@@ -740,7 +759,414 @@
 
 
   <!-- ==================== SECTION 5: 03 / WORK (CASE STUDIES) ==================== -->
-  <section id="work" class="py-24 bg-paper-deep relative">
+  
+  <!-- 14 FLAGSHIP SYSTEMS & GITHUB REPOSITORIES (PORTFOLIO SHOWCASE) -->
+  <section id="projects" class="py-24 bg-paper dark:bg-slate-950 relative border-t border-ink-faint/20 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-wave dark:text-gold block mb-3">02 / ARCHITECTURE & PORTFOLIO</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-white uppercase tracking-tight">14 Production Systems</h2>
+        </div>
+        <p class="text-sm text-ink-soft dark:text-slate-400 max-w-md mt-4 md:mt-0 leading-relaxed">
+          From sovereign autonomous AI swarms to enterprise Next.js SaaS and open-source PyPI libraries. Every system built to eliminate manual bottlenecks.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-ink-faint/20 dark:border-slate-800">
+        <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-abyss text-white dark:bg-white dark:text-slate-950 shadow-sm" data-filter="all">All Systems (14)</button>
+        <button onclick="filterProjects('ai')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="ai">AI Agents & Conversational (5)</button>
+        <button onclick="filterProjects('fullstack')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="fullstack">Full-Stack SaaS & Web (4)</button>
+        <button onclick="filterProjects('automation')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="automation">Automation & Tools (5)</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+        
+        <!-- Project 1: B2B Sales Engine -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="B2B AI Sales Engine" data-preview-badge="AI Agent" data-preview-tag="Python · Gemini 2.5">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">AI Conversational</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">01 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">B2B AI Sales Engine</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              24/7 conversational sales brain & smartphone simulator. Validates BD 11-digit phone numbers and extracts instant cash-on-delivery orders.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">FastAPI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Gemini 2.5</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Social Humanizer -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Social Humanizer PyPI" data-preview-badge="Open Source" data-preview-tag="Python · PyPI Package">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PyPI Published</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">02 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Social Humanizer</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Universal AI Social Media Humanizer & Algorithmic Risk Auditor. Strips AI clichés, calculates burstiness, and audits reach suppression rules.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">PyPI v0.2.0</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Rich CLI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Gradio</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/social-humanizer" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+              <a href="https://pypi.org/project/social-humanizer/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-coral/10 text-coral hover:bg-coral hover:text-white transition-all">
+                <i data-lucide="package" class="w-3.5 h-3.5"></i> PyPI
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Freshy Food -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Freshy Food E-Commerce" data-preview-badge="E-Commerce" data-preview-tag="1-Click COD · AI Chatbot">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">03 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Freshy Food Storefront</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Organic e-commerce platform with 1-Click COD checkout, live admin ledger, Bengali AI Nutritionist, and Strix OWASP-hardened backend.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Vanilla JS</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Tailwind</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Apps Script</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/freshy-food" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+              <a href="https://jubayer-ahamed42.github.io/freshy-food/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Multi-Agent AI Orchestrator -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Multi-Agent AI Swarm" data-preview-badge="Agentic AI" data-preview-tag="7 Autonomous Agents">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Agent Swarm</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">04 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Multi-Agent Orchestrator</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              24/7 cloud architecture orchestrating 7 specialized autonomous agents with real-time Telegram Command Center & SQLite persistent memory.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Telegram API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Docker</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Madrasah Management SaaS -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Madrasah SaaS ERP" data-preview-badge="Enterprise SaaS" data-preview-tag="Next.js 14 · Supabase">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Enterprise ERP</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">05 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Madrasah Management SaaS</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Institutional ERP with fee ledgers, automated Bengali currency-in-words engine, dual-copy printable receipts, and role-based staff security.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Next.js 14</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">TypeScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Supabase</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Gemma 4 Local AI Workspace -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Gemma 4 Local AI" data-preview-badge="Edge AI" data-preview-tag="Offline bn-BD Speech">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">06 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Gemma 4 Offline AI</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Lightweight (30KB) single-file web dashboard with native Bengali voice recognition running Google Gemma 4 for 100% air-gapped private intelligence.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Single File</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Speech API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Edge AI</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+              <a href="https://jubayer-ahamed42.github.io/gemma4-local-ai-workspace/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: BeSmart Agency Brand Portal -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Be Smart With AI Portal" data-preview-badge="Agency Portal" data-preview-tag="Full-Stack Web">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">07 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Be Smart With AI Portal</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Official agency brand website and high-performance portal deployed on GitHub Pages with server-side telemetry and dark/light mode architecture.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Tailwind</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">GitHub Pages</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/besmartwithai-agency" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+              <a href="https://jubayer-ahamed42.github.io/besmartwithai-agency/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: PureView AI Android -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="PureView AI Android" data-preview-badge="Mobile AI" data-preview-tag="Computer Vision Shield">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300">Mobile AI</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">08 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">PureView AI Android</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              On-device AI computer vision shield for mobile video streaming ensuring real-time privacy and intelligent visual artifact suppression.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Android</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Kotlin/Java</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Vision AI</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/PureView-AI-Android" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Facebook Auto-Poster Agent -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Facebook Auto-Poster" data-preview-badge="Automation" data-preview-tag="Meta Graph API">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Social Automation</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">09 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Facebook Auto-Poster</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Autonomous multi-channel social media scheduler and content creator powering Be Smart With AI commercial growth channels.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Meta API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Cron</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: LinkedIn B2B Client Acquisition -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="LinkedIn B2B Acquisition" data-preview-badge="B2B Growth" data-preview-tag="Outreach Pipeline">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-600/10 text-blue-700 dark:bg-blue-600/20 dark:text-blue-300">B2B Outreach</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">10 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">LinkedIn B2B Engine</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Automated high-intent client acquisition pipeline capturing enterprise decision-maker leads through personalized value demonstrations.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">LinkedIn API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">B2B</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 11: Smart Utility PWA Suite -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Smart Utility PWA Suite" data-preview-badge="PWA Trio" data-preview-tag="Offline-First Web Apps">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PWA Suite</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">11 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Smart Utility PWA Trio</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Offline-first Progressive Web App trio: FirstAid Emergency, ZeroWasteChef, and WattSaver Energy Manager designed for everyday consumer utility.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">PWA</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Service Workers</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Offline-First</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 12: OpenClaw & Hermes AI Lab -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="OpenClaw & Hermes Lab" data-preview-badge="AI Research" data-preview-tag="Hermes LLM · CLI">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Autonomous Lab</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">12 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">OpenClaw & Hermes Lab</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Autonomous deep-reasoning research environment orchestrating local open-source LLMs with real-time terminal evaluation and persistent memory.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Hermes LLM</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Terminal CLI</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">RAG</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 13: Personal PC Control Agent -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Ahmad PC Assistant" data-preview-badge="OS Agent" data-preview-tag="Voice OS Automation">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">System Automation</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">13 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Personal PC Agent (Ahmad)</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Voice and command-driven personal desktop assistant automating Windows workflows, application switching, and file management hands-free.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Win32 API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Voice Control</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 14: GitHub Spec-Kit & Agentic Suite -->
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 hover:border-wave dark:hover:border-gold transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="GitHub Spec-Kit" data-preview-badge="SDD Framework" data-preview-tag="Agentic Engineering">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/20 text-gold dark:bg-gold/30">SDD Core</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">14 / 14</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">GitHub Spec-Kit Suite</h3>
+            <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
+              Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured specification, planning, task breakdown, and code review.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Markdown</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Spec-Kit</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">DevOps</span>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
+              <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header -->
@@ -884,7 +1310,7 @@
   </section>
 
 <!-- ==================== SECTION 7: 04 / INSIGHTS & ARTICLES ==================== -->
-  <section id="insights" class="py-24 bg-paper-deep relative">
+  <section id="insights" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header -->
@@ -1389,6 +1815,128 @@
     document.getElementById('audit-modal').addEventListener('click', (e) => {
       if (e.target.id === 'audit-modal') closeAuditModal();
     });
+  </script>
+
+
+  <!-- SCRIPT ENGINE: Theme Toggle, Snellenberg Hover Preview, Project Filtering -->
+  <script>
+    // 1. Light/Dark Mode Switcher Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateThemeIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const dIcon = document.getElementById('theme-toggle-dark-icon');
+      const lIcon = document.getElementById('theme-toggle-light-icon');
+      if (dIcon && lIcon) {
+        if (isDark) {
+          dIcon.style.display = 'none';
+          lIcon.style.display = 'inline-block';
+        } else {
+          dIcon.style.display = 'inline-block';
+          lIcon.style.display = 'none';
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+    updateThemeIcons();
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        updateThemeIcons();
+      });
+    }
+
+    // 2. Dennis Snellenberg Ambient Cursor Spotlight & Hover Floating Preview
+    const spotlight = document.getElementById('ambient-spotlight');
+    const hoverModal = document.getElementById('hover-preview-modal');
+    const previewTitle = document.getElementById('preview-title');
+    const previewBadge = document.getElementById('preview-badge');
+    const previewTag = document.getElementById('preview-tag');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let modalX = mouseX;
+    let modalY = mouseY;
+    let isHoveringCard = false;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (spotlight) {
+        spotlight.style.setProperty('--mouse-x', `${mouseX}px`);
+        spotlight.style.setProperty('--mouse-y', `${mouseY}px`);
+      }
+    });
+
+    // Smooth Lerp loop for Floating Preview
+    function animateModal() {
+      modalX += (mouseX - modalX) * 0.18;
+      modalY += (mouseY - modalY) * 0.18;
+      if (hoverModal) {
+        hoverModal.style.left = `${modalX}px`;
+        hoverModal.style.top = `${modalY - 15}px`;
+      }
+      requestAnimationFrame(animateModal);
+    }
+    animateModal();
+
+    // Attach hover listeners to all project cards
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        isHoveringCard = true;
+        const title = card.getAttribute('data-preview-title') || 'Project';
+        const badge = card.getAttribute('data-preview-badge') || 'System';
+        const tag = card.getAttribute('data-preview-tag') || 'Architecture';
+
+        if (previewTitle) previewTitle.textContent = title;
+        if (previewBadge) previewBadge.textContent = badge;
+        if (previewTag) previewTag.textContent = tag;
+
+        if (hoverModal) {
+          hoverModal.classList.remove('opacity-0', 'scale-90');
+          hoverModal.classList.add('opacity-100', 'scale-100');
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHoveringCard = false;
+        if (hoverModal) {
+          hoverModal.classList.remove('opacity-100', 'scale-100');
+          hoverModal.classList.add('opacity-0', 'scale-90');
+        }
+      });
+    });
+
+    // 3. Project Filter Tabs Logic
+    function filterProjects(category) {
+      document.querySelectorAll('.project-filter-btn').forEach((btn) => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('active', 'bg-abyss', 'text-white', 'dark:bg-white', 'dark:text-slate-950');
+          btn.classList.remove('bg-paper-deep', 'dark:bg-slate-900', 'text-ink-soft', 'dark:text-slate-300');
+        } else {
+          btn.classList.remove('active', 'bg-abyss', 'text-white', 'dark:bg-white', 'dark:text-slate-950');
+          btn.classList.add('bg-paper-deep', 'dark:bg-slate-900', 'text-ink-soft', 'dark:text-slate-300');
+        }
+      });
+
+      document.querySelectorAll('.project-card').forEach((card) => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 
 </body>
