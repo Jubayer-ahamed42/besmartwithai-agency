@@ -284,27 +284,27 @@
 
       <!-- Desktop Navigation Links -->
       <nav id="desktop-nav" class="hidden md:flex items-center gap-1.5 lg:gap-2.5 text-sm font-medium">
-        <a href="#home" data-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home');" class="nav-link active-nav px-3.5 py-1.5 rounded-full text-sm font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 transition-all duration-200 inline-flex items-center gap-2 shadow-xs" aria-current="page">
-          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
+        <a href="#home" data-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home', true);" class="nav-link active-nav px-3.5 py-1.5 rounded-full text-sm font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2 shadow-xs" aria-current="page">
+          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse inline-flex"></span>
           <span>Home</span>
         </a>
-        <a href="#projects" data-nav="projects" onclick="if (window.setActiveNav) setActiveNav('projects')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+        <a href="#projects" data-nav="projects" onclick="if (window.setActiveNav) setActiveNav('projects', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>14 Systems</span>
         </a>
-        <a href="#services" data-nav="services" onclick="if (window.setActiveNav) setActiveNav('services')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+        <a href="#services" data-nav="services" onclick="if (window.setActiveNav) setActiveNav('services', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>Capabilities</span>
         </a>
-        <a href="#agency" data-nav="agency" onclick="if (window.setActiveNav) setActiveNav('agency')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+        <a href="#agency" data-nav="agency" onclick="if (window.setActiveNav) setActiveNav('agency', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>About</span>
         </a>
-        <a href="#insights" data-nav="insights" onclick="if (window.setActiveNav) setActiveNav('insights')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+        <a href="#insights" data-nav="insights" onclick="if (window.setActiveNav) setActiveNav('insights', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>Insights</span>
         </a>
-        <a href="#contact" data-nav="contact" onclick="if (window.setActiveNav) setActiveNav('contact')" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
+        <a href="#contact" data-nav="contact" onclick="if (window.setActiveNav) setActiveNav('contact', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>Contact</span>
         </a>
@@ -333,42 +333,42 @@
 
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-2">
-      <a href="#home" data-mobile-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu(); if (window.setActiveNav) setActiveNav('home');" class="mobile-nav-link active-nav flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 transition-colors" aria-current="page">
+      <a href="#home" data-nav="home" data-mobile-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu(); if (window.setActiveNav) setActiveNav('home', true);" class="mobile-nav-link active-nav flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors" aria-current="page">
         <span>Home</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#projects" data-mobile-nav="projects" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('projects');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#projects" data-nav="projects" data-mobile-nav="projects" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('projects', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>14 Systems</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#services" data-mobile-nav="services" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('services');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#services" data-nav="services" data-mobile-nav="services" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('services', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Capabilities</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#agency" data-mobile-nav="agency" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('agency');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#agency" data-nav="agency" data-mobile-nav="agency" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('agency', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>About</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#insights" data-mobile-nav="insights" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('insights');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#insights" data-nav="insights" data-mobile-nav="insights" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('insights', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Insights</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#contact" data-mobile-nav="contact" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('contact');" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#contact" data-nav="contact" data-mobile-nav="contact" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('contact', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Contact</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
@@ -2574,9 +2574,20 @@ ${bottleneck}
     const inactiveMobileClasses = ['font-medium', 'text-ink-soft', 'dark:text-slate-400', 'border-transparent'];
 
     let activeNavTarget = 'home';
+    let isManualNavigating = false;
+    let manualNavTimeout = null;
 
-    window.setActiveNav = function(targetId) {
+    window.setActiveNav = function(targetId, isUserClick) {
       if (!targetId) return;
+
+      if (isUserClick) {
+        isManualNavigating = true;
+        if (manualNavTimeout) clearTimeout(manualNavTimeout);
+        manualNavTimeout = setTimeout(() => {
+          isManualNavigating = false;
+        }, 850);
+      }
+
       activeNavTarget = targetId;
 
       // Update Desktop Nav
@@ -2589,7 +2600,7 @@ ${bottleneck}
           link.setAttribute('aria-current', 'page');
           if (dot) {
             dot.classList.remove('hidden');
-            dot.classList.add('inline-block');
+            dot.classList.add('inline-flex');
           }
         } else {
           link.classList.remove(...activeDesktopClasses);
@@ -2597,7 +2608,7 @@ ${bottleneck}
           link.removeAttribute('aria-current');
           if (dot) {
             dot.classList.add('hidden');
-            dot.classList.remove('inline-block');
+            dot.classList.remove('inline-flex');
           }
         }
       });
@@ -2610,20 +2621,28 @@ ${bottleneck}
           link.classList.remove(...inactiveMobileClasses);
           link.classList.add(...activeMobileClasses);
           link.setAttribute('aria-current', 'page');
-          if (dot) dot.classList.remove('hidden');
+          if (dot) {
+            dot.classList.remove('hidden');
+            dot.classList.add('inline-flex');
+          }
         } else {
           link.classList.remove(...activeMobileClasses);
           link.classList.add(...inactiveMobileClasses);
           link.removeAttribute('aria-current');
-          if (dot) dot.classList.add('hidden');
+          if (dot) {
+            dot.classList.add('hidden');
+            dot.classList.remove('inline-flex');
+          }
         }
       });
     };
 
     function calculateScrollSpy() {
+      if (isManualNavigating) return;
+
       const scrollY = window.scrollY || window.pageYOffset;
       const windowHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight;
+      const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
 
       // 1. Bottom boundary: always highlight contact when near or at bottom
       if (scrollY + windowHeight >= docHeight - 70) {
@@ -2637,15 +2656,15 @@ ${bottleneck}
         return;
       }
 
-      // 3. Section boundary scanning
+      // 3. Section boundary scanning via getBoundingClientRect for absolute pixel precision
       const headerOffset = 140;
       let detectedTarget = 'home';
       for (let i = 0; i < scrollSpySections.length; i++) {
         const sec = scrollSpySections[i];
         const el = document.getElementById(sec.id);
         if (el) {
-          const top = el.offsetTop - headerOffset;
-          if (scrollY >= top) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= headerOffset) {
             detectedTarget = sec.target;
           }
         }
