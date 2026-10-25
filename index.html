@@ -120,6 +120,9 @@
       border-color: var(--card-accent, #3d6bb5) !important;
       box-shadow: 0 16px 36px -10px var(--card-glow, rgba(61, 107, 181, 0.25)) !important;
     }
+    .project-card:hover .project-card-title {
+      color: var(--card-accent, #3d6bb5) !important;
+    }
     .project-card:active {
       transform: translateY(-1px) scale(0.995);
     }
@@ -866,13 +869,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
         
         <!-- Project 1: B2B Sales Engine -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="B2B AI Sales Engine" data-preview-badge="AI Conversational" data-preview-tag="Python · Gemini 2.5" data-accent-color="#0284c7" data-accent-rgb="2, 132, 199" data-card-link="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="B2B AI Sales Engine - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="B2B AI Sales Engine" data-preview-badge="AI Conversational" data-preview-tag="Python · Gemini 2.5" data-preview-desc="24/7 conversational sales brain & smartphone simulator with COD order extraction." data-accent-color="#0284c7" data-accent-rgb="2, 132, 199" data-card-link="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="B2B AI Sales Engine - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">AI Conversational</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">01 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">B2B AI Sales Engine</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">B2B AI Sales Engine</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               24/7 conversational sales brain & smartphone simulator. Validates BD 11-digit phone numbers and extracts instant cash-on-delivery orders.
             </p>
@@ -892,13 +895,13 @@
         </div>
 
         <!-- Project 2: Social Humanizer -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Social Humanizer PyPI" data-preview-badge="PyPI Published" data-preview-tag="Python · PyPI Package" data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/social-humanizer" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Social Humanizer - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Social Humanizer PyPI" data-preview-badge="PyPI Published" data-preview-tag="Python · PyPI Package" data-preview-desc="Universal AI Social Media Humanizer & Algorithmic Risk Auditor published on PyPI." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/social-humanizer" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Social Humanizer - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PyPI Published</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">02 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Social Humanizer</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Social Humanizer</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Universal AI Social Media Humanizer & Algorithmic Risk Auditor. Strips AI clichés, calculates burstiness, and audits reach suppression rules.
             </p>
@@ -921,13 +924,13 @@
         </div>
 
         <!-- Project 3: Freshy Food -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Freshy Food Storefront" data-preview-badge="Live Demo" data-preview-tag="1-Click COD · AI Chatbot" data-accent-color="#059669" data-accent-rgb="5, 150, 105" data-card-link="https://github.com/Jubayer-ahamed42/freshy-food" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Freshy Food Storefront - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Freshy Food Storefront" data-preview-badge="Live Demo" data-preview-tag="1-Click COD · AI Chatbot" data-preview-desc="Organic e-commerce platform with 1-Click COD checkout & Bengali AI Nutritionist." data-accent-color="#059669" data-accent-rgb="5, 150, 105" data-card-link="https://github.com/Jubayer-ahamed42/freshy-food" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Freshy Food Storefront - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">03 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Freshy Food Storefront</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Freshy Food Storefront</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Organic e-commerce platform with 1-Click COD checkout, live admin ledger, Bengali AI Nutritionist, and Strix OWASP-hardened backend.
             </p>
@@ -950,13 +953,13 @@
         </div>
 
         <!-- Project 4: Multi-Agent AI Orchestrator -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Multi-Agent Orchestrator" data-preview-badge="Agent Swarm" data-preview-tag="7 Autonomous Agents" data-accent-color="#a855f7" data-accent-rgb="168, 85, 247" data-card-link="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Multi-Agent AI Orchestrator - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Multi-Agent Orchestrator" data-preview-badge="Agent Swarm" data-preview-tag="7 Autonomous Agents" data-preview-desc="24/7 cloud architecture orchestrating 7 specialized autonomous agents with Telegram command." data-accent-color="#a855f7" data-accent-rgb="168, 85, 247" data-card-link="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Multi-Agent AI Orchestrator - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Agent Swarm</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">04 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Multi-Agent Orchestrator</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Multi-Agent Orchestrator</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               24/7 cloud architecture orchestrating 7 specialized autonomous agents with real-time Telegram Command Center & SQLite persistent memory.
             </p>
@@ -976,13 +979,13 @@
         </div>
 
         <!-- Project 5: Madrasah Management SaaS -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Madrasah SaaS ERP" data-preview-badge="Enterprise ERP" data-preview-tag="Next.js 14 · Supabase" data-accent-color="#3b82f6" data-accent-rgb="59, 130, 246" data-card-link="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Madrasah Management SaaS - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Madrasah SaaS ERP" data-preview-badge="Enterprise ERP" data-preview-tag="Next.js 14 · Supabase" data-preview-desc="Institutional ERP with fee ledgers, automated currency-in-words, and dual-copy printable receipts." data-accent-color="#3b82f6" data-accent-rgb="59, 130, 246" data-card-link="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Madrasah Management SaaS - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Enterprise ERP</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">05 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Madrasah Management SaaS</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Madrasah Management SaaS</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Institutional ERP with fee ledgers, automated Bengali currency-in-words engine, dual-copy printable receipts, and role-based staff security.
             </p>
@@ -1002,13 +1005,13 @@
         </div>
 
         <!-- Project 6: Gemma 4 Local AI Workspace -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Gemma 4 Offline AI" data-preview-badge="Live Demo" data-preview-tag="Offline bn-BD Speech" data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Gemma 4 Local AI - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="Gemma 4 Offline AI" data-preview-badge="Live Demo" data-preview-tag="Offline bn-BD Speech" data-preview-desc="Air-gapped 30KB offline AI web dashboard with native Bengali voice recognition." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Gemma 4 Local AI - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">06 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Gemma 4 Offline AI</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Gemma 4 Offline AI</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Lightweight (30KB) single-file web dashboard with native Bengali voice recognition running Google Gemma 4 for 100% air-gapped private intelligence.
             </p>
@@ -1031,13 +1034,13 @@
         </div>
 
         <!-- Project 7: BeSmart Agency Brand Portal -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Be Smart With AI Portal" data-preview-badge="Live Demo" data-preview-tag="Full-Stack Web" data-accent-color="#06b6d4" data-accent-rgb="6, 182, 212" data-card-link="https://github.com/Jubayer-ahamed42/besmartwithai-agency" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Be Smart With AI Portal - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Be Smart With AI Portal" data-preview-badge="Live Demo" data-preview-tag="Full-Stack Web" data-preview-desc="Official agency brand portal with telemetry, dynamic cursor physics, and dark mode." data-accent-color="#06b6d4" data-accent-rgb="6, 182, 212" data-card-link="https://github.com/Jubayer-ahamed42/besmartwithai-agency" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Be Smart With AI Portal - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">07 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Be Smart With AI Portal</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Be Smart With AI Portal</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Official agency brand website and high-performance portal deployed on GitHub Pages with server-side telemetry and dark/light mode architecture.
             </p>
@@ -1060,13 +1063,13 @@
         </div>
 
         <!-- Project 8: PureView AI Android -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="PureView AI Android" data-preview-badge="Mobile AI" data-preview-tag="Computer Vision Shield" data-accent-color="#0ea5e9" data-accent-rgb="14, 165, 233" data-card-link="https://github.com/Jubayer-ahamed42/PureView-AI-Android" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="PureView AI Android - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="PureView AI Android" data-preview-badge="Mobile AI" data-preview-tag="Computer Vision Shield" data-preview-desc="On-device AI computer vision shield for mobile video streaming & artifact suppression." data-accent-color="#0ea5e9" data-accent-rgb="14, 165, 233" data-card-link="https://github.com/Jubayer-ahamed42/PureView-AI-Android" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="PureView AI Android - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300">Mobile AI</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">08 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">PureView AI Android</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">PureView AI Android</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               On-device AI computer vision shield for mobile video streaming ensuring real-time privacy and intelligent visual artifact suppression.
             </p>
@@ -1086,13 +1089,13 @@
         </div>
 
         <!-- Project 9: Facebook Auto-Poster Agent -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Facebook Auto-Poster" data-preview-badge="Social Automation" data-preview-tag="Meta Graph API" data-accent-color="#2563eb" data-accent-rgb="37, 99, 235" data-card-link="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Facebook Auto-Poster - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Facebook Auto-Poster" data-preview-badge="Social Automation" data-preview-tag="Meta Graph API" data-preview-desc="Autonomous multi-channel social media scheduler & content creator via Meta Graph API." data-accent-color="#2563eb" data-accent-rgb="37, 99, 235" data-card-link="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Facebook Auto-Poster - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Social Automation</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">09 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Facebook Auto-Poster</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Facebook Auto-Poster</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Autonomous multi-channel social media scheduler and content creator powering Be Smart With AI commercial growth channels.
             </p>
@@ -1112,13 +1115,13 @@
         </div>
 
         <!-- Project 10: LinkedIn B2B Client Acquisition -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="LinkedIn B2B Engine" data-preview-badge="B2B Outreach" data-preview-tag="Outreach Pipeline" data-accent-color="#1d4ed8" data-accent-rgb="29, 78, 216" data-card-link="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="LinkedIn B2B Engine - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="LinkedIn B2B Engine" data-preview-badge="B2B Outreach" data-preview-tag="Outreach Pipeline" data-preview-desc="Automated client acquisition pipeline capturing enterprise decision-maker leads." data-accent-color="#1d4ed8" data-accent-rgb="29, 78, 216" data-card-link="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="LinkedIn B2B Engine - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-600/10 text-blue-700 dark:bg-blue-600/20 dark:text-blue-300">B2B Outreach</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">10 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">LinkedIn B2B Engine</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">LinkedIn B2B Engine</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Automated high-intent client acquisition pipeline capturing enterprise decision-maker leads through personalized value demonstrations.
             </p>
@@ -1138,13 +1141,13 @@
         </div>
 
         <!-- Project 11: Smart Utility PWA Suite -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Smart Utility PWA Trio" data-preview-badge="PWA Suite" data-preview-tag="Offline-First Web Apps" data-accent-color="#14b8a6" data-accent-rgb="20, 184, 166" data-card-link="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Smart Utility PWA Trio - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="fullstack" data-preview-title="Smart Utility PWA Trio" data-preview-badge="PWA Suite" data-preview-tag="Offline-First Web Apps" data-preview-desc="Offline-first Progressive Web App trio: FirstAid, ZeroWasteChef, and WattSaver." data-accent-color="#14b8a6" data-accent-rgb="20, 184, 166" data-card-link="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Smart Utility PWA Trio - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PWA Suite</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">11 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Smart Utility PWA Trio</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Smart Utility PWA Trio</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Offline-first Progressive Web App trio: FirstAid Emergency, ZeroWasteChef, and WattSaver Energy Manager designed for everyday consumer utility.
             </p>
@@ -1164,13 +1167,13 @@
         </div>
 
         <!-- Project 12: OpenClaw & Hermes AI Lab -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="OpenClaw & Hermes Lab" data-preview-badge="Autonomous Lab" data-preview-tag="Hermes LLM · CLI" data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="OpenClaw & Hermes Lab - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="ai" data-preview-title="OpenClaw & Hermes Lab" data-preview-badge="Autonomous Lab" data-preview-tag="Hermes LLM · CLI" data-preview-desc="Autonomous deep-reasoning research environment orchestrating local open-source LLMs." data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="OpenClaw & Hermes Lab - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Autonomous Lab</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">12 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">OpenClaw & Hermes Lab</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">OpenClaw & Hermes Lab</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Autonomous deep-reasoning research environment orchestrating local open-source LLMs with real-time terminal evaluation and persistent memory.
             </p>
@@ -1183,20 +1186,20 @@
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
               <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Profile
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 13: Personal PC Control Agent -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Personal PC Agent (Ahmad)" data-preview-badge="System Automation" data-preview-tag="Voice OS Automation" data-accent-color="#3d6bb5" data-accent-rgb="61, 107, 181" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="Personal PC Agent - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="Personal PC Agent (Ahmad)" data-preview-badge="System Automation" data-preview-tag="Voice OS Automation" data-preview-desc="Voice and command-driven personal desktop assistant automating Windows workflows." data-accent-color="#3d6bb5" data-accent-rgb="61, 107, 181" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="Personal PC Agent - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">System Automation</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">13 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">Personal PC Agent (Ahmad)</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Personal PC Agent (Ahmad)</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Voice and command-driven personal desktop assistant automating Windows workflows, application switching, and file management hands-free.
             </p>
@@ -1209,20 +1212,20 @@
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
               <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Profile
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 14: GitHub Spec-Kit & Agentic Suite -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="GitHub Spec-Kit Suite" data-preview-badge="SDD Core" data-preview-tag="Agentic Engineering" data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="GitHub Spec-Kit Suite - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between hover:shadow-xl" data-category="automation" data-preview-title="GitHub Spec-Kit Suite" data-preview-badge="SDD Core" data-preview-tag="Agentic Engineering" data-preview-desc="Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows." data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="GitHub Spec-Kit Suite - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/20 text-gold dark:bg-gold/30">SDD Core</span>
               <span class="text-xs font-mono text-ink-soft dark:text-slate-500">14 / 14</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-white font-bold group-hover:text-wave dark:group-hover:text-gold transition-colors mb-2">GitHub Spec-Kit Suite</h3>
+            <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">GitHub Spec-Kit Suite</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
               Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured specification, planning, task breakdown, and code review.
             </p>
@@ -1235,7 +1238,7 @@
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
               <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Profile
               </a>
             </div>
           </div>
@@ -2365,7 +2368,7 @@ ${bottleneck}
 
 
   <!-- Floating Hover Preview Modal (Dennis Snellenberg Cursor Physics + Dynamic Spectrum Glow) -->
-  <div id="hover-preview-modal" class="pointer-events-none fixed z-50 w-80 rounded-2xl bg-white/95 dark:bg-[#0c1527]/95 backdrop-blur-xl p-4 shadow-2xl border border-slate-200/80 dark:border-slate-800 opacity-0 scale-90 transition-[opacity,transform,border-color,box-shadow] duration-250 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block" style="box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.45);">
+  <div id="hover-preview-modal" class="pointer-events-none fixed z-50 w-80 rounded-2xl bg-white/95 dark:bg-[#0c1527]/95 backdrop-blur-xl p-4 shadow-2xl border border-slate-200/80 dark:border-slate-800 opacity-0 scale-90 transition-[opacity,transform,border-color,box-shadow,background] duration-200 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block" style="box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.45);">
     <!-- Dynamic Glowing Top Accent Line -->
     <div id="preview-accent-line" class="h-1 w-full rounded-full mb-3 transition-all duration-300" style="background: linear-gradient(90deg, #0284c7, transparent);"></div>
     
@@ -2378,13 +2381,13 @@ ${bottleneck}
     </div>
     
     <h4 id="preview-title" class="font-serif text-base font-bold text-abyss dark:text-white leading-tight mb-1">B2B AI Sales Engine</h4>
-    <p id="preview-desc" class="text-[11px] text-ink-soft dark:text-slate-300 leading-snug">Live architecture and production system blueprint.</p>
+    <p id="preview-desc" class="text-[11px] text-ink-soft dark:text-slate-300 leading-snug">24/7 conversational sales brain & smartphone simulator.</p>
     
     <!-- Action Prompt Footer -->
     <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-ink-faint/15 dark:border-slate-800 text-[10px] text-ink-soft dark:text-slate-400 font-medium">
-      <span class="inline-flex items-center gap-1">
-        <svg class="w-3.5 h-3.5 text-ink-soft dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
-        Click card to open
+      <span class="inline-flex items-center gap-1.5">
+        <svg id="preview-click-icon" class="w-3.5 h-3.5 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
+        <span>Click card to open</span>
       </span>
       <span id="preview-action" class="font-semibold inline-flex items-center gap-1 transition-colors duration-300" style="color: #0284c7;">
         <span>GitHub Repo</span>
@@ -2448,6 +2451,7 @@ ${bottleneck}
     const previewTag = document.getElementById('preview-tag');
     const previewDesc = document.getElementById('preview-desc');
     const previewAction = document.getElementById('preview-action');
+    const previewClickIcon = document.getElementById('preview-click-icon');
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -2455,6 +2459,7 @@ ${bottleneck}
     let modalY = mouseY;
     let isHoveringCard = false;
     let hoverLeaveTimeout = null;
+    let lastTouchTime = 0;
     const isFinePointer = window.matchMedia('(pointer: fine)').matches;
 
     window.addEventListener('mousemove', (e) => {
@@ -2466,8 +2471,9 @@ ${bottleneck}
       }
     });
 
-    // Touch protection: Suppress hover preview modal on touch devices to avoid stuck bubbles
+    // Touch protection: Suppress hover preview modal on touch devices / taps to avoid stuck bubbles
     window.addEventListener('touchstart', () => {
+      lastTouchTime = Date.now();
       if (hoverModal) {
         hoverModal.classList.remove('opacity-100', 'scale-100');
         hoverModal.classList.add('opacity-0', 'scale-90');
@@ -2475,18 +2481,20 @@ ${bottleneck}
       isHoveringCard = false;
     }, { passive: true });
 
-    // Smooth Lerp loop for Floating Preview with Viewport Boundary Clamping
+    // Smooth Lerp loop for Floating Preview with Viewport Boundary Clamping & Cursor Visibility Offset
     function animateModal() {
       if (isHoveringCard && hoverModal) {
         // Dennis Snellenberg smooth spring lerp
+        // Target vertical offset: float comfortably above the cursor, or flip below if close to viewport top
+        const targetY = mouseY < 200 ? mouseY + 95 : mouseY - 95;
         modalX += (mouseX - modalX) * 0.18;
-        modalY += (mouseY - modalY) * 0.18;
+        modalY += (targetY - modalY) * 0.18;
 
         // Viewport Boundary Clamping: prevent bubble from clipping outside the screen
-        const halfW = 170;
-        const halfH = 80;
-        const clampedX = Math.max(halfW + 12, Math.min(window.innerWidth - halfW - 12, modalX));
-        const clampedY = Math.max(halfH + 12, Math.min(window.innerHeight - halfH - 12, modalY - 20));
+        const halfW = 160;
+        const halfH = 85;
+        const clampedX = Math.max(halfW + 16, Math.min(window.innerWidth - halfW - 16, modalX));
+        const clampedY = Math.max(halfH + 16, Math.min(window.innerHeight - halfH - 16, modalY));
 
         hoverModal.style.left = `${clampedX}px`;
         hoverModal.style.top = `${clampedY}px`;
@@ -2508,49 +2516,79 @@ ${bottleneck}
 
       // Mouseenter
       card.addEventListener('mouseenter', () => {
-        if (!isFinePointer) return;
+        // Block synthetic mouseenter events fired by touch taps on touch laptops
+        if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
+
         if (hoverLeaveTimeout) {
           clearTimeout(hoverLeaveTimeout);
           hoverLeaveTimeout = null;
         }
-        isHoveringCard = true;
 
         const title = card.getAttribute('data-preview-title') || card.querySelector('h3')?.textContent || 'Project';
         const badge = card.getAttribute('data-preview-badge') || 'System';
         const tag = card.getAttribute('data-preview-tag') || 'Architecture';
+        const desc = card.getAttribute('data-preview-desc') || card.querySelector('p')?.textContent?.trim() || 'Production system blueprint.';
         const actionLabel = card.getAttribute('data-card-action') || 'GitHub Repo';
 
         if (previewTitle) previewTitle.textContent = title;
         if (previewBadgeText) previewBadgeText.textContent = badge;
         else if (previewBadge) previewBadge.textContent = badge;
         if (previewTag) previewTag.textContent = tag;
+        if (previewDesc) previewDesc.textContent = desc;
 
-        // Synchronize dynamic color morphing to the hover bubble
+        // Synchronize vibrant dynamic color morphing to the hover bubble
+        const isDark = document.documentElement.classList.contains('dark');
         if (previewBadge) {
-          previewBadge.style.backgroundColor = `rgba(${rgb}, 0.14)`;
+          previewBadge.style.backgroundColor = `rgba(${rgb}, 0.16)`;
           previewBadge.style.color = color;
-          previewBadge.style.borderColor = `rgba(${rgb}, 0.35)`;
+          previewBadge.style.borderColor = `rgba(${rgb}, 0.45)`;
+          previewBadge.style.boxShadow = `0 0 10px rgba(${rgb}, 0.2)`;
         }
         if (previewIndicatorDot) {
           previewIndicatorDot.style.backgroundColor = color;
+          previewIndicatorDot.style.boxShadow = `0 0 8px ${color}`;
         }
         if (previewAccentLine) {
-          previewAccentLine.style.background = `linear-gradient(90deg, ${color}, transparent)`;
+          previewAccentLine.style.background = `linear-gradient(90deg, ${color}, rgba(${rgb}, 0.2) 80%, transparent)`;
+          previewAccentLine.style.boxShadow = `0 0 10px rgba(${rgb}, 0.5)`;
         }
         if (previewAction) {
           previewAction.style.color = color;
           const actionSpan = previewAction.querySelector('span');
           if (actionSpan) actionSpan.textContent = actionLabel;
         }
+        if (previewClickIcon) {
+          previewClickIcon.style.color = color;
+        }
         if (hoverModal) {
-          hoverModal.style.borderColor = `rgba(${rgb}, 0.4)`;
-          hoverModal.style.boxShadow = `0 20px 40px -8px rgba(0, 0, 0, 0.45), 0 0 25px rgba(${rgb}, 0.28)`;
+          hoverModal.style.borderColor = `rgba(${rgb}, 0.45)`;
+          hoverModal.style.boxShadow = isDark
+            ? `0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 35px rgba(${rgb}, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.08)`
+            : `0 20px 45px -10px rgba(0, 0, 0, 0.15), 0 0 30px rgba(${rgb}, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.8)`;
+          hoverModal.style.background = isDark
+            ? `radial-gradient(circle at 50% 0%, rgba(${rgb}, 0.18) 0%, rgba(12, 21, 39, 0.96) 80%)`
+            : `radial-gradient(circle at 50% 0%, rgba(${rgb}, 0.12) 0%, rgba(255, 255, 255, 0.98) 80%)`;
+
+          // If the bubble was previously closed, snap coordinates immediately so it doesn't fly across screen
+          if (!isHoveringCard || hoverModal.classList.contains('opacity-0')) {
+            const initialTargetY = mouseY < 200 ? mouseY + 95 : mouseY - 95;
+            modalX = mouseX;
+            modalY = initialTargetY;
+            const halfW = 160;
+            const halfH = 85;
+            const clampedX = Math.max(halfW + 16, Math.min(window.innerWidth - halfW - 16, modalX));
+            const clampedY = Math.max(halfH + 16, Math.min(window.innerHeight - halfH - 16, modalY));
+            hoverModal.style.left = `${clampedX}px`;
+            hoverModal.style.top = `${clampedY}px`;
+          }
+
           hoverModal.classList.remove('opacity-0', 'scale-90');
           hoverModal.classList.add('opacity-100', 'scale-100');
         }
+        isHoveringCard = true;
       });
 
-      // Mouseleave (smooth crossfade when gliding between cards)
+      // Mouseleave (smooth crossfade with 220ms grace window for gliding across 24px grid gaps)
       card.addEventListener('mouseleave', (e) => {
         if (!isFinePointer) return;
         const related = e.relatedTarget;
@@ -2565,7 +2603,7 @@ ${bottleneck}
             hoverModal.classList.remove('opacity-100', 'scale-100');
             hoverModal.classList.add('opacity-0', 'scale-90');
           }
-        }, 60);
+        }, 220);
       });
 
       // Full Card Click Navigation
@@ -2577,6 +2615,17 @@ ${bottleneck}
         const link = card.getAttribute('data-card-link');
         if (link && link !== '#') {
           window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      });
+
+      // Middle click (wheel click) navigation
+      card.addEventListener('auxclick', (e) => {
+        if (e.button === 1) { // middle click
+          if (e.target.closest('a') || e.target.closest('button')) return;
+          const link = card.getAttribute('data-card-link');
+          if (link && link !== '#') {
+            window.open(link, '_blank', 'noopener,noreferrer');
+          }
         }
       });
 
@@ -2627,6 +2676,7 @@ ${bottleneck}
         }
       });
     }
+    window.filterProjects = filterProjects;
 
     // 4. Intelligent Dynamic Green Active ScrollSpy Engine
     const scrollSpySections = [
