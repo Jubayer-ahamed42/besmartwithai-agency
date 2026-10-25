@@ -108,6 +108,68 @@
       display: inline-flex !important;
     }
 
+    /* Enhanced Dennis Snellenberg Ambient Cursor Spotlight Tracker */
+    #ambient-spotlight {
+      --mouse-x: 50vw;
+      --mouse-y: 50vh;
+      --spot-rgb-1: 37, 99, 235;    /* dynamic primary */
+      --spot-rgb-2: 14, 165, 233;   /* dynamic secondary */
+      background: radial-gradient(
+        580px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+        rgba(var(--spot-rgb-1, 37, 99, 235), 0.15) 0%,
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.08) 35%,
+        rgba(var(--spot-rgb-1, 37, 99, 235), 0.02) 65%,
+        transparent 80%
+      );
+      transition: opacity 0.3s ease;
+      will-change: background;
+    }
+    .dark #ambient-spotlight {
+      --spot-rgb-1: 16, 185, 129;   /* dynamic primary in dark */
+      --spot-rgb-2: 14, 165, 233;   /* dynamic secondary */
+      background: radial-gradient(
+        660px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.22) 0%,
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.12) 35%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.04) 65%,
+        transparent 82%
+      );
+    }
+
+    /* Bento Pillar Card Dynamic Hover & Surface Interaction */
+    .bento-pillar-card {
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.25s ease;
+      will-change: transform, border-color, box-shadow;
+    }
+    .bento-pillar-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--card-accent, #10b981) !important;
+      box-shadow: 0 14px 30px -8px var(--card-glow, rgba(16, 185, 129, 0.22)) !important;
+    }
+    .bento-pillar-card > *, .project-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    .bento-pillar-card::before, .project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        320px circle at var(--mouse-card-x, -999px) var(--mouse-card-y, -999px),
+        var(--card-glow, rgba(16, 185, 129, 0.14)),
+        transparent 70%
+      );
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    .bento-pillar-card:hover::before, .project-card:hover::before {
+      opacity: 1;
+    }
+
     /* Project Card Dynamic Hover & Surface Interaction */
     .project-card {
       cursor: pointer;
@@ -277,8 +339,8 @@
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
 
-  <!-- Ambient Spotlight (Dennis Snellenberg cursor track) -->
-  <div id="ambient-spotlight" class="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-70 dark:opacity-40" style="background: radial-gradient(600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(61, 107, 181, 0.08), transparent 70%);"></div>
+  <!-- Ambient Spotlight (Dennis Snellenberg dynamic chromatic cursor track) -->
+  <div id="ambient-spotlight" class="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-90 dark:opacity-95"></div>
 
   <!-- ==================== STICKY NAVIGATION ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-paper/85 dark:bg-dark-bg/85 backdrop-blur-md border-b border-ink-faint/30 dark:border-dark-border transition-all duration-300">
@@ -496,7 +558,7 @@
         <span class="text-xs font-bold tracking-widest uppercase text-wave">01 / ABOUT JUBAYER</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         <!-- Left: Story & Pitch -->
         <div class="lg:col-span-7">
@@ -512,32 +574,61 @@
             </p>
           </div>
 
-          <!-- Feature Bullets -->
+          <!-- 4-Pillar Executive Bento Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-ink-faint/30 dark:border-dark-border">
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
+            
+            <!-- Pillar 1: Business Problem Solver -->
+            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-amber-500/50 dark:hover:border-amber-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-amber-500/10 group relative overflow-hidden" data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 shadow-xs group-hover:scale-105 transition-transform">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                </div>
+                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Business Problem Solver</h3>
               </div>
-              <span class="text-sm font-medium text-ink dark:text-dark-text">Zero offshore handoffs — work directly with me</span>
+              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+                Translating operational bottlenecks, leaking sales funnels, and manual overhead into high-ROI architectural blueprints.
+              </p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
+
+            <!-- Pillar 2: AI Automation Specialist -->
+            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-sky-500/10 group relative overflow-hidden" data-accent-color="#0284c7" data-accent-rgb="2, 132, 199">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0 border border-sky-500/20 shadow-xs group-hover:scale-105 transition-transform">
+                  <i data-lucide="cpu" class="w-4 h-4"></i>
+                </div>
+                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">AI Automation Specialist</h3>
               </div>
-              <span class="text-sm font-medium text-ink dark:text-dark-text">Hardened Linux & Sovereign Cloud Infrastructure</span>
+              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+                Deploying 24/7 autonomous agent swarms, WhatsApp sales bots, RAG pipelines, and automated CRM workflows that eliminate human fatigue.
+              </p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
+
+            <!-- Pillar 3: Full-Stack Systems Engineer -->
+            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-emerald-500/50 dark:hover:border-emerald-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-emerald-500/10 group relative overflow-hidden" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 shadow-xs group-hover:scale-105 transition-transform">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                </div>
+                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Full-Stack Systems Engineer</h3>
               </div>
-              <span class="text-sm font-medium text-ink dark:text-dark-text">Multi-Agent AI Orchestration (WhatsApp, CRM, Web)</span>
+              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+                Hardened Linux infrastructure, production databases, resilient APIs, and intuitive UI/UX. Ensuring AI runs on unshakeable foundations.
+              </p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
+
+            <!-- Pillar 4: Educator & Technical Mentor -->
+            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/10 group relative overflow-hidden" data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246">
+              <div class="flex items-center gap-3 mb-2.5">
+                <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20 shadow-xs group-hover:scale-105 transition-transform">
+                  <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                </div>
+                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Educator & Technical Mentor</h3>
               </div>
-              <span class="text-sm font-medium text-ink dark:text-dark-text">Transparent, performance-driven milestone pricing</span>
+              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+                Demystifying bleeding-edge AI for business owners, upskilling internal teams for seamless adoption, and cultivating the next generation of builders.
+              </p>
             </div>
+
           </div>
 
           <div class="mt-10 flex items-center gap-4">
@@ -553,7 +644,7 @@
 
         <!-- Right: Modernized Founder Showcase Card (UI/UX Pro Max Spec) -->
         <div class="lg:col-span-5">
-          <div class="bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all">
+          <div class="founder-showcase-card bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
             
             <!-- Floating Active Status Badge -->
             <div class="flex items-center justify-between mb-6">
@@ -2462,6 +2553,11 @@ ${bottleneck}
     let lastTouchTime = 0;
     const isFinePointer = window.matchMedia('(pointer: fine)').matches;
 
+    // Ambient Spotlight Dynamic Chromatic & Card Tracking Engine
+    let activeCardRgb = null;
+    let currSpotRgb1 = [16, 185, 129];
+    let currSpotRgb2 = [14, 165, 233];
+
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -2469,6 +2565,13 @@ ${bottleneck}
         spotlight.style.setProperty('--mouse-x', `${mouseX}px`);
         spotlight.style.setProperty('--mouse-y', `${mouseY}px`);
       }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      if (spotlight) spotlight.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      if (spotlight) spotlight.style.opacity = '';
     });
 
     // Touch protection: Suppress hover preview modal on touch devices / taps to avoid stuck bubbles
@@ -2481,16 +2584,63 @@ ${bottleneck}
       isHoveringCard = false;
     }, { passive: true });
 
-    // Smooth Lerp loop for Floating Preview with Viewport Boundary Clamping & Cursor Visibility Offset
+    // Smooth Lerp loop for Floating Preview with Viewport Boundary Clamping & Dynamic Chromatic Glow
     function animateModal() {
+      // 1. Dynamic Chromatic Ambient Glow Modulation
+      if (spotlight) {
+        let targetRgb1, targetRgb2;
+        if (activeCardRgb) {
+          targetRgb1 = activeCardRgb.rgb1;
+          targetRgb2 = activeCardRgb.rgb2;
+        } else {
+          // Positional chromatic spectrum sweep across viewport
+          const nx = Math.max(0, Math.min(1, mouseX / (window.innerWidth || 1)));
+          if (nx < 0.33) {
+            const t = nx / 0.33;
+            targetRgb1 = [
+              Math.round(16 + (6 - 16) * t),
+              Math.round(185 + (182 - 185) * t),
+              Math.round(129 + (212 - 129) * t)
+            ];
+            targetRgb2 = [14, 165, 233];
+          } else if (nx < 0.66) {
+            const t = (nx - 0.33) / 0.33;
+            targetRgb1 = [
+              Math.round(6 + (59 - 6) * t),
+              Math.round(182 + (130 - 182) * t),
+              Math.round(212 + (246 - 212) * t)
+            ];
+            targetRgb2 = [99, 102, 241];
+          } else {
+            const t = (nx - 0.66) / 0.34;
+            targetRgb1 = [
+              Math.round(59 + (139 - 59) * t),
+              Math.round(130 + (92 - 130) * t),
+              Math.round(246 + (246 - 246) * t)
+            ];
+            targetRgb2 = [168, 85, 247];
+          }
+        }
+
+        // Smooth color interpolation
+        currSpotRgb1[0] += (targetRgb1[0] - currSpotRgb1[0]) * 0.12;
+        currSpotRgb1[1] += (targetRgb1[1] - currSpotRgb1[1]) * 0.12;
+        currSpotRgb1[2] += (targetRgb1[2] - currSpotRgb1[2]) * 0.12;
+
+        currSpotRgb2[0] += (targetRgb2[0] - currSpotRgb2[0]) * 0.12;
+        currSpotRgb2[1] += (targetRgb2[1] - currSpotRgb2[1]) * 0.12;
+        currSpotRgb2[2] += (targetRgb2[2] - currSpotRgb2[2]) * 0.12;
+
+        spotlight.style.setProperty('--spot-rgb-1', `${Math.round(currSpotRgb1[0])}, ${Math.round(currSpotRgb1[1])}, ${Math.round(currSpotRgb1[2])}`);
+        spotlight.style.setProperty('--spot-rgb-2', `${Math.round(currSpotRgb2[0])}, ${Math.round(currSpotRgb2[1])}, ${Math.round(currSpotRgb2[2])}`);
+      }
+
+      // 2. Floating Preview Lerp Loop
       if (isHoveringCard && hoverModal) {
-        // Dennis Snellenberg smooth spring lerp
-        // Target vertical offset: float comfortably above the cursor, or flip below if close to viewport top
         const targetY = mouseY < 200 ? mouseY + 95 : mouseY - 95;
         modalX += (mouseX - modalX) * 0.18;
         modalY += (targetY - modalY) * 0.18;
 
-        // Viewport Boundary Clamping: prevent bubble from clipping outside the screen
         const halfW = 160;
         const halfH = 85;
         const clampedX = Math.max(halfW + 16, Math.min(window.innerWidth - halfW - 16, modalX));
@@ -2511,8 +2661,17 @@ ${bottleneck}
       card.style.cursor = 'pointer';
       const color = card.getAttribute('data-accent-color') || '#0284c7';
       const rgb = card.getAttribute('data-accent-rgb') || '2, 132, 199';
+      const rgbParts = rgb.split(',').map(n => parseInt(n.trim(), 10));
       card.style.setProperty('--card-accent', color);
       card.style.setProperty('--card-glow', `rgba(${rgb}, 0.25)`);
+      card.style.setProperty('--card-rgb', rgb);
+
+      // Mousemove on card for local spotlight tracking
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-card-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-card-y', `${e.clientY - rect.top}px`);
+      });
 
       // Mouseenter
       card.addEventListener('mouseenter', () => {
@@ -2523,6 +2682,11 @@ ${bottleneck}
           clearTimeout(hoverLeaveTimeout);
           hoverLeaveTimeout = null;
         }
+
+        activeCardRgb = {
+          rgb1: rgbParts,
+          rgb2: [Math.min(255, rgbParts[0] + 30), Math.min(255, rgbParts[1] + 30), Math.min(255, rgbParts[2] + 40)]
+        };
 
         const title = card.getAttribute('data-preview-title') || card.querySelector('h3')?.textContent || 'Project';
         const badge = card.getAttribute('data-preview-badge') || 'System';
@@ -2591,6 +2755,7 @@ ${bottleneck}
       // Mouseleave (smooth crossfade with 220ms grace window for gliding across 24px grid gaps)
       card.addEventListener('mouseleave', (e) => {
         if (!isFinePointer) return;
+        activeCardRgb = null;
         const related = e.relatedTarget;
         if (related && related.closest && related.closest('.project-card')) {
           // Immediately transitioning to an adjacent project card without flickering
@@ -2639,6 +2804,36 @@ ${bottleneck}
             window.open(link, '_blank', 'noopener,noreferrer');
           }
         }
+      });
+    });
+
+    // Setup interactive card tracking for Bento Pillars and Founder Showcase
+    document.querySelectorAll('.bento-pillar-card, .founder-showcase-card').forEach((card) => {
+      const color = card.getAttribute('data-accent-color') || '#10b981';
+      const rgb = card.getAttribute('data-accent-rgb') || '16, 185, 129';
+      const rgbParts = rgb.split(',').map(n => parseInt(n.trim(), 10));
+
+      card.style.setProperty('--card-accent', color);
+      card.style.setProperty('--card-glow', `rgba(${rgb}, 0.22)`);
+      card.style.setProperty('--card-rgb', rgb);
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-card-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-card-y', `${e.clientY - rect.top}px`);
+      });
+
+      card.addEventListener('mouseenter', () => {
+        if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
+        activeCardRgb = {
+          rgb1: rgbParts,
+          rgb2: [Math.min(255, rgbParts[0] + 30), Math.min(255, rgbParts[1] + 30), Math.min(255, rgbParts[2] + 40)]
+        };
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (!isFinePointer) return;
+        activeCardRgb = null;
       });
     });
 
