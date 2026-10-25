@@ -105,40 +105,46 @@
       --spot-rgb-1: 16, 185, 129;   /* dynamic primary core */
       --spot-rgb-2: 14, 165, 233;   /* dynamic secondary aura */
       opacity: 0;
-      /* Dual-layer radial composition: vibrant focal core + expansive soft ambient bloom */
+      /* Dual-layer radial composition: crystal-clear, non-glare ambient aura */
       background: radial-gradient(
         220px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.26) 0%,
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.16) 40%,
-        rgba(var(--spot-rgb-2, 14, 165, 233), 0.06) 75%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.12) 0%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.06) 40%,
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.02) 75%,
         transparent 100%
       ),
       radial-gradient(
         620px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
-        rgba(var(--spot-rgb-2, 14, 165, 233), 0.12) 0%,
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.05) 50%,
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.06) 0%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.02) 50%,
         transparent 80%
       );
       transition: opacity 0.4s ease;
       will-change: background, opacity;
+      pointer-events: none;
     }
     #ambient-spotlight.is-active {
       opacity: 1;
     }
+    /* When cursor hovers over any interactive card, soften the global overlay to let internal precision torch take precedence without washing text */
+    #ambient-spotlight.is-hovering-card {
+      opacity: 0.22 !important;
+    }
     .dark #ambient-spotlight {
       --spot-rgb-1: 16, 185, 129;
       --spot-rgb-2: 14, 165, 233;
+      mix-blend-mode: screen;
       background: radial-gradient(
-        260px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.36) 0%,
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.22) 45%,
-        rgba(var(--spot-rgb-2, 14, 165, 233), 0.08) 75%,
+        240px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.15) 0%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.08) 45%,
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.03) 75%,
         transparent 100%
       ),
       radial-gradient(
-        700px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
-        rgba(var(--spot-rgb-2, 14, 165, 233), 0.18) 0%,
-        rgba(var(--spot-rgb-1, 16, 185, 129), 0.06) 55%,
+        680px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+        rgba(var(--spot-rgb-2, 14, 165, 233), 0.07) 0%,
+        rgba(var(--spot-rgb-1, 16, 185, 129), 0.02) 55%,
         transparent 85%
       );
     }
@@ -154,14 +160,14 @@
     .bento-pillar-card:hover {
       transform: translateY(-3px);
       border-color: var(--card-accent, #10b981) !important;
-      box-shadow: 0 14px 30px -8px var(--card-glow, rgba(16, 185, 129, 0.28)) !important;
+      box-shadow: 0 12px 28px -8px var(--card-glow, rgba(16, 185, 129, 0.20)) !important;
     }
     .founder-showcase-card {
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.25s ease;
     }
     .founder-showcase-card:hover {
       border-color: var(--card-accent, #10b981) !important;
-      box-shadow: 0 16px 36px -10px var(--card-glow, rgba(16, 185, 129, 0.25)) !important;
+      box-shadow: 0 14px 32px -10px var(--card-glow, rgba(16, 185, 129, 0.20)) !important;
     }
     .service-card {
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.25s ease;
@@ -169,7 +175,7 @@
     .service-card:hover {
       transform: translateY(-4px);
       border-color: var(--card-accent, #3d6bb5) !important;
-      box-shadow: 0 14px 32px -8px var(--card-glow, rgba(61, 107, 181, 0.25)) !important;
+      box-shadow: 0 12px 28px -8px var(--card-glow, rgba(61, 107, 181, 0.20)) !important;
     }
     .bento-pillar-card > *, .founder-showcase-card > *, .service-card > *, .project-card > * {
       position: relative;
@@ -181,9 +187,9 @@
       inset: 0;
       border-radius: inherit;
       background: radial-gradient(
-        340px circle at var(--mouse-card-x, -999px) var(--mouse-card-y, -999px),
-        var(--card-surface-glow, rgba(16, 185, 129, 0.18)),
-        transparent 72%
+        280px circle at var(--mouse-card-x, -999px) var(--mouse-card-y, -999px),
+        var(--card-surface-glow, rgba(16, 185, 129, 0.10)),
+        transparent 70%
       );
       opacity: 0;
       pointer-events: none;
@@ -192,13 +198,75 @@
     }
     .dark .bento-pillar-card::before, .dark .founder-showcase-card::before, .dark .service-card::before, .dark .project-card::before {
       background: radial-gradient(
-        360px circle at var(--mouse-card-x, -999px) var(--mouse-card-y, -999px),
-        var(--card-surface-glow, rgba(16, 185, 129, 0.26)),
-        transparent 75%
+        300px circle at var(--mouse-card-x, -999px) var(--mouse-card-y, -999px),
+        var(--card-surface-glow, rgba(16, 185, 129, 0.12)),
+        transparent 72%
       );
     }
     .bento-pillar-card:hover::before, .founder-showcase-card:hover::before, .service-card:hover::before, .project-card:hover::before {
       opacity: 1;
+    }
+
+    /* Executive Typography Clarity Booster & Subtle Scale Elevation on Hover */
+    .bento-pillar-card h2, .service-card h3, .project-card-title {
+      transition: color 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.24s ease;
+    }
+    .bento-pillar-card:hover h2 {
+      transform: translateY(-0.5px) scale(1.015);
+      transform-origin: left center;
+    }
+    .service-card:hover h3, .project-card:hover .project-card-title {
+      transform: translateY(-0.5px) scale(1.01);
+      transform-origin: left center;
+    }
+
+    .bento-pillar-card p, .service-card p, .project-card p {
+      transition: color 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.24s ease, opacity 0.24s ease;
+    }
+    .bento-pillar-card:hover p {
+      color: #0f172a !important; /* Deep crisp obsidian in light mode */
+      transform: translateY(-0.5px) scale(1.015);
+      transform-origin: left top;
+      opacity: 1 !important;
+    }
+    .dark .bento-pillar-card:hover p {
+      color: #ffffff !important; /* Pure crystal-clear white */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.12);
+      transform: translateY(-0.5px) scale(1.015);
+      transform-origin: left top;
+      opacity: 1 !important;
+    }
+
+    .service-card:hover p, .project-card p {
+      transition: color 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.24s ease, opacity 0.24s ease;
+    }
+    .service-card:hover p, .project-card:hover p {
+      color: #0f172a !important;
+      transform: translateY(-0.5px) scale(1.01);
+      transform-origin: left top;
+      opacity: 1 !important;
+    }
+    .dark .service-card:hover p, .dark .project-card:hover p {
+      color: #ffffff !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      transform: translateY(-0.5px) scale(1.01);
+      transform-origin: left top;
+      opacity: 1 !important;
+    }
+
+    .founder-showcase-card blockquote {
+      transition: color 0.24s ease, transform 0.24s ease, text-shadow 0.24s ease;
+    }
+    .founder-showcase-card:hover blockquote {
+      color: #0f172a !important;
+      transform: scale(1.01);
+      transform-origin: center;
+    }
+    .dark .founder-showcase-card:hover blockquote {
+      color: #ffffff !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+      transform: scale(1.01);
+      transform-origin: center;
     }
 
     /* Project Card Dynamic Hover & Surface Interaction */
@@ -2318,8 +2386,8 @@ ${bottleneck}
       const rgbParts = rgb.split(',').map(n => parseInt(n.trim(), 10));
       const harmonicRgb2 = getHarmonicPair(rgbParts);
       card.style.setProperty('--card-accent', color);
-      card.style.setProperty('--card-glow', `rgba(${rgb}, 0.28)`);
-      card.style.setProperty('--card-surface-glow', `rgba(${rgb}, 0.22)`);
+      card.style.setProperty('--card-glow', `rgba(${rgb}, 0.20)`);
+      card.style.setProperty('--card-surface-glow', `rgba(${rgb}, 0.12)`);
       card.style.setProperty('--card-rgb', rgb);
 
       // Mousemove on card for local spotlight tracking
@@ -2333,6 +2401,7 @@ ${bottleneck}
       card.addEventListener('mouseenter', () => {
         // Block synthetic mouseenter events fired by touch taps on touch laptops
         if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
+        if (spotlight) spotlight.classList.add('is-hovering-card');
 
         if (hoverLeaveTimeout) {
           clearTimeout(hoverLeaveTimeout);
@@ -2417,6 +2486,7 @@ ${bottleneck}
           // Immediately transitioning to an adjacent project card without flickering
           return;
         }
+        if (spotlight) spotlight.classList.remove('is-hovering-card');
 
         hoverLeaveTimeout = setTimeout(() => {
           isHoveringCard = false;
@@ -2471,8 +2541,8 @@ ${bottleneck}
       const harmonicRgb2 = getHarmonicPair(rgbParts);
 
       card.style.setProperty('--card-accent', color);
-      card.style.setProperty('--card-glow', `rgba(${rgb}, 0.28)`);
-      card.style.setProperty('--card-surface-glow', `rgba(${rgb}, 0.22)`);
+      card.style.setProperty('--card-glow', `rgba(${rgb}, 0.20)`);
+      card.style.setProperty('--card-surface-glow', `rgba(${rgb}, 0.12)`);
       card.style.setProperty('--card-rgb', rgb);
 
       card.addEventListener('mousemove', (e) => {
@@ -2483,6 +2553,7 @@ ${bottleneck}
 
       card.addEventListener('mouseenter', () => {
         if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
+        if (spotlight) spotlight.classList.add('is-hovering-card');
         activeCardRgb = {
           rgb1: rgbParts,
           rgb2: harmonicRgb2
@@ -2491,6 +2562,7 @@ ${bottleneck}
 
       card.addEventListener('mouseleave', () => {
         if (!isFinePointer) return;
+        if (spotlight) spotlight.classList.remove('is-hovering-card');
         activeCardRgb = null;
       });
     });
