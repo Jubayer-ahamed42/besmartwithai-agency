@@ -10,16 +10,13 @@
 - **Aesthetic Fidelity**: Matches the exact editorial typography (`Anton` display, `Fraunces` serif, `Inter` sans), color hierarchy (Deep Abyss `#0e1f4a`, Paper Deep `#f2f5fa`, Coral `#fb2c36`, Gold `#e9b85c`), and subtle ambient animations.
 - **Brand Substitution**: All Khalid Farhan mentions, media, branding, and images have been systematically replaced with **Jubayer Ahamed**, **Be Smart With AI**, and Jubayer's real profile photo (`assets/jubayer.png`).
 - **Complete Architecture**:
-  1. Sticky Glassmorphism Header with Mobile Navigation Drawer & Dynamic ScrollSpy
-  2. Section 1: Master Homepage Hero (Unified Founder Showcase, 4-Pillar Bento Grid & Scale Metrics)
-  3. Section 4: 02 / Services (9 Interactive High-Value AI & Engineering Service Cards)
-  4. Section 5: 02 / Architecture & Portfolio Showcase (14 Production Systems with Real-Time Filtering)
-  5. Section 5: 03 / Work (3 High-Impact Real-World Case Studies & Transformations)
-  6. Section 6: 04 / Engineering Articles & Insights (In-Depth Technical Guides with Native Reader Modal)
-  7. Section 7: Field Insights & Topic Pills (Interactive Engineering Topics & Newsletter)
-  8. Section 8: Contact & Business Solutions Hub (Direct Architecture Inquiry & Consultation Funnel)
-  9. Comprehensive Multi-Column Footer with Status Indicator & Social Links
-  10. Interactive Modal Systems (Full-Page Article Reader & Architecture Audit Modal)
+  1. Sticky Floating Header with 4-Item Dynamic Menu (Home · 14 Systems · Capabilities · Contact) & ScrollSpy
+  2. Section 1: Master Homepage Hero (Unified Founder Showcase, 4-Pillar Executive Bento Grid & Scale Metrics)
+  3. Section 2: 02 / Capabilities & Services (High-ROI Autonomous AI & Software Engineering Cards)
+  4. Section 3: 03 / Systems & Architecture (14 Production Systems with Real-Time Dynamic Bubble Tracking & Case Studies)
+  5. Section 4: 04 / Contact & Business Solutions Hub (Direct Architecture Inquiry & Free AI Audit Funnel)
+  6. Comprehensive Multi-Column Footer with Status Indicator & Verified Direct Channels
+  7. High-Conversion Interactive Modal System (Executive Business Audit Funnel)
 
 ---
 
