@@ -48,23 +48,13 @@
             sans: ['Inter', 'system-ui', 'sans-serif']
           },
           animation: {
-            'blob-float': 'blobFloat 12s ease-in-out infinite',
-            'marquee-slow': 'marquee 45s linear infinite',
-            'marquee-reverse': 'marqueeRev 40s linear infinite'
+            'blob-float': 'blobFloat 12s ease-in-out infinite'
           },
           keyframes: {
             blobFloat: {
               '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
               '33%': { transform: 'translate(25px, -30px) scale(1.08)' },
               '66%': { transform: 'translate(-20px, 20px) scale(0.94)' }
-            },
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' }
-            },
-            marqueeRev: {
-              '0%': { transform: 'translateX(-50%)' },
-              '100%': { transform: 'translateX(0%)' }
             }
           }
         }
@@ -341,11 +331,6 @@
       z-index: 0;
     }
 
-    /* Mask linear gradient for marquee fade edges */
-    .marquee-mask {
-      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    }
 
         /* Instant theme-toggle icon visibility (zero flicker) */
     html.dark #theme-toggle-dark-icon { display: none !important; }
@@ -1423,46 +1408,6 @@
     </div>
   </section>
 
-
-  <!-- ==================== SECTION 6: CLIENT BRANDS MARQUEE ==================== -->
-  <section class="py-12 bg-paper dark:bg-dark-bg border-y border-ink-faint/20 dark:border-dark-border overflow-hidden">
-    <div class="marquee-mask w-full">
-      <div class="flex items-center gap-12 w-max animate-marquee-reverse text-ink-soft dark:text-dark-muted font-semibold text-xl tracking-wider">
-        <span>ARAGLEN HOUSE</span>
-        <span>•</span>
-        <span>LENDORSE FINANCIAL</span>
-        <span>•</span>
-        <span>TEMPO ACADEMY</span>
-        <span>•</span>
-        <span>RIVORE TECHNOLOGIES</span>
-        <span>•</span>
-        <span>INSTASD DIGITAL</span>
-        <span>•</span>
-        <span>ABLE TOOL</span>
-        <span>•</span>
-        <span>POSITIVE ATTITUDE MEDIA</span>
-        <span>•</span>
-        <span>FMCO CAPITAL</span>
-        <span>•</span>
-        <!-- Duplicated for loop -->
-        <span>ARAGLEN HOUSE</span>
-        <span>•</span>
-        <span>LENDORSE FINANCIAL</span>
-        <span>•</span>
-        <span>TEMPO ACADEMY</span>
-        <span>•</span>
-        <span>RIVORE TECHNOLOGIES</span>
-        <span>•</span>
-        <span>INSTASD DIGITAL</span>
-        <span>•</span>
-        <span>ABLE TOOL</span>
-        <span>•</span>
-        <span>POSITIVE ATTITUDE MEDIA</span>
-        <span>•</span>
-        <span>FMCO CAPITAL</span>
-      </div>
-    </div>
-  </section>
 
 <!-- ==================== SECTION 7: 04 / INSIGHTS & ARTICLES ==================== -->
   <section id="insights" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
