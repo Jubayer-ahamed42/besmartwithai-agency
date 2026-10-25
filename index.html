@@ -500,72 +500,59 @@
   </header>
 
 
-  <!-- ==================== SECTION 1: HOMEPAGE HERO ==================== -->
+  <!-- ==================== SECTION 1: HOMEPAGE HERO (UI/UX PRO MAX SPEC) ==================== -->
   <section id="home" class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
-    <!-- Animated Ambient Blobs -->
-    <div class="hero-blob w-80 h-80 bg-ink-faint top-12 right-10 animate-blob-float"></div>
-    <div class="hero-blob w-64 h-64 bg-wave bottom-16 right-1/4 animate-blob-float" style="animation-delay: 2s;"></div>
-    <div class="hero-blob w-48 h-48 bg-gold top-1/2 left-8 animate-blob-float" style="animation-delay: 4s;"></div>
+    <!-- Subtle CAD Architectural Grid & Central Atmospheric Bloom -->
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-40 dark:opacity-30"></div>
+    <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-emerald-500/10 via-sky-500/5 to-transparent blur-3xl opacity-70"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
         
-        <!-- Live Status Pill Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border mb-8 shadow-sm">
-          <span class="relative flex h-2.5 w-2.5">
+        <!-- Live Status & Identity Pill Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-paper-deep/90 dark:bg-dark-card/90 backdrop-blur-md border border-ink-faint/40 dark:border-dark-border mb-8 shadow-xs">
+          <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" class="w-6 h-6 rounded-full object-cover object-top border border-emerald-500/40">
+          <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span class="text-xs sm:text-sm font-semibold text-ink-soft dark:text-dark-muted">Available for High-Impact Projects &amp; Architecture &middot; Dhaka, Bangladesh</span>
+          <span class="text-xs sm:text-sm font-medium text-abyss dark:text-dark-text">Jubayer Ahamed &middot;</span>
+          <span class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400">Available for High-Impact Projects</span>
         </div>
 
-        <!-- Giant Display Headline -->
-        <h1 class="font-display tracking-tight text-abyss dark:text-dark-text text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase leading-[0.94] mb-6">
-          <span class="block">HI, I'M JUBAYER AHAMED.</span>
-          <span class="block text-coral text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mt-2 font-display">ARCHITECTING AUTONOMOUS AI &amp; HIGH-ROI SOFTWARE</span>
+        <!-- Masterclass Display Headline (Dual-Font System: Inter Sans + Fraunces Italic Serif) -->
+        <h1 class="font-sans font-bold tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-abyss dark:text-white leading-[1.08] max-w-5xl mb-6">
+          Architecting <span class="font-serif italic font-normal text-emerald-600 dark:text-emerald-400">autonomous AI</span> &amp; high-ROI software that eliminates business bottlenecks.
         </h1>
 
-        <!-- Subheadline: Emphasizing 4 Core Pillars -->
-        <p class="max-w-3xl text-lg sm:text-xl text-ink-soft dark:text-dark-muted font-normal leading-relaxed mb-8">
-          Founder, full-stack engineer, and AI automation architect helping ambitious business owners eliminate operational bottlenecks. I engineer high-conversion web systems, deploy autonomous agent swarms, and teach modern AI mastery to empower real-world business growth.
+        <!-- High-Agency Subheadline (Integrating the 4 Pillars seamlessly) -->
+        <p class="max-w-3xl text-base sm:text-lg md:text-xl text-ink-soft dark:text-slate-300 font-normal leading-relaxed mb-10">
+          I am a <strong>Business Problem Solver</strong>, <strong>AI Automation Specialist</strong>, <strong>Full-Stack Systems Engineer</strong>, and <strong>Technical Mentor</strong> based in Dhaka. I build sovereign AI agents, resilient web applications, and production architectures that convert operational chaos into predictable growth.
         </p>
 
-        <!-- 4 Interactive Core Pillar Badges -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 max-w-3xl">
-          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border text-xs sm:text-sm font-semibold text-abyss dark:text-dark-text hover:border-coral hover:text-coral transition-all cursor-pointer shadow-xs group">
-            <i data-lucide="briefcase" class="w-4 h-4 text-coral group-hover:scale-110 transition-transform"></i>
-            <span>Business Problem Solver</span>
-          </a>
-          <a href="#agency" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border text-xs sm:text-sm font-semibold text-abyss dark:text-dark-text hover:border-wave hover:text-wave transition-all cursor-pointer shadow-xs group">
-            <i data-lucide="graduation-cap" class="w-4 h-4 text-wave group-hover:scale-110 transition-transform"></i>
-            <span>Teacher &amp; Mentor</span>
-          </a>
-          <a href="#services" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border text-xs sm:text-sm font-semibold text-abyss dark:text-dark-text hover:border-gold hover:text-gold transition-all cursor-pointer shadow-xs group">
-            <i data-lucide="code-2" class="w-4 h-4 text-gold group-hover:scale-110 transition-transform"></i>
-            <span>Full-Stack Web Developer</span>
-          </a>
-          <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-deep dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border text-xs sm:text-sm font-semibold text-abyss dark:text-dark-text hover:border-emerald-500 hover:text-emerald-500 transition-all cursor-pointer shadow-xs group">
-            <i data-lucide="bot" class="w-4 h-4 text-emerald-500 group-hover:scale-110 transition-transform"></i>
-            <span>AI Automation Specialist</span>
-          </a>
-        </div>
-
-        <!-- Action Buttons -->
+        <!-- 1+1 Executive CTA Architecture (Hick's Law Compliant) -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 hover:shadow-coral/30 hover:-translate-y-0.5">
-            <span>Explore 14 Systems ↓</span>
+          <!-- Primary Commercial Action -->
+          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base shadow-lg shadow-emerald-600/25 hover:shadow-emerald-500/35 hover:-translate-y-0.5 transition-all cursor-pointer">
+            <i data-lucide="sparkles" class="w-4 h-4 text-emerald-200"></i>
+            <span>Audit Your Business</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper-deep dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-base hover:bg-ink-faint/30 dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-sm">
-            <i data-lucide="github" class="w-5 h-5"></i>
-            <span>GitHub Repositories ↗</span>
-          </a>
-          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-coral text-coral hover:bg-coral hover:text-white font-semibold text-base transition-all hover:-translate-y-0.5">
-            <i data-lucide="sparkles" class="w-4 h-4"></i>
-            <span>Audit Your Business &rarr;</span>
+
+          <!-- Secondary Proof-of-Work Action -->
+          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-base hover:bg-paper-deep dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-sm cursor-pointer">
+            <i data-lucide="layers" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
+            <span>Explore 14 Systems</span>
+            <i data-lucide="arrow-down" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
           </a>
         </div>
 
-        <!-- Metric Badges below CTA -->
+        <div class="text-xs text-ink-soft dark:text-slate-400 mt-4 flex items-center justify-center gap-2">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i>
+          <span>Direct Founder Collaboration &middot; 30-Min Technical Feasibility &middot; Zero Offshore Handoffs</span>
+        </div>
+
+        <!-- Metric Badges below CTA (Anchored Proof Ledger) -->
         <div class="mt-14 pt-8 border-t border-ink-faint/30 dark:border-dark-border grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full max-w-3xl">
           <div>
             <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">14</div>
