@@ -412,10 +412,6 @@
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>Capabilities</span>
         </a>
-        <a href="#agency" data-nav="agency" onclick="if (window.setActiveNav) setActiveNav('agency', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
-          <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
-          <span>About</span>
-        </a>
         <a href="#insights" data-nav="insights" onclick="if (window.setActiveNav) setActiveNav('insights', true)" class="nav-link px-3.5 py-1.5 rounded-full text-sm font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-all duration-200 inline-flex items-center gap-2">
           <span class="nav-dot w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse hidden"></span>
           <span>Insights</span>
@@ -470,13 +466,6 @@
           <span>Current</span>
         </span>
       </a>
-      <a href="#agency" data-nav="agency" data-mobile-nav="agency" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('agency', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
-        <span>About</span>
-        <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
-          <span>Current</span>
-        </span>
-      </a>
       <a href="#insights" data-nav="insights" data-mobile-nav="insights" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('insights', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Insights</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
@@ -500,194 +489,138 @@
   </header>
 
 
-  <!-- ==================== SECTION 1: HOMEPAGE HERO (UI/UX PRO MAX SPEC) ==================== -->
-  <section id="home" class="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
+  <!-- ==================== SECTION 1: MASTER HOMEPAGE HERO (PAGE 1) ==================== -->
+  <section id="home" class="relative min-h-[92vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
     <!-- Subtle CAD Architectural Grid & Central Atmospheric Bloom -->
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-40 dark:opacity-30"></div>
-    <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-emerald-500/10 via-sky-500/5 to-transparent blur-3xl opacity-70"></div>
+    <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[650px] bg-gradient-to-b from-emerald-500/10 via-sky-500/5 to-transparent blur-3xl opacity-75"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-        
-        <!-- Live Status & Identity Pill Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-paper-deep/90 dark:bg-dark-card/90 backdrop-blur-md border border-ink-faint/40 dark:border-dark-border mb-8 shadow-xs">
-          <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" class="w-6 h-6 rounded-full object-cover object-top border border-emerald-500/40">
+      
+      <!-- Top Live Status Badge -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-paper-deep/90 dark:bg-dark-card/90 backdrop-blur-md border border-ink-faint/40 dark:border-dark-border shadow-xs">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span class="text-xs sm:text-sm font-medium text-abyss dark:text-dark-text">Jubayer Ahamed &middot;</span>
-          <span class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400">Available for High-Impact Projects</span>
+          <span class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400">Available for High-Impact Projects &middot; Dhaka, Bangladesh</span>
         </div>
-
-        <!-- Masterclass Display Headline (Dual-Font System: Inter Sans + Fraunces Italic Serif) -->
-        <h1 class="font-sans font-bold tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-abyss dark:text-white leading-[1.08] max-w-5xl mb-6">
-          Architecting <span class="font-serif italic font-normal text-emerald-600 dark:text-emerald-400">autonomous AI</span> &amp; high-ROI software that eliminates business bottlenecks.
-        </h1>
-
-        <!-- High-Agency Subheadline (Integrating the 4 Pillars seamlessly) -->
-        <p class="max-w-3xl text-base sm:text-lg md:text-xl text-ink-soft dark:text-slate-300 font-normal leading-relaxed mb-10">
-          I am a <strong>Business Problem Solver</strong>, <strong>AI Automation Specialist</strong>, <strong>Full-Stack Systems Engineer</strong>, and <strong>Technical Mentor</strong> based in Dhaka. I build sovereign AI agents, resilient web applications, and production architectures that convert operational chaos into predictable growth.
-        </p>
-
-        <!-- 1+1 Executive CTA Architecture (Hick's Law Compliant) -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-          <!-- Primary Commercial Action -->
-          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base shadow-lg shadow-emerald-600/25 hover:shadow-emerald-500/35 hover:-translate-y-0.5 transition-all cursor-pointer">
-            <i data-lucide="sparkles" class="w-4 h-4 text-emerald-200"></i>
-            <span>Audit Your Business</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-
-          <!-- Secondary Proof-of-Work Action -->
-          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-paper dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-base hover:bg-paper-deep dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-sm cursor-pointer">
-            <i data-lucide="layers" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
-            <span>Explore 14 Systems</span>
-            <i data-lucide="arrow-down" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
-          </a>
-        </div>
-
-        <div class="text-xs text-ink-soft dark:text-slate-400 mt-4 flex items-center justify-center gap-2">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i>
-          <span>Direct Founder Collaboration &middot; 30-Min Technical Feasibility &middot; Zero Offshore Handoffs</span>
-        </div>
-
-        <!-- Metric Badges below CTA (Anchored Proof Ledger) -->
-        <div class="mt-14 pt-8 border-t border-ink-faint/30 dark:border-dark-border grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full max-w-3xl">
-          <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">14</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">Autonomous Systems</div>
-          </div>
-          <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">50+</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">Production Workflows</div>
-          </div>
-          <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">99.9%</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">System Reliability</div>
-          </div>
-          <div>
-            <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">24/7</div>
-            <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted mt-1">AI Agent Uptime</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==================== SECTION 3: 01 / ABOUT JUBAYER ==================== -->
-  <section id="agency" class="py-24 bg-paper-deep dark:bg-dark-surface relative transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Label -->
-      <div class="flex items-center gap-2 mb-4">
-        <span class="text-xs font-bold tracking-widest uppercase text-wave">01 / ABOUT JUBAYER</span>
+        <span class="hidden sm:inline-block text-xs font-mono uppercase tracking-widest text-ink-soft dark:text-slate-400">AI Systems Architect &middot; Founder</span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Main Two-Column Master Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         
-        <!-- Left: Story & Pitch -->
+        <!-- Left: High-Agency Narrative & 4-Pillar Bento Grid (Col 7) -->
         <div class="lg:col-span-7">
-          <h2 class="font-serif text-3xl sm:text-5xl text-abyss dark:text-dark-text font-normal leading-tight mb-8">
-            I engineer autonomous AI systems to automate workflows and scale business operations.
-          </h2>
-          <div class="space-y-6 text-base sm:text-lg text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+          
+          <h1 class="font-sans font-bold tracking-tight text-3xl sm:text-5xl lg:text-5xl xl:text-6xl text-abyss dark:text-white leading-[1.08] mb-6">
+            Architecting <span class="font-serif italic font-normal text-emerald-600 dark:text-emerald-400">autonomous AI</span> &amp; high-ROI software that eliminates business bottlenecks.
+          </h1>
+
+          <div class="space-y-4 text-base sm:text-lg text-ink-soft dark:text-slate-300 leading-relaxed font-normal mb-8">
             <p>
-              I lead a founder-led AI automation and software solutions practice based in Dhaka, Bangladesh. I don’t outsource offshore, I don’t sell you what you don’t need, and I don’t hide behind vanity dashboards.
-            </p>
-            <p>
-              You work directly with me—an experienced AI Systems Architect, Full-Stack Engineer and Educator who is directly invested in your business ROI and automation success. Whether it’s 24/7 Autonomous Sales Agents, sovereign cloud architecture, or Generative Engine Optimisation (GEO), I engineer systems that produce measurable ROI.
+              I am <strong>Jubayer Ahamed</strong>—an INTJ Solutions Architect, Full-Stack Engineer, and Technical Mentor based in Dhaka. I bridge commercial strategy and production engineering: deploying 24/7 autonomous agents, resilient web systems, and high-ROI architectures that turn operational chaos into predictable growth.
             </p>
           </div>
 
           <!-- 4-Pillar Executive Bento Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-ink-faint/30 dark:border-dark-border">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             
             <!-- Pillar 1: Business Problem Solver -->
-            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-amber-500/50 dark:hover:border-amber-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-amber-500/10 group relative overflow-hidden" data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 shadow-xs group-hover:scale-105 transition-transform">
+            <div class="bento-pillar-card p-4 sm:p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-amber-500/50 dark:hover:border-amber-400/50 transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-amber-500/10 group relative overflow-hidden" data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 shadow-xs group-hover:scale-105 transition-transform">
                   <i data-lucide="trending-up" class="w-4 h-4"></i>
                 </div>
-                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Business Problem Solver</h3>
+                <h2 class="font-serif text-sm sm:text-base font-semibold text-abyss dark:text-dark-text group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Business Problem Solver</h2>
               </div>
-              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+              <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed">
                 Translating operational bottlenecks, leaking sales funnels, and manual overhead into high-ROI architectural blueprints.
               </p>
             </div>
 
             <!-- Pillar 2: AI Automation Specialist -->
-            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-sky-500/10 group relative overflow-hidden" data-accent-color="#0284c7" data-accent-rgb="2, 132, 199">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0 border border-sky-500/20 shadow-xs group-hover:scale-105 transition-transform">
+            <div class="bento-pillar-card p-4 sm:p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-sky-500/50 dark:hover:border-sky-400/50 transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-sky-500/10 group relative overflow-hidden" data-accent-color="#0284c7" data-accent-rgb="2, 132, 199">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0 border border-sky-500/20 shadow-xs group-hover:scale-105 transition-transform">
                   <i data-lucide="cpu" class="w-4 h-4"></i>
                 </div>
-                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">AI Automation Specialist</h3>
+                <h2 class="font-serif text-sm sm:text-base font-semibold text-abyss dark:text-dark-text group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">AI Automation Specialist</h2>
               </div>
-              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+              <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed">
                 Deploying 24/7 autonomous agent swarms, WhatsApp sales bots, RAG pipelines, and automated CRM workflows that eliminate human fatigue.
               </p>
             </div>
 
             <!-- Pillar 3: Full-Stack Systems Engineer -->
-            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-emerald-500/50 dark:hover:border-emerald-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-emerald-500/10 group relative overflow-hidden" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 shadow-xs group-hover:scale-105 transition-transform">
+            <div class="bento-pillar-card p-4 sm:p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-emerald-500/50 dark:hover:border-emerald-400/50 transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-emerald-500/10 group relative overflow-hidden" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 shadow-xs group-hover:scale-105 transition-transform">
                   <i data-lucide="layers" class="w-4 h-4"></i>
                 </div>
-                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Full-Stack Systems Engineer</h3>
+                <h2 class="font-serif text-sm sm:text-base font-semibold text-abyss dark:text-dark-text group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Full-Stack Systems Engineer</h2>
               </div>
-              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+              <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed">
                 Hardened Linux infrastructure, production databases, resilient APIs, and intuitive UI/UX. Ensuring AI runs on unshakeable foundations.
               </p>
             </div>
 
             <!-- Pillar 4: Educator & Technical Mentor -->
-            <div class="bento-pillar-card p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/10 group relative overflow-hidden" data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20 shadow-xs group-hover:scale-105 transition-transform">
+            <div class="bento-pillar-card p-4 sm:p-5 rounded-2xl bg-paper dark:bg-dark-card/90 border border-ink-faint/40 dark:border-dark-border hover:border-purple-500/50 dark:hover:border-purple-400/50 transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-purple-500/10 group relative overflow-hidden" data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20 shadow-xs group-hover:scale-105 transition-transform">
                   <i data-lucide="graduation-cap" class="w-4 h-4"></i>
                 </div>
-                <h3 class="font-serif text-base font-semibold text-abyss dark:text-dark-text group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Educator & Technical Mentor</h3>
+                <h2 class="font-serif text-sm sm:text-base font-semibold text-abyss dark:text-dark-text group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Educator &amp; Technical Mentor</h2>
               </div>
-              <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted leading-relaxed font-normal">
+              <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed">
                 Demystifying bleeding-edge AI for business owners, upskilling internal teams for seamless adoption, and cultivating the next generation of builders.
               </p>
             </div>
 
           </div>
 
-          <div class="mt-10 flex items-center gap-4">
-            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-md">
-              <span>Explore Services</span>
+          <!-- 1+1 Executive Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-3">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-emerald-600/25 hover:shadow-emerald-500/35 hover:-translate-y-0.5 transition-all cursor-pointer">
+              <i data-lucide="sparkles" class="w-4 h-4 text-emerald-200"></i>
+              <span>Audit Your Business</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <button onclick="openAuditModal()" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-paper bg-white dark:bg-dark-card text-ink text-[#1e3a6e] dark:text-dark-text border border-ink-faint/40 dark:border-dark-border font-semibold text-sm hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors shadow-sm">
-              <span>Book Architecture Call</span>
-            </button>
+            <a href="#projects" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-paper dark:bg-dark-card text-ink dark:text-dark-text font-semibold text-sm sm:text-base hover:bg-paper-deep dark:hover:bg-dark-surface border border-ink-faint/40 dark:border-dark-border transition-all hover:-translate-y-0.5 shadow-xs cursor-pointer">
+              <i data-lucide="layers" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
+              <span>Explore 14 Systems</span>
+              <i data-lucide="arrow-down" class="w-4 h-4 text-ink-soft dark:text-slate-400"></i>
+            </a>
           </div>
+
+          <div class="text-xs text-ink-soft dark:text-slate-400 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>Direct Founder Collaboration &middot; 30-Min Technical Feasibility &middot; Zero Offshore Handoffs</span>
+          </div>
+
         </div>
 
-        <!-- Right: Modernized Founder Showcase Card (UI/UX Pro Max Spec) -->
+        <!-- Right: Modernized Founder Showcase Card (Col 5) -->
         <div class="lg:col-span-5">
-          <div class="founder-showcase-card bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
+          <div class="founder-showcase-card bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-7 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
             
             <!-- Floating Active Status Badge -->
-            <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center justify-between mb-5">
               <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Active Founder & Architect</span>
+                <span>Active Founder &amp; Architect</span>
               </span>
-              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-dark-muted">Be Smart With AI</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400">Be Smart With AI</span>
             </div>
 
             <!-- Full-Face High-Resolution Portrait Display -->
-            <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300">
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-5 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300">
               <img 
                 src="assets/jubayer.jpg" 
-                alt="Jubayer Ahamed - AI Automation & Software Solutions Specialist" 
+                alt="Jubayer Ahamed - AI Automation &amp; Software Solutions Specialist" 
                 class="w-full h-full object-cover object-top"
               >
               <!-- Gradient Overlay on Bottom of Image -->
@@ -696,7 +629,7 @@
               <!-- Bottom Pill on Image -->
               <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-medium">
                 <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">AI Automation</span>
-                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">Software & Web Dev</span>
+                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">Full-Stack Systems</span>
               </div>
             </div>
 
@@ -709,38 +642,38 @@
                 </div>
               </div>
 
-              <p class="text-sm font-semibold text-coral uppercase tracking-wider mt-1.5">Founder & Lead AI Solutions Architect</p>
-              <p class="text-xs text-ink-soft dark:text-dark-muted mt-1">Be Smart With AI · Dhaka, Bangladesh 🇧🇩</p>
+              <p class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mt-1">Founder &amp; Lead AI Solutions Architect</p>
+              <p class="text-xs text-ink-soft dark:text-slate-400 mt-0.5">Be Smart With AI &middot; Dhaka, Bangladesh</p>
               
-              <blockquote class="text-sm text-ink-soft/90 dark:text-dark-muted italic mt-4 px-2 leading-relaxed bg-paper-deep/70 dark:bg-dark-surface/70 p-4 rounded-xl border border-ink-faint/20 dark:border-dark-border">
+              <blockquote class="text-xs sm:text-sm text-ink-soft/90 dark:text-slate-300 italic mt-3 px-2 leading-relaxed bg-paper-deep/70 dark:bg-dark-surface/70 p-3.5 rounded-xl border border-ink-faint/20 dark:border-dark-border text-left">
                 "I don't build software that adds more work to your plate. I engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy."
               </blockquote>
 
               <!-- Crisp Vector Social & Contact Icons (Inline SVG for 100% Reliable Render) -->
-              <div class="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-ink-faint/20 dark:border-dark-border">
+              <div class="flex items-center justify-center gap-3 mt-5 pt-4 border-t border-ink-faint/20 dark:border-dark-border">
                 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#0077b5] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#0077b5] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="LinkedIn Profile">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/8801610594042" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#25d366] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="WhatsApp Direct">
+                <a href="https://wa.me/8801610594042" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#25d366] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="WhatsApp Direct">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-abyss text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="GitHub Repository">
+                <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-abyss text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="GitHub Repository">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://facebook.com/besmartwithaipro" target="_blank" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#1877f2] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Facebook Page">
+                <a href="https://facebook.com/besmartwithaipro" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#1877f2] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Facebook Page">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
 
                 <!-- Direct Email -->
-                <a href="mailto:jubayerahamed.dev@gmail.com" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-coral text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" title="Direct Email">
+                <a href="mailto:jubayerahamed.dev@gmail.com" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-emerald-600 text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Direct Email">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
                 </a>
 
@@ -751,6 +684,27 @@
         </div>
 
       </div>
+
+      <!-- Anchored Scale Metrics Ledger (Spanning full-width under the columns) -->
+      <div class="mt-12 pt-8 border-t border-ink-faint/30 dark:border-dark-border grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12 w-full">
+        <div>
+          <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">14</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400 mt-1">Autonomous Systems</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">50+</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400 mt-1">Production Workflows</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">99.9%</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400 mt-1">System Reliability</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl sm:text-4xl text-abyss dark:text-dark-text">24/7</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400 mt-1">AI Agent Uptime</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1923,7 +1877,7 @@
         <div>
           <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Company</h4>
           <ul class="space-y-2.5 text-ink-faint">
-            <li><a href="#agency" class="hover:text-coral transition-colors">About Jubayer</a></li>
+            <li><a href="#home" class="hover:text-emerald-400 transition-colors">About Jubayer</a></li>
             <li><a href="#work" class="hover:text-coral transition-colors">Case Studies</a></li>
             <li><a href="#insights" class="hover:text-coral transition-colors">Engineering Insights</a></li>
             <li><a href="#contact" class="hover:text-coral transition-colors">Contact &amp; Solutions Hub</a></li>
@@ -2964,7 +2918,6 @@ ${bottleneck}
     // 4. Intelligent Dynamic Green Active ScrollSpy Engine
     const scrollSpySections = [
       { id: 'home', target: 'home' },
-      { id: 'agency', target: 'agency' },
       { id: 'services', target: 'services' },
       { id: 'projects', target: 'projects' },
       { id: 'work', target: 'projects' },
