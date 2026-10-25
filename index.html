@@ -255,7 +255,11 @@
     }
 
     .founder-showcase-card blockquote {
+      color: #0f172a;
       transition: color 0.24s ease, transform 0.24s ease, text-shadow 0.24s ease;
+    }
+    .dark .founder-showcase-card blockquote {
+      color: #ffffff;
     }
     .founder-showcase-card:hover blockquote {
       color: #0f172a !important;
@@ -267,6 +271,10 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
       transform: scale(1.01);
       transform-origin: center;
+    }
+    .group\/tooltip:hover > span[class*="pointer-events-none"] {
+      opacity: 1 !important;
+      transform: translate(-50%, 0) !important;
     }
 
     /* Project Card Dynamic Hover & Surface Interaction */
@@ -653,9 +661,9 @@
             <div class="flex items-center justify-between mb-5">
               <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Active Founder &amp; Architect</span>
+                <span>Principal AI Solutions Architect</span>
               </span>
-              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400">Be Smart With AI</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-slate-400">Verified AI Studio</span>
             </div>
 
             <!-- Full-Face High-Resolution Portrait Display -->
@@ -665,14 +673,6 @@
                 alt="Jubayer Ahamed - AI Automation &amp; Software Solutions Specialist" 
                 class="w-full h-full object-cover object-top"
               >
-              <!-- Gradient Overlay on Bottom of Image -->
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-abyss/80 via-abyss/30 to-transparent pointer-events-none"></div>
-              
-              <!-- Bottom Pill on Image -->
-              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-medium">
-                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">AI Automation</span>
-                <span class="bg-abyss/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">Full-Stack Systems</span>
-              </div>
             </div>
 
             <!-- Founder Bio Details -->
@@ -685,38 +685,48 @@
               </div>
 
               <p class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mt-1">Founder &amp; Lead AI Solutions Architect</p>
-              <p class="text-xs text-ink-soft dark:text-slate-400 mt-0.5">Be Smart With AI &middot; Dhaka, Bangladesh</p>
+              <p class="text-xs text-ink-soft dark:text-slate-400 mt-0.5">Available Globally &middot; Dhaka Hub</p>
               
-              <blockquote class="text-xs sm:text-sm text-ink-soft/90 dark:text-slate-300 italic mt-3 px-2 leading-relaxed bg-paper-deep/70 dark:bg-dark-surface/70 p-3.5 rounded-xl border border-ink-faint/20 dark:border-dark-border text-left">
-                "I don't build software that adds more work to your plate. I engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy."
+              <blockquote class="relative text-xs sm:text-sm text-slate-800 dark:text-white italic mt-3 px-4 py-3.5 rounded-xl bg-paper-deep/70 dark:bg-dark-surface/70 border border-ink-faint/20 dark:border-dark-border leading-relaxed text-center">
+                <div class="flex justify-center mb-1.5 text-emerald-500/80">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+                <span>&ldquo;I don't build software that adds more work to your plate. I engineer autonomous agents that eliminate repetitive labor so you can focus on high-leverage strategy.&rdquo;</span>
               </blockquote>
 
               <!-- Crisp Vector Social & Contact Icons (Inline SVG for 100% Reliable Render) -->
               <div class="flex items-center justify-center gap-3 mt-5 pt-4 border-t border-ink-faint/20 dark:border-dark-border">
                 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#0077b5] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="group/tooltip relative w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#0077b5] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="LinkedIn Profile">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-abyss dark:bg-slate-800 text-white px-2 py-0.5 text-[10px] font-medium shadow-md opacity-0 -translate-y-1 group-hover/tooltip:opacity-100 group-hover/tooltip:translate-y-0 transition-all duration-200 z-20">LinkedIn Profile</span>
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/8801610594042" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#25d366] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="WhatsApp Direct">
+                <a href="https://wa.me/8801610594042" target="_blank" rel="noopener noreferrer" aria-label="Direct WhatsApp" class="group/tooltip relative w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#25d366] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Direct WhatsApp">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-abyss dark:bg-slate-800 text-white px-2 py-0.5 text-[10px] font-medium shadow-md opacity-0 -translate-y-1 group-hover/tooltip:opacity-100 group-hover/tooltip:translate-y-0 transition-all duration-200 z-20">Direct WhatsApp</span>
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-abyss text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="GitHub Repository">
+                <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repositories" class="group/tooltip relative w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-abyss text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="GitHub Repositories">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-abyss dark:bg-slate-800 text-white px-2 py-0.5 text-[10px] font-medium shadow-md opacity-0 -translate-y-1 group-hover/tooltip:opacity-100 group-hover/tooltip:translate-y-0 transition-all duration-200 z-20">GitHub Repositories</span>
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://facebook.com/besmartwithaipro" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#1877f2] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Facebook Page">
+                <a href="https://facebook.com/besmartwithaipro" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" class="group/tooltip relative w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-[#1877f2] text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Facebook Page">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                  <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-abyss dark:bg-slate-800 text-white px-2 py-0.5 text-[10px] font-medium shadow-md opacity-0 -translate-y-1 group-hover/tooltip:opacity-100 group-hover/tooltip:translate-y-0 transition-all duration-200 z-20">Facebook Page</span>
                 </a>
 
                 <!-- Direct Email -->
-                <a href="mailto:jubayerahamed.dev@gmail.com" class="w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-emerald-600 text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Direct Email">
+                <a href="mailto:jubayerahamed.dev@gmail.com" aria-label="Direct Email" class="group/tooltip relative w-10 h-10 rounded-xl bg-paper-deep dark:bg-dark-surface hover:bg-emerald-600 text-ink dark:text-dark-text hover:text-white flex items-center justify-center transition-all shadow-xs hover:scale-105 cursor-pointer" title="Direct Email">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+                  <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-abyss dark:bg-slate-800 text-white px-2 py-0.5 text-[10px] font-medium shadow-md opacity-0 -translate-y-1 group-hover/tooltip:opacity-100 group-hover/tooltip:translate-y-0 transition-all duration-200 z-20">Direct Email</span>
                 </a>
 
               </div>
@@ -1798,7 +1808,66 @@
     </div>
   </footer>
 
+  <!-- ==================== INTERACTIVE AUDIT MODAL ==================== -->
+  <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative animate-in fade-in zoom-in duration-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors" aria-label="Close modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
 
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
+          <span>100% Free Architectural Audit</span>
+        </div>
+        <h3 class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-semibold">Get Your Growth Audit</h3>
+        <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">We’ll analyze your website, search authority, and AI automation opportunities.</p>
+      </div>
+
+      <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name</label>
+          <input type="text" name="name" required placeholder="Jubayer Ahamed" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email</label>
+          <input type="email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Website or Current Stack</label>
+          <input type="text" name="stack" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Primary Growth Focus</label>
+          <select name="focus" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+            <option>Autonomous Multi-Agent AI System</option>
+            <option>Generative Engine Optimisation (GEO) &amp; SEO</option>
+            <option>Sovereign DevOps (Cut SaaS Costs)</option>
+            <option>WhatsApp / Telegram AI Sales Bot</option>
+            <option>High-Converting Web / SaaS Application</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
+          Request Free Audit Blueprint &rarr;
+        </button>
+      </form>
+
+      <div id="modal-success" class="hidden text-center py-6">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="check-circle" class="w-6 h-6"></i>
+        </div>
+        <h4 id="modal-success-title" class="font-serif text-xl text-abyss dark:text-dark-text font-semibold">Audit Request Received!</h4>
+        <p id="modal-success-desc" class="text-sm text-ink-soft dark:text-dark-muted mt-1">Our engineering team will review your domain and email your blueprint within 24 hours.</p>
+        <div id="modal-success-actions" class="mt-4 flex flex-wrap gap-2 justify-center"></div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
@@ -1822,15 +1891,19 @@
     // Audit Modal Controls
     function openAuditModal() {
       const modal = document.getElementById('audit-modal');
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      if (window.lucide) lucide.createIcons();
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        if (window.lucide) lucide.createIcons();
+      }
     }
 
     function closeAuditModal() {
       const modal = document.getElementById('audit-modal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
     }
 
     // Copy Email to Clipboard with Tooltip & Mobile Support
@@ -2118,9 +2191,12 @@ ${bottleneck}
       if (e.key === 'Escape') { closeAuditModal(); }
     });
 
-    document.getElementById('audit-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'audit-modal') closeAuditModal();
-    });
+    const auditModalBackdrop = document.getElementById('audit-modal');
+    if (auditModalBackdrop) {
+      auditModalBackdrop.addEventListener('click', (e) => {
+        if (e.target.id === 'audit-modal') closeAuditModal();
+      });
+    }
   </script>
 
 
