@@ -1297,6 +1297,7 @@
   </section>
 
   <section id="work" class="py-24 bg-paper-deep dark:bg-slate-900/60 relative">
+    <span id="insights" class="absolute -top-24" aria-hidden="true"></span>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header -->
@@ -1832,7 +1833,14 @@
         }
         const form = document.getElementById('audit-modal-form') || modal.querySelector('form');
         const success = document.getElementById('modal-success');
-        if (form) form.classList.remove('hidden');
+        if (form) {
+          form.classList.remove('hidden');
+          const submitBtn = form.querySelector('button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Request Free Audit Blueprint &rarr;';
+          }
+        }
         if (success) success.classList.add('hidden');
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
@@ -2023,9 +2031,17 @@ ${bottleneck}
     function resetContactForm() {
       const form = document.getElementById('contact-solutions-form');
       const success = document.getElementById('contact-form-success');
+      const submitBtn = document.getElementById('contact-submit-btn');
+      const btnText = document.getElementById('contact-btn-text');
       if (form) {
         form.reset();
         form.classList.remove('hidden');
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+      }
+      if (btnText) {
+        btnText.innerHTML = 'Audit Your Business &amp; Dispatch Brief &rarr;';
       }
       if (success) {
         success.classList.add('hidden');
@@ -2275,6 +2291,9 @@ ${bottleneck}
 
     let isLoopRunning = false;
     function ensureLoopRunning() {
+      if (!isFinePointer) return;
+      const auditModal = document.getElementById('audit-modal');
+      if (auditModal && !auditModal.classList.contains('hidden')) return;
       if (!isLoopRunning) {
         isLoopRunning = true;
         requestAnimationFrame(animateModal);
@@ -2313,6 +2332,13 @@ ${bottleneck}
 
     // Smooth Lerp loop for Floating Preview with Viewport Boundary Clamping & Dynamic Chromatic Glow
     function animateModal() {
+      let needsNextFrame = false;
+      const auditModal = document.getElementById('audit-modal');
+      if (auditModal && !auditModal.classList.contains('hidden')) {
+        isLoopRunning = false;
+        return;
+      }
+
       // 1. Dynamic Chromatic Ambient Glow Modulation
       if (spotlight) {
         let targetRgb1, targetRgb2;
