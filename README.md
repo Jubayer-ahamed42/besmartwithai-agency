@@ -11,7 +11,7 @@
 - **Brand Substitution**: All Khalid Farhan mentions, media, branding, and images have been systematically replaced with **Jubayer Ahamed**, **Be Smart With AI**, and Jubayer's real profile photo (`assets/jubayer.png`).
 - **Complete Architecture**:
   1. Sticky Floating Header with 4-Item Dynamic Menu (Home · 14 Systems · Capabilities · Contact) & ScrollSpy
-  2. Section 1: Master Homepage Hero (Unified Founder Showcase, 4-Pillar Executive Bento Grid & Scale Metrics)
+  2. Section 1: Master Homepage Hero (Unified Founder Showcase & 4-Pillar Executive Bento Grid)
   3. Section 2: 02 / Capabilities & Services (High-ROI Autonomous AI & Software Engineering Cards)
   4. Section 3: 03 / Systems & Architecture (14 Production Systems with Real-Time Dynamic Bubble Tracking & Case Studies)
   5. Section 4: 04 / Contact & Business Solutions Hub (Direct Architecture Inquiry & Free AI Audit Funnel)
