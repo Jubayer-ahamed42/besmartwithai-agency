@@ -1,4 +1,4 @@
-# Be Smart With AI — Agency & Personal Brand Website
+# Jubayer Ahamed — Personal Portfolio Website
 
 > **Reverse-Engineered & Architected by Jubayer Ahamed**  
 > Based on the high-conversion structural anatomy of `khalidfarhan.com`.
