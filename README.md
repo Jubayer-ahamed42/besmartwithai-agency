@@ -1,5 +1,8 @@
 # Jubayer Ahamed — Personal Portfolio Website
 
+[![Live Deployment (Vercel)](https://img.shields.io/badge/Live_Deployment-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://jubayer-ahamed.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Mirror-0969DA?style=for-the-badge&logo=github&logoColor=white)](https://jubayer-ahamed42.github.io/besmartwithai-agency/)
+
 > **Reverse-Engineered & Architected by Jubayer Ahamed**  
 > Based on the high-conversion structural anatomy of `khalidfarhan.com`.
 
