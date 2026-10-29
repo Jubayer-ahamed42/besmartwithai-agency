@@ -11,7 +11,7 @@
 ## 🌟 Highlights
 
 - **Aesthetic Fidelity**: Matches the exact editorial typography (`Anton` display, `Fraunces` serif, `Inter` sans), color hierarchy (Deep Abyss `#0e1f4a`, Paper Deep `#f2f5fa`, Coral `#fb2c36`, Gold `#e9b85c`), and subtle ambient animations.
-- **Brand Substitution**: All Khalid Farhan mentions, media, branding, and images have been systematically replaced with **Jubayer Ahamed**, **Be Smart With AI**, and Jubayer's real profile photo (`assets/jubayer.png`).
+- **Brand Substitution**: All Khalid Farhan mentions, media, branding, and images have been systematically replaced with **Jubayer Ahamed**, **Be Smart With AI**, and Jubayer's real profile photo (`assets/jubayer.jpg`).
 - **Complete Architecture**:
   1. Sticky Floating Header with 4-Item Dynamic Menu (Home · 14 Systems · Capabilities · Contact) & ScrollSpy
   2. Section 1: Master Homepage Hero (Unified Founder Showcase & 4-Pillar Executive Bento Grid)
