@@ -29,20 +29,20 @@ This flagship web portal serves as the primary digital presence and engineering 
 2. **Master Hero & Executive Bento Grid**: High-impact founder narrative introducing the strategic pillars of Be Smart With AI—Autonomous Multi-Agent Architecture, Enterprise AI Strategy, Full-Stack Engineering, and Sovereign Infrastructure.
 3. **Capabilities & Enterprise Services**: Four core service matrices covering Autonomous Agent Swarms, Enterprise Full-Stack Web Architecture, Algorithmic Automation, and Generative Engine Optimization (GEO).
 4. **14 Production Systems Showcase**: Complete catalog of 14 engineered applications and client systems with interactive category filtering (`All`, `AI & ML`, `Full-Stack`, `Automation`), dynamic telemetry bubbles, direct GitHub repositories, and live demo access:
-   - **01. B2B AI Sales Engine**: 24/7 conversational sales brain & smartphone simulator with automated COD order extraction (`Python · Gemini 2.5`).
-   - **02. Social Humanizer PyPI**: Universal AI social media humanizer and algorithmic risk auditor published on PyPI (`Python · PyPI Package`).
-   - **03. Freshy Food Storefront**: Organic e-commerce platform with 1-click COD checkout and Bengali AI Nutritionist (`Full-Stack Web`).
-   - **04. Multi-Agent AI Orchestrator**: Cloud orchestration framework running 7 specialized autonomous agents with Telegram command dispatch (`Agent Swarm`).
-   - **05. Madrasah SaaS ERP**: Institutional ERP with fee ledgers, automated currency-in-words, and dual-copy printable receipts (`Next.js · Supabase`).
-   - **06. Gemma 4 Local AI Workspace**: Air-gapped 30KB offline AI web dashboard with native Bengali voice recognition (`Offline AI`).
-   - **07. Jubayer Ahamed Portfolio Website**: Flagship agency brand portal with telemetry, dynamic cursor physics, and dark mode (`Full-Stack Web`).
-   - **08. PureView AI Android**: On-device AI computer vision shield for mobile video streaming & artifact suppression (`Mobile AI · Computer Vision`).
-   - **09. Facebook Auto-Poster**: Autonomous multi-channel social media scheduler & content creator via Meta Graph API (`Social Automation`).
-   - **10. LinkedIn B2B Client Acquisition Engine**: Automated client acquisition pipeline capturing enterprise decision-maker leads (`B2B Outreach`).
-   - **11. Smart Utility PWA Suite**: Offline-first Progressive Web App trio featuring FirstAid, ZeroWasteChef, and WattSaver (`PWA Suite`).
-   - **12. OpenClaw & Hermes Autonomous Agent Lab**: Isolated agent execution environment integrating OpenClaw with Nous Hermes reasoning models and OmniRoute sandbox testing (`Autonomous AI Lab`).
-   - **13. Personal PC Control Agent (Ahmad)**: Voice and command-driven personal desktop assistant automating Windows workflows (`Voice OS Automation`).
-   - **14. GitHub Spec-Kit & Agentic Suite**: Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows (`SDD Core`).
+   - [**01. B2B AI Sales Engine**](https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine): 24/7 conversational sales brain & smartphone simulator with automated COD order extraction (`Python · Gemini 2.5`).
+   - [**02. Social Humanizer PyPI**](https://github.com/Jubayer-ahamed42/social-humanizer): Universal AI social media humanizer and algorithmic risk auditor published on PyPI (`Python · PyPI Package`).
+   - [**03. Freshy Food Storefront**](https://github.com/Jubayer-ahamed42/freshy-food): Organic e-commerce platform with 1-click COD checkout and Bengali AI Nutritionist (`Full-Stack Web`).
+   - [**04. Multi-Agent AI Orchestrator**](https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator): Cloud orchestration framework running 7 specialized autonomous agents with Telegram command dispatch (`Agent Swarm`).
+   - [**05. Madrasah SaaS ERP**](https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS): Institutional ERP with fee ledgers, automated currency-in-words, and dual-copy printable receipts (`Next.js · Supabase`).
+   - [**06. Gemma 4 Local AI Workspace**](https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace): Air-gapped 30KB offline AI web dashboard with native Bengali voice recognition (`Offline AI`).
+   - [**07. Jubayer Ahamed Portfolio Website**](https://github.com/Jubayer-ahamed42/besmartwithai-agency): Flagship agency brand portal with telemetry, dynamic cursor physics, and dark mode (`Full-Stack Web`).
+   - [**08. PureView AI Android**](https://github.com/Jubayer-ahamed42/PureView-AI-Android): On-device AI computer vision shield for mobile video streaming & artifact suppression (`Mobile AI · Computer Vision`).
+   - [**09. Facebook Auto-Poster**](https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation): Autonomous multi-channel social media scheduler & content creator via Meta Graph API (`Social Automation`).
+   - [**10. LinkedIn B2B Client Acquisition Engine**](https://github.com/Jubayer-ahamed42/linkedin-b2b-automation): Automated client acquisition pipeline capturing enterprise decision-maker leads (`B2B Outreach`).
+   - [**11. Smart Utility PWA Suite**](https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite): Offline-first Progressive Web App trio featuring FirstAid, ZeroWasteChef, and WattSaver (`PWA Suite`).
+   - [**12. OpenClaw & Hermes Autonomous Agent Lab**](https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab): Isolated agent execution environment integrating OpenClaw with Nous Hermes reasoning models and OmniRoute sandbox testing (`Autonomous AI Lab`).
+   - [**13. Personal PC Control Agent (Ahmad)**](https://github.com/Jubayer-ahamed42/ahmad-agent): Voice and command-driven personal desktop assistant automating Windows workflows (`Voice OS Automation`).
+   - [**14. GitHub Spec-Kit & Agentic Suite**](https://github.com/Jubayer-ahamed42): Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows (`SDD Core`).
 5. **Interactive Executive Audit Modal**: High-conversion lead capture modal with keyboard trap management, escape-key listener, backdrop blur, and client inquiry funnel.
 6. **Executive Contact Hub & Multi-Column Footer**: Direct channel verification (WhatsApp, Email, LinkedIn, GitHub), real-time availability indicator, and legal notice.
 
@@ -53,14 +53,24 @@ This flagship web portal serves as the primary digital presence and engineering 
 ### Option 1: Direct File Launch
 Double-click `index.html` to open directly in any modern browser (Chrome, Edge, Safari, Firefox).
 
-### Option 2: Python HTTP Server
+### Option 2: 1-Click Windows Launcher
+Double-click `run_website.bat` to launch the local web server and automatically open the site in your browser.
+
+### Option 3: Dedicated Agency Server (Clean URLs)
+Run the bundled clean-URL server inside the project root:
+```powershell
+python server.py 8080
+```
+Then navigate to `http://localhost:8080`.
+
+### Option 4: Python HTTP Server
 Run inside the project root:
 ```powershell
 python -m http.server 3000
 ```
 Then navigate to `http://localhost:3000`.
 
-### Option 3: Local Node / Serve
+### Option 5: Local Node / Serve
 ```powershell
 npx serve .
 ```
