@@ -44,7 +44,7 @@ Transform `besmartwithai.com` from a standard passive agency website into an act
 - **Website Trigger Widget:**  
   *"Enter your brand domain, core service, and location. See live whether ChatGPT, Perplexity, and Google Gemini are recommending you or sending your customers straight to your top 2 competitors."*
 - **Execution Pipeline (30 Seconds):**
-  1. Headless parallel API queries fired across Perplexity (Sonar-pro), OpenAI SearchGPT, and Google Gemini Grounded Search for high-intent buyer prompts (e.g., *"Who is the top-rated dental implant specialist in Dublin?"*).
+  1. Headless parallel API queries fired across Perplexity (Sonar-pro), OpenAI SearchGPT, and Google Gemini Grounded Search for high-intent buyer prompts (e.g., *"Who is the top-rated dental implant specialist in Austin?"*).
   2. Live matrix visualization shows:
      - **AI Search Visibility Score:** (e.g., *11/100 — Critical Risk: Invisible to AI Search*)
      - **Share of Voice:** Competitor A gets 74% citations; Client gets 0%.
