@@ -14,6 +14,11 @@
   <meta property="og:title" content="Jubayer Ahamed · Portfolio Website | AI Automation Architect & Full-Stack Solutions">
   <meta property="og:description" content="Founder-led AI Automation and Software Solutions agency helping businesses scale through Autonomous Multi-Agent Systems, GEO, and sovereign cloud infrastructure.">
   <meta property="og:image" content="https://jubayer-ahamed.vercel.app/assets/jubayer.jpg">
+  <meta property="og:image:secure_url" content="https://jubayer-ahamed.vercel.app/assets/jubayer.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Jubayer Ahamed - Solutions Architect &amp; AI Systems Engineer">
   <meta property="og:site_name" content="Jubayer Ahamed Portfolio Website">
   <meta property="og:locale" content="en_US">
 
@@ -22,6 +27,7 @@
   <meta name="twitter:title" content="Jubayer Ahamed · Portfolio Website | AI Automation Architect & Full-Stack Solutions">
   <meta name="twitter:description" content="Founder-led AI Automation and Software Solutions agency helping businesses scale through Autonomous Multi-Agent Systems, GEO, and sovereign cloud infrastructure.">
   <meta name="twitter:image" content="https://jubayer-ahamed.vercel.app/assets/jubayer.jpg">
+  <meta name="twitter:image:alt" content="Jubayer Ahamed - Solutions Architect &amp; AI Systems Engineer">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -419,7 +425,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo -->
-      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home');" class="flex items-center gap-3 group">
+      <a href="#home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); if (window.setActiveNav) setActiveNav('home', true);" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-abyss to-ink flex items-center justify-center shadow-md shadow-abyss/15 group-hover:scale-105 transition-transform">
           <i data-lucide="bot" class="w-6 h-6 text-gold"></i>
         </div>
@@ -476,35 +482,35 @@
 
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 bg-paper dark:bg-dark-surface border-b border-ink-faint/30 dark:border-dark-border shadow-xl space-y-2">
-      <a href="#home" data-nav="home" data-mobile-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu(); if (window.setActiveNav) setActiveNav('home', true);" class="mobile-nav-link active-nav flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors" aria-current="page">
+      <a href="#home" data-mobile-nav="home" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (history.replaceState) history.replaceState(null, null, ' '); toggleMobileMenu(); if (window.setActiveNav) setActiveNav('home', true);" class="mobile-nav-link active-nav flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors" aria-current="page">
         <span>Home</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#services" data-nav="services" data-mobile-nav="services" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('services', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#services" data-mobile-nav="services" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('services', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Capabilities</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#projects" data-nav="projects" data-mobile-nav="projects" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('projects', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#projects" data-mobile-nav="projects" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('projects', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>14 Systems</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#work" data-nav="work" data-mobile-nav="work" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('work', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#work" data-mobile-nav="work" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('work', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Case Studies</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
           <span>Current</span>
         </span>
       </a>
-      <a href="#contact" data-nav="contact" data-mobile-nav="contact" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('contact', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
+      <a href="#contact" data-mobile-nav="contact" onclick="toggleMobileMenu(); if (window.setActiveNav) setActiveNav('contact', true);" class="mobile-nav-link flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-medium text-ink-soft dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 border border-transparent hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10 transition-colors">
         <span>Contact</span>
         <span class="mobile-nav-dot inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hidden">
           <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse"></span>
@@ -3806,7 +3812,7 @@ ${bottleneck}
       activeNavTarget = targetId;
 
       // Update Desktop Nav
-      document.querySelectorAll('[data-nav]').forEach((link) => {
+      document.querySelectorAll('#desktop-nav [data-nav]').forEach((link) => {
         const isMatch = link.getAttribute('data-nav') === targetId;
         const dot = link.querySelector('.nav-dot');
         if (isMatch) {
@@ -3829,7 +3835,7 @@ ${bottleneck}
       });
 
       // Update Mobile Drawer Nav
-      document.querySelectorAll('[data-mobile-nav]').forEach((link) => {
+      document.querySelectorAll('#mobile-menu [data-mobile-nav]').forEach((link) => {
         const isMatch = link.getAttribute('data-mobile-nav') === targetId;
         const dot = link.querySelector('.mobile-nav-dot');
         if (isMatch) {
