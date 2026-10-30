@@ -77,6 +77,29 @@
     ::-webkit-scrollbar-thumb { background: #a9bddd; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #5b7cb8; }
 
+    .dark ::-webkit-scrollbar-track { background: #0e1726; }
+    .dark ::-webkit-scrollbar-thumb { background: #1e2d4d; border-radius: 4px; }
+    .dark ::-webkit-scrollbar-thumb:hover { background: #3d6bb5; }
+
+    /* Clean horizontal scrollbar suppressor for mobile tab strips */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Silky Smooth Modal Entrance Animation */
+    @keyframes modalEnter {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    .modal-dialog-enter {
+      animation: modalEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
     /* Scroll Margin for Sticky Header Navigation */
     section {
       scroll-margin-top: 5rem;
@@ -1315,7 +1338,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         <!-- Case Study 1 -->
-        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-coral/40 dark:hover:border-coral/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(1)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: Hospitality & Booking direct reservation pipelines" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(1);}">
+        <div class="case-study-card group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-coral/40 dark:hover:border-coral/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(1)" data-accent-color="#fb2c36" data-accent-rgb="251, 44, 54">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Hospitality &amp; Booking</span>
@@ -1338,17 +1361,17 @@
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(1);" aria-haspopup="dialog" aria-label="Read full case study: Hospitality &amp; Booking direct reservation pipelines" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
             <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
-          </div>
+          </button>
         </div>
 
         <!-- Case Study 2 -->
-        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-wave/40 dark:hover:border-gold/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(2)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: Education & EdTech 6-month waiting list flywheel" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(2);}">
+        <div class="case-study-card group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-wave/40 dark:hover:border-gold/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(2)" data-accent-color="#e9b85c" data-accent-rgb="233, 184, 92">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Education &amp; EdTech</span>
@@ -1371,17 +1394,17 @@
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(2);" aria-haspopup="dialog" aria-label="Read full case study: Education &amp; EdTech 6-month waiting list flywheel" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
             <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
-          </div>
+          </button>
         </div>
 
         <!-- Case Study 3 -->
-        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(3)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: B2B Financial Services enterprise lead acceleration" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(3);}">
+        <div class="case-study-card group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(3)" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">B2B Financial Services</span>
@@ -1404,13 +1427,13 @@
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(3);" aria-haspopup="dialog" aria-label="Read full case study: B2B Financial Services enterprise lead acceleration" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
             <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
-          </div>
+          </button>
         </div>
 
       </div>
@@ -1759,19 +1782,19 @@
 
   <!-- ==================== IN-PAGE CASE STUDY VIEWER MODAL ==================== -->
   <div id="case-study-modal" class="fixed inset-0 z-50 hidden bg-abyss/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title">
-    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-4xl w-full shadow-2xl border border-ink-faint/30 dark:border-dark-border relative flex flex-col max-h-[92vh] overflow-hidden my-auto animate-in fade-in zoom-in duration-200">
+    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-4xl w-full shadow-2xl border border-ink-faint/30 dark:border-dark-border relative flex flex-col max-h-[92vh] overflow-hidden my-auto modal-dialog-enter">
       
       <!-- Modal Top Navigation & Control Bar -->
       <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
         <!-- Case Study Selector Tabs (1, 2, 3) -->
-        <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
-          <button type="button" id="cs-tab-1" onclick="switchCaseStudy(1)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral">
+        <div role="tablist" aria-label="Case study selector" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 flex-1 min-w-0">
+          <button type="button" role="tab" id="cs-tab-1" aria-selected="true" aria-controls="cs-modal-body" tabindex="0" onclick="switchCaseStudy(1)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
             <span>01 Hospitality</span>
           </button>
-          <button type="button" id="cs-tab-2" onclick="switchCaseStudy(2)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="cs-tab-2" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(2)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>02 EdTech</span>
           </button>
-          <button type="button" id="cs-tab-3" onclick="switchCaseStudy(3)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="cs-tab-3" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(3)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>03 FinTech</span>
           </button>
         </div>
@@ -1779,21 +1802,21 @@
         <!-- Controls: Prev / Next + Close Button -->
         <div class="flex items-center gap-2 shrink-0">
           <div class="hidden sm:flex items-center gap-1 border-r border-ink-faint/20 dark:border-dark-border pr-2">
-            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study (Left Arrow)" title="Previous Case Study (←)" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-left" class="w-4 h-4"></i>
             </button>
-            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study (Right Arrow)" title="Next Case Study (→)" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </button>
           </div>
-          <button type="button" onclick="closeCaseStudyModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study">
+          <button type="button" onclick="closeCaseStudyModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
 
       <!-- Scrollable Case Study Body -->
-      <div id="cs-modal-body" class="overflow-y-auto px-5 sm:px-10 py-6 sm:py-8 space-y-8 flex-1">
+      <div id="cs-modal-body" tabindex="0" role="region" aria-label="Case Study Detailed Report" class="overflow-y-auto px-5 sm:px-10 py-6 sm:py-8 space-y-8 flex-1 focus:outline-none">
         
         <!-- Header Info -->
         <div>
@@ -1874,8 +1897,8 @@
           <div class="text-xs text-ink-soft dark:text-dark-muted hidden sm:block">Direct founder review &amp; custom execution blueprint for your company.</div>
         </div>
         <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <button type="button" onclick="closeCaseStudyModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer">
-            Close Viewer
+          <button type="button" onclick="closeCaseStudyModal()" class="px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap shrink-0">
+            <span>Close</span><span class="hidden sm:inline">&nbsp;Viewer</span>
           </button>
           <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
             <span id="cs-cta-text">Deploy This System</span>
@@ -1888,11 +1911,11 @@
   </div>
 
   <!-- ==================== INTERACTIVE AUDIT MODAL ==================== -->
-  <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative animate-in fade-in zoom-in duration-200">
+  <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title">
+    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative modal-dialog-enter my-auto">
       
       <!-- Close Button -->
-      <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors" aria-label="Close modal">
+      <button type="button" onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors cursor-pointer" aria-label="Close modal (Escape)">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
@@ -1900,7 +1923,7 @@
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
           <span>100% Free Architectural Audit</span>
         </div>
-        <h3 class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-semibold">Get Your Growth Audit</h3>
+        <h3 id="audit-modal-title" class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-semibold">Get Your Growth Audit</h3>
         <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I’ll analyze your website, search authority, and AI automation opportunities.</p>
       </div>
 
@@ -1974,10 +1997,15 @@
     // Audit Modal Controls
     let auditResetTimeout = null;
     let auditMailtoTimeout = null;
+    let auditLastFocusedElement = null;
 
     function openAuditModal(focusService) {
       const modal = document.getElementById('audit-modal');
       if (modal) {
+        if (document.activeElement && (!modal.contains(document.activeElement))) {
+          auditLastFocusedElement = document.activeElement;
+        }
+
         if (auditResetTimeout) {
           clearTimeout(auditResetTimeout);
           auditResetTimeout = null;
@@ -2053,6 +2081,12 @@
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
         if (window.lucide) lucide.createIcons();
+
+        // Autofocus first input with small delay to ensure DOM render
+        setTimeout(() => {
+          const nameInput = document.getElementById('audit-name');
+          if (nameInput) nameInput.focus();
+        }, 50);
       }
     }
 
@@ -2060,7 +2094,10 @@
       const modal = document.getElementById('audit-modal');
       if (modal) {
         modal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
+        const csModal = document.getElementById('case-study-modal');
+        if (!csModal || csModal.classList.contains('hidden')) {
+          document.body.style.overflow = 'auto';
+        }
       }
       if (auditResetTimeout) {
         clearTimeout(auditResetTimeout);
@@ -2084,6 +2121,14 @@
       if (success) {
         success.classList.add('hidden');
       }
+
+      // Restore focus to opener element
+      if (auditLastFocusedElement && typeof auditLastFocusedElement.focus === 'function') {
+        auditLastFocusedElement.focus();
+        auditLastFocusedElement = null;
+      }
+
+      ensureLoopRunning();
     }
 
     // ==================== IN-PAGE CASE STUDY VIEWER ENGINE ====================
@@ -2220,16 +2265,18 @@
       if (!data) return;
       currentCaseStudyId = id;
 
-      // Update switcher tabs
+      // Update switcher tabs with ARIA 1.2 tablist semantics
       for (let i = 1; i <= 3; i++) {
         const tab = document.getElementById(`cs-tab-${i}`);
         if (tab) {
           if (i === id) {
             tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm';
             tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
           } else {
             tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text';
             tab.setAttribute('aria-selected', 'false');
+            tab.setAttribute('tabindex', '-1');
           }
         }
       }
@@ -2279,13 +2326,13 @@
         `).join('');
       }
 
-      // Outcomes
+      // Outcomes (with robust inline SVG checkmarks for zero-flicker rendering)
       const outcomesEl = document.getElementById('cs-outcomes');
       if (outcomesEl) {
         outcomesEl.innerHTML = data.outcomes.map(o => `
           <li class="flex items-start gap-2.5">
             <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
             <span class="leading-relaxed">${o}</span>
           </li>
@@ -2313,20 +2360,36 @@
       if (window.lucide) lucide.createIcons();
     }
 
-    function openCaseStudyModal(id) {
-      csLastFocusedElement = document.activeElement;
+    function openCaseStudyModal(id, updateHash = true) {
       const modal = document.getElementById('case-study-modal');
       if (modal) {
+        if (document.activeElement && (!modal.contains(document.activeElement))) {
+          csLastFocusedElement = document.activeElement;
+        }
         renderCaseStudy(id || 1);
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
+
+        if (updateHash && window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '#case-study-' + (id || 1));
+        }
+
         if (window.lucide) lucide.createIcons();
-        const closeBtn = modal.querySelector('button[aria-label="Close Case Study"]');
-        if (closeBtn) closeBtn.focus();
+
+        // Focus the active tab or close button
+        setTimeout(() => {
+          const activeTab = document.getElementById(`cs-tab-${id || 1}`);
+          if (activeTab) {
+            activeTab.focus();
+          } else {
+            const closeBtn = modal.querySelector('button[aria-label^="Close"]');
+            if (closeBtn) closeBtn.focus();
+          }
+        }, 40);
       }
     }
 
-    function closeCaseStudyModal() {
+    function closeCaseStudyModal(clearHash = true) {
       const modal = document.getElementById('case-study-modal');
       if (modal) {
         modal.classList.add('hidden');
@@ -2335,13 +2398,28 @@
           document.body.style.overflow = 'auto';
         }
       }
+
+      if (clearHash && window.location.hash && window.location.hash.startsWith('#case-study-')) {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }
+
       if (csLastFocusedElement && typeof csLastFocusedElement.focus === 'function') {
         csLastFocusedElement.focus();
+        csLastFocusedElement = null;
       }
+
+      ensureLoopRunning();
     }
 
     function switchCaseStudy(id) {
       renderCaseStudy(id);
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#case-study-' + id);
+      }
+      const activeTab = document.getElementById(`cs-tab-${id}`);
+      if (activeTab) activeTab.focus();
     }
 
     function navigateCaseStudy(direction) {
@@ -2354,16 +2432,34 @@
     function deployCurrentCaseStudy() {
       const data = caseStudiesData[currentCaseStudyId];
       const service = data ? data.focusService : '';
-      closeCaseStudyModal();
+      const returnElement = csLastFocusedElement;
+      
+      const modal = document.getElementById('case-study-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+      if (window.location.hash && window.location.hash.startsWith('#case-study-')) {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }
+
       openAuditModal(service);
+      auditLastFocusedElement = returnElement;
     }
 
-    // Deep link hash support on load & hashchange
+    // Deep link hash support on load & browser history back/forward navigation
     function checkCaseStudyHash() {
       const hash = window.location.hash;
-      if (hash === '#case-study-1') openCaseStudyModal(1);
-      else if (hash === '#case-study-2') openCaseStudyModal(2);
-      else if (hash === '#case-study-3') openCaseStudyModal(3);
+      if (hash === '#case-study-1') openCaseStudyModal(1, false);
+      else if (hash === '#case-study-2') openCaseStudyModal(2, false);
+      else if (hash === '#case-study-3') openCaseStudyModal(3, false);
+      else {
+        const modal = document.getElementById('case-study-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+          closeCaseStudyModal(false);
+        }
+      }
     }
     window.addEventListener('DOMContentLoaded', checkCaseStudyHash);
     window.addEventListener('hashchange', checkCaseStudyHash);
@@ -2654,14 +2750,59 @@ ${bottleneck}
       }, isDelivered ? 4000 : 9000);
     }
 
-    // Close on Escape or click backdrop
+    // Global Keyboard Controls: Escape dismiss, Arrow navigation, and WAI-ARIA Focus Trap
     window.addEventListener('keydown', (e) => {
+      const csModal = document.getElementById('case-study-modal');
+      const isCsOpen = csModal && !csModal.classList.contains('hidden');
+      const auditModal = document.getElementById('audit-modal');
+      const isAuditOpen = auditModal && !auditModal.classList.contains('hidden');
+
+      // 1. Escape key dismiss (topmost active modal closes first)
       if (e.key === 'Escape') {
-        const csModal = document.getElementById('case-study-modal');
-        if (csModal && !csModal.classList.contains('hidden')) {
-          closeCaseStudyModal();
-        } else {
+        if (isAuditOpen) {
           closeAuditModal();
+        } else if (isCsOpen) {
+          closeCaseStudyModal();
+        }
+        return;
+      }
+
+      // 2. Left / Right Arrow navigation inside Case Study modal
+      if (isCsOpen && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+        if (activeTag !== 'input' && activeTag !== 'textarea' && activeTag !== 'select') {
+          e.preventDefault();
+          navigateCaseStudy(e.key === 'ArrowRight' ? 1 : -1);
+          return;
+        }
+      }
+
+      // 3. WAI-ARIA Focus Trap for active modal dialog
+      if (e.key === 'Tab' && (isAuditOpen || isCsOpen)) {
+        const activeModal = isAuditOpen ? auditModal : csModal;
+        const focusableSelector = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        const focusables = Array.from(activeModal.querySelectorAll(focusableSelector)).filter(el => {
+          return el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement;
+        });
+
+        if (focusables.length === 0) {
+          e.preventDefault();
+          return;
+        }
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first || !activeModal.contains(document.activeElement)) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last || !activeModal.contains(document.activeElement)) {
+            e.preventDefault();
+            first.focus();
+          }
         }
       }
     });
@@ -3129,8 +3270,8 @@ ${bottleneck}
       });
     });
 
-    // Setup interactive card tracking for Bento Pillars, Founder Showcase and Services
-    document.querySelectorAll('.bento-pillar-card, .founder-showcase-card, .service-card').forEach((card) => {
+    // Setup interactive card tracking for Bento Pillars, Founder Showcase, Services and Case Studies
+    document.querySelectorAll('.bento-pillar-card, .founder-showcase-card, .service-card, .case-study-card').forEach((card) => {
       const color = card.getAttribute('data-accent-color') || '#10b981';
       const rgb = card.getAttribute('data-accent-rgb') || '16, 185, 129';
       const rgbParts = rgb.split(',').map(n => parseInt(n.trim(), 10));
