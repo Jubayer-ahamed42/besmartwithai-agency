@@ -301,6 +301,31 @@
       outline-offset: 4px;
     }
 
+    /* Service Card Bottom Action Button Interactions */
+    .service-action-btn {
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+    }
+    .service-action-btn:hover {
+      color: #ff6b4a !important;
+    }
+    .service-action-btn:hover [data-lucide="arrow-up-right"],
+    .service-action-btn:hover svg {
+      transform: translate(2px, -2px);
+    }
+    .service-action-btn:active {
+      transform: scale(0.98);
+    }
+    .service-action-btn:focus-visible {
+      outline: 2px solid #ff6b4a;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .dark .service-action-btn:focus-visible {
+      outline-color: #f59e0b;
+    }
+
 
     /* Floating Blobs */
     .hero-blob {
@@ -693,9 +718,9 @@
               Deploy 24/7 autonomous AI orchestrators for sales prospecting, client onboarding, support triaging, and real-time CRM updates.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Autonomous Multi-Agent AI System')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Autonomous Multi-Agent AI System');}" aria-label="Learn Architecture - Autonomous Multi-Agent Systems" data-service="Autonomous Multi-Agent AI System" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Learn Architecture</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -713,9 +738,9 @@
               Get cited and recommended by ChatGPT, Perplexity, Claude, and Google AI Overviews, not just traditional blue links.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Generative Engine Optimisation (GEO) & SEO')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Generative Engine Optimisation (GEO) & SEO');}" aria-label="Learn GEO Strategy - Generative Engine Optimisation" data-service="Generative Engine Optimisation (GEO) & SEO" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Learn GEO Strategy</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -733,9 +758,9 @@
               Build sustainable organic search authority that drives qualified, high-intent traffic and compounds over years.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Generative Engine Optimisation (GEO) & SEO')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Generative Engine Optimisation (GEO) & SEO');}" aria-label="View Case Studies - Search Engine Optimisation" data-service="Generative Engine Optimisation (GEO) & SEO" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>View Case Studies</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -753,9 +778,9 @@
               Cut massive SaaS subscription costs. I build private Linux VPS clouds with Docker, Coolify PaaS, and self-hosted private LLMs.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Sovereign DevOps (Cut SaaS Costs)')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Sovereign DevOps (Cut SaaS Costs)');}" aria-label="Calculate Savings - Sovereign DevOps & Self-Hosting" data-service="Sovereign DevOps (Cut SaaS Costs)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Calculate Savings</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -773,9 +798,9 @@
               Turn WhatsApp, Telegram, and Messenger into tireless 24/7 closing machines. Voice memos, order syncing, and payment gateways.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('WhatsApp / Telegram AI Sales Bot')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('WhatsApp / Telegram AI Sales Bot');}" aria-label="Demo Live Bot - Omnichannel AI Sales Bots" data-service="WhatsApp / Telegram AI Sales Bot" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Demo Live Bot</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -793,9 +818,9 @@
               High-performance web apps built with Next.js, FastAPI, PostgreSQL, and Tailwind. Fast, secure, and engineered to convert visitors.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('High-Converting Web / SaaS Application')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('High-Converting Web / SaaS Application');}" aria-label="Explore Stack - Production Web & SaaS Engineering" data-service="High-Converting Web / SaaS Application" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Explore Stack</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -813,9 +838,9 @@
               Performance Max and paid media campaigns built for measurable, bottom-line return on ad spend (ROAS).
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Meta & Google Performance Ads')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Meta & Google Performance Ads');}" aria-label="View ROAS Metrics - Meta & Google Performance Ads" data-service="Meta & Google Performance Ads" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>View ROAS Metrics</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -833,9 +858,9 @@
               Systematic UX audits and landing page redesigns that squeeze maximum sales from existing traffic without raising ad spend.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Conversion Rate Optimisation (CRO)')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Conversion Rate Optimisation (CRO)');}" aria-label="Request CRO Audit - Conversion Rate Optimisation" data-service="Conversion Rate Optimisation (CRO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>Request CRO Audit</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -853,9 +878,9 @@
               Clean, first-party data pipelines that bypass iOS privacy blocks, giving ad algorithms 100% accurate conversion signals.
             </p>
           </div>
-          <div class="mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave group-hover:text-coral">
+          <div role="button" tabindex="0" onclick="openAuditModal('Server-Side Tracking & Telemetry')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAuditModal('Server-Side Tracking & Telemetry');}" aria-label="View Architecture - Server-Side Tracking & Telemetry" data-service="Server-Side Tracking & Telemetry" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-coral dark:focus-visible:ring-gold rounded select-none">
             <span>View Architecture</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
@@ -1755,6 +1780,9 @@
             <option>Sovereign DevOps (Cut SaaS Costs)</option>
             <option>WhatsApp / Telegram AI Sales Bot</option>
             <option>High-Converting Web / SaaS Application</option>
+            <option>Meta &amp; Google Performance Ads</option>
+            <option>Conversion Rate Optimisation (CRO)</option>
+            <option>Server-Side Tracking &amp; Telemetry</option>
           </select>
         </div>
 
@@ -1798,7 +1826,7 @@
     let auditResetTimeout = null;
     let auditMailtoTimeout = null;
 
-    function openAuditModal() {
+    function openAuditModal(focusService) {
       const modal = document.getElementById('audit-modal');
       if (modal) {
         if (auditResetTimeout) {
@@ -1817,6 +1845,26 @@
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = 'Request Free Audit Blueprint &rarr;';
+          }
+
+          let targetService = (typeof focusService === 'string' && focusService) ? focusService : null;
+          if (!targetService && document.activeElement && typeof document.activeElement.getAttribute === 'function') {
+            targetService = document.activeElement.getAttribute('data-service');
+          }
+
+          if (targetService) {
+            const focusSelect = document.getElementById('audit-focus');
+            if (focusSelect) {
+              const target = targetService.toLowerCase().trim();
+              for (let i = 0; i < focusSelect.options.length; i++) {
+                const optText = focusSelect.options[i].text.toLowerCase();
+                const optVal = focusSelect.options[i].value.toLowerCase();
+                if (optText.includes(target) || target.includes(optText) || optVal === target) {
+                  focusSelect.selectedIndex = i;
+                  break;
+                }
+              }
+            }
           }
         }
         if (success) success.classList.add('hidden');
@@ -2632,6 +2680,16 @@ ${bottleneck}
         if (!isFinePointer) return;
         if (spotlight) spotlight.classList.remove('is-hovering-card');
         activeCardRgb = null;
+      });
+    });
+
+    // Setup keyboard accessibility for Service Action Buttons
+    document.querySelectorAll('.service-action-btn').forEach((btn) => {
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
       });
     });
 
