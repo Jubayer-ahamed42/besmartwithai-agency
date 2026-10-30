@@ -1315,83 +1315,101 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         <!-- Case Study 1 -->
-        <div class="bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-coral/40 dark:hover:border-coral/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(1)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: Hospitality & Booking direct reservation pipelines" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(1);}">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block mb-6">Hospitality & Booking</span>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6">From invisible to fully booked through autonomous pipelines</h3>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Hospitality &amp; Booking</span>
+              <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 01</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">From invisible to fully booked through autonomous pipelines</h3>
             
             <div class="space-y-4 my-8">
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-coral">+180%</div>
-                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Organic Search & AI Discovery</div>
+                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Organic Search &amp; AI Discovery</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-abyss dark:text-dark-text">Page 1</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">For 14 High-Intent Target Keywords</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
-                <div class="font-display text-3xl text-emerald-600">-22%</div>
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
+                <div class="font-display text-3xl text-emerald-600 dark:text-emerald-400">-22%</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Reduction in Third-Party Commission Fees</div>
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
-            <span>Read full case study</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+            <span class="inline-flex items-center gap-2">
+              <span>Read full case study</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
           </div>
         </div>
 
         <!-- Case Study 2 -->
-        <div class="bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-wave/40 dark:hover:border-gold/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(2)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: Education & EdTech 6-month waiting list flywheel" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(2);}">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block mb-6">Education & EdTech</span>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6">From empty batches to a 6-month waiting list</h3>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Education &amp; EdTech</span>
+              <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 02</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">From empty batches to a 6-month waiting list</h3>
             
             <div class="space-y-4 my-8">
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-coral">+213%</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Qualified Lead Flow in 9 Months</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-abyss dark:text-dark-text">#1 AI Ranking</div>
-                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Top recommendation on ChatGPT & Perplexity</div>
+                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Top recommendation on ChatGPT &amp; Perplexity</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
-                <div class="font-display text-3xl text-emerald-600">Waiting List</div>
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
+                <div class="font-display text-3xl text-emerald-600 dark:text-emerald-400">Waiting List</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">For All Premium Cohorts</div>
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
-            <span>Read full case study</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+            <span class="inline-flex items-center gap-2">
+              <span>Read full case study</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
           </div>
         </div>
 
         <!-- Case Study 3 -->
-        <div class="bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl transition-all flex flex-col justify-between">
+        <div class="group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(3)" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open detailed case study: B2B Financial Services enterprise lead acceleration" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal(3);}">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block mb-6">B2B Financial Services</span>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6">High-value enterprise contracts at 40% lower acquisition cost</h3>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">B2B Financial Services</span>
+              <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 03</span>
+            </div>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">High-value enterprise contracts at 40% lower acquisition cost</h3>
             
             <div class="space-y-4 my-8">
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
-                <div class="font-display text-3xl text-emerald-600">-40%</div>
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
+                <div class="font-display text-3xl text-emerald-600 dark:text-emerald-400">-40%</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Cost Per Qualified Lead (CPL)</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-abyss dark:text-dark-text">+60%</div>
-                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Automated Lead Score & Velocity</div>
+                <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Automated Lead Score &amp; Velocity</div>
               </div>
-              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface">
+              <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
                 <div class="font-display text-3xl text-coral">3.4x</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Verified Return on Ad Spend (ROAS)</div>
               </div>
             </div>
           </div>
-          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text hover:text-coral transition-colors cursor-pointer" onclick="openAuditModal()">
-            <span>Read full case study</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors">
+            <span class="inline-flex items-center gap-2">
+              <span>Read full case study</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
+            </span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
           </div>
         </div>
 
@@ -1739,6 +1757,136 @@
     </div>
   </footer>
 
+  <!-- ==================== IN-PAGE CASE STUDY VIEWER MODAL ==================== -->
+  <div id="case-study-modal" class="fixed inset-0 z-50 hidden bg-abyss/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title">
+    <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-4xl w-full shadow-2xl border border-ink-faint/30 dark:border-dark-border relative flex flex-col max-h-[92vh] overflow-hidden my-auto animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Top Navigation & Control Bar -->
+      <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
+        <!-- Case Study Selector Tabs (1, 2, 3) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+          <button type="button" id="cs-tab-1" onclick="switchCaseStudy(1)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral">
+            <span>01 Hospitality</span>
+          </button>
+          <button type="button" id="cs-tab-2" onclick="switchCaseStudy(2)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+            <span>02 EdTech</span>
+          </button>
+          <button type="button" id="cs-tab-3" onclick="switchCaseStudy(3)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+            <span>03 FinTech</span>
+          </button>
+        </div>
+
+        <!-- Controls: Prev / Next + Close Button -->
+        <div class="flex items-center gap-2 shrink-0">
+          <div class="hidden sm:flex items-center gap-1 border-r border-ink-faint/20 dark:border-dark-border pr-2">
+            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            </button>
+            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <button type="button" onclick="closeCaseStudyModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Case Study Body -->
+      <div id="cs-modal-body" class="overflow-y-auto px-5 sm:px-10 py-6 sm:py-8 space-y-8 flex-1">
+        
+        <!-- Header Info -->
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span id="cs-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-coral/10 text-coral border border-coral/20"></span>
+            <span id="cs-market" class="px-3 py-1 rounded-full text-xs font-medium text-ink-soft dark:text-dark-muted bg-paper-deep dark:bg-dark-surface border border-ink-faint/20 dark:border-dark-border"></span>
+          </div>
+          <h2 id="cs-modal-title" class="font-serif text-2xl sm:text-4xl text-abyss dark:text-dark-text font-bold tracking-tight mb-3"></h2>
+          <p id="cs-summary" class="text-sm sm:text-base text-ink-soft dark:text-dark-muted leading-relaxed"></p>
+        </div>
+
+        <!-- 4 Key Quantifiable Metrics -->
+        <div id="cs-metrics-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Executive Overview & Commercial Challenge -->
+        <div class="bg-paper-deep/70 dark:bg-dark-surface/60 rounded-2xl p-5 sm:p-7 border border-coral/20 border-l-4 border-l-coral">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-coral mb-3">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i>
+            <span>Executive Overview &amp; Commercial Challenge</span>
+          </div>
+          <div id="cs-challenge" class="space-y-3 text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Technical Architecture & Engineering Solution -->
+        <div class="bg-paper-deep/70 dark:bg-dark-surface/60 rounded-2xl p-5 sm:p-7 border border-wave/20 dark:border-gold/20 border-l-4 border-l-wave dark:border-l-gold">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-wave dark:text-gold mb-3">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+            <span>Technical Architecture &amp; Engineering Solution</span>
+          </div>
+          <div id="cs-solution" class="space-y-3 text-sm text-ink-soft dark:text-dark-muted leading-relaxed">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Architecture Workflow Diagram -->
+          <div class="mt-6 p-4 sm:p-5 rounded-xl bg-paper dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border">
+            <div class="text-[11px] font-mono uppercase font-bold tracking-wider text-wave dark:text-gold mb-3 flex items-center gap-2">
+              <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+              <span>Pipeline &amp; Dataflow Execution Map</span>
+            </div>
+            <div id="cs-workflow" class="space-y-2 text-xs font-mono">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantifiable Business Outcomes & Verified ROI -->
+        <div class="bg-paper-deep/70 dark:bg-dark-surface/60 rounded-2xl p-5 sm:p-7 border border-emerald-500/20 border-l-4 border-l-emerald-500">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Quantifiable Business Outcomes &amp; Verified ROI</span>
+          </div>
+          <ul id="cs-outcomes" class="space-y-3 text-sm text-ink-soft dark:text-dark-muted">
+            <!-- Populated dynamically -->
+          </ul>
+        </div>
+
+        <!-- Technology Stack Tags -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-ink-soft dark:text-dark-muted mb-3 flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Production Architecture &amp; Technology Stack</span>
+          </div>
+          <div id="cs-stack" class="flex flex-wrap gap-2">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Bottom Action Bar (Contextual CTA) -->
+      <div class="px-5 sm:px-8 py-4 border-t border-ink-faint/20 dark:border-dark-border flex flex-col sm:flex-row items-center justify-between gap-3 bg-paper-deep/90 dark:bg-dark-surface/90 backdrop-blur shrink-0">
+        <div class="text-center sm:text-left">
+          <div class="text-xs font-bold uppercase tracking-wider text-abyss dark:text-dark-text">Deploy Similar Architecture</div>
+          <div class="text-xs text-ink-soft dark:text-dark-muted hidden sm:block">Direct founder review &amp; custom execution blueprint for your company.</div>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <button type="button" onclick="closeCaseStudyModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer">
+            Close Viewer
+          </button>
+          <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
+            <span id="cs-cta-text">Deploy This System</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ==================== INTERACTIVE AUDIT MODAL ==================== -->
   <div id="audit-modal" class="fixed inset-0 z-50 hidden bg-abyss/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative animate-in fade-in zoom-in duration-200">
@@ -1937,6 +2085,288 @@
         success.classList.add('hidden');
       }
     }
+
+    // ==================== IN-PAGE CASE STUDY VIEWER ENGINE ====================
+    const caseStudiesData = {
+      1: {
+        id: 1,
+        badge: "Hospitality & Booking · Direct Reservation Engine",
+        market: "Luxury Boutique Eco-Resorts & Private Villas",
+        title: "From Invisible to Fully Booked Through Autonomous Pipelines",
+        summary: "How an integrated Generative Engine Optimization (GEO) architecture and 24/7 autonomous AI reservation concierge bypassed high-commission OTA aggregators to capture $420,000+ in direct bookings with zero added advertising spend.",
+        focusService: "Search Engine Optimisation (SEO)",
+        ctaText: "Deploy Booking Architecture",
+        metrics: [
+          { value: "+180%", label: "Organic Search & GEO", sub: "14 target buyer keywords on Page 1 & LLMs", color: "text-coral" },
+          { value: "Page 1", label: "Top 3 SERP Ranking", sub: "Dominated high-ticket regional search queries", color: "text-abyss dark:text-dark-text" },
+          { value: "-22%", label: "OTA Commission Bleed", sub: "$92,000+ retained in net operating profit", color: "text-emerald-600 dark:text-emerald-400" },
+          { value: "<45s", label: "Global Inbound Latency", sub: "24/7 multilingual conversational concierge", color: "text-wave dark:text-gold" }
+        ],
+        challenge: [
+          "The resort property was trapped in a costly addiction to Online Travel Agencies (OTAs) such as Booking.com, Agoda, and Expedia, sacrificing 18% to 25% in commission fees on every reservation.",
+          "While their physical guest experience was world-class, their digital footprint was practically invisible on modern search engines, ranking past page 4 on Google for competitive luxury villa queries.",
+          "Crucially, when prospective international travelers queried generative search tools like ChatGPT Search, Perplexity AI, or Google AI Overviews for 'exclusive secluded eco-resorts with private chef', the resort never appeared in LLM-synthesized recommendations.",
+          "Furthermore, international guest inquiries received via WhatsApp, Instagram DM, and website forms outside Southeast Asian daylight hours went unanswered for an average of 6.2 hours. By the time front desk staff logged in, prospective guests had already booked with responsive competitors."
+        ],
+        solution: [
+          "<strong>1. Generative Engine Optimization (GEO) & Semantic Knowledge Graph:</strong> Engineered and injected exhaustive JSON-LD schemas (<code>LodgingBusiness</code>, <code>Resort</code>, <code>AmenityFeatureSpecification</code>, <code>PriceSpecification</code>) and connected authoritative citation hubs across travel directories and regional tourism boards. Configured edge-rendered semantic markdown feeds tailored specifically for LLM crawler consumption (GPTBot, PerplexityBot, Google-Extended).",
+          "<strong>2. Autonomous Multilingual AI Reservation Concierge:</strong> Built a low-latency, retrieval-augmented (RAG) conversational agent deployed simultaneously across WhatsApp Cloud API, Instagram DM, and website webchat. The agent was connected via authenticated REST webhooks directly into the resort's Cloud PMS (Property Management System). It dynamically checks real-time room availability, quotes multi-currency rates, suggests customized stay itineraries, offers high-margin upsells (helicopter transfers, couples spa, private chef dinners), and generates encrypted Stripe checkout links directly inside the chat.",
+          "<strong>3. High-Performance Headless Direct Booking Web Architecture:</strong> Replaced the clunky legacy CMS with a sub-second, mobile-first booking interface scoring 99+ on Google Lighthouse Mobile, reducing bounce rates from 62% to under 19%."
+        ],
+        workflow: [
+          { step: "01. Discovery", text: "Traveler queries Google, Perplexity AI, or ChatGPT for luxury secluded eco-villas" },
+          { step: "02. Routing", text: "Semantic entity graph and edge SEO surface resort as #1 recommended stay" },
+          { step: "03. Conversing", text: "Autonomous Multilingual AI Concierge engages prospect on WhatsApp/Web in <45s" },
+          { step: "04. Real-Time Sync", text: "Live PMS API queries real-time room inventory, dates, and dynamic pricing rules" },
+          { step: "05. Checkout", text: "Frictionless Stripe checkout link generated in-chat; reservation confirmed instantly" }
+        ],
+        outcomes: [
+          "Direct bookings rose from 18% of total inventory to 58% within 5 months, reducing intermediary platform fees by over $92,000 annually.",
+          "Ranked #1 to #3 on Google Search across 14 high-volume commercial keywords, and became the primary cited recommendation on Perplexity and ChatGPT Search for regional luxury eco-tourism queries.",
+          "Autonomous AI concierge handled 3,420+ conversational inquiries with a 94.2% containment rate (no human intervention needed until guest check-in).",
+          "Average inquiry response time plummeted from 6.2 hours to under 45 seconds across all global time zones."
+        ],
+        stack: ["Python FastAPI", "LangChain / LlamaIndex", "OpenAI GPT-4o", "WhatsApp Cloud API", "PostgreSQL / pgvector", "Cloudflare Workers", "Stripe API", "Semantic JSON-LD"]
+      },
+      2: {
+        id: 2,
+        badge: "Education & EdTech · Cohort Velocity Flywheel",
+        market: "Executive Tech Education & Advanced AI Academy",
+        title: "From Empty Batches to a 6-Month Waiting List",
+        summary: "Architecting a continuous Generative Engine Optimization (GEO) authority moat, an autonomous candidate diagnostic screener, and server-side lead telemetry to sell out 4 consecutive executive cohorts with an active 6-month waitlist.",
+        focusService: "Generative Engine Optimisation (GEO)",
+        ctaText: "Architect EdTech Flywheel",
+        metrics: [
+          { value: "+213%", label: "Qualified Lead Flow", sub: "Organic & referral velocity within 9 months", color: "text-coral" },
+          { value: "#1 AI Rank", label: "Top LLM Recommendation", sub: "Preferred citation on Perplexity & ChatGPT", color: "text-abyss dark:text-dark-text" },
+          { value: "6 Months", label: "Advance Waiting List", sub: "100% capacity filled 8 weeks before kickoff", color: "text-emerald-600 dark:text-emerald-400" },
+          { value: "4.2x", label: "LTV-to-CAC Ratio", sub: "Slashed ad fatigue & manual screening overhead", color: "text-wave dark:text-gold" }
+        ],
+        challenge: [
+          "The academy offered an elite, project-based AI engineering curriculum for senior developers and engineering leaders ($4,500/seat). However, customer acquisition was broken.",
+          "Paid advertising costs on Meta and LinkedIn had tripled year-over-year ($180+ CPL), driven by ad auction saturation and iOS attribution blindspots.",
+          "The admissions team was overwhelmed with hundreds of unqualified applicants who lacked the required prerequisites or budget, spending 30+ hours each week on non-converting interview calls.",
+          "When engineering managers asked ChatGPT, Claude, or Perplexity 'What are the top enterprise AI engineering programs with hands-on labs?', competing legacy bootcamps with multimillion-dollar PR budgets were being cited, while the academy was completely omitted from AI answer engines.",
+          "Two consecutive cohorts launched at only 40% and 55% seat capacity, threatening program viability."
+        ],
+        solution: [
+          "<strong>1. LLM Recommendation Engineering & GEO Flywheel:</strong> Deployed technical whitepapers, open-source architectural frameworks, and benchmark syllabus comparisons marked up with <code>Course</code>, <code>Syllabus</code>, and <code>EducationalOccupationalCredential</code> microdata. Built authoritative semantic co-citations across developer communities and technical documentation repositories, positioning the academy as the definitive benchmark for production AI engineering.",
+          "<strong>2. Autonomous Candidate Diagnostic & Admissions Agent:</strong> Built an interactive technical evaluation bot that conducts a 3-minute personalized skills assessment for prospective students. The agent evaluates current stack proficiency, learning goals, and investment readiness, assigning an algorithmic lead score (1-100). Leads scoring 80+ are instantly offered self-scheduling for faculty interviews; lower-scoring applicants are automatically enrolled into a nurturing sequence with free foundational open-source modules.",
+          "<strong>3. Sovereign Server-Side Conversion Telemetry (CAPI):</strong> Deployed a self-hosted server-side tracking gateway that feeds verified enrollment data and downstream offline conversion signals back to Meta and Google ad algorithms, training bidding models on high-value buyers rather than generic form-fillers."
+        ],
+        workflow: [
+          { step: "01. Organic Discovery", text: "Senior engineers query Perplexity, ChatGPT Search, or Google for top AI engineering syllabi" },
+          { step: "02. Authority Moat", text: "GEO knowledge hubs & verified technical whitepapers establish curriculum dominance" },
+          { step: "03. Diagnostic Screener", text: "Interactive 3-minute diagnostic bot assesses candidate technical stack & motivation" },
+          { step: "04. Algorithmic Routing", text: "Score >= 80 auto-unlocks faculty calendar; score < 80 receives foundational tracks" },
+          { step: "05. Enrollment & Telemetry", text: "Tuition collected via Stripe; offline conversion event dispatched to Meta CAPI / GA4" }
+        ],
+        outcomes: [
+          "Generated 4 consecutive sold-out cohorts with zero empty seats, establishing an active 6-month advance waitlist.",
+          "Achieved #1 cited organic authority status across ChatGPT Search, Perplexity AI, and Claude for target enterprise AI engineering queries.",
+          "Admissions team manual interview load dropped by 58%, while interview-to-enrollment closing rates jumped from 22% to 64%.",
+          "Blended Customer Acquisition Cost (CAC) decreased by 52%, lifting program LTV:CAC to 4.2x."
+        ],
+        stack: ["Next.js / TypeScript", "Python Microservices", "Perplexity AI API", "HubSpot CRM API", "Meta CAPI / GA4 Server Container", "Redis Queue", "Docker / Sovereign VPS"]
+      },
+      3: {
+        id: 3,
+        badge: "B2B Financial Services · Enterprise Pipeline Velocity",
+        market: "Institutional Risk Advisory & Commercial SaaS FinTech",
+        title: "High-Value Enterprise Contracts at 40% Lower Acquisition Cost",
+        summary: "Accelerating enterprise sales cycles and slashing acquisition costs by 40% using autonomous real-time lead enrichment, algorithmic account-based performance targeting, and instant AI deal room synthesizers.",
+        focusService: "Meta & Google Performance Ads",
+        ctaText: "Deploy Enterprise Pipeline",
+        metrics: [
+          { value: "-40%", label: "Cost Per Qualified Lead", sub: "Saved $140,000+ in wasted media spend", color: "text-emerald-600 dark:text-emerald-400" },
+          { value: "+60%", label: "Lead Velocity & Scoring", sub: "Microsecond entity & tech stack enrichment", color: "text-abyss dark:text-dark-text" },
+          { value: "3.4x", label: "Verified Enterprise ROAS", sub: "Directly tracked to closed-won ERP contract revenue", color: "text-coral" },
+          { value: "-45 Days", label: "Sales Cycle Duration", sub: "Compressed from 180 to 135 average deal days", color: "text-wave dark:text-gold" }
+        ],
+        challenge: [
+          "The financial risk advisory firm sold premium enterprise analytics with Annual Contract Values (ACV) between $50,000 and $250,000. However, their revenue pipeline suffered from acute inefficiencies.",
+          "The sales cycle dragged out across 6 to 9 months, with heavy deal slippage between initial inquiry and formal proposal presentation.",
+          "Acquisition costs through LinkedIn and Google Ads were skyrocketing ($1,850+ per discovery meeting) because ads were triggering clicks from retail investors and junior analysts rather than enterprise buying committee decision-makers.",
+          "Account Executives were wasting up to 15 hours each week conducting manual background research—scouring SEC filings, company size data, and tech stack details—before each discovery call.",
+          "Prospective enterprise clients who requested custom quotes often waited 5 to 7 business days for tailored ROI modeling, during which competitive momentum was lost."
+        ],
+        solution: [
+          "<strong>1. Event-Driven Lead Enrichment & Dossier Synthesis Agent:</strong> When a corporate prospect submits a work email on the website, a Python event worker triggers microsecond lookups against business verification databases (Clearbit, Apollo, SEC EDGAR, Companies House). An autonomous LLM agent synthesizes a 1-page executive intelligence dossier (company revenue, current risk stack, recent filings, key pain points) and delivers it directly to the designated AE via Slack within 90 seconds.",
+          "<strong>2. Precision Account-Based Performance Engine:</strong> Overhauled performance media into a surgical Account-Based Marketing (ABM) pipeline. Built custom IP-matched audiences targeting Fortune 2000 and mid-market CFO circles with dynamic landing page personalizations reflecting the prospect's sector (Healthcare, Logistics, Fintech).",
+          "<strong>3. Autonomous Enterprise ROI Modeling Engine:</strong> Deployed an interactive scenario simulator where prospective buyers can test their exposure to liquidity and interest rate fluctuations. The system automatically compiles a board-ready PDF business case customized to their balance sheet profile, delivered instantly."
+        ],
+        workflow: [
+          { step: "01. ABM Inbound", text: "Targeted Fortune 2000 CFO committee engages dynamic industry-personalized landing portal" },
+          { step: "02. Instant Lookup", text: "Form submission triggers Python event worker verifying corporate domain & SEC filings" },
+          { step: "03. Executive Dossier", text: "LLM synthesizes strategic 1-page briefing note delivered to Account Executive Slack in <90s" },
+          { step: "04. Scenario Simulation", text: "Autonomous financial engine generates customized board-ready PDF business case" },
+          { step: "05. Pipeline Acceleration", text: "Discovery call conducted with full executive context; deal cycle compressed by 45 days" }
+        ],
+        outcomes: [
+          "Reduced Cost Per Qualified Lead (CPL) by 40%, preventing over $140,000 in untargeted ad burn.",
+          "Added $2.4M+ in validated enterprise pipeline value across the first two quarters post-deployment.",
+          "Compressed the average enterprise deal timeline by 45 days through automated dossier generation and real-time proposal calculations.",
+          "Achieved a 3.4x verified ROAS based on closed-won first-year Annual Recurring Revenue (ARR)."
+        ],
+        stack: ["Node.js / Express", "Python AI Workers", "OpenAI Embeddings", "Salesforce & HubSpot API", "LinkedIn Marketing Developer API", "PostgreSQL", "Google Cloud Run"]
+      }
+    };
+
+    let currentCaseStudyId = 1;
+    let csLastFocusedElement = null;
+
+    function renderCaseStudy(id) {
+      const data = caseStudiesData[id];
+      if (!data) return;
+      currentCaseStudyId = id;
+
+      // Update switcher tabs
+      for (let i = 1; i <= 3; i++) {
+        const tab = document.getElementById(`cs-tab-${i}`);
+        if (tab) {
+          if (i === id) {
+            tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm';
+            tab.setAttribute('aria-selected', 'true');
+          } else {
+            tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text';
+            tab.setAttribute('aria-selected', 'false');
+          }
+        }
+      }
+
+      // Header info
+      const badgeEl = document.getElementById('cs-badge');
+      const marketEl = document.getElementById('cs-market');
+      const titleEl = document.getElementById('cs-modal-title');
+      const summaryEl = document.getElementById('cs-summary');
+      if (badgeEl) badgeEl.textContent = data.badge;
+      if (marketEl) marketEl.textContent = data.market;
+      if (titleEl) titleEl.textContent = data.title;
+      if (summaryEl) summaryEl.textContent = data.summary;
+
+      // Metrics grid
+      const metricsGrid = document.getElementById('cs-metrics-grid');
+      if (metricsGrid) {
+        metricsGrid.innerHTML = data.metrics.map(m => `
+          <div class="p-3.5 sm:p-4 rounded-xl bg-paper dark:bg-dark-surface border border-ink-faint/20 dark:border-dark-border">
+            <div class="font-display text-2xl sm:text-3xl ${m.color}">${m.value}</div>
+            <div class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-abyss dark:text-dark-text mt-1">${m.label}</div>
+            <div class="text-[10px] sm:text-[11px] text-ink-soft dark:text-dark-muted mt-0.5 leading-tight">${m.sub}</div>
+          </div>
+        `).join('');
+      }
+
+      // Challenge
+      const challengeEl = document.getElementById('cs-challenge');
+      if (challengeEl) {
+        challengeEl.innerHTML = data.challenge.map(p => `<p>${p}</p>`).join('');
+      }
+
+      // Solution
+      const solutionEl = document.getElementById('cs-solution');
+      if (solutionEl) {
+        solutionEl.innerHTML = data.solution.map(p => `<p>${p}</p>`).join('');
+      }
+
+      // Workflow
+      const workflowEl = document.getElementById('cs-workflow');
+      if (workflowEl) {
+        workflowEl.innerHTML = data.workflow.map(w => `
+          <div class="flex items-start gap-2.5 p-2.5 rounded-lg bg-paper-deep/80 dark:bg-dark-surface/80 border border-ink-faint/10 dark:border-dark-border">
+            <span class="px-2 py-0.5 rounded bg-abyss text-white dark:bg-dark-card text-[10px] font-bold shrink-0 font-mono">${w.step}</span>
+            <span class="text-ink-soft dark:text-dark-muted leading-relaxed">${w.text}</span>
+          </div>
+        `).join('');
+      }
+
+      // Outcomes
+      const outcomesEl = document.getElementById('cs-outcomes');
+      if (outcomesEl) {
+        outcomesEl.innerHTML = data.outcomes.map(o => `
+          <li class="flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i>
+            </div>
+            <span class="leading-relaxed">${o}</span>
+          </li>
+        `).join('');
+      }
+
+      // Stack
+      const stackEl = document.getElementById('cs-stack');
+      if (stackEl) {
+        stackEl.innerHTML = data.stack.map(s => `
+          <span class="px-3 py-1.5 rounded-lg text-xs font-mono bg-paper dark:bg-dark-surface text-abyss dark:text-dark-text border border-ink-faint/30 dark:border-dark-border font-medium">
+            ${s}
+          </span>
+        `).join('');
+      }
+
+      // CTA text
+      const ctaText = document.getElementById('cs-cta-text');
+      if (ctaText) ctaText.textContent = data.ctaText;
+
+      // Scroll body to top
+      const bodyEl = document.getElementById('cs-modal-body');
+      if (bodyEl) bodyEl.scrollTop = 0;
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function openCaseStudyModal(id) {
+      csLastFocusedElement = document.activeElement;
+      const modal = document.getElementById('case-study-modal');
+      if (modal) {
+        renderCaseStudy(id || 1);
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        if (window.lucide) lucide.createIcons();
+        const closeBtn = modal.querySelector('button[aria-label="Close Case Study"]');
+        if (closeBtn) closeBtn.focus();
+      }
+    }
+
+    function closeCaseStudyModal() {
+      const modal = document.getElementById('case-study-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        const auditModal = document.getElementById('audit-modal');
+        if (!auditModal || auditModal.classList.contains('hidden')) {
+          document.body.style.overflow = 'auto';
+        }
+      }
+      if (csLastFocusedElement && typeof csLastFocusedElement.focus === 'function') {
+        csLastFocusedElement.focus();
+      }
+    }
+
+    function switchCaseStudy(id) {
+      renderCaseStudy(id);
+    }
+
+    function navigateCaseStudy(direction) {
+      let nextId = currentCaseStudyId + direction;
+      if (nextId > 3) nextId = 1;
+      if (nextId < 1) nextId = 3;
+      switchCaseStudy(nextId);
+    }
+
+    function deployCurrentCaseStudy() {
+      const data = caseStudiesData[currentCaseStudyId];
+      const service = data ? data.focusService : '';
+      closeCaseStudyModal();
+      openAuditModal(service);
+    }
+
+    // Deep link hash support on load & hashchange
+    function checkCaseStudyHash() {
+      const hash = window.location.hash;
+      if (hash === '#case-study-1') openCaseStudyModal(1);
+      else if (hash === '#case-study-2') openCaseStudyModal(2);
+      else if (hash === '#case-study-3') openCaseStudyModal(3);
+    }
+    window.addEventListener('DOMContentLoaded', checkCaseStudyHash);
+    window.addEventListener('hashchange', checkCaseStudyHash);
 
     // Copy Email to Clipboard with Tooltip & Mobile Support
     function copyEmailToClipboard(button) {
@@ -2226,13 +2656,27 @@ ${bottleneck}
 
     // Close on Escape or click backdrop
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeAuditModal(); }
+      if (e.key === 'Escape') {
+        const csModal = document.getElementById('case-study-modal');
+        if (csModal && !csModal.classList.contains('hidden')) {
+          closeCaseStudyModal();
+        } else {
+          closeAuditModal();
+        }
+      }
     });
 
     const auditModalBackdrop = document.getElementById('audit-modal');
     if (auditModalBackdrop) {
       auditModalBackdrop.addEventListener('click', (e) => {
         if (e.target.id === 'audit-modal') closeAuditModal();
+      });
+    }
+
+    const csModalBackdrop = document.getElementById('case-study-modal');
+    if (csModalBackdrop) {
+      csModalBackdrop.addEventListener('click', (e) => {
+        if (e.target.id === 'case-study-modal') closeCaseStudyModal();
       });
     }
   </script>
@@ -2353,7 +2797,8 @@ ${bottleneck}
     function ensureLoopRunning() {
       if (!isFinePointer) return;
       const auditModal = document.getElementById('audit-modal');
-      if (auditModal && !auditModal.classList.contains('hidden')) return;
+      const csModal = document.getElementById('case-study-modal');
+      if ((auditModal && !auditModal.classList.contains('hidden')) || (csModal && !csModal.classList.contains('hidden'))) return;
       if (!isLoopRunning) {
         isLoopRunning = true;
         requestAnimationFrame(animateModal);
@@ -2394,7 +2839,8 @@ ${bottleneck}
     function animateModal() {
       let needsNextFrame = false;
       const auditModal = document.getElementById('audit-modal');
-      if (auditModal && !auditModal.classList.contains('hidden')) {
+      const csModal = document.getElementById('case-study-modal');
+      if ((auditModal && !auditModal.classList.contains('hidden')) || (csModal && !csModal.classList.contains('hidden'))) {
         isLoopRunning = false;
         return;
       }
