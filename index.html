@@ -52,7 +52,7 @@
             paper: '#ffffff',
             'paper-deep': '#f2f5fa',
             ink: '#1e3a6e',
-            'ink-soft': '#5b7cb8',
+            'ink-soft': '#4769a5',
             'ink-faint': '#a9bddd',
             wave: '#3d6bb5',
             gold: '#e9b85c',
@@ -462,7 +462,7 @@
       <!-- Header Actions: Theme Toggle & CTA Button -->
       <div class="flex items-center gap-3">
         <!-- Theme Toggle Button -->
-        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 rounded-full flex items-center justify-center text-ink dark:text-dark-text bg-paper-deep/80 dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border hover:bg-ink-faint/20 dark:hover:bg-dark-surface transition-all cursor-pointer">
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-11 h-11 rounded-full flex items-center justify-center text-ink dark:text-dark-text bg-paper-deep/80 dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border hover:bg-ink-faint/20 dark:hover:bg-dark-surface transition-all cursor-pointer">
           <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-4 h-4"></i>
           <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4 hidden"></i>
         </button>
@@ -473,7 +473,7 @@
         </a>
 
         <!-- Mobile Menu Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-ink dark:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-card focus:outline-none" aria-label="Toggle navigation menu">
+        <button onclick="toggleMobileMenu()" class="md:hidden min-w-[44px] min-h-[44px] p-2.5 rounded-lg flex items-center justify-center text-ink dark:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-card focus:outline-none" aria-label="Toggle navigation menu">
           <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
         </button>
       </div>
@@ -658,11 +658,17 @@
 
             <!-- Full-Face High-Resolution Portrait Display -->
             <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-5 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300">
-              <img 
-                src="assets/jubayer.jpg" 
-                alt="Jubayer Ahamed - AI Automation &amp; Software Solutions Specialist" 
-                class="w-full h-full object-cover object-top"
-              >
+              <picture class="w-full h-full block">
+                <source srcset="assets/jubayer.webp" type="image/webp">
+                <img 
+                  src="assets/jubayer.jpg" 
+                  alt="Jubayer Ahamed - AI Automation &amp; Software Solutions Specialist" 
+                  width="1024" 
+                  height="1024" 
+                  fetchpriority="high"
+                  class="w-full h-full object-cover object-top"
+                >
+              </picture>
             </div>
 
             <!-- Founder Bio Details -->
@@ -965,10 +971,10 @@
 
       <!-- Filter Tabs -->
       <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-ink-faint/20 dark:border-slate-800">
-        <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-abyss text-white dark:bg-white dark:text-slate-950 shadow-sm" data-filter="all">All Systems (14)</button>
-        <button onclick="filterProjects('ai')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="ai">AI Agents & Conversational (5)</button>
-        <button onclick="filterProjects('fullstack')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="fullstack">Full-Stack SaaS & Web (4)</button>
-        <button onclick="filterProjects('automation')" class="project-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="automation">Automation & Tools (5)</button>
+        <button onclick="filterProjects('all')" class="project-filter-btn active min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-abyss text-white dark:bg-white dark:text-slate-950 shadow-sm" data-filter="all">All Systems (14)</button>
+        <button onclick="filterProjects('ai')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="ai">AI Agents & Conversational (5)</button>
+        <button onclick="filterProjects('fullstack')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="fullstack">Full-Stack SaaS & Web (4)</button>
+        <button onclick="filterProjects('automation')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="automation">Automation & Tools (5)</button>
       </div>
 
       <!-- Projects Grid -->
@@ -979,7 +985,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">AI Conversational</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">01 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">01 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">B2B AI Sales Engine</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1005,7 +1011,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PyPI Published</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">02 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">02 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Social Humanizer</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1034,7 +1040,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">03 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">03 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Freshy Food Storefront</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1063,7 +1069,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Agent Swarm</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">04 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">04 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Multi-Agent Orchestrator</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1089,7 +1095,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Enterprise ERP</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">05 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">05 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Madrasah Management SaaS</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1115,7 +1121,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">06 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">06 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Gemma 2 Local AI Workspace</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1144,7 +1150,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">07 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">07 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Jubayer Ahamed Portfolio Website</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1173,7 +1179,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300">Mobile AI</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">08 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">08 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">PureView AI Android</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1199,7 +1205,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Social Automation</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">09 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">09 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Facebook Auto-Poster</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1225,7 +1231,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-600/10 text-blue-700 dark:bg-blue-600/20 dark:text-blue-300">B2B Outreach</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">10 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">10 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">LinkedIn B2B Engine</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1251,7 +1257,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PWA Suite</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">11 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">11 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Smart Utility PWA Trio</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1277,7 +1283,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Autonomous Lab</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">12 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">12 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">OpenClaw & Hermes Agent Lab</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1303,7 +1309,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">System Automation</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">13 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">13 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">Personal PC Agent (Ahmad)</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1329,7 +1335,7 @@
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/20 text-gold dark:bg-gold/30">SDD Core</span>
-              <span class="text-xs font-mono text-ink-soft dark:text-slate-500">14 / 14</span>
+              <span class="text-xs font-mono text-ink-soft dark:text-slate-400">14 / 14</span>
             </div>
             <h3 class="project-card-title font-serif text-2xl text-abyss dark:text-white font-bold transition-colors mb-2">GitHub Spec-Kit Suite</h3>
             <p class="text-xs text-ink-soft dark:text-slate-400 leading-relaxed mb-6">
@@ -1505,7 +1511,10 @@
           <!-- Founder Intro Box -->
           <div class="bg-paper dark:bg-dark-card rounded-2xl p-6 border border-ink-faint/30 dark:border-dark-border shadow-sm">
             <div class="flex items-center gap-4 mb-4">
-              <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" class="w-16 h-16 rounded-2xl object-cover border-2 border-coral shadow-md">
+              <picture class="shrink-0 w-16 h-16 block">
+                <source srcset="assets/jubayer.webp" type="image/webp">
+                <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" width="64" height="64" loading="lazy" class="w-16 h-16 rounded-2xl object-cover border-2 border-coral shadow-md">
+              </picture>
               <div>
                 <h3 class="font-serif text-xl font-bold text-abyss dark:text-dark-text">Jubayer Ahamed</h3>
                 <p class="text-xs font-semibold text-coral uppercase tracking-wider">AI Architect &middot; Web Developer &middot; Mentor</p>
@@ -1836,14 +1845,14 @@
         <!-- Controls: Prev / Next + Close Button -->
         <div class="flex items-center gap-2 shrink-0">
           <div class="hidden sm:flex items-center gap-1 border-r border-ink-faint/20 dark:border-dark-border pr-2">
-            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study (Left Arrow)" title="Previous Case Study (←)" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study (Left Arrow)" title="Previous Case Study (←)" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-left" class="w-4 h-4"></i>
             </button>
-            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study (Right Arrow)" title="Next Case Study (→)" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study (Right Arrow)" title="Next Case Study (→)" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </button>
           </div>
-          <button type="button" onclick="closeCaseStudyModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
+          <button type="button" onclick="closeCaseStudyModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -1949,7 +1958,7 @@
     <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative modal-dialog-enter my-auto">
       
       <!-- Close Button -->
-      <button type="button" onclick="closeAuditModal()" class="absolute top-6 right-6 text-ink-soft hover:text-coral transition-colors cursor-pointer" aria-label="Close modal (Escape)">
+      <button type="button" onclick="closeAuditModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6" aria-label="Close modal (Escape)" title="Close Audit Modal (Esc)">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
@@ -2030,7 +2039,7 @@
 
         <!-- Close Button -->
         <div class="flex items-center gap-2 shrink-0">
-          <button type="button" onclick="closeLegalModal()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
+          <button type="button" onclick="closeLegalModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -2064,6 +2073,35 @@
     </div>
   </div>
 
+  <!-- Floating Hover Preview Modal (Dennis Snellenberg Cursor Physics + Dynamic Spectrum Glow) -->
+  <div id="hover-preview-modal" class="pointer-events-none fixed z-50 w-80 rounded-2xl bg-white/95 dark:bg-[#0c1527]/95 backdrop-blur-xl p-4 shadow-2xl border border-slate-200/80 dark:border-slate-800 opacity-0 scale-90 transition-[opacity,transform,border-color,box-shadow,background] duration-200 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block" style="box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.45);">
+    <!-- Dynamic Glowing Top Accent Line -->
+    <div id="preview-accent-line" class="h-1 w-full rounded-full mb-3 transition-all duration-300" style="background: linear-gradient(90deg, #0284c7, transparent);"></div>
+    
+    <div class="flex items-center justify-between mb-2">
+      <span id="preview-badge" class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border transition-all duration-300 flex items-center gap-1.5" style="background-color: rgba(2, 132, 199, 0.12); color: #0284c7; border-color: rgba(2, 132, 199, 0.3);">
+        <span id="preview-indicator-dot" class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: #0284c7;"></span>
+        <span id="preview-badge-text">AI Conversational</span>
+      </span>
+      <span id="preview-tag" class="text-[10px] font-mono text-ink-soft dark:text-slate-400">Python · Gemini 2.0 Flash</span>
+    </div>
+    
+    <h4 id="preview-title" class="font-serif text-base font-bold text-abyss dark:text-white leading-tight mb-1">B2B AI Sales Engine</h4>
+    <p id="preview-desc" class="text-[11px] text-ink-soft dark:text-slate-300 leading-snug">24/7 conversational sales brain & smartphone simulator.</p>
+    
+    <!-- Action Prompt Footer -->
+    <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-ink-faint/15 dark:border-slate-800 text-[10px] text-ink-soft dark:text-slate-400 font-medium">
+      <span class="inline-flex items-center gap-1.5">
+        <svg id="preview-click-icon" class="w-3.5 h-3.5 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
+        <span>Click card to open</span>
+      </span>
+      <span id="preview-action" class="font-semibold inline-flex items-center gap-1 transition-colors duration-300" style="color: #0284c7;">
+        <span>GitHub Repo</span>
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </span>
+    </div>
+  </div>
+
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
     
@@ -2077,6 +2115,7 @@
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('menu-icon');
       const isClosed = menu.classList.toggle('hidden');
+      document.body.style.overflow = isClosed ? 'auto' : 'hidden';
       if (icon) {
         icon.setAttribute('data-lucide', isClosed ? 'menu' : 'x');
         if (window.lucide) lucide.createIcons();
@@ -3247,40 +3286,8 @@ ${bottleneck}
         if (e.target.id === 'legal-modal') closeLegalModal();
       });
     }
-  </script>
 
-
-  <!-- Floating Hover Preview Modal (Dennis Snellenberg Cursor Physics + Dynamic Spectrum Glow) -->
-  <div id="hover-preview-modal" class="pointer-events-none fixed z-50 w-80 rounded-2xl bg-white/95 dark:bg-[#0c1527]/95 backdrop-blur-xl p-4 shadow-2xl border border-slate-200/80 dark:border-slate-800 opacity-0 scale-90 transition-[opacity,transform,border-color,box-shadow,background] duration-200 ease-out -translate-x-1/2 -translate-y-1/2 hidden md:block" style="box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.45);">
-    <!-- Dynamic Glowing Top Accent Line -->
-    <div id="preview-accent-line" class="h-1 w-full rounded-full mb-3 transition-all duration-300" style="background: linear-gradient(90deg, #0284c7, transparent);"></div>
-    
-    <div class="flex items-center justify-between mb-2">
-      <span id="preview-badge" class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border transition-all duration-300 flex items-center gap-1.5" style="background-color: rgba(2, 132, 199, 0.12); color: #0284c7; border-color: rgba(2, 132, 199, 0.3);">
-        <span id="preview-indicator-dot" class="w-1.5 h-1.5 rounded-full animate-pulse" style="background-color: #0284c7;"></span>
-        <span id="preview-badge-text">AI Conversational</span>
-      </span>
-      <span id="preview-tag" class="text-[10px] font-mono text-ink-soft dark:text-slate-400">Python · Gemini 2.0 Flash</span>
-    </div>
-    
-    <h4 id="preview-title" class="font-serif text-base font-bold text-abyss dark:text-white leading-tight mb-1">B2B AI Sales Engine</h4>
-    <p id="preview-desc" class="text-[11px] text-ink-soft dark:text-slate-300 leading-snug">24/7 conversational sales brain & smartphone simulator.</p>
-    
-    <!-- Action Prompt Footer -->
-    <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-ink-faint/15 dark:border-slate-800 text-[10px] text-ink-soft dark:text-slate-400 font-medium">
-      <span class="inline-flex items-center gap-1.5">
-        <svg id="preview-click-icon" class="w-3.5 h-3.5 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
-        <span>Click card to open</span>
-      </span>
-      <span id="preview-action" class="font-semibold inline-flex items-center gap-1 transition-colors duration-300" style="color: #0284c7;">
-        <span>GitHub Repo</span>
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-      </span>
-    </div>
-  </div>
-
-  <!-- SCRIPT ENGINE: Theme Toggle, Snellenberg Hover Preview, Project Filtering -->
-  <script>
+    // ==================== THEME TOGGLE, SNELLENBERG HOVER PREVIEW, PROJECT FILTERING ====================
     // 1. Light/Dark Mode Switcher Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -3556,6 +3563,7 @@ ${bottleneck}
 
       // Mousemove on card for local spotlight tracking
       card.addEventListener('mousemove', (e) => {
+        if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--mouse-card-x', `${e.clientX - rect.left}px`);
         card.style.setProperty('--mouse-card-y', `${e.clientY - rect.top}px`);
@@ -3712,6 +3720,7 @@ ${bottleneck}
       card.style.setProperty('--card-rgb', rgb);
 
       card.addEventListener('mousemove', (e) => {
+        if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--mouse-card-x', `${e.clientX - rect.left}px`);
         card.style.setProperty('--mouse-card-y', `${e.clientY - rect.top}px`);
@@ -3800,6 +3809,7 @@ ${bottleneck}
 
     window.setActiveNav = function(targetId, isUserClick) {
       if (!targetId) return;
+      if (activeNavTarget === targetId && !isUserClick) return;
 
       if (isUserClick) {
         isManualNavigating = true;

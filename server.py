@@ -14,6 +14,9 @@ import socketserver
 import os
 import urllib.parse
 import sys
+import mimetypes
+
+mimetypes.add_type('image/webp', '.webp')
 
 # Ensure UTF-8 output on Windows
 if sys.platform == 'win32':
