@@ -201,6 +201,45 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertEqual(len(val.errors), 0, f"HTML nesting errors: {val.errors}")
         self.assertEqual(len(val.stack), 0, f"Unclosed HTML tags: {val.stack}")
 
+    def test_audit_modal_form_configuration(self):
+        """6.1 Audit modal form must have FormSubmit action, method, and hidden configuration fields."""
+        form_idx = self.html.find('id="audit-modal-form"')
+        self.assertNotEqual(form_idx, -1, "audit-modal-form must be present")
+        form_snippet = self.html[form_idx:form_idx+1500]
+        
+        self.assertIn('action="https://formsubmit.co/jubayer.ahamed.dev@gmail.com"', form_snippet)
+        self.assertIn('method="POST"', form_snippet)
+        self.assertIn('onsubmit="handleAuditSubmit(event)"', form_snippet)
+        self.assertIn('name="_subject"', form_snippet)
+        self.assertIn('name="_template" value="table"', form_snippet)
+        self.assertIn('name="_captcha" value="false"', form_snippet)
+        self.assertIn('name="_autoresponse"', form_snippet)
+        self.assertIn('name="_replyto" id="audit-replyto"', form_snippet)
+
+    def test_contact_solutions_form_configuration(self):
+        """6.2 Contact solutions brief form must have FormSubmit action, method, and hidden configuration fields."""
+        form_idx = self.html.find('id="contact-solutions-form"')
+        self.assertNotEqual(form_idx, -1, "contact-solutions-form must be present")
+        form_snippet = self.html[form_idx:form_idx+1500]
+        
+        self.assertIn('action="https://formsubmit.co/jubayer.ahamed.dev@gmail.com"', form_snippet)
+        self.assertIn('method="POST"', form_snippet)
+        self.assertIn('onsubmit="handleContactSolutionsSubmit(event)"', form_snippet)
+        self.assertIn('name="_subject"', form_snippet)
+        self.assertIn('name="_template" value="table"', form_snippet)
+        self.assertIn('name="_captcha" value="false"', form_snippet)
+        self.assertIn('name="_autoresponse"', form_snippet)
+        self.assertIn('name="_replyto" id="contact-replyto"', form_snippet)
+
+    def test_javascript_email_dispatch_routing(self):
+        """6.3 JavaScript handlers must dispatch to jubayer.ahamed.dev@gmail.com with fallback channels."""
+        self.assertIn("https://formsubmit.co/ajax/jubayer.ahamed.dev@gmail.com", self.html)
+        self.assertIn("mailto:jubayer.ahamed.dev@gmail.com", self.html)
+        self.assertIn("https://wa.me/8801610594042", self.html)
+        # Ensure replyto mapping logic exists
+        self.assertIn("contactReplyToEl", self.html)
+        self.assertIn("auditReplyToEl", self.html)
+
 
 if __name__ == '__main__':
     unittest.main()

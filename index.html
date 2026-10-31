@@ -1629,7 +1629,13 @@
             </div>
 
             <!-- Form -->
-            <form id="contact-solutions-form" onsubmit="handleContactSolutionsSubmit(event)" class="space-y-5">
+            <form id="contact-solutions-form" action="https://formsubmit.co/jubayer.ahamed.dev@gmail.com" method="POST" onsubmit="handleContactSolutionsSubmit(event)" class="space-y-5">
+              <!-- FormSubmit Anti-Spam & Configuration Directives -->
+              <input type="hidden" name="_subject" value="⚡ Urgent Business Brief - Jubayer Portfolio">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Jubayer Ahamed. I have received your business brief and will review your technical requirements within 24 hours.">
+              <input type="hidden" name="_replyto" id="contact-replyto" value="">
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -1970,7 +1976,13 @@
         <p class="text-sm text-ink-soft dark:text-dark-muted mt-1">I’ll analyze your website, search authority, and AI automation opportunities.</p>
       </div>
 
-      <form id="audit-modal-form" onsubmit="handleAuditSubmit(event)" class="space-y-4">
+      <form id="audit-modal-form" action="https://formsubmit.co/jubayer.ahamed.dev@gmail.com" method="POST" onsubmit="handleAuditSubmit(event)" class="space-y-4">
+        <!-- FormSubmit Anti-Spam & Configuration Directives -->
+        <input type="hidden" name="_subject" value="⚡ Free Growth Audit Request - Jubayer Portfolio">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Thank you for requesting an architectural growth audit from Jubayer Ahamed. I am reviewing your tech stack and growth focus, and will send your custom blueprint within 24 hours.">
+        <input type="hidden" name="_replyto" id="audit-replyto" value="">
         <div>
           <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name <span class="text-coral">*</span></label>
           <input type="text" id="audit-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
@@ -2947,19 +2959,23 @@
       const form = e.target;
       const submitBtn = document.getElementById('contact-submit-btn');
       const btnText = document.getElementById('contact-btn-text');
-      const originalText = btnText ? btnText.innerHTML : 'Submit Brief';
+      const originalText = btnText ? btnText.innerHTML : 'Audit Your Business &amp; Dispatch Brief &rarr;';
 
-      const name = form.name ? form.name.value.trim() : '';
-      const contact = form.contact ? form.contact.value.trim() : '';
-      const company_stack = form.company_stack ? form.company_stack.value.trim() : '';
-      const service_need = form.service_need ? form.service_need.value : 'General Business Architecture';
-      const bottleneck = form.bottleneck ? form.bottleneck.value.trim() : '';
+      const name = (form.querySelector('#contact-name') || form.querySelector('[name="name"]'))?.value.trim() || '';
+      const contact = (form.querySelector('#contact-channel') || form.querySelector('[name="contact"]'))?.value.trim() || '';
+      const company_stack = (form.querySelector('#contact-company') || form.querySelector('[name="company_stack"]'))?.value.trim() || '';
+      const service_need = (form.querySelector('#contact-service') || form.querySelector('[name="service_need"]'))?.value || 'General Business Architecture';
+      const bottleneck = (form.querySelector('#contact-bottleneck') || form.querySelector('[name="bottleneck"]'))?.value.trim() || '';
 
       if (submitBtn) submitBtn.disabled = true;
       if (btnText) {
         btnText.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
         if (window.lucide) lucide.createIcons();
       }
+
+      const isEmail = contact.includes('@');
+      const contactReplyToEl = document.getElementById('contact-replyto');
+      if (contactReplyToEl && isEmail) contactReplyToEl.value = contact;
 
       const payload = {
         name: name,
@@ -2969,8 +2985,13 @@
         bottleneck_scope: bottleneck,
         _subject: `⚡ Urgent Business Brief: ${name} (${service_need})`,
         _template: 'table',
-        _captcha: 'false'
+        _captcha: 'false',
+        _autoresponse: 'Thank you for reaching out to Jubayer Ahamed. I have received your business brief and will review your technical requirements within 24 hours.'
       };
+      if (isEmail) {
+        payload.email = contact;
+        payload._replyto = contact;
+      }
 
       // Construct mailto & WhatsApp links for immediate delivery assurance
       const mailSubject = encodeURIComponent(`⚡ Urgent Business Brief: ${name} (${service_need})`);
@@ -3088,25 +3109,31 @@ ${bottleneck}
 
       const form = e.target;
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Request Free Audit Blueprint &rarr;';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending Audit Request...';
+        submitBtn.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
+        if (window.lucide) lucide.createIcons();
       }
 
-      const name = (form.querySelector('[name="name"]') || form.querySelectorAll('input')[0])?.value.trim() || 'Client';
-      const email = (form.querySelector('[name="email"]') || form.querySelectorAll('input')[1])?.value.trim() || '';
-      const stack = (form.querySelector('[name="stack"]') || form.querySelectorAll('input')[2])?.value.trim() || 'Not specified';
-      const focus = (form.querySelector('[name="focus"]') || form.querySelector('select'))?.value || 'Autonomous Multi-Agent Systems';
+      const name = (form.querySelector('#audit-name') || form.querySelector('[name="name"]'))?.value.trim() || 'Client';
+      const email = (form.querySelector('#audit-email') || form.querySelector('[name="email"]'))?.value.trim() || '';
+      const stack = (form.querySelector('#audit-stack') || form.querySelector('[name="stack"]'))?.value.trim() || 'Not specified';
+      const focus = (form.querySelector('#audit-focus') || form.querySelector('[name="focus"]'))?.value || 'Autonomous Multi-Agent Systems';
+
+      const auditReplyToEl = document.getElementById('audit-replyto');
+      if (auditReplyToEl && email) auditReplyToEl.value = email;
 
       const payload = {
         name: name,
         email: email,
+        _replyto: email,
         website_or_stack: stack,
         primary_growth_focus: focus,
         _subject: `⚡ Free Growth Audit Request from ${name}`,
         _template: 'table',
-        _captcha: 'false'
+        _captcha: 'false',
+        _autoresponse: 'Thank you for requesting an architectural growth audit from Jubayer Ahamed. I am reviewing your tech stack and growth focus, and will send your custom blueprint within 24 hours.'
       };
 
       const mailSubject = encodeURIComponent(`⚡ Free Growth Audit Request from ${name}`);
@@ -3145,10 +3172,12 @@ ${bottleneck}
           const data = await response.json().catch(() => ({}));
           if (data.success === 'true' || data.success === true) {
             isDelivered = true;
+          } else {
+            console.warn('Audit FormSubmit non-success response:', data.message);
           }
         }
       } catch (err) {
-        console.warn('Modal form dispatch warning:', err);
+        console.warn('Modal form dispatch warning (adblock or offline):', err);
       }
 
       form.classList.add('hidden');
@@ -3158,23 +3187,23 @@ ${bottleneck}
       const actions = document.getElementById('modal-success-actions');
 
       if (isDelivered) {
-        if (title) title.textContent = 'Audit Request Received!';
-        if (desc) desc.textContent = 'I will personally review your domain and email your architectural blueprint within 24 hours.';
+        if (title) title.textContent = 'Audit Request Received Directly!';
+        if (desc) desc.innerHTML = 'Your audit request has landed directly in Jubayer Ahamed\'s inbox (<span class="font-mono text-coral">jubayer.ahamed.dev@gmail.com</span>). I will personally review your domain and email your blueprint within 24 hours.';
         if (actions) actions.innerHTML = `
           <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>Ping on WhatsApp</span>
+            <span>Need Faster Turnaround? WhatsApp Direct</span>
           </a>
         `;
       } else {
         if (title) title.textContent = 'Audit Request Ready to Send!';
-        if (desc) desc.textContent = "Click below to dispatch directly to Jubayer's inbox or message on WhatsApp:";
+        if (desc) desc.innerHTML = "To guarantee 100% direct delivery to Jubayer's inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
         if (actions) actions.innerHTML = `
-          <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-coral text-white text-xs font-semibold hover:bg-white hover:text-abyss transition-all">
+          <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-coral text-white text-xs font-semibold hover:bg-white hover:text-abyss transition-all shadow-md">
             <i data-lucide="mail" class="w-4 h-4"></i>
             <span>Send Email Direct</span>
           </a>
-          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all shadow-md">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
             <span>WhatsApp Direct</span>
           </a>
@@ -3182,6 +3211,10 @@ ${bottleneck}
       }
 
       if (success) success.classList.remove('hidden');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
       if (window.lucide) lucide.createIcons();
 
       if (isDelivered) {
