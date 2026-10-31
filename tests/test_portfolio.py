@@ -215,6 +215,9 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('name="_captcha" value="false"', form_snippet)
         self.assertIn('name="_autoresponse"', form_snippet)
         self.assertIn('name="_replyto" id="audit-replyto"', form_snippet)
+        self.assertIn('name="_next"', form_snippet)
+        self.assertIn('name="_honey"', form_snippet)
+        self.assertIn('id="modal-success-icon"', self.html)
 
     def test_contact_solutions_form_configuration(self):
         """6.2 Contact solutions brief form must have FormSubmit action, method, and hidden configuration fields."""
@@ -230,6 +233,8 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('name="_captcha" value="false"', form_snippet)
         self.assertIn('name="_autoresponse"', form_snippet)
         self.assertIn('name="_replyto" id="contact-replyto"', form_snippet)
+        self.assertIn('name="_next"', form_snippet)
+        self.assertIn('name="_honey"', form_snippet)
 
     def test_javascript_email_dispatch_routing(self):
         """6.3 JavaScript handlers must dispatch to jubayer.ahamed.dev@gmail.com with fallback channels."""
@@ -239,6 +244,7 @@ class TestPortfolioAudit(unittest.TestCase):
         # Ensure replyto mapping logic exists
         self.assertIn("contactReplyToEl", self.html)
         self.assertIn("auditReplyToEl", self.html)
+        self.assertIn("Dispatching to Jubayer...", self.html)
 
 
 if __name__ == '__main__':

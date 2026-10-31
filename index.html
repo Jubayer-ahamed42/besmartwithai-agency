@@ -1636,6 +1636,8 @@
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Jubayer Ahamed. I have received your business brief and will review your technical requirements within 24 hours.">
               <input type="hidden" name="_replyto" id="contact-replyto" value="">
+              <input type="hidden" name="_next" value="https://jubayer-ahamed.vercel.app/#contact">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -1983,6 +1985,8 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_autoresponse" value="Thank you for requesting an architectural growth audit from Jubayer Ahamed. I am reviewing your tech stack and growth focus, and will send your custom blueprint within 24 hours.">
         <input type="hidden" name="_replyto" id="audit-replyto" value="">
+        <input type="hidden" name="_next" value="https://jubayer-ahamed.vercel.app/?audit_submitted=true">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div>
           <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name <span class="text-coral">*</span></label>
           <input type="text" id="audit-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
@@ -2019,7 +2023,7 @@
       </form>
 
       <div id="modal-success" class="hidden text-center py-6">
-        <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3">
+        <div id="modal-success-icon" class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3">
           <i data-lucide="check-circle" class="w-6 h-6"></i>
         </div>
         <h4 id="modal-success-title" class="font-serif text-xl text-abyss dark:text-dark-text font-semibold">Audit Request Received!</h4>
@@ -2136,7 +2140,6 @@
 
     // Audit Modal Controls
     let auditResetTimeout = null;
-    let auditMailtoTimeout = null;
     let auditLastFocusedElement = null;
 
     function openAuditModal(focusService) {
@@ -2149,10 +2152,6 @@
         if (auditResetTimeout) {
           clearTimeout(auditResetTimeout);
           auditResetTimeout = null;
-        }
-        if (auditMailtoTimeout) {
-          clearTimeout(auditMailtoTimeout);
-          auditMailtoTimeout = null;
         }
         const form = document.getElementById('audit-modal-form') || modal.querySelector('form');
         const success = document.getElementById('modal-success');
@@ -2244,12 +2243,13 @@
         clearTimeout(auditResetTimeout);
         auditResetTimeout = null;
       }
-      if (auditMailtoTimeout) {
-        clearTimeout(auditMailtoTimeout);
-        auditMailtoTimeout = null;
-      }
       const form = document.getElementById('audit-modal-form') || (modal ? modal.querySelector('form') : null);
       const success = document.getElementById('modal-success');
+      const statusIcon = document.getElementById('modal-success-icon');
+      if (statusIcon) {
+        statusIcon.className = 'w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3';
+        statusIcon.innerHTML = '<i data-lucide="check-circle" class="w-6 h-6"></i>';
+      }
       if (form) {
         form.reset();
         form.classList.remove('hidden');
@@ -2969,7 +2969,7 @@
 
       if (submitBtn) submitBtn.disabled = true;
       if (btnText) {
-        btnText.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
+        btnText.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatching to Jubayer...</span>';
         if (window.lucide) lucide.createIcons();
       }
 
@@ -3061,11 +3061,16 @@ ${bottleneck}
         if (statusIcon) statusIcon.innerHTML = '<i data-lucide="check" class="w-8 h-8 text-emerald-600"></i>';
         if (statusTitle) statusTitle.textContent = 'Brief Dispatched Directly to Jubayer!';
         if (statusDesc) statusDesc.innerHTML = "Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.";
+        if (emailBtn) emailBtn.classList.add('hidden');
       } else {
         // Fallback state: FormSubmit activation pending or network block; zero data lost
         if (statusIcon) statusIcon.innerHTML = '<i data-lucide="mail" class="w-8 h-8 text-coral"></i>';
         if (statusTitle) statusTitle.textContent = 'Brief Prepared for Instant Delivery!';
         if (statusDesc) statusDesc.innerHTML = "Your project brief is compiled! To guarantee 100% direct delivery to Jubayer's personal inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
+        if (emailBtn) {
+          emailBtn.classList.remove('hidden');
+          emailBtn.innerHTML = '<i data-lucide="mail" class="w-4 h-4"></i><span>Send Email Direct</span>';
+        }
       }
 
       if (successContainer) successContainer.classList.remove('hidden');
@@ -3079,6 +3084,7 @@ ${bottleneck}
       const success = document.getElementById('contact-form-success');
       const submitBtn = document.getElementById('contact-submit-btn');
       const btnText = document.getElementById('contact-btn-text');
+      const emailBtn = document.getElementById('contact-success-email-btn');
       if (form) {
         form.reset();
         form.classList.remove('hidden');
@@ -3088,6 +3094,9 @@ ${bottleneck}
       }
       if (btnText) {
         btnText.innerHTML = 'Audit Your Business &amp; Dispatch Brief &rarr;';
+      }
+      if (emailBtn) {
+        emailBtn.classList.remove('hidden');
       }
       if (success) {
         success.classList.add('hidden');
@@ -3102,17 +3111,13 @@ ${bottleneck}
         clearTimeout(auditResetTimeout);
         auditResetTimeout = null;
       }
-      if (auditMailtoTimeout) {
-        clearTimeout(auditMailtoTimeout);
-        auditMailtoTimeout = null;
-      }
 
       const form = e.target;
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Request Free Audit Blueprint &rarr;';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatched to Jubayer...</span>';
+        submitBtn.innerHTML = '<span class="inline-flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Dispatching to Jubayer...</span>';
         if (window.lucide) lucide.createIcons();
       }
 
@@ -3182,11 +3187,16 @@ ${bottleneck}
 
       form.classList.add('hidden');
       const success = document.getElementById('modal-success');
+      const statusIcon = document.getElementById('modal-success-icon');
       const title = document.getElementById('modal-success-title');
       const desc = document.getElementById('modal-success-desc');
       const actions = document.getElementById('modal-success-actions');
 
       if (isDelivered) {
+        if (statusIcon) {
+          statusIcon.className = 'w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3';
+          statusIcon.innerHTML = '<i data-lucide="check-circle" class="w-6 h-6"></i>';
+        }
         if (title) title.textContent = 'Audit Request Received Directly!';
         if (desc) desc.innerHTML = 'Your audit request has landed directly in Jubayer Ahamed\'s inbox (<span class="font-mono text-coral">jubayer.ahamed.dev@gmail.com</span>). I will personally review your domain and email your blueprint within 24 hours.';
         if (actions) actions.innerHTML = `
@@ -3196,6 +3206,10 @@ ${bottleneck}
           </a>
         `;
       } else {
+        if (statusIcon) {
+          statusIcon.className = 'w-12 h-12 rounded-full bg-coral/10 text-coral flex items-center justify-center mx-auto mb-3';
+          statusIcon.innerHTML = '<i data-lucide="mail" class="w-6 h-6"></i>';
+        }
         if (title) title.textContent = 'Audit Request Ready to Send!';
         if (desc) desc.innerHTML = "To guarantee 100% direct delivery to Jubayer's inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
         if (actions) actions.innerHTML = `
