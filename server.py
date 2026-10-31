@@ -26,7 +26,12 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+def get_port():
+    if len(sys.argv) > 1 and sys.argv[1].isdigit():
+        return int(sys.argv[1])
+    return 8080
+
+PORT = get_port()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 

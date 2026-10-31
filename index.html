@@ -971,10 +971,10 @@
 
       <!-- Filter Tabs -->
       <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-ink-faint/20 dark:border-slate-800">
-        <button onclick="filterProjects('all')" class="project-filter-btn active min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-abyss text-white dark:bg-white dark:text-slate-950 shadow-sm" data-filter="all">All Systems (14)</button>
-        <button onclick="filterProjects('ai')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="ai">AI Agents & Conversational (5)</button>
-        <button onclick="filterProjects('fullstack')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="fullstack">Full-Stack SaaS & Web (4)</button>
-        <button onclick="filterProjects('automation')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white" data-filter="automation">Automation & Tools (5)</button>
+        <button type="button" onclick="filterProjects('all')" class="project-filter-btn active min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-abyss text-white dark:bg-white dark:text-slate-950 shadow-sm cursor-pointer" data-filter="all">All Systems (14)</button>
+        <button type="button" onclick="filterProjects('ai')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white cursor-pointer" data-filter="ai">AI Agents & Conversational (5)</button>
+        <button type="button" onclick="filterProjects('fullstack')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white cursor-pointer" data-filter="fullstack">Full-Stack SaaS & Web (4)</button>
+        <button type="button" onclick="filterProjects('automation')" class="project-filter-btn min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-paper-deep dark:bg-slate-900 text-ink-soft dark:text-slate-300 hover:text-abyss dark:hover:text-white cursor-pointer" data-filter="automation">Automation & Tools (5)</button>
       </div>
 
       <!-- Projects Grid -->
@@ -1831,13 +1831,13 @@
       <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
         <!-- Case Study Selector Tabs (1, 2, 3) -->
         <div role="tablist" aria-label="Case study selector" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 flex-1 min-w-0">
-          <button type="button" role="tab" id="cs-tab-1" aria-selected="true" aria-controls="cs-modal-body" tabindex="0" onclick="switchCaseStudy(1)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
+          <button type="button" role="tab" id="cs-tab-1" aria-selected="true" aria-controls="cs-modal-body" tabindex="0" onclick="switchCaseStudy(1)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
             <span>01 Hospitality</span>
           </button>
-          <button type="button" role="tab" id="cs-tab-2" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(2)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="cs-tab-2" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(2)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>02 EdTech</span>
           </button>
-          <button type="button" role="tab" id="cs-tab-3" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(3)" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="cs-tab-3" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(3)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>03 FinTech</span>
           </button>
         </div>
@@ -1845,14 +1845,14 @@
         <!-- Controls: Prev / Next + Close Button -->
         <div class="flex items-center gap-2 shrink-0">
           <div class="hidden sm:flex items-center gap-1 border-r border-ink-faint/20 dark:border-dark-border pr-2">
-            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study (Left Arrow)" title="Previous Case Study (←)" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(-1)" aria-label="Previous Case Study (Left Arrow)" title="Previous Case Study (←)" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-left" class="w-4 h-4"></i>
             </button>
-            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study (Right Arrow)" title="Next Case Study (→)" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
+            <button type="button" onclick="navigateCaseStudy(1)" aria-label="Next Case Study (Right Arrow)" title="Next Case Study (→)" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-abyss dark:text-dark-muted dark:hover:text-dark-text hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer">
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </button>
           </div>
-          <button type="button" onclick="closeCaseStudyModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
+          <button type="button" onclick="closeCaseStudyModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -1940,10 +1940,10 @@
           <div class="text-xs text-ink-soft dark:text-dark-muted hidden sm:block">Direct founder review &amp; custom execution blueprint for your company.</div>
         </div>
         <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <button type="button" onclick="closeCaseStudyModal()" class="px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap shrink-0">
+          <button type="button" onclick="closeCaseStudyModal()" class="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap shrink-0">
             <span>Close</span><span class="hidden sm:inline">&nbsp;Viewer</span>
           </button>
-          <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
+          <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
             <span id="cs-cta-text">Deploy This System</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -1958,7 +1958,7 @@
     <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative modal-dialog-enter my-auto">
       
       <!-- Close Button -->
-      <button type="button" onclick="closeAuditModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6" aria-label="Close modal (Escape)" title="Close Audit Modal (Esc)">
+      <button type="button" onclick="closeAuditModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft dark:text-dark-muted hover:text-coral dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6" aria-label="Close modal (Escape)" title="Close Audit Modal (Esc)">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
@@ -2026,20 +2026,20 @@
       <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
         <!-- Tabs: Privacy Policy, Terms of Service, Security Architecture -->
         <div role="tablist" aria-label="Legal & Security Documents" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 flex-1 min-w-0">
-          <button type="button" role="tab" id="legal-tab-privacy" aria-selected="true" aria-controls="legal-modal-body" tabindex="0" onclick="switchLegalTab('privacy')" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
+          <button type="button" role="tab" id="legal-tab-privacy" aria-selected="true" aria-controls="legal-modal-body" tabindex="0" onclick="switchLegalTab('privacy')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
             <span>Privacy Policy</span>
           </button>
-          <button type="button" role="tab" id="legal-tab-terms" aria-selected="false" aria-controls="legal-modal-body" tabindex="-1" onclick="switchLegalTab('terms')" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="legal-tab-terms" aria-selected="false" aria-controls="legal-modal-body" tabindex="-1" onclick="switchLegalTab('terms')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>Terms of Service</span>
           </button>
-          <button type="button" role="tab" id="legal-tab-security" aria-selected="false" aria-controls="legal-modal-body" tabindex="-1" onclick="switchLegalTab('security')" class="px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
+          <button type="button" role="tab" id="legal-tab-security" aria-selected="false" aria-controls="legal-modal-body" tabindex="-1" onclick="switchLegalTab('security')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
             <span>Security Architecture</span>
           </button>
         </div>
 
         <!-- Close Button -->
         <div class="flex items-center gap-2 shrink-0">
-          <button type="button" onclick="closeLegalModal()" class="w-11 h-11 rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
+          <button type="button" onclick="closeLegalModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -2060,10 +2060,10 @@
           <div class="text-[11px] text-ink-soft dark:text-dark-muted mt-0.5">Direct founder review · Guaranteed NDA confidentiality · Zero unconsented telemetry</div>
         </div>
         <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <button type="button" onclick="closeLegalModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap">
+          <button type="button" onclick="closeLegalModal()" class="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap">
             Close Viewer
           </button>
-          <button type="button" onclick="closeLegalModal(); openAuditModal('Sovereign DevOps &amp; Self-Hosting');" class="px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
+          <button type="button" onclick="closeLegalModal(); openAuditModal('Sovereign DevOps &amp; Self-Hosting');" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
             <span>Audit Architecture</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -3200,7 +3200,7 @@ ${bottleneck}
       const legalModal = document.getElementById('legal-modal');
       const isLegalOpen = legalModal && !legalModal.classList.contains('hidden');
 
-      // 1. Escape key dismiss (topmost active modal closes first)
+      // 1. Escape key dismiss (topmost active modal closes first, then mobile menu)
       if (e.key === 'Escape') {
         if (isLegalOpen) {
           closeLegalModal();
@@ -3208,6 +3208,11 @@ ${bottleneck}
           closeAuditModal();
         } else if (isCsOpen) {
           closeCaseStudyModal();
+        } else {
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+          }
         }
         return;
       }
@@ -3350,7 +3355,15 @@ ${bottleneck}
     let isHoveringCard = false;
     let hoverLeaveTimeout = null;
     let lastTouchTime = 0;
-    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    let isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    try {
+      const finePointerQuery = window.matchMedia('(pointer: fine)');
+      if (finePointerQuery.addEventListener) {
+        finePointerQuery.addEventListener('change', (e) => {
+          isFinePointer = e.matches;
+        });
+      }
+    } catch (_) {}
 
     // Ambient Spotlight Dynamic Chromatic & Card Tracking Engine
     let activeCardRgb = null;
@@ -3382,6 +3395,7 @@ ${bottleneck}
     }
 
     window.addEventListener('mousemove', (e) => {
+      if (!isFinePointer || (Date.now() - lastTouchTime < 1000)) return;
       mouseX = e.clientX;
       mouseY = e.clientY;
       if (spotlight) {
@@ -3803,7 +3817,7 @@ ${bottleneck}
     const activeMobileClasses = ['active-nav', 'font-bold', 'text-emerald-600', 'dark:text-emerald-400', 'bg-emerald-500/10', 'dark:bg-emerald-500/20', 'border-emerald-500/20', 'dark:border-emerald-500/30'];
     const inactiveMobileClasses = ['font-medium', 'text-ink-soft', 'dark:text-slate-400', 'border-transparent'];
 
-    let activeNavTarget = 'home';
+    let activeNavTarget = null;
     let isManualNavigating = false;
     let manualNavTimeout = null;
 
@@ -3914,7 +3928,13 @@ ${bottleneck}
       }
     }, { passive: true });
 
-    window.addEventListener('resize', calculateScrollSpy, { passive: true });
+    window.addEventListener('resize', () => {
+      calculateScrollSpy();
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (window.innerWidth >= 768 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        toggleMobileMenu();
+      }
+    }, { passive: true });
     window.addEventListener('hashchange', calculateScrollSpy, { passive: true });
     window.addEventListener('load', calculateScrollSpy, { passive: true });
 
