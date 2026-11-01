@@ -252,15 +252,18 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('data-preview-tag="Python · Gemini 3.5"', self.html)
         self.assertIn('>Gemini 3.5</span>', self.html)
         self.assertIn('id="preview-tag" class="text-[10px] font-mono text-ink-soft dark:text-slate-400">Python · Gemini 3.5</span>', self.html)
-        self.assertNotIn('Gemini 2.0 Flash', self.html)
+        self.assertNotIn('Gemini 2.0', self.html)
+        self.assertNotIn('Gemini 2.5', self.html)
 
         # Project 6 in index.html
         self.assertIn('data-preview-title="Gemma 4 Local AI Workspace"', self.html)
         self.assertIn('aria-label="Gemma 4 Local AI Workspace - View on GitHub"', self.html)
         self.assertIn('running Google Gemma 4 for sovereign private intelligence', self.html)
         self.assertIn('>Gemma 4 Local AI Workspace</h3>', self.html)
-        self.assertNotIn('Gemma 2 Local AI Workspace', self.html)
-        self.assertNotIn('Gemma 2 backends', self.html)
+        self.assertIn('data-card-link="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace"', self.html)
+        self.assertIn('href="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace"', self.html)
+        self.assertIn('href="https://jubayer-ahamed42.github.io/gemma4-local-ai-workspace/"', self.html)
+        self.assertNotIn('Gemma 2', self.html)
 
         # README.md verification
         readme_path = os.path.join(BASE_DIR, 'README.md')
@@ -270,8 +273,9 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('Python · Gemini 3.5', readme)
         self.assertIn('06. Gemma 4 Local AI Workspace', readme)
         self.assertIn('Google Gemma 4', readme)
-        self.assertNotIn('Gemini 2.0 Flash', readme)
-        self.assertNotIn('Gemma 2 Local AI Workspace', readme)
+        self.assertNotIn('Gemini 2.0', readme)
+        self.assertNotIn('Gemini 2.5', readme)
+        self.assertNotIn('Gemma 2', readme)
 
 
 if __name__ == '__main__':
