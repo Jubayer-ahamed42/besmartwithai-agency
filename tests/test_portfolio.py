@@ -404,11 +404,24 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertEqual(self.html.count('data-card-link="https://github.com/'), 14)
 
     def test_badge_pills_removed(self):
-        """Verify that the hero live status badge pill and founder card dual-role badge pills are removed."""
+        """Verify that the hero live status badge pill, secondary title, and founder card dual-role badge pills are removed."""
+        # 1. Hero top status badge and accompanying title text
         self.assertNotIn("Available for High-Impact Projects", self.html, "Hero live status badge must be removed")
-        self.assertNotIn("Principal AI Solutions Architect", self.html, "Founder showcase role badge must be removed")
+        self.assertNotIn("AI Systems Architect &middot; Founder", self.html, "Hero top status secondary title must be removed")
+        self.assertNotIn("AI Systems Architect · Founder", self.html, "Hero top status secondary title must be removed")
         self.assertNotIn("<!-- Top Live Status Badge -->", self.html, "Top live status badge container comment/wrapper must be removed")
+
+        # 2. Founder card dual role badge pills
+        self.assertNotIn("Principal AI Solutions Architect", self.html, "Founder showcase role badge must be removed")
         self.assertNotIn("<!-- Floating Active Status Badge -->", self.html, "Floating active status badge container comment/wrapper must be removed")
+
+        # 3. Structural verification: founder card begins cleanly with portrait display
+        card_start = self.html.find('class="founder-showcase-card')
+        card_end = self.html.find('<!-- Founder Bio Details -->', card_start)
+        card_header = self.html[card_start:card_end]
+        self.assertNotIn('bg-emerald-50', card_header, "Role badge pill container must not exist in founder card")
+        self.assertNotIn('bg-amber-500', card_header, "Business problem solver dot must not exist in founder card")
+        self.assertIn('Full-Face High-Resolution Portrait Display', card_header, "Portrait display must be the leading element in founder card")
 
 
 if __name__ == '__main__':
