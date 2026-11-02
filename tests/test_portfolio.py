@@ -149,18 +149,18 @@ class TestPortfolioAudit(unittest.TestCase):
 
         with Image.open(WEBP_PATH) as img:
             self.assertEqual(img.format, "WEBP")
-            self.assertEqual(img.size, (1024, 1024))
+            self.assertEqual(img.size, (1024, 819))
 
         with Image.open(JPG_PATH) as img:
             self.assertEqual(img.format, "JPEG")
-            self.assertEqual(img.size, (1024, 1024))
+            self.assertEqual(img.size, (1024, 819))
 
         # Hero picture check
         hero_idx = self.html.find('assets/jubayer.webp')
         hero_snippet = self.html[hero_idx-100:hero_idx+400]
         self.assertIn('<picture', hero_snippet)
         self.assertIn('width="1024"', hero_snippet)
-        self.assertIn('height="1024"', hero_snippet)
+        self.assertIn('height="819"', hero_snippet)
         self.assertIn('fetchpriority="high"', hero_snippet)
 
         # Contact avatar check
