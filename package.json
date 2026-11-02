@@ -1,0 +1,11 @@
+{
+  "name": "jubayer-ahamed-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "echo Static assets ready",
+    "dev": "python -m http.server 3000",
+    "preview": "python -m http.server 3000"
+  }
+}
