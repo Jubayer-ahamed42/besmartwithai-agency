@@ -155,6 +155,10 @@ class TestPortfolioAudit(unittest.TestCase):
             self.assertEqual(img.format, "JPEG")
             self.assertEqual(img.size, (1024, 819))
 
+        # OpenGraph metadata check
+        self.assertIn('<meta property="og:image:width" content="1024">', self.html)
+        self.assertIn('<meta property="og:image:height" content="819">', self.html)
+
         # Hero picture check
         hero_idx = self.html.find('assets/jubayer.webp')
         hero_snippet = self.html[hero_idx-100:hero_idx+400]
@@ -162,6 +166,11 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('width="1024"', hero_snippet)
         self.assertIn('height="819"', hero_snippet)
         self.assertIn('fetchpriority="high"', hero_snippet)
+        # Hero wrapper aspect ratio style check for fail-safe zero CLS
+        hero_wrap_idx = self.html.find('aspect-[1024/819]')
+        self.assertNotEqual(hero_wrap_idx, -1, "Hero image wrapper must have aspect-[1024/819]")
+        hero_wrap_snippet = self.html[hero_wrap_idx-50:hero_wrap_idx+250]
+        self.assertIn('style="aspect-ratio: 1024 / 819;"', hero_wrap_snippet)
 
         # Contact avatar check
         contact_idx = self.html.rfind('assets/jubayer.webp')
@@ -170,6 +179,8 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('width="64"', contact_snippet)
         self.assertIn('height="64"', contact_snippet)
         self.assertIn('loading="lazy"', contact_snippet)
+        self.assertIn('transform: scale(2.15)', contact_snippet)
+        self.assertIn('transform-origin: 95% 25%', contact_snippet)
 
     def test_dom_cleanliness_and_html_validity(self):
         """5.0 HTML syntax validity and modal cleanliness."""

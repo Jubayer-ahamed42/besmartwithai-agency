@@ -668,7 +668,7 @@
           <div class="founder-showcase-card bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-7 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative overflow-hidden group hover:shadow-abyss/10 transition-all" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
 
             <!-- Full-Face High-Resolution Portrait Display -->
-            <div class="relative w-full aspect-[1024/819] rounded-2xl overflow-hidden mb-5 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300">
+            <div class="relative w-full aspect-[1024/819] rounded-2xl overflow-hidden mb-5 bg-abyss shadow-inner border border-ink-faint/20 dark:border-dark-border group-hover:scale-[1.01] transition-transform duration-300" style="aspect-ratio: 1024 / 819;">
               <picture class="w-full h-full block">
                 <source srcset="assets/jubayer.webp" type="image/webp">
                 <img 
@@ -1551,10 +1551,12 @@
           <!-- Founder Intro Box -->
           <div class="bg-paper dark:bg-dark-card rounded-2xl p-6 border border-ink-faint/30 dark:border-dark-border shadow-sm">
             <div class="flex items-center gap-4 mb-4">
-              <picture class="shrink-0 w-16 h-16 block">
-                <source srcset="assets/jubayer.webp" type="image/webp">
-                <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" width="64" height="64" loading="lazy" class="w-16 h-16 rounded-2xl object-cover object-right border-2 border-indigo-500 shadow-md">
-              </picture>
+              <div class="shrink-0 w-16 h-16 rounded-2xl overflow-hidden border-2 border-indigo-500 shadow-md relative bg-abyss">
+                <picture class="w-full h-full block">
+                  <source srcset="assets/jubayer.webp" type="image/webp">
+                  <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" width="64" height="64" loading="lazy" class="w-full h-full object-cover scale-[2.15] origin-[95%_25%]" style="transform: scale(2.15); transform-origin: 95% 25%;">
+                </picture>
+              </div>
               <div>
                 <h3 class="font-serif text-xl font-bold text-abyss dark:text-dark-text">Jubayer Ahamed</h3>
                 <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">AI Architect &middot; Web Developer &middot; Mentor</p>
