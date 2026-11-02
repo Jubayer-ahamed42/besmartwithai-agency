@@ -279,6 +279,9 @@ class TestPortfolioAudit(unittest.TestCase):
 
     def test_dark_mode_default_configuration(self):
         """Verify the website opens in Dark Mode by default with zero-flicker toggle."""
+        # 0. Root html tag must have dark class by default for zero-FOUC native dark rendering
+        self.assertIn('<html lang="en" class="dark scroll-smooth">', self.html)
+
         # 1. Head script must default to dark mode unless localStorage explicitly has 'light'
         self.assertIn(
             "if (localStorage.theme === 'light') {\n        document.documentElement.classList.remove('dark');\n      } else {\n        document.documentElement.classList.add('dark');\n      }",
@@ -303,11 +306,18 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn("themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');", self.html)
 
     def test_enterprise_indigo_palette_and_zero_coral(self):
-        """Verify Enterprise Royal Indigo replaces all coral/red accents (#fb2c36) across the codebase."""
+        """Verify Enterprise Royal Indigo replaces all coral/red accents (#fb2c36, #ff6b4a) across the codebase."""
         # Zero occurrences of red/coral in index.html
         coral_classes = re.findall(r'[a-zA-Z0-9_\:\/\.\-]+coral[a-zA-Z0-9_\:\/\.\-]*', self.html)
         self.assertEqual(len(coral_classes), 0, f"Expected 0 coral classes in index.html, found: {coral_classes}")
         self.assertEqual(self.html.count('#fb2c36'), 0, "No #fb2c36 should remain in index.html")
+        self.assertEqual(self.html.count('#ff6b4a'), 0, "No legacy coral #ff6b4a should remain in index.html")
+
+        # Service action button hover & focus-visible in Enterprise Indigo
+        self.assertIn("color: #4f46e5 !important;", self.html)
+        self.assertIn("color: #818cf8 !important;", self.html)
+        self.assertIn("outline: 2px solid #6366f1;", self.html)
+        self.assertIn(".dark .service-action-btn:focus-visible {\n      outline-color: #818cf8;", self.html)
 
         # Enterprise Indigo system in Tailwind configuration
         self.assertIn("DEFAULT: '#6366f1'", self.html)

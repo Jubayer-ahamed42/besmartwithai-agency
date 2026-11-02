@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -368,7 +368,10 @@
       transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
     }
     .service-action-btn:hover {
-      color: #ff6b4a !important;
+      color: #4f46e5 !important;
+    }
+    .dark .service-action-btn:hover {
+      color: #818cf8 !important;
     }
     .service-action-btn:hover [data-lucide="arrow-up-right"],
     .service-action-btn:hover svg {
@@ -378,12 +381,12 @@
       transform: scale(0.98);
     }
     .service-action-btn:focus-visible {
-      outline: 2px solid #ff6b4a;
+      outline: 2px solid #6366f1;
       outline-offset: 4px;
       border-radius: 4px;
     }
     .dark .service-action-btn:focus-visible {
-      outline-color: #f59e0b;
+      outline-color: #818cf8;
     }
 
 
@@ -3516,7 +3519,7 @@ ${bottleneck}
           // 0.00 - 0.25: Emerald Green [16, 185, 129] -> Electric Sky [14, 165, 233]
           // 0.25 - 0.50: Electric Sky [14, 165, 233] -> Royal Sapphire [37, 99, 235]
           // 0.50 - 0.75: Royal Sapphire [37, 99, 235] -> Deep Violet [139, 92, 246]
-          // 0.75 - 1.00: Deep Violet [139, 92, 246] -> Executive Amber/Gold [245, 158, 11]
+          // 0.75 - 1.00: Deep Violet [139, 92, 246] -> Executive Gold [233, 184, 92]
           if (phase < 0.25) {
             const t = phase / 0.25;
             targetRgb1 = [
