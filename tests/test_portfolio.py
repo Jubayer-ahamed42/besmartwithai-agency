@@ -411,9 +411,18 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('https://warmheart-cafe-bakery-website.sbmc4042.workers.dev', self.html)
         self.assertIn('aria-label="WarmHeart Cafe &amp; Bakery - View on GitHub"', self.html)
         self.assertIn('>WarmHeart Cafe &amp; Bakery</h3>', self.html)
-        self.assertIn('15 / 15', self.html)
         self.assertIn('All Systems (15)', self.html)
         self.assertIn('Full-Stack SaaS & Web (5)', self.html)
+        self.assertIn('<span>15 Systems</span>', self.html)
+        self.assertIn('Explore 15 Systems', self.html)
+        self.assertIn('15 Production Systems', self.html)
+        self.assertIn('15 Repos', self.html)
+
+        # All 15 sequential counters (01 / 15 through 15 / 15) must be present
+        for i in range(1, 16):
+            self.assertIn(f'{i:02d} / 15', self.html, f"Project counter {i:02d} / 15 missing")
+
+        # Category distribution verification
         categories = re.findall(r'data-category="([a-z]+)"', self.html)
         self.assertEqual(len(categories), 15, "Must have exactly 15 project card categories")
         self.assertEqual(categories.count('ai'), 5, "Must have 5 AI & Conversational projects")
@@ -427,6 +436,7 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('15. WarmHeart Cafe & Bakery Website', readme)
         self.assertIn('warmheart-cafe-bakery-website', readme)
         self.assertIn('15 Production Systems', readme)
+        self.assertIn('15 enterprise production systems', readme)
 
     def test_badge_pills_removed(self):
         """Verify that the hero live status badge pill, secondary title, and founder card dual-role badge pills are removed."""
