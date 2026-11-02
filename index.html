@@ -417,6 +417,16 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
+    /* Motion Sensitivity & Reduced Motion Support (WCAG 2.2 AA / Apple HIG) */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 
   <script>
@@ -434,6 +444,11 @@
 </head>
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-indigo-600 selection:text-white dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
+
+  <!-- Accessible Skip to Main Content Link (WCAG 2.2 AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-indigo-600 focus:text-white focus:rounded-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white text-xs font-bold tracking-wide transition-all">
+    Skip to main content
+  </a>
 
   <!-- Ambient Spotlight (Dennis Snellenberg dynamic chromatic cursor track) -->
   <div id="ambient-spotlight" class="pointer-events-none fixed inset-0 z-30 transition-opacity duration-500 opacity-0" aria-hidden="true"></div>
@@ -543,8 +558,10 @@
     </div>
   </header>
 
+  <!-- ==================== MAIN CONTENT LANDMARK (WCAG 2.2 AA) ==================== -->
+  <main id="main-content">
 
-  <!-- ==================== SECTION 1: MASTER HOMEPAGE HERO (PAGE 1) ==================== -->
+    <!-- ==================== SECTION 1: MASTER HOMEPAGE HERO (PAGE 1) ==================== -->
   <section id="home" class="relative min-h-[92vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden bg-paper dark:bg-dark-bg transition-colors duration-300">
     <!-- Subtle CAD Architectural Grid & Central Atmospheric Bloom -->
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-40 dark:opacity-30"></div>
@@ -1667,14 +1684,14 @@
                   <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
                     Your Full Name <span class="text-indigo-600 dark:text-indigo-400">*</span>
                   </label>
-                  <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
+                  <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Henderson" autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
                 </div>
 
                 <div>
                   <label for="contact-channel" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
                     Email / WhatsApp <span class="text-indigo-600 dark:text-indigo-400">*</span>
                   </label>
-                  <input type="text" id="contact-channel" name="contact" required placeholder="name@company.com or +1..." class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
+                  <input type="text" id="contact-channel" name="contact" required placeholder="name@company.com or +1..." autocomplete="email tel" inputmode="email" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
                 </div>
               </div>
 
@@ -1682,7 +1699,7 @@
                 <label for="contact-company" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
                   Company Name &amp; Website or Current Tech Stack
                 </label>
-                <input type="text" id="contact-company" name="company_stack" placeholder="e.g. Acme Corp · acme.com (Shopify / Node / Python / WordPress)" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
+                <input type="text" id="contact-company" name="company_stack" placeholder="e.g. Acme Corp · acme.com (Shopify / Node / Python / WordPress)" autocomplete="organization" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
               </div>
 
               <div>
@@ -1717,7 +1734,7 @@
             </form>
 
             <!-- Success State Banner -->
-            <div id="contact-form-success" class="hidden text-center py-10 px-4 animate-in fade-in duration-300">
+            <div id="contact-form-success" role="status" aria-live="polite" class="hidden text-center py-10 px-4 animate-in fade-in duration-300">
               <div id="contact-success-icon" class="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mx-auto mb-4 border-2 border-emerald-500">
                 <i data-lucide="check" class="w-8 h-8"></i>
               </div>
@@ -1748,6 +1765,7 @@
     </div>
   </section>
 
+  </main>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="bg-abyss text-white pt-20 pb-12 border-t border-ink/40">
@@ -2012,17 +2030,17 @@
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div>
           <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name <span class="text-indigo-600 dark:text-indigo-400">*</span></label>
-          <input type="text" id="audit-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <input type="text" id="audit-name" name="name" required placeholder="e.g. Alex Henderson" autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
         </div>
 
         <div>
           <label for="audit-email" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email <span class="text-indigo-600 dark:text-indigo-400">*</span></label>
-          <input type="email" id="audit-email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <input type="email" id="audit-email" name="email" required placeholder="name@company.com" autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
         </div>
 
         <div>
           <label for="audit-stack" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Website or Current Stack</label>
-          <input type="text" id="audit-stack" name="stack" placeholder="https://yourcompany.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
+          <input type="text" id="audit-stack" name="stack" placeholder="https://yourcompany.com" autocomplete="url" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
         </div>
 
         <div>
@@ -2045,7 +2063,7 @@
         </button>
       </form>
 
-      <div id="modal-success" class="hidden text-center py-6">
+      <div id="modal-success" role="status" aria-live="polite" class="hidden text-center py-6">
         <div id="modal-success-icon" class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-3">
           <i data-lucide="check-circle" class="w-6 h-6"></i>
         </div>

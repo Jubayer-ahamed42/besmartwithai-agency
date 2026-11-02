@@ -458,6 +458,38 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertNotIn('bg-amber-500', card_header, "Business problem solver dot must not exist in founder card")
         self.assertIn('Full-Face High-Resolution Portrait Display', card_header, "Portrait display must be the leading element in founder card")
 
+    def test_ui_ux_pro_max_accessibility_and_ergonomics(self):
+        """Verify UI/UX Pro Max WCAG 2.2 AA landmarks, skip-link, reduced-motion, and form ergonomics."""
+        # 1. Accessible skip link
+        self.assertIn('<a href="#main-content"', self.html, "Skip to content link must point to #main-content")
+        self.assertIn('Skip to main content', self.html, "Skip link must have accessible text")
+
+        # 2. Semantic main content landmark
+        main_start = self.html.find('<main id="main-content">')
+        main_end = self.html.find('</main>')
+        self.assertNotEqual(main_start, -1, "<main id='main-content'> landmark must be present")
+        self.assertNotEqual(main_end, -1, "</main> must be present")
+        home_pos = self.html.find('id="home"')
+        contact_pos = self.html.find('id="contact"')
+        footer_pos = self.html.find('<footer')
+        self.assertTrue(main_start < home_pos < contact_pos < main_end < footer_pos,
+                        "main landmark must cleanly enclose primary content sections before footer")
+
+        # 3. Reduced motion media query
+        self.assertIn('@media (prefers-reduced-motion: reduce)', self.html,
+                      "Must support prefers-reduced-motion for motion sensitivity")
+
+        # 4. Form autocomplete and inputmode directives
+        self.assertIn('autocomplete="name"', self.html)
+        self.assertIn('autocomplete="email"', self.html)
+        self.assertIn('autocomplete="url"', self.html)
+        self.assertIn('autocomplete="email tel"', self.html)
+        self.assertIn('inputmode="email"', self.html)
+
+        # 5. Form status ARIA live regions
+        self.assertIn('id="contact-form-success" role="status" aria-live="polite"', self.html)
+        self.assertIn('id="modal-success" role="status" aria-live="polite"', self.html)
+
 
 if __name__ == '__main__':
     unittest.main()
