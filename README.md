@@ -7,7 +7,7 @@
 
 > **Architected & Engineered by Jubayer Ahamed**  
 > *Solutions Architect & AI Systems Engineer, Founder of Be Smart With AI*  
-> High-performance digital flagship showcasing 14 enterprise production systems, autonomous multi-agent swarms, and sovereign cloud architectures.
+> High-performance digital flagship showcasing 15 enterprise production systems, autonomous multi-agent swarms, and sovereign cloud architectures.
 
 ---
 
@@ -25,10 +25,10 @@ This flagship web portal serves as the primary digital presence and engineering 
 
 ## 🌟 Core Systems & Sections Architecture
 
-1. **Sticky Floating Command Header**: Dynamic glassmorphic navigation with active ScrollSpy tracking, dark mode toggle, and seamless routing across `Home`, `Capabilities`, `14 Systems`, `Case Studies`, and `Contact`.
+1. **Sticky Floating Command Header**: Dynamic glassmorphic navigation with active ScrollSpy tracking, dark mode toggle, and seamless routing across `Home`, `Capabilities`, `15 Systems`, `Case Studies`, and `Contact`.
 2. **Master Hero & Executive Bento Grid**: High-impact founder narrative introducing the strategic pillars of Be Smart With AI—Autonomous Multi-Agent Architecture, Enterprise AI Strategy, Full-Stack Engineering, and Sovereign Infrastructure.
 3. **Capabilities & Enterprise Services**: Four core service matrices covering Autonomous Agent Swarms, Enterprise Full-Stack Web Architecture, Algorithmic Automation, and Generative Engine Optimization (GEO).
-4. **14 Production Systems Showcase**: Complete catalog of 14 engineered applications and client systems with interactive category filtering (`All`, `AI & ML`, `Full-Stack`, `Automation`), dynamic telemetry bubbles, direct GitHub repositories, and live demo access:
+4. **15 Production Systems Showcase**: Complete catalog of 15 engineered applications and client systems with interactive category filtering (`All`, `AI & ML`, `Full-Stack`, `Automation`), dynamic telemetry bubbles, direct GitHub repositories, and live demo access:
    - [**01. B2B AI Sales Engine**](https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine): 24/7 conversational sales brain & smartphone simulator with automated COD order extraction (`Python · Gemini 3.5`).
    - [**02. Social Humanizer PyPI**](https://github.com/Jubayer-ahamed42/social-humanizer): Universal AI social media humanizer and algorithmic risk auditor published on PyPI (`Python · PyPI Package`).
    - [**03. Freshy Food Storefront**](https://github.com/Jubayer-ahamed42/freshy-food): Organic e-commerce platform with 1-click COD checkout and Bengali AI Nutritionist (`Full-Stack Web`).
@@ -43,6 +43,7 @@ This flagship web portal serves as the primary digital presence and engineering 
    - [**12. OpenClaw & Hermes Autonomous Agent Lab**](https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab): Isolated agent execution environment integrating OpenClaw with Nous Hermes reasoning models and OmniRoute sandbox testing (`Autonomous AI Lab`).
    - [**13. Personal PC Control Agent (Ahmad)**](https://github.com/Jubayer-ahamed42/ahmad-agent): Voice and command-driven personal desktop assistant automating Windows workflows (`Voice OS Automation`).
    - [**14. GitHub Spec-Kit & Agentic Suite**](https://github.com/Jubayer-ahamed42): Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows (`SDD Core`).
+   - [**15. WarmHeart Cafe & Bakery Website**](https://github.com/Jubayer-ahamed42/warmheart-cafe-bakery-website): Artisanal specialty coffee & handcrafted bakery web platform with scrollspy navigation, visual menu, and reservation workflows (`Full-Stack Web · Edge CDN`).
 5. **Interactive Executive Audit Modal**: High-conversion lead capture modal with keyboard trap management, escape-key listener, backdrop blur, and client inquiry funnel.
 6. **Executive Contact Hub & Multi-Column Footer**: Direct channel verification (WhatsApp, Email, LinkedIn, GitHub), real-time availability indicator, and legal notice.
 

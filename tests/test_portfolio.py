@@ -353,7 +353,7 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('#6366f1', logo)
 
     def test_project_card_clean_hover_and_modal_removal(self):
-        """Verify #hover-preview-modal is removed and all 14 project cards feature smooth hover scale elevation, active feedback, and security."""
+        """Verify #hover-preview-modal is removed and all 15 project cards feature smooth hover scale elevation, active feedback, and security."""
         # 1. Zero occurrences of floating preview modal and its inner elements
         self.assertNotIn('id="hover-preview-modal"', self.html)
         self.assertNotIn('id="preview-accent-line"', self.html)
@@ -369,9 +369,9 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertNotIn("animateModal", self.html)
         self.assertIn("animateSpotlight", self.html)
 
-        # 3. All 14 project cards feature smooth forward hover lift & scale classes + active press feedback
+        # 3. All 15 project cards feature smooth forward hover lift & scale classes + active press feedback
         project_cards = re.findall(r'class="project-card\s[^"]*"', self.html)
-        self.assertEqual(len(project_cards), 14, "Must have exactly 14 project cards")
+        self.assertEqual(len(project_cards), 15, "Must have exactly 15 project cards")
         for card_class in project_cards:
             self.assertIn('hover:-translate-y-2', card_class)
             self.assertIn('hover:scale-[1.02]', card_class)
@@ -394,14 +394,39 @@ class TestPortfolioAudit(unittest.TestCase):
         grid_end = self.html.find('</section>', grid_start)
         grid_html = self.html[grid_start:grid_end]
         links = re.findall(r'<a\s+[^>]*>', grid_html)
-        self.assertGreaterEqual(len(links), 14)
+        self.assertGreaterEqual(len(links), 15)
         for link in links:
             if 'target="_blank"' in link:
                 self.assertIn('rel="noopener noreferrer"', link)
 
         # 6. Interaction: full card navigation and keyboard accessibility attributes
-        self.assertEqual(self.html.count('role="link" tabindex="0"'), 14)
-        self.assertEqual(self.html.count('data-card-link="https://github.com/'), 14)
+        self.assertEqual(self.html.count('role="link" tabindex="0"'), 15)
+        self.assertEqual(self.html.count('data-card-link="https://github.com/'), 15)
+
+    def test_warmheart_cafe_bakery_project(self):
+        """Verify Project 15 WarmHeart Cafe & Bakery is properly integrated in index.html and README.md."""
+        # 1. index.html card structure and metadata
+        self.assertIn('data-preview-title="WarmHeart Cafe &amp; Bakery"', self.html)
+        self.assertIn('https://github.com/Jubayer-ahamed42/warmheart-cafe-bakery-website', self.html)
+        self.assertIn('https://warmheart-cafe-bakery-website.sbmc4042.workers.dev', self.html)
+        self.assertIn('aria-label="WarmHeart Cafe &amp; Bakery - View on GitHub"', self.html)
+        self.assertIn('>WarmHeart Cafe &amp; Bakery</h3>', self.html)
+        self.assertIn('15 / 15', self.html)
+        self.assertIn('All Systems (15)', self.html)
+        self.assertIn('Full-Stack SaaS & Web (5)', self.html)
+        categories = re.findall(r'data-category="([a-z]+)"', self.html)
+        self.assertEqual(len(categories), 15, "Must have exactly 15 project card categories")
+        self.assertEqual(categories.count('ai'), 5, "Must have 5 AI & Conversational projects")
+        self.assertEqual(categories.count('fullstack'), 5, "Must have 5 Full-Stack SaaS & Web projects")
+        self.assertEqual(categories.count('automation'), 5, "Must have 5 Automation & Tools projects")
+
+        # 2. README.md verification
+        readme_path = os.path.join(BASE_DIR, 'README.md')
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            readme = f.read()
+        self.assertIn('15. WarmHeart Cafe & Bakery Website', readme)
+        self.assertIn('warmheart-cafe-bakery-website', readme)
+        self.assertIn('15 Production Systems', readme)
 
     def test_badge_pills_removed(self):
         """Verify that the hero live status badge pill, secondary title, and founder card dual-role badge pills are removed."""
