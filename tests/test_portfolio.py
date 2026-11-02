@@ -501,7 +501,47 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('id="contact-form-success" role="status" aria-live="polite"', self.html)
         self.assertIn('id="modal-success" role="status" aria-live="polite"', self.html)
 
+    def test_cloudflare_pages_deployment_configuration(self):
+        """Verify Cloudflare Pages configuration, domain, canonical, og:image, and _headers."""
+        # 1. Zero occurrences of vercel in index.html
+        self.assertNotIn("jubayer-ahamed.vercel.app", self.html)
+
+        # 2. Canonical URL & OpenGraph point to Cloudflare Pages
+        self.assertIn('<link rel="canonical" href="https://jubayer-ahamed.pages.dev/">', self.html)
+        self.assertIn('<meta property="og:url" content="https://jubayer-ahamed.pages.dev/">', self.html)
+        self.assertIn('<meta property="og:image" content="https://jubayer-ahamed.pages.dev/assets/jubayer.jpg">', self.html)
+        self.assertIn('<meta property="og:image:secure_url" content="https://jubayer-ahamed.pages.dev/assets/jubayer.jpg">', self.html)
+        self.assertIn('<meta name="twitter:image" content="https://jubayer-ahamed.pages.dev/assets/jubayer.jpg">', self.html)
+
+        # 3. Form redirect _next values point to Cloudflare Pages
+        self.assertIn('value="https://jubayer-ahamed.pages.dev/#contact"', self.html)
+        self.assertIn('value="https://jubayer-ahamed.pages.dev/?audit_submitted=true"', self.html)
+
+        # 4. Cloudflare configuration files exist
+        cf_headers_path = os.path.join(BASE_DIR, '_headers')
+        wrangler_json_path = os.path.join(BASE_DIR, 'wrangler.json')
+        wrangler_toml_path = os.path.join(BASE_DIR, 'wrangler.toml')
+        self.assertTrue(os.path.isfile(cf_headers_path), "_headers file must exist for Cloudflare Pages")
+        self.assertTrue(os.path.isfile(wrangler_json_path), "wrangler.json must exist")
+        self.assertTrue(os.path.isfile(wrangler_toml_path), "wrangler.toml must exist")
+
+        with open(cf_headers_path, 'r', encoding='utf-8') as f:
+            headers_content = f.read()
+        self.assertIn('X-Content-Type-Options: nosniff', headers_content)
+        self.assertIn('X-Frame-Options: SAMEORIGIN', headers_content)
+        self.assertIn('Referrer-Policy: strict-origin-when-cross-origin', headers_content)
+        self.assertIn('Cache-Control: public, max-age=31536000, immutable', headers_content)
+
+        # 5. README.md references Cloudflare Pages live deployment
+        readme_path = os.path.join(BASE_DIR, 'README.md')
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            readme = f.read()
+        self.assertIn('https://jubayer-ahamed.pages.dev', readme)
+        self.assertIn('Live_Deployment-Cloudflare_Pages-F38020', readme)
+        self.assertNotIn('jubayer-ahamed.vercel.app', readme)
+
 
 if __name__ == '__main__':
     unittest.main()
+
 

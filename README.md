@@ -1,9 +1,9 @@
 # Jubayer Ahamed — Flagship Portfolio & Systems Architecture
 
-[![Live Deployment (Vercel)](https://img.shields.io/badge/Live_Deployment-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://jubayer-ahamed.vercel.app)
+[![Live Deployment (Cloudflare Pages)](https://img.shields.io/badge/Live_Deployment-Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://jubayer-ahamed.pages.dev)
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Mirror-0969DA?style=for-the-badge&logo=github&logoColor=white)](https://jubayer-ahamed42.github.io/besmartwithai-agency/)
-[![Architecture](https://img.shields.io/badge/Architecture-Zero--Dependency_Pure_Web-10b981?style=for-the-badge)](https://jubayer-ahamed.vercel.app)
-[![Status](https://img.shields.io/badge/Status-Production_Active-blue?style=for-the-badge)](https://jubayer-ahamed.vercel.app)
+[![Architecture](https://img.shields.io/badge/Architecture-Zero--Dependency_Pure_Web-10b981?style=for-the-badge)](https://jubayer-ahamed.pages.dev)
+[![Status](https://img.shields.io/badge/Status-Production_Active-blue?style=for-the-badge)](https://jubayer-ahamed.pages.dev)
 
 > **Architected & Engineered by Jubayer Ahamed**  
 > *Solutions Architect & AI Systems Engineer, Founder of Be Smart With AI*  
@@ -80,7 +80,7 @@ npx serve .
 
 ## 🌐 Deployment & Edge Infrastructure
 
-- **Vercel Edge Network**: Continuous deployment configured via `vercel.json` for global low-latency CDN delivery.
+- **Cloudflare Pages Edge Network**: Continuous deployment configured via `wrangler.json`, `wrangler.toml`, and `_headers` for global low-latency CDN delivery on [jubayer-ahamed.pages.dev](https://jubayer-ahamed.pages.dev).
 - **GitHub Pages Mirror**: Configured for static site hosting on repository branch `main`.
 
 ---
@@ -92,4 +92,4 @@ npx serve .
 - **Agency**: Be Smart With AI
 - **Email**: [jubayer.ahamed.dev@gmail.com](mailto:jubayer.ahamed.dev@gmail.com)
 - **GitHub**: [github.com/Jubayer-ahamed42](https://github.com/Jubayer-ahamed42)
-- **Live Flagship**: [jubayer-ahamed.vercel.app](https://jubayer-ahamed.vercel.app)
+- **Live Flagship**: [jubayer-ahamed.pages.dev](https://jubayer-ahamed.pages.dev)
