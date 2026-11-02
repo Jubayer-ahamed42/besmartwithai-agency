@@ -403,6 +403,13 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertEqual(self.html.count('role="link" tabindex="0"'), 14)
         self.assertEqual(self.html.count('data-card-link="https://github.com/'), 14)
 
+    def test_badge_pills_removed(self):
+        """Verify that the hero live status badge pill and founder card dual-role badge pills are removed."""
+        self.assertNotIn("Available for High-Impact Projects", self.html, "Hero live status badge must be removed")
+        self.assertNotIn("Principal AI Solutions Architect", self.html, "Founder showcase role badge must be removed")
+        self.assertNotIn("<!-- Top Live Status Badge -->", self.html, "Top live status badge container comment/wrapper must be removed")
+        self.assertNotIn("<!-- Floating Active Status Badge -->", self.html, "Floating active status badge container comment/wrapper must be removed")
+
 
 if __name__ == '__main__':
     unittest.main()
