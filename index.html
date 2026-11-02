@@ -342,7 +342,8 @@
     .project-card {
       cursor: pointer;
       position: relative;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.25s ease;
+      z-index: 1;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.25s ease, z-index 0s 0.3s;
       will-change: transform, border-color, box-shadow;
     }
     .project-card:hover {
@@ -350,12 +351,13 @@
       border-color: var(--card-accent, #3d6bb5) !important;
       box-shadow: 0 20px 40px -10px var(--card-glow, rgba(61, 107, 181, 0.30)), 0 0 25px var(--card-surface-glow, rgba(61, 107, 181, 0.15)) !important;
       z-index: 10;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.25s ease, z-index 0s 0s;
     }
     .project-card:hover .project-card-title {
       color: var(--card-accent, #3d6bb5) !important;
     }
     .project-card:active {
-      transform: translateY(-2px) scale(0.995);
+      transform: translateY(-2px) scale(0.995) !important;
     }
     .project-card:focus-visible {
       outline: 2px solid var(--card-accent, #3d6bb5);
@@ -997,7 +999,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
         
         <!-- Project 1: B2B Sales Engine -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="ai" data-preview-title="B2B AI Sales Engine" data-preview-badge="AI Conversational" data-preview-tag="Python · Gemini 3.5" data-preview-desc="24/7 conversational sales brain & smartphone simulator with COD order extraction." data-accent-color="#0284c7" data-accent-rgb="2, 132, 199" data-card-link="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="B2B AI Sales Engine - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="ai" data-preview-title="B2B AI Sales Engine" data-preview-badge="AI Conversational" data-preview-tag="Python · Gemini 3.5" data-preview-desc="24/7 conversational sales brain & smartphone simulator with COD order extraction." data-accent-color="#0284c7" data-accent-rgb="2, 132, 199" data-card-link="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="B2B AI Sales Engine - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">AI Conversational</span>
@@ -1015,7 +1017,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Gemini 3.5</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1023,7 +1025,7 @@
         </div>
 
         <!-- Project 2: Social Humanizer -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="automation" data-preview-title="Social Humanizer PyPI" data-preview-badge="PyPI Published" data-preview-tag="Python · PyPI Package" data-preview-desc="Universal AI Social Media Humanizer & Algorithmic Risk Auditor published on PyPI." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/social-humanizer" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Social Humanizer - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="automation" data-preview-title="Social Humanizer PyPI" data-preview-badge="PyPI Published" data-preview-tag="Python · PyPI Package" data-preview-desc="Universal AI Social Media Humanizer & Algorithmic Risk Auditor published on PyPI." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/social-humanizer" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Social Humanizer - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PyPI Published</span>
@@ -1041,10 +1043,10 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Gradio</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/social-humanizer" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/social-humanizer" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
-              <a href="https://pypi.org/project/social-humanizer/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all">
+              <a href="https://pypi.org/project/social-humanizer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all">
                 <i data-lucide="package" class="w-3.5 h-3.5"></i> PyPI
               </a>
             </div>
@@ -1052,7 +1054,7 @@
         </div>
 
         <!-- Project 3: Freshy Food -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="fullstack" data-preview-title="Freshy Food Storefront" data-preview-badge="Live Demo" data-preview-tag="1-Click COD · AI Chatbot" data-preview-desc="Organic e-commerce platform with 1-Click COD checkout & Bengali AI Nutritionist." data-accent-color="#059669" data-accent-rgb="5, 150, 105" data-card-link="https://github.com/Jubayer-ahamed42/freshy-food" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Freshy Food Storefront - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="fullstack" data-preview-title="Freshy Food Storefront" data-preview-badge="Live Demo" data-preview-tag="1-Click COD · AI Chatbot" data-preview-desc="Organic e-commerce platform with 1-Click COD checkout & Bengali AI Nutritionist." data-accent-color="#059669" data-accent-rgb="5, 150, 105" data-card-link="https://github.com/Jubayer-ahamed42/freshy-food" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Freshy Food Storefront - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
@@ -1070,10 +1072,10 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Apps Script</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/freshy-food" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/freshy-food" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
-              <a href="https://jubayer-ahamed42.github.io/freshy-food/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+              <a href="https://jubayer-ahamed42.github.io/freshy-food/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
               </a>
             </div>
@@ -1081,7 +1083,7 @@
         </div>
 
         <!-- Project 4: Multi-Agent AI Orchestrator -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="ai" data-preview-title="Multi-Agent Orchestrator" data-preview-badge="Agent Swarm" data-preview-tag="7 Autonomous Agents" data-preview-desc="24/7 cloud architecture orchestrating 7 specialized autonomous agents with Telegram command." data-accent-color="#a855f7" data-accent-rgb="168, 85, 247" data-card-link="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Multi-Agent AI Orchestrator - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="ai" data-preview-title="Multi-Agent Orchestrator" data-preview-badge="Agent Swarm" data-preview-tag="7 Autonomous Agents" data-preview-desc="24/7 cloud architecture orchestrating 7 specialized autonomous agents with Telegram command." data-accent-color="#a855f7" data-accent-rgb="168, 85, 247" data-card-link="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Multi-Agent AI Orchestrator - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Agent Swarm</span>
@@ -1099,7 +1101,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Docker</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/Multi-Agent-AI-Orchestrator" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1107,7 +1109,7 @@
         </div>
 
         <!-- Project 5: Madrasah Management SaaS -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="fullstack" data-preview-title="Madrasah SaaS ERP" data-preview-badge="Enterprise ERP" data-preview-tag="Next.js 14 · Supabase" data-preview-desc="Institutional ERP with fee ledgers, automated currency-in-words, and dual-copy printable receipts." data-accent-color="#3b82f6" data-accent-rgb="59, 130, 246" data-card-link="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Madrasah Management SaaS - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="fullstack" data-preview-title="Madrasah SaaS ERP" data-preview-badge="Enterprise ERP" data-preview-tag="Next.js 14 · Supabase" data-preview-desc="Institutional ERP with fee ledgers, automated currency-in-words, and dual-copy printable receipts." data-accent-color="#3b82f6" data-accent-rgb="59, 130, 246" data-card-link="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Madrasah Management SaaS - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Enterprise ERP</span>
@@ -1125,7 +1127,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Supabase</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/Madrasah-Management-SaaS" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1133,7 +1135,7 @@
         </div>
 
         <!-- Project 6: Gemma 4 Local AI Workspace -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="ai" data-preview-title="Gemma 4 Local AI Workspace" data-preview-badge="Live Demo" data-preview-tag="Offline bn-BD Speech" data-preview-desc="Lightweight (30KB) single-file web dashboard with native Bengali voice recognition running Google Gemma 4 for sovereign private intelligence." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Gemma 4 Local AI Workspace - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="ai" data-preview-title="Gemma 4 Local AI Workspace" data-preview-badge="Live Demo" data-preview-tag="Offline bn-BD Speech" data-preview-desc="Lightweight (30KB) single-file web dashboard with native Bengali voice recognition running Google Gemma 4 for sovereign private intelligence." data-accent-color="#10b981" data-accent-rgb="16, 185, 129" data-card-link="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Gemma 4 Local AI Workspace - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
@@ -1151,10 +1153,10 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Edge AI</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/gemma4-local-ai-workspace" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
-              <a href="https://jubayer-ahamed42.github.io/gemma4-local-ai-workspace/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+              <a href="https://jubayer-ahamed42.github.io/gemma4-local-ai-workspace/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
               </a>
             </div>
@@ -1162,7 +1164,7 @@
         </div>
 
         <!-- Project 7: BeSmart Agency Brand Portal -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="fullstack" data-preview-title="Jubayer Ahamed Portfolio Website" data-preview-badge="Live Demo" data-preview-tag="Full-Stack Web" data-preview-desc="Official agency brand portal with telemetry, dynamic cursor physics, and dark mode." data-accent-color="#06b6d4" data-accent-rgb="6, 182, 212" data-card-link="https://github.com/Jubayer-ahamed42/besmartwithai-agency" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Jubayer Ahamed Portfolio Website - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="fullstack" data-preview-title="Jubayer Ahamed Portfolio Website" data-preview-badge="Live Demo" data-preview-tag="Full-Stack Web" data-preview-desc="Official agency brand portal with telemetry, dynamic cursor physics, and dark mode." data-accent-color="#06b6d4" data-accent-rgb="6, 182, 212" data-card-link="https://github.com/Jubayer-ahamed42/besmartwithai-agency" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Jubayer Ahamed Portfolio Website - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">Live Demo</span>
@@ -1180,10 +1182,10 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">GitHub Pages</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/besmartwithai-agency" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/besmartwithai-agency" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
-              <a href="https://jubayer-ahamed42.github.io/besmartwithai-agency/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
+              <a href="https://jubayer-ahamed42.github.io/besmartwithai-agency/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-wave/10 text-wave hover:bg-wave hover:text-white transition-all">
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
               </a>
             </div>
@@ -1191,7 +1193,7 @@
         </div>
 
         <!-- Project 8: PureView AI Android -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="ai" data-preview-title="PureView AI Android" data-preview-badge="Mobile AI" data-preview-tag="Computer Vision Shield" data-preview-desc="On-device AI computer vision shield for mobile video streaming & artifact suppression." data-accent-color="#0ea5e9" data-accent-rgb="14, 165, 233" data-card-link="https://github.com/Jubayer-ahamed42/PureView-AI-Android" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="PureView AI Android - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="ai" data-preview-title="PureView AI Android" data-preview-badge="Mobile AI" data-preview-tag="Computer Vision Shield" data-preview-desc="On-device AI computer vision shield for mobile video streaming & artifact suppression." data-accent-color="#0ea5e9" data-accent-rgb="14, 165, 233" data-card-link="https://github.com/Jubayer-ahamed42/PureView-AI-Android" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="PureView AI Android - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/20 dark:text-cyan-300">Mobile AI</span>
@@ -1209,7 +1211,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Vision AI</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/PureView-AI-Android" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/PureView-AI-Android" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1217,7 +1219,7 @@
         </div>
 
         <!-- Project 9: Facebook Auto-Poster Agent -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="automation" data-preview-title="Facebook Auto-Poster" data-preview-badge="Social Automation" data-preview-tag="Meta Graph API" data-preview-desc="Autonomous multi-channel social media scheduler & content creator via Meta Graph API." data-accent-color="#2563eb" data-accent-rgb="37, 99, 235" data-card-link="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Facebook Auto-Poster - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="automation" data-preview-title="Facebook Auto-Poster" data-preview-badge="Social Automation" data-preview-tag="Meta Graph API" data-preview-desc="Autonomous multi-channel social media scheduler & content creator via Meta Graph API." data-accent-color="#2563eb" data-accent-rgb="37, 99, 235" data-card-link="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Facebook Auto-Poster - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">Social Automation</span>
@@ -1235,7 +1237,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Cron</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/BeSmart-Social-AI-Automation" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1243,7 +1245,7 @@
         </div>
 
         <!-- Project 10: LinkedIn B2B Client Acquisition -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="automation" data-preview-title="LinkedIn B2B Engine" data-preview-badge="B2B Outreach" data-preview-tag="Outreach Pipeline" data-preview-desc="Automated client acquisition pipeline capturing enterprise decision-maker leads." data-accent-color="#1d4ed8" data-accent-rgb="29, 78, 216" data-card-link="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="LinkedIn B2B Engine - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="automation" data-preview-title="LinkedIn B2B Engine" data-preview-badge="B2B Outreach" data-preview-tag="Outreach Pipeline" data-preview-desc="Automated client acquisition pipeline capturing enterprise decision-maker leads." data-accent-color="#1d4ed8" data-accent-rgb="29, 78, 216" data-card-link="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="LinkedIn B2B Engine - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-600/10 text-blue-700 dark:bg-blue-600/20 dark:text-blue-300">B2B Outreach</span>
@@ -1261,7 +1263,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">B2B</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/linkedin-b2b-automation" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1269,7 +1271,7 @@
         </div>
 
         <!-- Project 11: Smart Utility PWA Suite -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="fullstack" data-preview-title="Smart Utility PWA Trio" data-preview-badge="PWA Suite" data-preview-tag="Offline-First Web Apps" data-preview-desc="Offline-first Progressive Web App trio: FirstAid, ZeroWasteChef, and WattSaver." data-accent-color="#14b8a6" data-accent-rgb="20, 184, 166" data-card-link="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Smart Utility PWA Trio - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="fullstack" data-preview-title="Smart Utility PWA Trio" data-preview-badge="PWA Suite" data-preview-tag="Offline-First Web Apps" data-preview-desc="Offline-first Progressive Web App trio: FirstAid, ZeroWasteChef, and WattSaver." data-accent-color="#14b8a6" data-accent-rgb="20, 184, 166" data-card-link="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Smart Utility PWA Trio - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">PWA Suite</span>
@@ -1287,7 +1289,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Offline-First</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/Smart-Utility-PWA-Suite" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1295,7 +1297,7 @@
         </div>
 
         <!-- Project 12: OpenClaw & Hermes Autonomous Agent Lab -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="ai" data-preview-title="OpenClaw & Hermes Agent Lab" data-preview-badge="Autonomous Lab" data-preview-tag="OpenClaw · Nous Hermes" data-preview-desc="Isolated autonomous agent execution environment integrating OpenClaw with Nous Hermes reasoning models, OmniRoute gateway & deterministic sandbox testing." data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246" data-card-link="https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="OpenClaw & Hermes Agent Lab - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="ai" data-preview-title="OpenClaw & Hermes Agent Lab" data-preview-badge="Autonomous Lab" data-preview-tag="OpenClaw · Nous Hermes" data-preview-desc="Isolated autonomous agent execution environment integrating OpenClaw with Nous Hermes reasoning models, OmniRoute gateway & deterministic sandbox testing." data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246" data-card-link="https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="OpenClaw & Hermes Agent Lab - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300">Autonomous Lab</span>
@@ -1313,7 +1315,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Sandbox</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/openclaw-hermes-agent-lab" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1321,7 +1323,7 @@
         </div>
 
         <!-- Project 13: Personal PC Control Agent -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="automation" data-preview-title="Personal PC Agent (Ahmad)" data-preview-badge="System Automation" data-preview-tag="Voice OS Automation" data-preview-desc="Voice and command-driven personal desktop assistant automating Windows workflows." data-accent-color="#3d6bb5" data-accent-rgb="61, 107, 181" data-card-link="https://github.com/Jubayer-ahamed42/ahmad-agent" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Personal PC Agent - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="automation" data-preview-title="Personal PC Agent (Ahmad)" data-preview-badge="System Automation" data-preview-tag="Voice OS Automation" data-preview-desc="Voice and command-driven personal desktop assistant automating Windows workflows." data-accent-color="#3d6bb5" data-accent-rgb="61, 107, 181" data-card-link="https://github.com/Jubayer-ahamed42/ahmad-agent" data-card-action="GitHub Repo" role="link" tabindex="0" aria-label="Personal PC Agent - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-wave/10 text-wave dark:bg-wave/30 dark:text-sky-300">System Automation</span>
@@ -1339,7 +1341,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">Voice Control</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42/ahmad-agent" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42/ahmad-agent" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
             </div>
@@ -1347,7 +1349,7 @@
         </div>
 
         <!-- Project 14: GitHub Spec-Kit & Agentic Suite -->
-        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl" data-category="automation" data-preview-title="GitHub Spec-Kit Suite" data-preview-badge="SDD Core" data-preview-tag="Agentic Engineering" data-preview-desc="Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows." data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="GitHub Spec-Kit Suite - View on GitHub">
+        <div class="project-card group bg-paper-deep dark:bg-slate-900/80 rounded-3xl p-7 border border-ink-faint/30 dark:border-slate-800 transition-all duration-300 ease-out flex flex-col justify-between hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl active:-translate-y-0.5 active:scale-[0.995]" data-category="automation" data-preview-title="GitHub Spec-Kit Suite" data-preview-badge="SDD Core" data-preview-tag="Agentic Engineering" data-preview-desc="Master Spec-Driven Development (SDD) toolkit for AI coding agents enforcing structured workflows." data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11" data-card-link="https://github.com/Jubayer-ahamed42" data-card-action="GitHub Profile" role="link" tabindex="0" aria-label="GitHub Spec-Kit Suite - View on GitHub">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/20 text-gold dark:bg-gold/30">SDD Core</span>
@@ -1365,7 +1367,7 @@
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-paper dark:bg-slate-800 text-ink-soft dark:text-slate-300">DevOps</span>
             </div>
             <div class="flex items-center gap-3 pt-4 border-t border-ink-faint/20 dark:border-slate-800">
-              <a href="https://github.com/Jubayer-ahamed42" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
+              <a href="https://github.com/Jubayer-ahamed42" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Profile
               </a>
             </div>
@@ -3415,7 +3417,7 @@ ${bottleneck}
       if ((auditModal && !auditModal.classList.contains('hidden')) || (csModal && !csModal.classList.contains('hidden')) || (legalModal && !legalModal.classList.contains('hidden'))) return;
       if (!isLoopRunning) {
         isLoopRunning = true;
-        requestAnimationFrame(animateModal);
+        requestAnimationFrame(animateSpotlight);
       }
     }
 
@@ -3446,7 +3448,7 @@ ${bottleneck}
     }, { passive: true });
 
     // Smooth Lerp loop for Ambient Spotlight Dynamic Chromatic Glow
-    function animateModal() {
+    function animateSpotlight() {
       let needsNextFrame = false;
       const auditModal = document.getElementById('audit-modal');
       const csModal = document.getElementById('case-study-modal');
@@ -3552,7 +3554,7 @@ ${bottleneck}
       }
 
       if (needsNextFrame) {
-        requestAnimationFrame(animateModal);
+        requestAnimationFrame(animateSpotlight);
       } else {
         isLoopRunning = false;
       }

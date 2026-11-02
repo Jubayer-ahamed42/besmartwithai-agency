@@ -353,7 +353,7 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('#6366f1', logo)
 
     def test_project_card_clean_hover_and_modal_removal(self):
-        """Verify #hover-preview-modal is removed and all 14 project cards feature smooth hover scale elevation."""
+        """Verify #hover-preview-modal is removed and all 14 project cards feature smooth hover scale elevation, active feedback, and security."""
         # 1. Zero occurrences of floating preview modal and its inner elements
         self.assertNotIn('id="hover-preview-modal"', self.html)
         self.assertNotIn('id="preview-accent-line"', self.html)
@@ -361,26 +361,47 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertNotIn('id="preview-tag"', self.html)
         self.assertNotIn('id="preview-click-icon"', self.html)
 
-        # 2. JavaScript does not reference hover-preview-modal element or popup tracking variables
+        # 2. JavaScript does not reference hover-preview-modal element, old animateModal name, or popup tracking variables
         self.assertNotIn("document.getElementById('hover-preview-modal')", self.html)
         self.assertNotIn("document.getElementById('preview-tag')", self.html)
         self.assertNotIn("isHoveringCard", self.html)
         self.assertNotIn("hoverLeaveTimeout", self.html)
+        self.assertNotIn("animateModal", self.html)
+        self.assertIn("animateSpotlight", self.html)
 
-        # 3. All 14 project cards feature smooth forward hover lift & scale classes
+        # 3. All 14 project cards feature smooth forward hover lift & scale classes + active press feedback
         project_cards = re.findall(r'class="project-card\s[^"]*"', self.html)
         self.assertEqual(len(project_cards), 14, "Must have exactly 14 project cards")
         for card_class in project_cards:
             self.assertIn('hover:-translate-y-2', card_class)
             self.assertIn('hover:scale-[1.02]', card_class)
             self.assertIn('hover:shadow-2xl', card_class)
+            self.assertIn('active:-translate-y-0.5', card_class)
+            self.assertIn('active:scale-[0.995]', card_class)
             self.assertIn('transition-all', card_class)
 
-        # 4. CSS defines project card hover elevation & accent glow
+        # 4. CSS defines project card hover elevation, accent glow, and z-index transition smoothing
         self.assertIn(".project-card:hover", self.html)
         self.assertIn("transform: translateY(-8px) scale(1.02);", self.html)
         self.assertIn("border-color: var(--card-accent", self.html)
         self.assertIn("box-shadow: 0 20px 40px -10px var(--card-glow", self.html)
+        self.assertIn("z-index: 10;", self.html)
+        self.assertIn("z-index 0s 0.3s", self.html)
+        self.assertIn(".project-card:active {\n      transform: translateY(-2px) scale(0.995) !important;", self.html)
+
+        # 5. Security & accessibility: all project action links in #projects-grid have rel="noopener noreferrer"
+        grid_start = self.html.find('id="projects-grid"')
+        grid_end = self.html.find('</section>', grid_start)
+        grid_html = self.html[grid_start:grid_end]
+        links = re.findall(r'<a\s+[^>]*>', grid_html)
+        self.assertGreaterEqual(len(links), 14)
+        for link in links:
+            if 'target="_blank"' in link:
+                self.assertIn('rel="noopener noreferrer"', link)
+
+        # 6. Interaction: full card navigation and keyboard accessibility attributes
+        self.assertEqual(self.html.count('role="link" tabindex="0"'), 14)
+        self.assertEqual(self.html.count('data-card-link="https://github.com/'), 14)
 
 
 if __name__ == '__main__':
