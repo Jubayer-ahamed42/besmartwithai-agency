@@ -6,6 +6,8 @@
   "scripts": {
     "build": "echo Static assets ready",
     "dev": "python -m http.server 3000",
-    "preview": "python -m http.server 3000"
+    "preview": "python -m http.server 3000",
+    "cf:dev": "wrangler pages dev .",
+    "cf:deploy": "wrangler pages deploy . --project-name=jubayer-ahamed"
   }
 }

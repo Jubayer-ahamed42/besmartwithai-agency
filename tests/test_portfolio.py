@@ -517,13 +517,17 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('value="https://jubayer-ahamed.pages.dev/#contact"', self.html)
         self.assertIn('value="https://jubayer-ahamed.pages.dev/?audit_submitted=true"', self.html)
 
-        # 4. Cloudflare configuration files exist
+        # 4. Cloudflare configuration files exist and are correctly configured
         cf_headers_path = os.path.join(BASE_DIR, '_headers')
         wrangler_json_path = os.path.join(BASE_DIR, 'wrangler.json')
         wrangler_toml_path = os.path.join(BASE_DIR, 'wrangler.toml')
+        vercel_json_path = os.path.join(BASE_DIR, 'vercel.json')
+        package_json_path = os.path.join(BASE_DIR, 'package.json')
+
         self.assertTrue(os.path.isfile(cf_headers_path), "_headers file must exist for Cloudflare Pages")
         self.assertTrue(os.path.isfile(wrangler_json_path), "wrangler.json must exist")
         self.assertTrue(os.path.isfile(wrangler_toml_path), "wrangler.toml must exist")
+        self.assertFalse(os.path.isfile(vercel_json_path), "vercel.json must be removed to avoid ambiguous deployments")
 
         with open(cf_headers_path, 'r', encoding='utf-8') as f:
             headers_content = f.read()
@@ -531,6 +535,19 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('X-Frame-Options: SAMEORIGIN', headers_content)
         self.assertIn('Referrer-Policy: strict-origin-when-cross-origin', headers_content)
         self.assertIn('Cache-Control: public, max-age=31536000, immutable', headers_content)
+
+        import json
+        with open(wrangler_json_path, 'r', encoding='utf-8') as f:
+            wrangler_json = json.load(f)
+        self.assertEqual(wrangler_json.get('pages_build_output_dir'), '.', "wrangler.json must configure pages_build_output_dir as .")
+
+        with open(wrangler_toml_path, 'r', encoding='utf-8') as f:
+            wrangler_toml = f.read()
+        self.assertIn('pages_build_output_dir = "."', wrangler_toml, "wrangler.toml must configure pages_build_output_dir")
+
+        with open(package_json_path, 'r', encoding='utf-8') as f:
+            package_json = json.load(f)
+        self.assertIn('cf:deploy', package_json.get('scripts', {}), "package.json must contain cf:deploy script")
 
         # 5. README.md references Cloudflare Pages live deployment
         readme_path = os.path.join(BASE_DIR, 'README.md')

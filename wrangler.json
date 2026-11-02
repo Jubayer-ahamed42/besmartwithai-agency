@@ -2,7 +2,5 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "jubayer-ahamed",
   "compatibility_date": "2024-11-01",
-  "assets": {
-    "directory": "./"
-  }
+  "pages_build_output_dir": "."
 }
