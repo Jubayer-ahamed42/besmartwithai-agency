@@ -172,10 +172,8 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('loading="lazy"', contact_snippet)
 
     def test_dom_cleanliness_and_html_validity(self):
-        """5.0 HTML syntax validity and hover modal position above scripts."""
-        hover_idx = self.html.find('id="hover-preview-modal"')
-        last_script_idx = self.html.rfind('<!-- ==================== JAVASCRIPT ==================== -->')
-        self.assertLess(hover_idx, last_script_idx, "hover-preview-modal must be placed before main script")
+        """5.0 HTML syntax validity and modal cleanliness."""
+        self.assertNotIn('id="hover-preview-modal"', self.html, "hover-preview-modal must be removed from DOM")
 
         class StrictValidator(HTMLParser):
             def __init__(self):
@@ -251,7 +249,7 @@ class TestPortfolioAudit(unittest.TestCase):
         # Project 1 in index.html
         self.assertIn('data-preview-tag="Python · Gemini 3.5"', self.html)
         self.assertIn('>Gemini 3.5</span>', self.html)
-        self.assertIn('id="preview-tag" class="text-[10px] font-mono text-ink-soft dark:text-slate-400">Python · Gemini 3.5</span>', self.html)
+        self.assertNotIn('id="preview-tag"', self.html)
         self.assertNotIn('Gemini 2.0', self.html)
         self.assertNotIn('Gemini 2.5', self.html)
 
@@ -353,6 +351,36 @@ class TestPortfolioAudit(unittest.TestCase):
             logo = f.read()
         self.assertNotIn('#fb2c36', logo)
         self.assertIn('#6366f1', logo)
+
+    def test_project_card_clean_hover_and_modal_removal(self):
+        """Verify #hover-preview-modal is removed and all 14 project cards feature smooth hover scale elevation."""
+        # 1. Zero occurrences of floating preview modal and its inner elements
+        self.assertNotIn('id="hover-preview-modal"', self.html)
+        self.assertNotIn('id="preview-accent-line"', self.html)
+        self.assertNotIn('id="preview-indicator-dot"', self.html)
+        self.assertNotIn('id="preview-tag"', self.html)
+        self.assertNotIn('id="preview-click-icon"', self.html)
+
+        # 2. JavaScript does not reference hover-preview-modal element or popup tracking variables
+        self.assertNotIn("document.getElementById('hover-preview-modal')", self.html)
+        self.assertNotIn("document.getElementById('preview-tag')", self.html)
+        self.assertNotIn("isHoveringCard", self.html)
+        self.assertNotIn("hoverLeaveTimeout", self.html)
+
+        # 3. All 14 project cards feature smooth forward hover lift & scale classes
+        project_cards = re.findall(r'class="project-card\s[^"]*"', self.html)
+        self.assertEqual(len(project_cards), 14, "Must have exactly 14 project cards")
+        for card_class in project_cards:
+            self.assertIn('hover:-translate-y-2', card_class)
+            self.assertIn('hover:scale-[1.02]', card_class)
+            self.assertIn('hover:shadow-2xl', card_class)
+            self.assertIn('transition-all', card_class)
+
+        # 4. CSS defines project card hover elevation & accent glow
+        self.assertIn(".project-card:hover", self.html)
+        self.assertIn("transform: translateY(-8px) scale(1.02);", self.html)
+        self.assertIn("border-color: var(--card-accent", self.html)
+        self.assertIn("box-shadow: 0 20px 40px -10px var(--card-glow", self.html)
 
 
 if __name__ == '__main__':
