@@ -277,6 +277,74 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertNotIn('Gemini 2.5', readme)
         self.assertNotIn('Gemma 2', readme)
 
+    def test_dark_mode_default_configuration(self):
+        """Verify the website opens in Dark Mode by default with zero-flicker toggle."""
+        # 1. Head script must default to dark mode unless localStorage explicitly has 'light'
+        self.assertIn(
+            "if (localStorage.theme === 'light') {\n        document.documentElement.classList.remove('dark');\n      } else {\n        document.documentElement.classList.add('dark');\n      }",
+            self.html,
+            "Head script must set dark mode by default unless 'light' is stored"
+        )
+        # Catch fallback must also guarantee dark mode
+        self.assertIn(
+            "catch (e) {\n      document.documentElement.classList.add('dark');\n    }",
+            self.html,
+            "Private browsing / storage-disabled fallback must default to dark mode"
+        )
+
+        # 2. Toggle button initial markup
+        self.assertIn('id="theme-toggle"', self.html)
+        self.assertIn('aria-label="Switch to light mode"', self.html)
+        self.assertIn('id="theme-toggle-dark-icon" class="w-4 h-4 hidden"', self.html)
+        self.assertIn('id="theme-toggle-light-icon" class="w-4 h-4"', self.html)
+
+        # 3. Theme switch handler persists 'dark' or 'light'
+        self.assertIn("localStorage.setItem('theme', isDark ? 'dark' : 'light');", self.html)
+        self.assertIn("themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');", self.html)
+
+    def test_enterprise_indigo_palette_and_zero_coral(self):
+        """Verify Enterprise Royal Indigo replaces all coral/red accents (#fb2c36) across the codebase."""
+        # Zero occurrences of red/coral in index.html
+        coral_classes = re.findall(r'[a-zA-Z0-9_\:\/\.\-]+coral[a-zA-Z0-9_\:\/\.\-]*', self.html)
+        self.assertEqual(len(coral_classes), 0, f"Expected 0 coral classes in index.html, found: {coral_classes}")
+        self.assertEqual(self.html.count('#fb2c36'), 0, "No #fb2c36 should remain in index.html")
+
+        # Enterprise Indigo system in Tailwind configuration
+        self.assertIn("DEFAULT: '#6366f1'", self.html)
+        self.assertIn("'indigo-light': '#818cf8'", self.html)
+        self.assertIn("accent: '#6366f1'", self.html)
+
+        # Accent attributes in Service 07 and Case Study 01
+        self.assertIn('data-accent-color="#6366f1" data-accent-rgb="99, 102, 241"', self.html)
+
+        # Ambient chromatic spotlight & lerp loop uses [99, 102, 241]
+        self.assertIn("Math.round(246 + (241 - 246) * t)", self.html)
+        self.assertIn("if (b > 200 && r > 80) return [139, 92, 246];", self.html)
+
+        # WCAG 2.2 Level AA Contrast compliance for Enterprise Indigo
+        cr_indigo_light = contrast('#4f46e5', '#ffffff')
+        self.assertGreaterEqual(cr_indigo_light, 4.5, f"indigo-600 contrast against white is {cr_indigo_light:.2f}, must be >= 4.5:1")
+
+        cr_indigo_dark_card = contrast('#818cf8', '#141f36')
+        self.assertGreaterEqual(cr_indigo_dark_card, 4.5, f"indigo-400 contrast against dark-card is {cr_indigo_dark_card:.2f}, must be >= 4.5:1")
+
+        cr_indigo_dark_bg = contrast('#818cf8', '#070b14')
+        self.assertGreaterEqual(cr_indigo_dark_bg, 4.5, f"indigo-400 contrast against dark-bg is {cr_indigo_dark_bg:.2f}, must be >= 4.5:1")
+
+        # SVG branding assets check
+        favicon_path = os.path.join(BASE_DIR, 'assets', 'favicon.svg')
+        with open(favicon_path, 'r', encoding='utf-8') as f:
+            fav = f.read()
+        self.assertNotIn('#fb2c36', fav)
+        self.assertIn('#6366f1', fav)
+
+        logo_path = os.path.join(BASE_DIR, 'assets', 'logo.svg')
+        with open(logo_path, 'r', encoding='utf-8') as f:
+            logo = f.read()
+        self.assertNotIn('#fb2c36', logo)
+        self.assertIn('#6366f1', logo)
+
 
 if __name__ == '__main__':
     unittest.main()
+

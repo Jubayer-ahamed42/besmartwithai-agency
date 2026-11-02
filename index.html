@@ -57,7 +57,21 @@
             wave: '#3d6bb5',
             gold: '#e9b85c',
             abyss: '#0e1f4a',
-            coral: '#fb2c36',
+            indigo: {
+              DEFAULT: '#6366f1',
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+            accent: '#6366f1',
+            'indigo-light': '#818cf8',
             'dark-bg': '#070b14',
             'dark-surface': '#0e1726',
             'dark-card': '#141f36',
@@ -400,22 +414,20 @@
   </style>
 
   <script>
-    // Theme toggle init with fallback protection
+    // Theme toggle init with fallback protection (Default: Dark Mode)
     try {
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
+      if (localStorage.theme === 'light') {
         document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
       }
     } catch (e) {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
+      document.documentElement.classList.add('dark');
     }
   </script>
 </head>
 
-<body class="bg-paper text-ink font-sans antialiased selection:bg-coral selection:text-white dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
+<body class="bg-paper text-ink font-sans antialiased selection:bg-indigo-600 selection:text-white dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
 
   <!-- Ambient Spotlight (Dennis Snellenberg dynamic chromatic cursor track) -->
   <div id="ambient-spotlight" class="pointer-events-none fixed inset-0 z-30 transition-opacity duration-500 opacity-0" aria-hidden="true"></div>
@@ -462,12 +474,12 @@
       <!-- Header Actions: Theme Toggle & CTA Button -->
       <div class="flex items-center gap-3">
         <!-- Theme Toggle Button -->
-        <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-11 h-11 rounded-full flex items-center justify-center text-ink dark:text-dark-text bg-paper-deep/80 dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border hover:bg-ink-faint/20 dark:hover:bg-dark-surface transition-all cursor-pointer">
-          <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-4 h-4"></i>
-          <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4 hidden"></i>
+        <button id="theme-toggle" type="button" aria-label="Switch to light mode" class="w-11 h-11 rounded-full flex items-center justify-center text-ink dark:text-dark-text bg-paper-deep/80 dark:bg-dark-card border border-ink-faint/40 dark:border-dark-border hover:bg-ink-faint/20 dark:hover:bg-dark-surface transition-all cursor-pointer">
+          <i data-lucide="moon" id="theme-toggle-dark-icon" class="w-4 h-4 hidden"></i>
+          <i data-lucide="sun" id="theme-toggle-light-icon" class="w-4 h-4"></i>
         </button>
 
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-abyss text-white text-sm font-semibold hover:bg-coral transition-all shadow-sm hover:shadow-lg hover:shadow-coral/25">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-abyss text-white text-sm font-semibold hover:bg-indigo-600 transition-all shadow-sm hover:shadow-lg hover:shadow-indigo-500/25">
           <span>Audit Your Business</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -518,7 +530,7 @@
         </span>
       </a>
       <div class="pt-2">
-        <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-coral">
+        <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-5 py-3 rounded-xl bg-abyss text-white text-sm font-semibold hover:bg-indigo-600">
           Audit Your Business →
         </a>
       </div>
@@ -758,7 +770,7 @@
           <span class="text-xs font-bold tracking-widest uppercase text-wave block mb-3">02 / SERVICES</span>
           <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-dark-text uppercase tracking-tight">What I Build</h2>
         </div>
-        <button onclick="openAuditModal()" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-abyss dark:hover:text-gold transition-colors">
+        <button onclick="openAuditModal()" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-abyss dark:hover:text-gold transition-colors">
           <span>Schedule an architecture call</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
@@ -771,7 +783,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#0284c7" data-accent-rgb="2, 132, 199">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">01</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">01</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="bot" class="w-5 h-5"></i>
               </div>
@@ -781,7 +793,7 @@
               Deploy 24/7 autonomous AI orchestrators for sales prospecting, client onboarding, support triaging, and real-time CRM updates.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Autonomous Multi-Agent Systems')" aria-label="Learn Architecture - Autonomous Multi-Agent Systems" data-service="Autonomous Multi-Agent Systems" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Autonomous Multi-Agent Systems')" aria-label="Learn Architecture - Autonomous Multi-Agent Systems" data-service="Autonomous Multi-Agent Systems" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Learn Architecture</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -791,7 +803,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#f59e0b" data-accent-rgb="245, 158, 11">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">02</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">02</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
@@ -801,7 +813,7 @@
               Get cited and recommended by ChatGPT, Perplexity, Claude, and Google AI Overviews, not just traditional blue links.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Generative Engine Optimisation (GEO)')" aria-label="Learn GEO Strategy - Generative Engine Optimisation" data-service="Generative Engine Optimisation (GEO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Generative Engine Optimisation (GEO)')" aria-label="Learn GEO Strategy - Generative Engine Optimisation" data-service="Generative Engine Optimisation (GEO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Learn GEO Strategy</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -811,7 +823,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#10b981" data-accent-rgb="16, 185, 129">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">03</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">03</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="search" class="w-5 h-5"></i>
               </div>
@@ -821,7 +833,7 @@
               Build sustainable organic search authority that drives qualified, high-intent traffic and compounds over years.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Search Engine Optimisation (SEO)')" aria-label="View Case Studies - Search Engine Optimisation" data-service="Search Engine Optimisation (SEO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Search Engine Optimisation (SEO)')" aria-label="View Case Studies - Search Engine Optimisation" data-service="Search Engine Optimisation (SEO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>View Case Studies</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -831,7 +843,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#8b5cf6" data-accent-rgb="139, 92, 246">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">04</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">04</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="server" class="w-5 h-5"></i>
               </div>
@@ -841,7 +853,7 @@
               Cut massive SaaS subscription costs. I build private Linux VPS clouds with Docker, Coolify PaaS, and self-hosted private LLMs.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Sovereign DevOps & Self-Hosting')" aria-label="Calculate Savings - Sovereign DevOps & Self-Hosting" data-service="Sovereign DevOps & Self-Hosting" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Sovereign DevOps & Self-Hosting')" aria-label="Calculate Savings - Sovereign DevOps & Self-Hosting" data-service="Sovereign DevOps & Self-Hosting" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Calculate Savings</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -851,7 +863,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#059669" data-accent-rgb="5, 150, 105">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">05</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">05</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="message-square" class="w-5 h-5"></i>
               </div>
@@ -861,7 +873,7 @@
               Turn WhatsApp, Telegram, and Messenger into tireless 24/7 closing machines. Voice memos, order syncing, and payment gateways.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Omnichannel AI Sales Bots')" aria-label="Demo Live Bot - Omnichannel AI Sales Bots" data-service="Omnichannel AI Sales Bots" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Omnichannel AI Sales Bots')" aria-label="Demo Live Bot - Omnichannel AI Sales Bots" data-service="Omnichannel AI Sales Bots" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Demo Live Bot</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -871,7 +883,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#3d6bb5" data-accent-rgb="61, 107, 181">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">06</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">06</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="code" class="w-5 h-5"></i>
               </div>
@@ -881,17 +893,17 @@
               High-performance web apps built with Next.js, FastAPI, PostgreSQL, and Tailwind. Fast, secure, and engineered to convert visitors.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Production Web & SaaS Engineering')" aria-label="Explore Stack - Production Web & SaaS Engineering" data-service="Production Web & SaaS Engineering" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Production Web & SaaS Engineering')" aria-label="Explore Stack - Production Web & SaaS Engineering" data-service="Production Web & SaaS Engineering" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Explore Stack</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
         </div>
 
         <!-- Service 7 -->
-        <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#fb2c36" data-accent-rgb="251, 44, 54">
+        <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#6366f1" data-accent-rgb="99, 102, 241">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">07</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">07</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="target" class="w-5 h-5"></i>
               </div>
@@ -901,7 +913,7 @@
               Performance Max and paid media campaigns built for measurable, bottom-line return on ad spend (ROAS).
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Meta & Google Performance Ads')" aria-label="View ROAS Metrics - Meta & Google Performance Ads" data-service="Meta & Google Performance Ads" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Meta & Google Performance Ads')" aria-label="View ROAS Metrics - Meta & Google Performance Ads" data-service="Meta & Google Performance Ads" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>View ROAS Metrics</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -911,7 +923,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#e9b85c" data-accent-rgb="233, 184, 92">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">08</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">08</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="trending-up" class="w-5 h-5"></i>
               </div>
@@ -921,7 +933,7 @@
               Systematic UX audits and landing page redesigns that squeeze maximum sales from existing traffic without raising ad spend.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Conversion Rate Optimisation (CRO)')" aria-label="Request CRO Audit - Conversion Rate Optimisation" data-service="Conversion Rate Optimisation (CRO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Conversion Rate Optimisation (CRO)')" aria-label="Request CRO Audit - Conversion Rate Optimisation" data-service="Conversion Rate Optimisation (CRO)" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>Request CRO Audit</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -931,7 +943,7 @@
         <div class="service-card p-8 rounded-2xl bg-paper-deep dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-wave dark:hover:border-gold hover:shadow-xl transition-all group flex flex-col justify-between overflow-hidden" data-accent-color="#06b6d4" data-accent-rgb="6, 182, 212">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-coral transition-colors">09</span>
+              <span class="font-display text-3xl text-ink-faint dark:text-dark-muted group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">09</span>
               <div class="w-10 h-10 rounded-xl bg-white dark:bg-dark-surface flex items-center justify-center text-wave dark:text-gold shadow-sm">
                 <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
               </div>
@@ -941,7 +953,7 @@
               Clean, first-party data pipelines that bypass iOS privacy blocks, giving ad algorithms 100% accurate conversion signals.
             </p>
           </div>
-          <div role="button" tabindex="0" onclick="openAuditModal('Server-Side Tracking & Telemetry')" aria-label="View Architecture - Server-Side Tracking & Telemetry" data-service="Server-Side Tracking & Telemetry" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-coral dark:group-hover:text-coral cursor-pointer transition-all duration-200 hover:text-coral dark:hover:text-coral active:scale-[0.98] rounded select-none">
+          <div role="button" tabindex="0" onclick="openAuditModal('Server-Side Tracking & Telemetry')" aria-label="View Architecture - Server-Side Tracking & Telemetry" data-service="Server-Side Tracking & Telemetry" class="service-action-btn mt-8 pt-4 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs font-semibold text-wave dark:text-gold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 cursor-pointer transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 active:scale-[0.98] rounded select-none">
             <span>View Architecture</span>
             <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </div>
@@ -1028,7 +1040,7 @@
               <a href="https://github.com/Jubayer-ahamed42/social-humanizer" target="_blank" class="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-paper dark:bg-slate-800 text-ink dark:text-white hover:bg-abyss hover:text-white transition-all">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub Repo
               </a>
-              <a href="https://pypi.org/project/social-humanizer/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-coral/10 text-coral hover:bg-coral hover:text-white transition-all">
+              <a href="https://pypi.org/project/social-humanizer/" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2 px-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all">
                 <i data-lucide="package" class="w-3.5 h-3.5"></i> PyPI
               </a>
             </div>
@@ -1378,17 +1390,17 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         <!-- Case Study 1 -->
-        <div class="case-study-card group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-coral/40 dark:hover:border-coral/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(1)" data-accent-color="#fb2c36" data-accent-rgb="251, 44, 54">
+        <div class="case-study-card group bg-paper dark:bg-dark-card rounded-3xl p-8 border border-ink-faint/30 dark:border-dark-border shadow-md hover:shadow-2xl hover:border-indigo-500/40 dark:hover:border-indigo-500/40 transition-all flex flex-col justify-between cursor-pointer" onclick="openCaseStudyModal(1)" data-accent-color="#6366f1" data-accent-rgb="99, 102, 241">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Hospitality &amp; Booking</span>
               <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 01</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">From invisible to fully booked through autonomous pipelines</h3>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">From invisible to fully booked through autonomous pipelines</h3>
             
             <div class="space-y-4 my-8">
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
-                <div class="font-display text-3xl text-coral">+180%</div>
+                <div class="font-display text-3xl text-indigo-600 dark:text-indigo-400">+180%</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Organic Search &amp; AI Discovery</div>
               </div>
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
@@ -1401,12 +1413,12 @@
               </div>
             </div>
           </div>
-          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(1);" aria-haspopup="dialog" aria-label="Read full case study: Hospitality &amp; Booking direct reservation pipelines" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(1);" aria-haspopup="dialog" aria-label="Read full case study: Hospitality &amp; Booking direct reservation pipelines" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
-            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-indigo-600 dark:text-indigo-400"></i>
           </button>
         </div>
 
@@ -1417,11 +1429,11 @@
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">Education &amp; EdTech</span>
               <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 02</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">From empty batches to a 6-month waiting list</h3>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-wave dark:group-hover:text-gold transition-colors">From empty batches to a 6-month waiting list</h3>
             
             <div class="space-y-4 my-8">
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
-                <div class="font-display text-3xl text-coral">+213%</div>
+                <div class="font-display text-3xl text-wave dark:text-gold">+213%</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Qualified Lead Flow in 9 Months</div>
               </div>
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
@@ -1434,12 +1446,12 @@
               </div>
             </div>
           </div>
-          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(2);" aria-haspopup="dialog" aria-label="Read full case study: Education &amp; EdTech 6-month waiting list flywheel" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(2);" aria-haspopup="dialog" aria-label="Read full case study: Education &amp; EdTech 6-month waiting list flywheel" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-wave dark:group-hover:text-gold transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
-            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-wave dark:text-gold"></i>
           </button>
         </div>
 
@@ -1450,7 +1462,7 @@
               <span class="text-xs font-bold uppercase tracking-wider text-wave dark:text-gold bg-paper-deep dark:bg-dark-surface px-3 py-1 rounded-full inline-block">B2B Financial Services</span>
               <span class="text-[11px] font-mono text-ink-soft dark:text-dark-muted">Case Study 03</span>
             </div>
-            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-coral transition-colors">High-value enterprise contracts at 40% lower acquisition cost</h3>
+            <h3 class="font-serif text-2xl text-abyss dark:text-dark-text font-semibold mb-6 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">High-value enterprise contracts at 40% lower acquisition cost</h3>
             
             <div class="space-y-4 my-8">
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
@@ -1462,17 +1474,17 @@
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Automated Lead Score &amp; Velocity</div>
               </div>
               <div class="p-4 rounded-xl bg-paper-deep dark:bg-dark-surface border border-ink-faint/10 dark:border-dark-border">
-                <div class="font-display text-3xl text-coral">3.4x</div>
+                <div class="font-display text-3xl text-emerald-600 dark:text-emerald-400">3.4x</div>
                 <div class="text-xs text-ink-soft dark:text-dark-muted font-medium uppercase mt-0.5">Verified Return on Ad Spend (ROAS)</div>
               </div>
             </div>
           </div>
-          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(3);" aria-haspopup="dialog" aria-label="Read full case study: B2B Financial Services enterprise lead acceleration" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-coral transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-xl">
+          <button type="button" onclick="event.stopPropagation(); openCaseStudyModal(3);" aria-haspopup="dialog" aria-label="Read full case study: B2B Financial Services enterprise lead acceleration" class="w-full pt-6 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-sm font-semibold text-abyss dark:text-dark-text group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-xl">
             <span class="inline-flex items-center gap-2">
               <span>Read full case study</span>
               <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-paper-deep dark:bg-dark-surface text-wave dark:text-gold border border-ink-faint/20 dark:border-dark-border">In-Depth</span>
             </span>
-            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-coral"></i>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1.5 text-emerald-600 dark:text-emerald-400"></i>
           </button>
         </div>
 
@@ -1484,15 +1496,15 @@
 <!-- ==================== SECTION 4: 04 / CONTACT & BUSINESS SOLUTIONS HUB ==================== -->
   <section id="contact" class="py-24 bg-paper-deep dark:bg-dark-surface relative overflow-hidden transition-colors duration-300 border-t border-ink-faint/20 dark:border-dark-border">
     <!-- Ambient Blobs -->
-    <div class="hero-blob w-96 h-96 bg-coral/10 top-10 right-10 animate-blob-float"></div>
+    <div class="hero-blob w-96 h-96 bg-indigo-500/10 top-10 right-10 animate-blob-float"></div>
     <div class="hero-blob w-80 h-80 bg-wave/10 bottom-10 left-10 animate-blob-float" style="animation-delay: 3s;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-4 border border-coral/20">
-          <span class="w-2 h-2 rounded-full bg-coral animate-ping"></span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-4 border border-indigo-500/20">
+          <span class="w-2 h-2 rounded-full bg-indigo-500 animate-ping"></span>
           <span>Partner In Your Growth · Direct Founder Access · Problem Solving</span>
         </div>
         <h2 class="font-display text-4xl sm:text-6xl text-abyss dark:text-dark-text uppercase tracking-tight mb-4">
@@ -1513,11 +1525,11 @@
             <div class="flex items-center gap-4 mb-4">
               <picture class="shrink-0 w-16 h-16 block">
                 <source srcset="assets/jubayer.webp" type="image/webp">
-                <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" width="64" height="64" loading="lazy" class="w-16 h-16 rounded-2xl object-cover border-2 border-coral shadow-md">
+                <img src="assets/jubayer.jpg" alt="Jubayer Ahamed" width="64" height="64" loading="lazy" class="w-16 h-16 rounded-2xl object-cover border-2 border-indigo-500 shadow-md">
               </picture>
               <div>
                 <h3 class="font-serif text-xl font-bold text-abyss dark:text-dark-text">Jubayer Ahamed</h3>
-                <p class="text-xs font-semibold text-coral uppercase tracking-wider">AI Architect &middot; Web Developer &middot; Mentor</p>
+                <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">AI Architect &middot; Web Developer &middot; Mentor</p>
                 <div class="flex items-center gap-1.5 text-xs text-ink-soft dark:text-dark-muted mt-1">
                   <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                   <span>Direct Founder Inquiries Open</span>
@@ -1548,27 +1560,27 @@
             </a>
 
             <!-- Founder Direct Email Card -->
-            <div class="p-4 rounded-xl bg-paper dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-coral hover:shadow-md transition-all">
+            <div class="p-4 rounded-xl bg-paper dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-indigo-500 hover:shadow-md transition-all">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3.5">
-                  <div class="w-11 h-11 rounded-xl bg-coral/10 text-coral flex items-center justify-center flex-shrink-0">
+                  <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
                     <i data-lucide="mail" class="w-6 h-6"></i>
                   </div>
                   <div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-coral">Direct Founder Email</div>
-                    <a href="mailto:jubayer.ahamed.dev@gmail.com" class="text-sm font-semibold text-abyss dark:text-dark-text hover:text-coral transition-colors block break-all">
+                    <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Direct Founder Email</div>
+                    <a href="mailto:jubayer.ahamed.dev@gmail.com" class="text-sm font-semibold text-abyss dark:text-dark-text hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors block break-all">
                       jubayer.ahamed.dev@gmail.com
                     </a>
                   </div>
                 </div>
-                <button type="button" onclick="copyEmailToClipboard(this)" class="p-2 rounded-lg bg-paper-deep dark:bg-dark-surface hover:bg-coral/10 text-ink-soft dark:text-dark-muted hover:text-coral transition-all cursor-pointer relative" title="Copy email address" aria-label="Copy email">
+                <button type="button" onclick="copyEmailToClipboard(this)" class="p-2 rounded-lg bg-paper-deep dark:bg-dark-surface hover:bg-indigo-500/10 text-ink-soft dark:text-dark-muted hover:text-indigo-600 dark:hover:text-indigo-400 transition-all cursor-pointer relative" title="Copy email address" aria-label="Copy email">
                   <i data-lucide="copy" class="w-4 h-4"></i>
                   <span class="copy-tooltip hidden absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-abyss text-white text-[10px] font-bold tracking-wider uppercase whitespace-nowrap shadow-md">Copied!</span>
                 </button>
               </div>
               <div class="mt-2.5 pt-2.5 border-t border-ink-faint/20 dark:border-dark-border flex items-center justify-between text-xs text-ink-soft dark:text-dark-muted">
                 <span>RFP &middot; Architecture &middot; Proposals</span>
-                <a href="mailto:jubayer.ahamed.dev@gmail.com" class="text-coral font-semibold hover:underline flex items-center gap-1">
+                <a href="mailto:jubayer.ahamed.dev@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1">
                   <span>Send Mail</span>
                   <i data-lucide="arrow-right" class="w-3 h-3"></i>
                 </a>
@@ -1597,8 +1609,8 @@
                 <span class="text-[11px] font-bold text-abyss dark:text-dark-text">Agency FB</span>
                 <span class="text-[9px] text-ink-soft dark:text-dark-muted">Updates</span>
               </a>
-              <a href="https://www.facebook.com/jubayer.ahamed.129258" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center p-3 rounded-xl bg-paper dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-coral hover:text-coral text-center transition-all group">
-                <i data-lucide="user-check" class="w-5 h-5 text-coral mb-1 group-hover:scale-110 transition-transform"></i>
+              <a href="https://www.facebook.com/jubayer.ahamed.129258" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center p-3 rounded-xl bg-paper dark:bg-dark-card border border-ink-faint/30 dark:border-dark-border hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 text-center transition-all group">
+                <i data-lucide="user-check" class="w-5 h-5 text-indigo-600 dark:text-indigo-400 mb-1 group-hover:scale-110 transition-transform"></i>
                 <span class="text-[11px] font-bold text-abyss dark:text-dark-text">Personal FB</span>
                 <span class="text-[9px] text-ink-soft dark:text-dark-muted">Founder</span>
               </a>
@@ -1618,13 +1630,13 @@
           <div class="bg-paper dark:bg-dark-card rounded-3xl p-6 sm:p-10 border border-ink-faint/30 dark:border-dark-border shadow-xl relative overflow-hidden">
             
             <div class="mb-8">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                 <span>Direct Inbound Brief</span>
               </div>
               <h3 class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-bold">Audit Your Business &amp; Request Solutions</h3>
               <p class="text-xs sm:text-sm text-ink-soft dark:text-dark-muted mt-2 leading-relaxed">
-                Detail your current business challenge or system requirement below. All submissions deliver directly to Jubayer's personal inbox (<span class="font-semibold text-coral">jubayer.ahamed.dev@gmail.com</span>) for an immediate technical and business evaluation.
+                Detail your current business challenge or system requirement below. All submissions deliver directly to Jubayer's personal inbox (<span class="font-semibold text-indigo-600 dark:text-indigo-400">jubayer.ahamed.dev@gmail.com</span>) for an immediate technical and business evaluation.
               </p>
             </div>
 
@@ -1642,16 +1654,16 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
-                    Your Full Name <span class="text-coral">*</span>
+                    Your Full Name <span class="text-indigo-600 dark:text-indigo-400">*</span>
                   </label>
-                  <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors">
+                  <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
                 </div>
 
                 <div>
                   <label for="contact-channel" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
-                    Email / WhatsApp <span class="text-coral">*</span>
+                    Email / WhatsApp <span class="text-indigo-600 dark:text-indigo-400">*</span>
                   </label>
-                  <input type="text" id="contact-channel" name="contact" required placeholder="name@company.com or +1..." class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors">
+                  <input type="text" id="contact-channel" name="contact" required placeholder="name@company.com or +1..." class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
                 </div>
               </div>
 
@@ -1659,14 +1671,14 @@
                 <label for="contact-company" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
                   Company Name &amp; Website or Current Tech Stack
                 </label>
-                <input type="text" id="contact-company" name="company_stack" placeholder="e.g. Acme Corp · acme.com (Shopify / Node / Python / WordPress)" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors">
+                <input type="text" id="contact-company" name="company_stack" placeholder="e.g. Acme Corp · acme.com (Shopify / Node / Python / WordPress)" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors">
               </div>
 
               <div>
                 <label for="contact-service" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
                   Primary Solution Requirement
                 </label>
-                <select id="contact-service" name="service_need" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral bg-paper-deep/60 dark:bg-dark-surface">
+                <select id="contact-service" name="service_need" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-paper-deep/60 dark:bg-dark-surface">
                   <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Autonomous Multi-Agent AI System">Autonomous Multi-Agent AI System (Workflow Automation)</option>
                   <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Generative Engine Optimisation (GEO) & SEO">Generative Engine Optimisation (GEO) &amp; AI Search Authority</option>
                   <option class="bg-paper dark:bg-dark-surface text-ink dark:text-dark-text" value="Full-Stack Web Development & High-ROI Portal">Full-Stack Web Application / SaaS Portal Development</option>
@@ -1678,18 +1690,18 @@
 
               <div>
                 <label for="contact-bottleneck" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1.5">
-                  Describe Your Current Bottleneck / Project Scope <span class="text-coral">*</span>
+                  Describe Your Current Bottleneck / Project Scope <span class="text-indigo-600 dark:text-indigo-400">*</span>
                 </label>
-                <textarea id="contact-bottleneck" name="bottleneck" rows="4" required placeholder="What manual tasks are costing your team time? What business outcome or software do you need built? What is your timeline?" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral transition-colors"></textarea>
+                <textarea id="contact-bottleneck" name="bottleneck" rows="4" required placeholder="What manual tasks are costing your team time? What business outcome or software do you need built? What is your timeline?" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper-deep/60 dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"></textarea>
               </div>
 
-              <button type="submit" id="contact-submit-btn" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-base hover:bg-coral transition-all shadow-lg shadow-abyss/20 flex items-center justify-center gap-2.5 cursor-pointer">
+              <button type="submit" id="contact-submit-btn" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-base hover:bg-indigo-600 transition-all shadow-lg shadow-abyss/20 flex items-center justify-center gap-2.5 cursor-pointer">
                 <i data-lucide="send" class="w-4 h-4"></i>
                 <span id="contact-btn-text">Audit Your Business &amp; Dispatch Brief →</span>
               </button>
 
               <p class="text-[11px] text-center text-ink-soft dark:text-dark-muted">
-                ⚡ Dispatched directly to <span class="font-mono text-coral">jubayer.ahamed.dev@gmail.com</span> &middot; Guaranteed NDA confidentiality &middot; Zero spam.
+                ⚡ Dispatched directly to <span class="font-mono text-indigo-600 dark:text-indigo-400">jubayer.ahamed.dev@gmail.com</span> &middot; Guaranteed NDA confidentiality &middot; Zero spam.
               </p>
             </form>
 
@@ -1700,14 +1712,14 @@
               </div>
               <h4 id="contact-success-title" class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-bold mb-2">Brief Dispatched Directly to Jubayer!</h4>
               <p id="contact-success-desc" class="text-sm text-ink-soft dark:text-dark-muted max-w-md mx-auto leading-relaxed mb-6">
-                Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class="font-mono text-coral">jubayer.ahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.
+                Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class="font-mono text-indigo-600 dark:text-indigo-400">jubayer.ahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.
               </p>
               <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a id="contact-success-wa-btn" href="https://wa.me/8801610594042" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all shadow-md">
                   <i data-lucide="message-circle" class="w-4 h-4"></i>
                   <span>Need Faster Reply? Ping on WhatsApp</span>
                 </a>
-                <a id="contact-success-email-btn" href="mailto:jubayer.ahamed.dev@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-abyss dark:bg-dark-card text-white text-xs font-semibold hover:bg-coral transition-all shadow-md border border-ink-faint/30 dark:border-dark-border">
+                <a id="contact-success-email-btn" href="mailto:jubayer.ahamed.dev@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-abyss dark:bg-dark-card text-white text-xs font-semibold hover:bg-indigo-600 transition-all shadow-md border border-ink-faint/30 dark:border-dark-border">
                   <i data-lucide="mail" class="w-4 h-4"></i>
                   <span>Open Email Client</span>
                 </a>
@@ -1741,7 +1753,7 @@
           </p>
         </div>
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href="#contact" class="px-6 py-3 rounded-full bg-coral text-white font-semibold text-sm hover:bg-white hover:text-abyss transition-all">
+          <a href="#contact" class="px-6 py-3 rounded-full bg-indigo-600 text-white font-semibold text-sm hover:bg-white hover:text-abyss transition-all shadow-md shadow-indigo-600/20">
             Audit Your Business →
           </a>
           <a href="mailto:jubayer.ahamed.dev@gmail.com" class="text-sm font-semibold text-ink-faint hover:text-white transition-colors">
@@ -1781,12 +1793,12 @@
         <div>
           <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Services</h4>
           <ul class="space-y-2.5 text-ink-faint">
-            <li><a href="#services" class="hover:text-coral transition-colors">Autonomous Multi-Agent</a></li>
-            <li><a href="#services" class="hover:text-coral transition-colors">Generative Engine (GEO)</a></li>
-            <li><a href="#services" class="hover:text-coral transition-colors">Search Engine (SEO)</a></li>
-            <li><a href="#services" class="hover:text-coral transition-colors">Sovereign DevOps</a></li>
-            <li><a href="#services" class="hover:text-coral transition-colors">WhatsApp AI Bots</a></li>
-            <li><a href="#services" class="hover:text-coral transition-colors">Web Development</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Autonomous Multi-Agent</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Generative Engine (GEO)</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Search Engine (SEO)</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Sovereign DevOps</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">WhatsApp AI Bots</a></li>
+            <li><a href="#services" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Web Development</a></li>
           </ul>
         </div>
 
@@ -1795,9 +1807,9 @@
           <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Company</h4>
           <ul class="space-y-2.5 text-ink-faint">
             <li><a href="#home" class="hover:text-emerald-400 transition-colors">About Jubayer</a></li>
-            <li><a href="#work" class="hover:text-coral transition-colors">Case Studies</a></li>
-            <li><a href="#contact" class="hover:text-coral transition-colors">Contact &amp; Solutions Hub</a></li>
-            <li><button type="button" onclick="openAuditModal()" class="hover:text-coral transition-colors text-left bg-transparent border-0 p-0 text-inherit cursor-pointer">Request Free Audit</button></li>
+            <li><a href="#work" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Case Studies</a></li>
+            <li><a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact &amp; Solutions Hub</a></li>
+            <li><button type="button" onclick="openAuditModal()" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left bg-transparent border-0 p-0 text-inherit cursor-pointer">Request Free Audit</button></li>
           </ul>
         </div>
 
@@ -1805,12 +1817,12 @@
         <div>
           <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Contact</h4>
           <ul class="space-y-2.5 text-ink-faint">
-            <li><a href="https://wa.me/8801610594042" target="_blank" class="hover:text-coral transition-colors">WhatsApp Direct</a></li>
-            <li><a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="hover:text-coral transition-colors">LinkedIn Profile</a></li>
-            <li><a href="https://facebook.com/besmartwithaipro" target="_blank" class="hover:text-coral transition-colors">Be Smart With AI Page</a></li>
-            <li><a href="https://www.facebook.com/jubayer.ahamed.129258" target="_blank" class="hover:text-coral transition-colors">Personal Facebook</a></li>
-            <li><a href="https://github.com/Jubayer-ahamed42" target="_blank" class="hover:text-coral transition-colors">GitHub Repositories</a></li>
-            <li><a href="mailto:jubayer.ahamed.dev@gmail.com" class="hover:text-coral transition-colors">jubayer.ahamed.dev@gmail.com</a></li>
+            <li><a href="https://wa.me/8801610594042" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">WhatsApp Direct</a></li>
+            <li><a href="https://www.linkedin.com/in/jubayer-ahamed-pro/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">LinkedIn Profile</a></li>
+            <li><a href="https://facebook.com/besmartwithaipro" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Be Smart With AI Page</a></li>
+            <li><a href="https://www.facebook.com/jubayer.ahamed.129258" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Personal Facebook</a></li>
+            <li><a href="https://github.com/Jubayer-ahamed42" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">GitHub Repositories</a></li>
+            <li><a href="mailto:jubayer.ahamed.dev@gmail.com" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">jubayer.ahamed.dev@gmail.com</a></li>
           </ul>
         </div>
 
@@ -1839,7 +1851,7 @@
       <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
         <!-- Case Study Selector Tabs (1, 2, 3) -->
         <div role="tablist" aria-label="Case study selector" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 flex-1 min-w-0">
-          <button type="button" role="tab" id="cs-tab-1" aria-selected="true" aria-controls="cs-modal-body" tabindex="0" onclick="switchCaseStudy(1)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
+          <button type="button" role="tab" id="cs-tab-1" aria-selected="true" aria-controls="cs-modal-body" tabindex="0" onclick="switchCaseStudy(1)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-indigo-600 shadow-sm">
             <span>01 Hospitality</span>
           </button>
           <button type="button" role="tab" id="cs-tab-2" aria-selected="false" aria-controls="cs-modal-body" tabindex="-1" onclick="switchCaseStudy(2)" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
@@ -1860,7 +1872,7 @@
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </button>
           </div>
-          <button type="button" onclick="closeCaseStudyModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
+          <button type="button" onclick="closeCaseStudyModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-indigo-600 dark:text-dark-muted dark:hover:text-indigo-400 hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close Case Study (Escape)" title="Close Case Study (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -1872,7 +1884,7 @@
         <!-- Header Info -->
         <div>
           <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span id="cs-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-coral/10 text-coral border border-coral/20"></span>
+            <span id="cs-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20"></span>
             <span id="cs-market" class="px-3 py-1 rounded-full text-xs font-medium text-ink-soft dark:text-dark-muted bg-paper-deep dark:bg-dark-surface border border-ink-faint/20 dark:border-dark-border"></span>
           </div>
           <h2 id="cs-modal-title" class="font-serif text-2xl sm:text-4xl text-abyss dark:text-dark-text font-bold tracking-tight mb-3"></h2>
@@ -1885,8 +1897,8 @@
         </div>
 
         <!-- Executive Overview & Commercial Challenge -->
-        <div class="bg-paper-deep/70 dark:bg-dark-surface/60 rounded-2xl p-5 sm:p-7 border border-coral/20 border-l-4 border-l-coral">
-          <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-coral mb-3">
+        <div class="bg-paper-deep/70 dark:bg-dark-surface/60 rounded-2xl p-5 sm:p-7 border border-indigo-500/20 border-l-4 border-l-indigo-500">
+          <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-indigo-600 dark:text-indigo-400 mb-3">
             <i data-lucide="alert-circle" class="w-4 h-4"></i>
             <span>Executive Overview &amp; Commercial Challenge</span>
           </div>
@@ -1951,7 +1963,7 @@
           <button type="button" onclick="closeCaseStudyModal()" class="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap shrink-0">
             <span>Close</span><span class="hidden sm:inline">&nbsp;Viewer</span>
           </button>
-          <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
+          <button type="button" id="cs-cta-btn" onclick="deployCurrentCaseStudy()" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-indigo-600/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
             <span id="cs-cta-text">Deploy This System</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -1966,12 +1978,12 @@
     <div class="bg-paper dark:bg-dark-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-ink-faint/30 dark:border-dark-border relative modal-dialog-enter my-auto">
       
       <!-- Close Button -->
-      <button type="button" onclick="closeAuditModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft dark:text-dark-muted hover:text-coral dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6" aria-label="Close modal (Escape)" title="Close Audit Modal (Esc)">
+      <button type="button" onclick="closeAuditModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft dark:text-dark-muted hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6" aria-label="Close modal (Escape)" title="Close Audit Modal (Esc)">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
       <div class="mb-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral/10 text-coral text-xs font-bold uppercase tracking-wider mb-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">
           <span>100% Free Architectural Audit</span>
         </div>
         <h3 id="audit-modal-title" class="font-serif text-2xl sm:text-3xl text-abyss dark:text-dark-text font-semibold">Get Your Growth Audit</h3>
@@ -1988,12 +2000,12 @@
         <input type="hidden" name="_next" value="https://jubayer-ahamed.vercel.app/?audit_submitted=true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div>
-          <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name <span class="text-coral">*</span></label>
+          <label for="audit-name" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Your Name <span class="text-indigo-600 dark:text-indigo-400">*</span></label>
           <input type="text" id="audit-name" name="name" required placeholder="e.g. Alex Henderson" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
         </div>
 
         <div>
-          <label for="audit-email" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email <span class="text-coral">*</span></label>
+          <label for="audit-email" class="block text-xs font-bold uppercase tracking-wider text-ink dark:text-dark-text mb-1">Work Email <span class="text-indigo-600 dark:text-indigo-400">*</span></label>
           <input type="email" id="audit-email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-ink-faint/40 dark:border-dark-border bg-paper dark:bg-dark-surface text-ink dark:text-dark-text text-sm focus:outline-none focus:border-abyss focus:ring-1 focus:ring-abyss">
         </div>
 
@@ -2017,7 +2029,7 @@
           </select>
         </div>
 
-        <button type="submit" id="audit-submit-btn" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-coral transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
+        <button type="submit" id="audit-submit-btn" class="w-full py-4 rounded-xl bg-abyss text-white font-semibold text-sm hover:bg-indigo-600 transition-colors shadow-lg shadow-abyss/20 mt-4 cursor-pointer">
           Request Free Audit Blueprint &rarr;
         </button>
       </form>
@@ -2042,7 +2054,7 @@
       <div class="px-5 sm:px-8 py-4 border-b border-ink-faint/20 dark:border-dark-border flex items-center justify-between bg-paper/95 dark:bg-dark-card/95 backdrop-blur z-10 shrink-0 gap-3">
         <!-- Tabs: Privacy Policy, Terms of Service, Security Architecture -->
         <div role="tablist" aria-label="Legal & Security Documents" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 flex-1 min-w-0">
-          <button type="button" role="tab" id="legal-tab-privacy" aria-selected="true" aria-controls="legal-modal-body" tabindex="0" onclick="switchLegalTab('privacy')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm">
+          <button type="button" role="tab" id="legal-tab-privacy" aria-selected="true" aria-controls="legal-modal-body" tabindex="0" onclick="switchLegalTab('privacy')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-indigo-600 shadow-sm">
             <span>Privacy Policy</span>
           </button>
           <button type="button" role="tab" id="legal-tab-terms" aria-selected="false" aria-controls="legal-modal-body" tabindex="-1" onclick="switchLegalTab('terms')" class="min-h-[44px] inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text">
@@ -2055,7 +2067,7 @@
 
         <!-- Close Button -->
         <div class="flex items-center gap-2 shrink-0">
-          <button type="button" onclick="closeLegalModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-coral dark:text-dark-muted dark:hover:text-coral hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
+          <button type="button" onclick="closeLegalModal()" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-ink-soft hover:text-indigo-600 dark:text-dark-muted dark:hover:text-indigo-400 hover:bg-paper-deep dark:hover:bg-dark-surface transition-colors cursor-pointer" aria-label="Close legal modal (Escape)" title="Close Legal Modal (Esc)">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
@@ -2079,7 +2091,7 @@
           <button type="button" onclick="closeLegalModal()" class="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-ink-soft dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text hover:bg-paper dark:hover:bg-dark-card transition-all cursor-pointer whitespace-nowrap">
             Close Viewer
           </button>
-          <button type="button" onclick="closeLegalModal(); openAuditModal('Sovereign DevOps &amp; Self-Hosting');" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-coral/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
+          <button type="button" onclick="closeLegalModal(); openAuditModal('Sovereign DevOps &amp; Self-Hosting');" class="min-h-[44px] px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg shadow-indigo-600/20 inline-flex items-center justify-center gap-2 cursor-pointer flex-1 sm:flex-initial">
             <span>Audit Architecture</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -2283,7 +2295,7 @@
         focusService: "Search Engine Optimisation (SEO)",
         ctaText: "Deploy Booking Architecture",
         metrics: [
-          { value: "+180%", label: "Organic Search & GEO", sub: "14 target buyer keywords on Page 1 & LLMs", color: "text-coral" },
+          { value: "+180%", label: "Organic Search & GEO", sub: "14 target buyer keywords on Page 1 & LLMs", color: "text-indigo-600 dark:text-indigo-400" },
           { value: "Page 1", label: "Top 3 SERP Ranking", sub: "Dominated high-ticket regional search queries", color: "text-abyss dark:text-dark-text" },
           { value: "-22%", label: "OTA Commission Bleed", sub: "$92,000+ retained in net operating profit", color: "text-emerald-600 dark:text-emerald-400" },
           { value: "<45s", label: "Global Inbound Latency", sub: "24/7 multilingual conversational concierge", color: "text-wave dark:text-gold" }
@@ -2323,7 +2335,7 @@
         focusService: "Generative Engine Optimisation (GEO)",
         ctaText: "Architect EdTech Flywheel",
         metrics: [
-          { value: "+213%", label: "Qualified Lead Flow", sub: "Organic & referral velocity within 9 months", color: "text-coral" },
+          { value: "+213%", label: "Qualified Lead Flow", sub: "Organic & referral velocity within 9 months", color: "text-wave dark:text-gold" },
           { value: "#1 AI Rank", label: "Top LLM Recommendation", sub: "Preferred citation on Perplexity & ChatGPT", color: "text-abyss dark:text-dark-text" },
           { value: "6 Months", label: "Advance Waiting List", sub: "100% capacity filled 8 weeks before kickoff", color: "text-emerald-600 dark:text-emerald-400" },
           { value: "4.2x", label: "LTV-to-CAC Ratio", sub: "Slashed ad fatigue & manual screening overhead", color: "text-wave dark:text-gold" }
@@ -2366,7 +2378,7 @@
         metrics: [
           { value: "-40%", label: "Cost Per Qualified Lead", sub: "Saved $140,000+ in wasted media spend", color: "text-emerald-600 dark:text-emerald-400" },
           { value: "+60%", label: "Lead Velocity & Scoring", sub: "Microsecond entity & tech stack enrichment", color: "text-abyss dark:text-dark-text" },
-          { value: "3.4x", label: "Verified Enterprise ROAS", sub: "Directly tracked to closed-won ERP contract revenue", color: "text-coral" },
+          { value: "3.4x", label: "Verified Enterprise ROAS", sub: "Directly tracked to closed-won ERP contract revenue", color: "text-emerald-600 dark:text-emerald-400" },
           { value: "-45 Days", label: "Sales Cycle Duration", sub: "Compressed from 180 to 135 average deal days", color: "text-wave dark:text-gold" }
         ],
         challenge: [
@@ -2411,7 +2423,7 @@
         const tab = document.getElementById(`cs-tab-${i}`);
         if (tab) {
           if (i === id) {
-            tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm';
+            tab.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-indigo-600 shadow-sm';
             tab.setAttribute('aria-selected', 'true');
             tab.setAttribute('tabindex', '0');
           } else {
@@ -2626,7 +2638,7 @@
         sections: [
           {
             icon: 'shield-check',
-            color: 'coral',
+            color: 'indigo',
             title: '1. Privacy-By-Design & Client Data Sovereignty',
             desc: 'We operate under a strict privacy-by-default architecture. When you visit this website, submit a project inquiry, or engage in architectural consulting, your personal identity, contact details, tech stacks, and proprietary requirements are treated with utmost enterprise confidentiality. We never sell, lease, trade, or share client data with data brokers, ad networks, or unauthorized third parties.'
           },
@@ -2650,7 +2662,7 @@
           },
           {
             icon: 'server',
-            color: 'coral',
+            color: 'indigo',
             title: '5. Retention & Purging Schedules',
             desc: 'Initial project inquiry briefs are maintained solely during active consultation and scoping. Inactive or non-converting correspondence is systematically purged from developer mailboxes on a 90-day retention schedule. Commissioned client systems adhere to individual retention contracts defined in your master service agreement.'
           }
@@ -2658,7 +2670,7 @@
       },
       terms: {
         badge: '100% IP Transfer & NDA Enforced',
-        badgeColor: 'bg-coral/10 text-coral border-coral/20',
+        badgeColor: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
         market: 'Contractual Framework · Global Engagements',
         title: 'Terms of Service & Consulting Engagement',
         summary: 'Clear contractual standards, strict mutual non-disclosure, 100% intellectual property ownership assignment upon settlement, and zero vendor lock-in.',
@@ -2671,7 +2683,7 @@
         sections: [
           {
             icon: 'file-check',
-            color: 'coral',
+            color: 'indigo',
             title: '1. Scope of Engagement & Architectural Consulting',
             desc: 'Jubayer Ahamed delivers elite consulting and engineering services covering autonomous multi-agent AI systems, sovereign cloud DevOps, production full-stack web applications, and generative engine optimization (GEO/SEO). Engagements begin with a transparent architectural blueprint, defined milestones, delivery timelines, and fixed or phased compensation agreed upon in writing.'
           },
@@ -2701,7 +2713,7 @@
           },
           {
             icon: 'scale',
-            color: 'coral',
+            color: 'indigo',
             title: '6. Limitation of Liability & Professional Standards',
             desc: 'Engagements are executed to the highest industry standards of modern software engineering and security. Total legal liability for any claim arising from a consulting engagement is strictly capped at the total fees actually received for the specific milestone in question.'
           }
@@ -2722,7 +2734,7 @@
         sections: [
           {
             icon: 'shield',
-            color: 'coral',
+            color: 'indigo',
             title: '1. Zero-Trust Security Baseline & Least Privilege',
             desc: 'Every software layer, API boundary, and autonomous agent service adheres strictly to Zero-Trust architecture. Role-Based Access Control (RBAC), short-lived token authentication (JWT/OAuth2), and mutual TLS (mTLS) ensure that every request is explicitly authenticated, authorized, and logged with tamper-evident auditing.'
           },
@@ -2752,7 +2764,7 @@
           },
           {
             icon: 'activity',
-            color: 'coral',
+            color: 'indigo',
             title: '6. Disaster Recovery & High-Availability Resiliency',
             desc: 'Production designs include automated point-in-time database replication, immutable off-site snapshots, health-check failover topologies, and Edge DDoS mitigation via Cloudflare reverse proxy to guarantee 99.9% uptime SLA compliance.'
           }
@@ -2781,8 +2793,8 @@
       }
 
       let sectionsHtml = doc.sections.map(s => {
-        let borderClass = 'border-l-4 border-l-coral';
-        let titleColor = 'text-coral';
+        let borderClass = 'border-l-4 border-l-indigo-500';
+        let titleColor = 'text-indigo-600 dark:text-indigo-400';
         if (s.color === 'emerald-500') {
           borderClass = 'border-l-4 border-l-emerald-500';
           titleColor = 'text-emerald-600 dark:text-emerald-400';
@@ -2792,6 +2804,9 @@
         } else if (s.color === 'gold') {
           borderClass = 'border-l-4 border-l-gold';
           titleColor = 'text-gold';
+        } else if (s.color === 'indigo') {
+          borderClass = 'border-l-4 border-l-indigo-500';
+          titleColor = 'text-indigo-600 dark:text-indigo-400';
         }
 
         return `
@@ -2892,7 +2907,7 @@
           btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
           btn.setAttribute('tabindex', isActive ? '0' : '-1');
           if (isActive) {
-            btn.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-coral shadow-sm';
+            btn.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-abyss text-white dark:bg-indigo-600 shadow-sm';
             if (shouldFocus) btn.focus();
           } else {
             btn.className = 'px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap bg-paper-deep text-ink-soft dark:bg-dark-surface dark:text-dark-muted hover:text-abyss dark:hover:text-dark-text';
@@ -3060,13 +3075,13 @@ ${bottleneck}
       if (isDelivered) {
         if (statusIcon) statusIcon.innerHTML = '<i data-lucide="check" class="w-8 h-8 text-emerald-600"></i>';
         if (statusTitle) statusTitle.textContent = 'Brief Dispatched Directly to Jubayer!';
-        if (statusDesc) statusDesc.innerHTML = "Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.";
+        if (statusDesc) statusDesc.innerHTML = "Your business inquiry has landed directly in Jubayer Ahamed's inbox (<span class=\"font-mono text-indigo-600 dark:text-indigo-400\">jubayer.ahamed.dev@gmail.com</span>). I will review your requirements and follow up with an architectural plan within 24 hours.";
         if (emailBtn) emailBtn.classList.add('hidden');
       } else {
         // Fallback state: FormSubmit activation pending or network block; zero data lost
-        if (statusIcon) statusIcon.innerHTML = '<i data-lucide="mail" class="w-8 h-8 text-coral"></i>';
+        if (statusIcon) statusIcon.innerHTML = '<i data-lucide="mail" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>';
         if (statusTitle) statusTitle.textContent = 'Brief Prepared for Instant Delivery!';
-        if (statusDesc) statusDesc.innerHTML = "Your project brief is compiled! To guarantee 100% direct delivery to Jubayer's personal inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
+        if (statusDesc) statusDesc.innerHTML = "Your project brief is compiled! To guarantee 100% direct delivery to Jubayer's personal inbox (<span class=\"font-mono text-indigo-600 dark:text-indigo-400\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
         if (emailBtn) {
           emailBtn.classList.remove('hidden');
           emailBtn.innerHTML = '<i data-lucide="mail" class="w-4 h-4"></i><span>Send Email Direct</span>';
@@ -3198,7 +3213,7 @@ ${bottleneck}
           statusIcon.innerHTML = '<i data-lucide="check-circle" class="w-6 h-6"></i>';
         }
         if (title) title.textContent = 'Audit Request Received Directly!';
-        if (desc) desc.innerHTML = 'Your audit request has landed directly in Jubayer Ahamed\'s inbox (<span class="font-mono text-coral">jubayer.ahamed.dev@gmail.com</span>). I will personally review your domain and email your blueprint within 24 hours.';
+        if (desc) desc.innerHTML = 'Your audit request has landed directly in Jubayer Ahamed\'s inbox (<span class="font-mono text-indigo-600 dark:text-indigo-400">jubayer.ahamed.dev@gmail.com</span>). I will personally review your domain and email your blueprint within 24 hours.';
         if (actions) actions.innerHTML = `
           <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
@@ -3207,13 +3222,13 @@ ${bottleneck}
         `;
       } else {
         if (statusIcon) {
-          statusIcon.className = 'w-12 h-12 rounded-full bg-coral/10 text-coral flex items-center justify-center mx-auto mb-3';
+          statusIcon.className = 'w-12 h-12 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto mb-3';
           statusIcon.innerHTML = '<i data-lucide="mail" class="w-6 h-6"></i>';
         }
         if (title) title.textContent = 'Audit Request Ready to Send!';
-        if (desc) desc.innerHTML = "To guarantee 100% direct delivery to Jubayer's inbox (<span class=\"font-mono text-coral\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
+        if (desc) desc.innerHTML = "To guarantee 100% direct delivery to Jubayer's inbox (<span class=\"font-mono text-indigo-600 dark:text-indigo-400\">jubayer.ahamed.dev@gmail.com</span>), click below to open your email client or message directly on WhatsApp:";
         if (actions) actions.innerHTML = `
-          <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-coral text-white text-xs font-semibold hover:bg-white hover:text-abyss transition-all shadow-md">
+          <a href="${mailtoUrl}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 text-white text-xs font-semibold hover:bg-white hover:text-abyss transition-all shadow-md">
             <i data-lucide="mail" class="w-4 h-4"></i>
             <span>Send Email Direct</span>
           </a>
@@ -3421,10 +3436,11 @@ ${bottleneck}
     function getHarmonicPair(rgb) {
       const [r, g, b] = rgb;
       if (g > r && g >= b) return [6, 182, 212];        // Emerald/Green -> Cyan
+      if (b > 200 && r > 80) return [139, 92, 246];     // Indigo -> Violet
       if (b > r && b >= g) return [99, 102, 241];       // Sky/Blue -> Indigo
-      if (r > 100 && b > 150) return [244, 63, 94];     // Purple/Violet -> Rose
+      if (r > 100 && b > 150) return [99, 102, 241];    // Purple/Violet -> Indigo
       if (r > 180 && g > 120 && b < 100) return [251, 146, 60]; // Amber/Gold -> Tangerine
-      if (r > 200 && g < 100) return [245, 158, 11];    // Coral/Red -> Amber
+      if (r > 200 && g < 100) return [99, 102, 241];    // Indigo / Iris
       return [14, 165, 233];                             // Fallback -> Sky
     }
 
@@ -3533,21 +3549,21 @@ ${bottleneck}
               Math.round(235 + (246 - 235) * t)
             ];
             targetRgb2 = [
-              Math.round(139 + (244 - 139) * t),
-              Math.round(92 + (63 - 92) * t),
-              Math.round(246 + (94 - 246) * t)
+              Math.round(139 + (99 - 139) * t),
+              Math.round(92 + (102 - 92) * t),
+              Math.round(246 + (241 - 246) * t)
             ];
           } else {
             const t = Math.min(1, (phase - 0.75) / 0.25);
             targetRgb1 = [
-              Math.round(139 + (245 - 139) * t),
-              Math.round(92 + (158 - 92) * t),
-              Math.round(246 + (11 - 246) * t)
+              Math.round(139 + (233 - 139) * t),
+              Math.round(92 + (184 - 92) * t),
+              Math.round(246 + (92 - 246) * t)
             ];
             targetRgb2 = [
-              Math.round(244 + (251 - 244) * t),
-              Math.round(63 + (146 - 63) * t),
-              Math.round(94 + (60 - 94) * t)
+              Math.round(99 + (233 - 99) * t),
+              Math.round(102 + (184 - 102) * t),
+              Math.round(241 + (92 - 241) * t)
             ];
           }
         }

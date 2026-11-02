@@ -18,7 +18,7 @@ This flagship web portal serves as the primary digital presence and engineering 
 ### Architectural Pillars
 - **Zero-Dependency Pure Web Stack**: Engineered with semantic HTML5, pure Vanilla JavaScript (ES6+), and Tailwind CSS. Zero framework hydration overhead, zero compilation bottlenecks, and instantaneous first-contentful paint (FCP < 0.4s).
 - **Editorial Typography & Visual Hierarchy**: Built upon an authoritative triad typography system—`Anton` display for commanding headlines, `Fraunces` optical serif for editorial refinement, and `Inter` for technical readability.
-- **Dual-State Ambient Theme Engine**: Fully responsive dark/light mode toggle with native CSS color-scheme syncing, persistent local state storage, and dynamic contrast-safe color variables (`Deep Abyss #0e1f4a`, `Paper Deep #f2f5fa`, `Wave #3d6bb5`, `Coral #fb2c36`, `Gold #e9b85c`, `Emerald #10b981`).
+- **Dual-State Ambient Theme Engine**: Fully responsive dark/light mode toggle with native CSS color-scheme syncing, persistent local state storage, and dynamic contrast-safe color variables (`Deep Abyss #0e1f4a`, `Paper Deep #f2f5fa`, `Wave #3d6bb5`, `Indigo #6366f1`, `Gold #e9b85c`, `Emerald #10b981`).
 - **Enterprise Accessibility & Interaction**: Strict adherence to WCAG 2.1 AA accessibility guidelines, semantic landmarks, keyboard-traversable modal dialogs, and smooth ScrollSpy telemetry across all major viewport breakpoints.
 
 ---
