@@ -25,10 +25,10 @@ This flagship web portal serves as the primary digital presence and engineering 
 
 ## 🌟 Core Systems & Sections Architecture
 
-1. **Sticky Floating Command Header**: Dynamic glassmorphic navigation with active ScrollSpy tracking, dark mode toggle, and seamless routing across `Home`, `Capabilities`, `15 Systems`, `Case Studies`, and `Contact`.
+1. **Sticky Floating Command Header**: Dynamic glassmorphic navigation with active ScrollSpy tracking, dark mode toggle, and seamless routing across `Home`, `Capabilities`, `Projects`, `Case Studies`, and `Contact`.
 2. **Master Hero & Executive Bento Grid**: High-impact founder narrative introducing the strategic pillars of Be Smart With AI—Autonomous Multi-Agent Architecture, Enterprise AI Strategy, Full-Stack Engineering, and Sovereign Infrastructure.
 3. **Capabilities & Enterprise Services**: Four core service matrices covering Autonomous Agent Swarms, Enterprise Full-Stack Web Architecture, Algorithmic Automation, and Generative Engine Optimization (GEO).
-4. **15 Production Systems Showcase**: Complete catalog of 15 engineered applications and client systems with interactive category filtering (`All`, `AI & ML`, `Full-Stack`, `Automation`), dynamic telemetry bubbles, direct GitHub repositories, and live demo access:
+4. **15 Featured Projects Showcase**: Complete catalog of 15 engineered applications and client systems with interactive category filtering (`All Projects (15)`, `AI & ML`, `Full-Stack`, `Automation`), dynamic telemetry bubbles, direct GitHub repositories, and live demo access:
    - [**01. B2B AI Sales Engine**](https://github.com/Jubayer-ahamed42/b2b-ai-sales-engine): 24/7 conversational sales brain & smartphone simulator with automated COD order extraction (`Python · Gemini 3.5`).
    - [**02. Social Humanizer PyPI**](https://github.com/Jubayer-ahamed42/social-humanizer): Universal AI social media humanizer and algorithmic risk auditor published on PyPI (`Python · PyPI Package`).
    - [**03. Freshy Food Storefront**](https://github.com/Jubayer-ahamed42/freshy-food): Organic e-commerce platform with 1-click COD checkout and Bengali AI Nutritionist (`Full-Stack Web`).

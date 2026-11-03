@@ -422,11 +422,11 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('https://warmheart-cafe-bakery-website.sbmc4042.workers.dev', self.html)
         self.assertIn('aria-label="WarmHeart Cafe &amp; Bakery - View on GitHub"', self.html)
         self.assertIn('>WarmHeart Cafe &amp; Bakery</h3>', self.html)
-        self.assertIn('All Systems (15)', self.html)
+        self.assertIn('All Projects (15)', self.html)
         self.assertIn('Full-Stack SaaS & Web (5)', self.html)
-        self.assertIn('<span>15 Systems</span>', self.html)
-        self.assertIn('Explore 15 Systems', self.html)
-        self.assertIn('15 Production Systems', self.html)
+        self.assertIn('<span>Projects</span>', self.html)
+        self.assertIn('Explore 15 Projects', self.html)
+        self.assertIn('15 Featured Projects', self.html)
         self.assertIn('15 Repos', self.html)
 
         # All 15 sequential counters (01 / 15 through 15 / 15) must be present
@@ -446,7 +446,7 @@ class TestPortfolioAudit(unittest.TestCase):
             readme = f.read()
         self.assertIn('15. WarmHeart Cafe & Bakery Website', readme)
         self.assertIn('warmheart-cafe-bakery-website', readme)
-        self.assertIn('15 Production Systems', readme)
+        self.assertIn('15 Featured Projects', readme)
         self.assertIn('15 enterprise production systems', readme)
 
     def test_badge_pills_removed(self):
