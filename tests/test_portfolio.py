@@ -585,6 +585,36 @@ class TestPortfolioAudit(unittest.TestCase):
             r'<a[^>]*>\s*<i data-lucide="sparkles"[^>]*>\s*<span>Audit Your Business</span>'
         )
 
+    def test_navigation_services_labels(self):
+        """Verify navigation bar uses 'Services' instead of 'Capabilities' across desktop and mobile menus."""
+        # 1. Desktop navigation checks
+        desktop_nav_start = self.html.find('id="desktop-nav"')
+        self.assertNotEqual(desktop_nav_start, -1, "desktop-nav must be present")
+        desktop_nav_end = self.html.find('</nav>', desktop_nav_start)
+        desktop_nav_snippet = self.html[desktop_nav_start:desktop_nav_end]
+
+        self.assertIn('data-nav="services"', desktop_nav_snippet)
+        self.assertIn('<span>Services</span>', desktop_nav_snippet)
+        self.assertNotIn('<span>Capabilities</span>', desktop_nav_snippet)
+        self.assertNotIn('Capabilities', desktop_nav_snippet)
+
+        # 2. Mobile drawer navigation checks
+        mobile_menu_start = self.html.find('id="mobile-menu"')
+        self.assertNotEqual(mobile_menu_start, -1, "mobile-menu must be present")
+        mobile_menu_end = self.html.find('</header>', mobile_menu_start)
+        mobile_menu_snippet = self.html[mobile_menu_start:mobile_menu_end]
+
+        self.assertIn('data-mobile-nav="services"', mobile_menu_snippet)
+        self.assertIn('<span>Services</span>', mobile_menu_snippet)
+        self.assertNotIn('<span>Capabilities</span>', mobile_menu_snippet)
+        self.assertNotIn('Capabilities', mobile_menu_snippet)
+
+        # 3. Global negative assertion for Capabilities in HTML
+        self.assertNotIn('<span>Capabilities</span>', self.html, "<span>Capabilities</span> must be cleanly removed from the entire HTML")
+        self.assertNotIn('Capabilities', self.html, "'Capabilities' must be cleanly removed from the entire HTML")
+        self.assertNotIn('CAPABILITIES & SERVICES', self.html, "Section 2 comment must not reference CAPABILITIES & SERVICES")
+        self.assertIn('<!-- ==================== SECTION 2: 02 / SERVICES ==================== -->', self.html)
+
 
 if __name__ == '__main__':
     unittest.main()
