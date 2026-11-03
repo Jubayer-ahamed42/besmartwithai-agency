@@ -440,14 +440,27 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertEqual(categories.count('fullstack'), 5, "Must have 5 Full-Stack SaaS & Web projects")
         self.assertEqual(categories.count('automation'), 5, "Must have 5 Automation & Tools projects")
 
-        # 2. README.md verification
+        # 2. Strict negative assertions against deprecated Systems terminology in index.html
+        self.assertNotIn('<span>15 Systems</span>', self.html, "Nav link must not contain '15 Systems'")
+        self.assertNotIn('Explore 15 Systems', self.html, "Hero button must not contain 'Explore 15 Systems'")
+        self.assertNotIn('15 Production Systems', self.html, "Section 03 H2 heading must not contain '15 Production Systems'")
+        self.assertNotIn('All Systems (15)', self.html, "Category filter button must not contain 'All Systems (15)'")
+        self.assertNotIn('03 / SYSTEMS & ARCHITECTURE', self.html, "Section 03 kicker must not contain '03 / SYSTEMS & ARCHITECTURE'")
+        self.assertNotIn('Every system built to eliminate manual bottlenecks.', self.html, "Section 03 description must use 'project'")
+        self.assertNotIn('Deploy This System', self.html, "Case study modal CTA must not use 'Deploy This System'")
+
+        # 3. README.md verification
         readme_path = os.path.join(BASE_DIR, 'README.md')
         with open(readme_path, 'r', encoding='utf-8') as f:
             readme = f.read()
         self.assertIn('15. WarmHeart Cafe & Bakery Website', readme)
         self.assertIn('warmheart-cafe-bakery-website', readme)
         self.assertIn('15 Featured Projects', readme)
-        self.assertIn('15 enterprise production systems', readme)
+        self.assertIn('15 featured enterprise projects', readme)
+        self.assertNotIn('15 Systems', readme, "README must not contain '15 Systems'")
+        self.assertNotIn('15 Production Systems', readme, "README must not contain '15 Production Systems'")
+        self.assertNotIn('All Systems (15)', readme, "README must not contain 'All Systems (15)'")
+        self.assertNotIn('15 enterprise production systems', readme, "README must not contain '15 enterprise production systems'")
 
     def test_badge_pills_removed(self):
         """Verify that the hero live status badge pill, secondary title, and founder card dual-role badge pills are removed."""
