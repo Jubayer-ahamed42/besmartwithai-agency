@@ -349,7 +349,7 @@
     .project-card:hover {
       transform: translateY(-8px) scale(1.02);
       border-color: var(--card-accent, #3d6bb5) !important;
-      box-shadow: 0 20px 40px -10px var(--card-glow, rgba(61, 107, 181, 0.30)), 0 0 25px var(--card-surface-glow, rgba(61, 107, 181, 0.15)) !important;
+      box-shadow: 0 0 0 1px var(--card-accent, rgba(99, 102, 241, 0.20)), 0 24px 48px -12px var(--card-glow, rgba(61, 107, 181, 0.20)), 0 0 32px -4px var(--card-surface-glow, rgba(61, 107, 181, 0.12)) !important;
       z-index: 10;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.25s ease, z-index 0s 0s;
     }
@@ -416,6 +416,25 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+
+    /* International Standard Gradient Section Divider (Stripe/Linear Mask) */
+    .section-divider-gradient {
+      position: relative;
+    }
+    .section-divider-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.20) 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 20;
+    }
+    .dark .section-divider-gradient::before {
+      background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.35) 30%, rgba(14, 165, 233, 0.25) 70%, transparent 100%);
     }
 
     /* Motion Sensitivity & Reduced Motion Support (WCAG 2.2 AA / Apple HIG) */
@@ -966,8 +985,11 @@
   <!-- ==================== SECTION 3: 03 / FEATURED PROJECTS ==================== -->
   
   <!-- 15 FEATURED PROJECTS & GITHUB REPOSITORIES (PORTFOLIO SHOWCASE) -->
-  <section id="projects" class="py-24 bg-paper dark:bg-slate-950 relative border-t border-ink-faint/20 dark:border-slate-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="projects" class="py-24 bg-paper dark:bg-slate-950 relative section-divider-gradient transition-colors duration-300 overflow-hidden">
+    <!-- International Standard Atmospheric Depth Mesh -->
+    <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[360px] bg-gradient-to-b from-indigo-500/8 via-sky-500/4 to-transparent blur-3xl opacity-60 dark:opacity-40" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -1522,7 +1544,7 @@
 
 
 <!-- ==================== SECTION 4: 04 / CONTACT & BUSINESS SOLUTIONS HUB ==================== -->
-  <section id="contact" class="py-24 bg-paper-deep dark:bg-dark-surface relative overflow-hidden transition-colors duration-300 border-t border-ink-faint/20 dark:border-dark-border">
+  <section id="contact" class="py-24 bg-paper-deep dark:bg-dark-surface relative overflow-hidden transition-colors duration-300 section-divider-gradient">
     <!-- Ambient Blobs -->
     <div class="hero-blob w-96 h-96 bg-indigo-500/10 top-10 right-10 animate-blob-float"></div>
     <div class="hero-blob w-80 h-80 bg-wave/10 bottom-10 left-10 animate-blob-float" style="animation-delay: 3s;"></div>

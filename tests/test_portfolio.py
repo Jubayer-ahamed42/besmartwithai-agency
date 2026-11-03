@@ -395,7 +395,8 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn(".project-card:hover", self.html)
         self.assertIn("transform: translateY(-8px) scale(1.02);", self.html)
         self.assertIn("border-color: var(--card-accent", self.html)
-        self.assertIn("box-shadow: 0 20px 40px -10px var(--card-glow", self.html)
+        self.assertIn("box-shadow: 0 0 0 1px var(--card-accent", self.html)
+        self.assertIn("0 24px 48px -12px var(--card-glow", self.html)
         self.assertIn("z-index: 10;", self.html)
         self.assertIn("z-index 0s 0.3s", self.html)
         self.assertIn(".project-card:active {\n      transform: translateY(-2px) scale(0.995) !important;", self.html)
@@ -629,6 +630,23 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertNotIn('capabilities', readme.lower(), "README.md must not contain 'capabilities' (case-insensitive)")
         self.assertIn('`Services`', readme, "README command header breakdown must list `Services`")
         self.assertIn('Services & Enterprise Solutions', readme, "README section list must include Services & Enterprise Solutions")
+
+    def test_international_standard_gradients_and_feathered_glow(self):
+        """Verify UI/UX Pro Max international standard color gradients, section dividers, and eye-friendly feathered card glow."""
+        # 1. Dual-layer feathered card glow (eye-comfort, 20% alpha diffusion)
+        self.assertIn('.section-divider-gradient', self.html, "Section divider gradient class must exist in CSS")
+        self.assertIn('linear-gradient(90deg, transparent 0%, rgba(99, 102, 241', self.html,
+                      "Subtle center-highlighted section divider gradient must be defined")
+
+        # 2. Section divider usage on major section landmarks
+        self.assertIn('<section id="projects" class="py-24 bg-paper dark:bg-slate-950 relative section-divider-gradient',
+                      self.html, "#projects must use subtle gradient section divider")
+        self.assertIn('<section id="contact" class="py-24 bg-paper-deep dark:bg-dark-surface relative overflow-hidden transition-colors duration-300 section-divider-gradient',
+                      self.html, "#contact must use subtle gradient section divider")
+
+        # 3. Section 3 atmospheric depth gradient mesh
+        self.assertIn('International Standard Atmospheric Depth Mesh', self.html,
+                      "#projects must include atmospheric depth gradient mesh")
 
 
 if __name__ == '__main__':
