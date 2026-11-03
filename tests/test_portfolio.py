@@ -557,6 +557,21 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('Live_Deployment-Cloudflare_Pages-F38020', readme)
         self.assertNotIn('jubayer-ahamed.vercel.app', readme)
 
+    def test_hero_cta_audit_iconography(self):
+        """Verify the primary 'Audit Your Business' CTA button uses search-check icon and interactive hover transition."""
+        self.assertIn('data-lucide="search-check"', self.html)
+        hero_audit_pattern = (
+            r'class="group inline-flex items-center justify-center[^"]*">\s*'
+            r'<i data-lucide="search-check" class="w-4 h-4 text-emerald-200"></i>\s*'
+            r'<span>Audit Your Business</span>\s*'
+            r'<i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>'
+        )
+        self.assertRegex(self.html, hero_audit_pattern)
+        self.assertNotRegex(
+            self.html,
+            r'<a[^>]*>\s*<i data-lucide="sparkles"[^>]*>\s*<span>Audit Your Business</span>'
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
