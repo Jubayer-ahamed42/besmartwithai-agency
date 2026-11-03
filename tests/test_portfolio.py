@@ -594,6 +594,8 @@ class TestPortfolioAudit(unittest.TestCase):
         desktop_nav_snippet = self.html[desktop_nav_start:desktop_nav_end]
 
         self.assertIn('data-nav="services"', desktop_nav_snippet)
+        self.assertIn('href="#services"', desktop_nav_snippet)
+        self.assertIn("setActiveNav('services', true)", desktop_nav_snippet)
         self.assertIn('<span>Services</span>', desktop_nav_snippet)
         self.assertNotIn('<span>Capabilities</span>', desktop_nav_snippet)
         self.assertNotIn('Capabilities', desktop_nav_snippet)
@@ -605,15 +607,28 @@ class TestPortfolioAudit(unittest.TestCase):
         mobile_menu_snippet = self.html[mobile_menu_start:mobile_menu_end]
 
         self.assertIn('data-mobile-nav="services"', mobile_menu_snippet)
+        self.assertIn('href="#services"', mobile_menu_snippet)
+        self.assertIn("setActiveNav('services', true)", mobile_menu_snippet)
         self.assertIn('<span>Services</span>', mobile_menu_snippet)
         self.assertNotIn('<span>Capabilities</span>', mobile_menu_snippet)
         self.assertNotIn('Capabilities', mobile_menu_snippet)
 
         # 3. Global negative assertion for Capabilities in HTML
         self.assertNotIn('<span>Capabilities</span>', self.html, "<span>Capabilities</span> must be cleanly removed from the entire HTML")
-        self.assertNotIn('Capabilities', self.html, "'Capabilities' must be cleanly removed from the entire HTML")
+        self.assertNotIn('capabilities', self.html.lower(), "'capabilities' (case-insensitive) must be cleanly removed from the entire HTML")
         self.assertNotIn('CAPABILITIES & SERVICES', self.html, "Section 2 comment must not reference CAPABILITIES & SERVICES")
         self.assertIn('<!-- ==================== SECTION 2: 02 / SERVICES ==================== -->', self.html)
+        self.assertIn('<section id="services"', self.html, "Section id='services' must exist as navigation anchor target")
+        self.assertIn('02 / SERVICES', self.html, "Section 2 kicker must display '02 / SERVICES'")
+        self.assertIn("{ id: 'services', target: 'services' }", self.html, "ScrollSpy registry must map #services to target services")
+
+        # 4. Documentation synchronization check in README.md
+        readme_path = os.path.join(BASE_DIR, 'README.md')
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            readme = f.read()
+        self.assertNotIn('capabilities', readme.lower(), "README.md must not contain 'capabilities' (case-insensitive)")
+        self.assertIn('`Services`', readme, "README command header breakdown must list `Services`")
+        self.assertIn('Services & Enterprise Solutions', readme, "README section list must include Services & Enterprise Solutions")
 
 
 if __name__ == '__main__':
