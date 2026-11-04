@@ -675,7 +675,27 @@ class TestPortfolioAudit(unittest.TestCase):
             self.assertEqual(img_webp.mode, 'RGBA', "WebP monogram must have alpha transparency channel")
             self.assertEqual(img_webp.size, (512, 512), "WebP monogram canvas must be 512x512")
 
-        # 4. Harmonized SVG assets integrity
+        # 4. Deep quality validation: aspect ratio circularity & edge decontamination
+        import numpy as np
+        with Image.open(png_path) as img_png:
+            arr_png = np.array(img_png)
+            alpha_ch = arr_png[:, :, 3]
+            ys, xs = np.where(alpha_ch > 15)
+            w = xs.max() - xs.min()
+            h = ys.max() - ys.min()
+            aspect_ratio = w / h
+            self.assertGreaterEqual(aspect_ratio, 0.95, f"Monogram must not be squashed vertically: ratio is {aspect_ratio:.3f}")
+            self.assertLessEqual(aspect_ratio, 1.06, f"Monogram must not be squashed horizontally: ratio is {aspect_ratio:.3f}")
+
+            # Verify edge pixels do not contain muddy dark-gray tones on white
+            rgb_ch = arr_png[:, :, :3].astype(float)
+            alpha_norm = (alpha_ch.astype(float) / 255.0)[:, :, None]
+            comp_white = (rgb_ch * alpha_norm + 255.0 * (1.0 - alpha_norm)).astype(np.uint8)
+            edge_mask = (alpha_ch > 10) & (alpha_ch < 200)
+            edge_comp = comp_white[edge_mask]
+            self.assertGreater(edge_comp[:, 0].mean(), 180.0, "Edge pixels blended on white must retain warm gold luminosity")
+
+        # 5. Harmonized SVG assets integrity
         fav_path = os.path.join(BASE_DIR, 'assets', 'favicon.svg')
         with open(fav_path, 'r', encoding='utf-8') as f:
             fav = f.read()
