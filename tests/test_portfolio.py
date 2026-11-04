@@ -648,8 +648,51 @@ class TestPortfolioAudit(unittest.TestCase):
         self.assertIn('International Standard Atmospheric Depth Mesh', self.html,
                       "#projects must include atmospheric depth gradient mesh")
 
+    def test_brand_ja_monogram_identity(self):
+        """Verify replacement of robotic bot icons with the luxury gold JA monogram across header, footer, services, and SVG assets."""
+        from PIL import Image
+
+        # 1. Zero occurrences of data-lucide="bot" in index.html
+        self.assertNotIn('data-lucide="bot"', self.html, "All robotic bot icons must be replaced")
+
+        # 2. Header and footer brand logos feature JA monogram
+        self.assertIn('assets/ja-monogram.webp', self.html, "Header/footer must reference ja-monogram.webp")
+        self.assertIn('assets/ja-monogram.png', self.html, "Header/footer must provide PNG fallback ja-monogram.png")
+
+        # 3. Verify on-disk asset integrity and image format
+        png_path = os.path.join(BASE_DIR, 'assets', 'ja-monogram.png')
+        webp_path = os.path.join(BASE_DIR, 'assets', 'ja-monogram.webp')
+        self.assertTrue(os.path.isfile(png_path), "assets/ja-monogram.png must exist on disk")
+        self.assertTrue(os.path.isfile(webp_path), "assets/ja-monogram.webp must exist on disk")
+        self.assertGreater(os.path.getsize(png_path), 10000, "PNG monogram must be non-empty")
+        self.assertGreater(os.path.getsize(webp_path), 5000, "WebP monogram must be non-empty")
+
+        with Image.open(png_path) as img_png:
+            self.assertEqual(img_png.mode, 'RGBA', "PNG monogram must have alpha transparency channel")
+            self.assertEqual(img_png.size, (512, 512), "PNG monogram canvas must be 512x512")
+
+        with Image.open(webp_path) as img_webp:
+            self.assertEqual(img_webp.mode, 'RGBA', "WebP monogram must have alpha transparency channel")
+            self.assertEqual(img_webp.size, (512, 512), "WebP monogram canvas must be 512x512")
+
+        # 4. Harmonized SVG assets integrity
+        fav_path = os.path.join(BASE_DIR, 'assets', 'favicon.svg')
+        with open(fav_path, 'r', encoding='utf-8') as f:
+            fav = f.read()
+        self.assertIn('#6366f1', fav)
+        self.assertNotIn('#fb2c36', fav)
+        self.assertIn('image/png;base64', fav, "favicon.svg must embed the JA monogram")
+
+        logo_path = os.path.join(BASE_DIR, 'assets', 'logo.svg')
+        with open(logo_path, 'r', encoding='utf-8') as f:
+            logo = f.read()
+        self.assertIn('#6366f1', logo)
+        self.assertNotIn('#fb2c36', logo)
+        self.assertIn('image/png;base64', logo, "logo.svg must embed the JA monogram")
+
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
