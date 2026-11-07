@@ -5,13 +5,13 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Zero--Dependency_Pure_Web-10b981?style=for-the-badge)](https://jubayer-ahamed.pages.dev)
 [![Status](https://img.shields.io/badge/Status-Production_Active-blue?style=for-the-badge)](https://jubayer-ahamed.pages.dev)
 
-> **Architected & Engineered by Jubayer Ahamed**  
-> *Solutions Architect & AI Systems Engineer, Founder of Be Smart With AI*  
+> **Architected & Engineered by Jubayer Ahamed** 
+> *Solutions Architect & AI Systems Engineer, Founder of Be Smart With AI* 
 > High-performance digital flagship showcasing 15 featured enterprise projects, autonomous multi-agent swarms, and sovereign cloud architectures.
 
 ---
 
-## 🏛️ Executive Architecture & Design Philosophy
+## Executive Architecture & Design Philosophy
 
 This flagship web portal serves as the primary digital presence and engineering showcase for **Jubayer Ahamed**, Founder and Solutions Architect at **Be Smart With AI**. Engineered from first principles with a Solutions Architect & AI Systems Engineer mindset, the platform synthesizes editorial typography, high-conversion visual storytelling, and ultra-lean front-end engineering.
 
@@ -23,7 +23,7 @@ This flagship web portal serves as the primary digital presence and engineering 
 
 ---
 
-## 🌟 Core Systems & Sections Architecture
+## Core Systems & Sections Architecture
 
 1. **Sticky Floating Command Header**: Dynamic glassmorphic navigation with active ScrollSpy tracking, dark mode toggle, and seamless routing across `Home`, `Services`, `Projects`, `Case Studies`, and `Contact`.
 2. **Master Hero & Executive Bento Grid**: High-impact founder narrative introducing the strategic pillars of Be Smart With AI—Autonomous Multi-Agent Architecture, Enterprise AI Strategy, Full-Stack Engineering, and Sovereign Infrastructure.
@@ -49,7 +49,7 @@ This flagship web portal serves as the primary digital presence and engineering 
 
 ---
 
-## 🚀 Local Development
+## Local Development
 
 ### Option 1: Direct File Launch
 Double-click `index.html` to open directly in any modern browser (Chrome, Edge, Safari, Firefox).
@@ -78,14 +78,14 @@ npx serve .
 
 ---
 
-## 🌐 Deployment & Edge Infrastructure
+## Deployment & Edge Infrastructure
 
 - **Cloudflare Pages Edge Network**: Continuous deployment configured via `wrangler.json`, `wrangler.toml`, and `_headers` for global low-latency CDN delivery on [jubayer-ahamed.pages.dev](https://jubayer-ahamed.pages.dev).
 - **GitHub Pages Mirror**: Configured for static site hosting on repository branch `main`.
 
 ---
 
-## 📬 Contact & Enterprise Inquiries
+## Contact & Enterprise Inquiries
 
 - **Founder & Architect**: Jubayer Ahamed
 - **Role**: Solutions Architect & AI Systems Engineer
