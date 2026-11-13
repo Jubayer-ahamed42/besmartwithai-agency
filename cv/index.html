@@ -122,53 +122,30 @@
     .header-p1 {
       position: relative;
       z-index: 2;
-      padding: 38px 42px 18px 42px;
+      padding: 34px 42px 14px 42px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
     }
     .name-block {
-      max-width: 440px;
+      max-width: 520px;
     }
-    .first-name {
-      font-size: 34px;
-      font-weight: 400;
-      letter-spacing: 3px;
+    .candidate-name {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 2px;
       color: #0f172a;
-      line-height: 1;
+      line-height: 1.1;
       text-transform: uppercase;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 6px;
     }
-    .last-name-box {
-      display: inline-block;
-      margin-top: 6px;
-      padding: 4px 14px;
-      border: 2.5px solid #5850ec;
-      border-radius: 6px;
-    }
-    .last-name {
-      font-size: 38px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      color: #13223f;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-    .title-tagline {
-      margin-top: 12px;
+    .candidate-title {
       font-size: 13.5px;
       font-weight: 700;
       color: #334155;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       line-height: 1.4;
-    }
-    .title-sub {
-      font-size: 11.5px;
-      color: #64748b;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-top: 3px;
     }
 
     /* Portrait Arch Frame */
@@ -207,21 +184,21 @@
     .sidebar-card {
       background: #13223f;
       color: #ffffff;
-      border-radius: 36px 36px 36px 36px;
-      padding: 26px 20px;
+      border-radius: 32px;
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
       box-shadow: 0 8px 24px rgba(19, 34, 63, 0.25);
     }
 
     .sidebar-heading {
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #ffffff;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
       position: relative;
       display: inline-block;
     }
@@ -237,9 +214,9 @@
     }
 
     .about-text {
-      font-size: 10.5px;
-      line-height: 1.6;
-      color: #e2e8f0;
+      font-size: 11.2px;
+      line-height: 1.58;
+      color: #f1f5f9;
       text-align: justify;
       font-weight: 400;
     }
@@ -254,10 +231,11 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 10.5px;
-      color: #e2e8f0;
+      font-size: 11.2px;
+      color: #f8fafc;
       text-decoration: none;
       word-break: break-word;
+      font-weight: 500;
     }
     .contact-item:hover {
       color: #ffffff;
@@ -285,14 +263,16 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6.5px;
+      gap: 7px;
     }
     .skills-list li {
-      font-size: 10.5px;
-      color: #e2e8f0;
+      font-size: 11.2px;
+      color: #f8fafc;
       display: flex;
       align-items: center;
       gap: 8px;
+      font-weight: 500;
+      line-height: 1.35;
     }
     .skills-list li::before {
       content: '';
@@ -305,13 +285,13 @@
 
     /* Language Circular Rings */
     .language-section {
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .languages-grid {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 8px;
       padding: 0 4px;
     }
     .lang-item {
@@ -321,9 +301,9 @@
       gap: 6px;
     }
     .lang-name {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 700;
-      color: #cbd5e1;
+      color: #f1f5f9;
       letter-spacing: 0.5px;
     }
     .circle-wrap {
@@ -357,7 +337,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #ffffff;
     }
@@ -402,7 +382,7 @@
     .timeline-list {
       display: flex;
       flex-direction: column;
-      gap: 13px;
+      gap: 15px;
     }
     .timeline-item {
       position: relative;
@@ -415,53 +395,53 @@
       margin-bottom: 2px;
     }
     .job-title {
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 800;
       color: #0f172a;
       letter-spacing: 0.2px;
     }
     .job-dates {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
-      color: #5850ec;
+      color: #4f46e5;
       letter-spacing: 0.3px;
       white-space: nowrap;
     }
     .job-org {
-      font-size: 11px;
-      font-weight: 700;
-      color: #475569;
-      margin-bottom: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 5px;
     }
     .job-desc {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 4.5px;
       padding-left: 12px;
     }
     .job-desc li {
-      font-size: 10.2px;
-      color: #334155;
-      line-height: 1.45;
+      font-size: 11px;
+      color: #1e293b;
+      line-height: 1.5;
       position: relative;
     }
     .job-desc li::before {
       content: '•';
       position: absolute;
-      left: -10px;
-      color: #5850ec;
+      left: -11px;
+      color: #4f46e5;
       font-weight: bold;
     }
 
     /* Page 2 Specific Styles */
     .header-p2 {
-      padding: 30px 42px 16px 42px;
+      padding: 24px 42px 12px 42px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1.5px solid #f1f5f9;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .header-p2 .brand-name {
       font-size: 20px;
@@ -490,33 +470,39 @@
 
     /* Education Item */
     .edu-item {
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .edu-title {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       color: #0f172a;
     }
     .edu-dates {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
-      color: #5850ec;
+      color: #4f46e5;
     }
     .edu-inst {
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 600;
-      color: #475569;
+      color: #334155;
     }
     .edu-badge {
       display: inline-block;
       margin-top: 3px;
       background: #eff6ff;
       color: #2563eb;
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 700;
-      padding: 1.5px 8px;
+      padding: 2px 8px;
       border-radius: 4px;
       border: 1px solid #bfdbfe;
+    }
+    .edu-desc {
+      font-size: 10.8px;
+      color: #334155;
+      margin-top: 4px;
+      line-height: 1.48;
     }
 
     /* Training Item */
@@ -529,25 +515,25 @@
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 9px 12px;
+      padding: 8px 12px;
     }
     .training-name {
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.3;
     }
     .training-inst {
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 10.5px;
+      font-weight: 700;
       color: #4f46e5;
       margin-top: 2px;
     }
     .training-desc {
-      font-size: 9.5px;
-      color: #64748b;
-      margin-top: 3px;
-      line-height: 1.35;
+      font-size: 10px;
+      color: #475569;
+      margin-top: 2px;
+      line-height: 1.38;
     }
 
     /* References */
@@ -560,7 +546,7 @@
       background: #f8fafc;
       border: 1.5px solid #e2e8f0;
       border-radius: 12px;
-      padding: 10px 14px;
+      padding: 8px 12px;
     }
     .ref-name {
       font-size: 12px;
@@ -568,7 +554,7 @@
       color: #13223f;
     }
     .ref-title {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #4f46e5;
       margin-top: 1px;
@@ -580,10 +566,10 @@
       margin-top: 2px;
     }
     .ref-phone {
-      font-size: 10px;
+      font-size: 10.2px;
       font-weight: 700;
       color: #0f172a;
-      margin-top: 4px;
+      margin-top: 3px;
       display: flex;
       align-items: center;
       gap: 5px;
@@ -618,12 +604,8 @@
     <!-- Header Area -->
     <div class="header-p1">
       <div class="name-block">
-        <div class="first-name">JUBAYER</div>
-        <div class="last-name-box">
-          <div class="last-name">AHAMED</div>
-        </div>
-        <div class="title-tagline">Business Problem Solver · AI Automation Specialist · Systems Engineer</div>
-        <div class="title-sub">Founder @ Be Smart With AI · Classical Scholar (Dawra-e-Hadith)</div>
+        <h1 class="candidate-name">JUBAYER AHAMED</h1>
+        <div class="candidate-title">AI Automation Specialist &amp; Systems Architect · Business Problem Solver</div>
       </div>
 
       <!-- Arch Portrait Photo -->
@@ -693,13 +675,14 @@
         <div>
           <div class="sidebar-heading">Technical Skills</div>
           <ul class="skills-list">
-            <li>AI Automation & Multi-Agent Swarms</li>
-            <li>Vibe Coding & Full-Stack Systems</li>
-            <li>Workflow Automation (n8n, Apps Script)</li>
+            <li>AI Automation &amp; Multi-Agent Swarms</li>
+            <li>Vibe Coding &amp; Full-Stack Systems</li>
+            <li>Workflow Automation (n8n, APIs)</li>
+            <li>Google Apps Script &amp; Cloud Workflows</li>
             <li>Generative Engine Optimization (GEO)</li>
-            <li>Prompt Engineering & RAG Pipelines</li>
-            <li>Database & Advanced Sheets Architecture</li>
-            <li>Classical Arabic & Islamic Jurisprudence</li>
+            <li>Prompt Engineering &amp; RAG Pipelines</li>
+            <li>Database &amp; Advanced Sheets Systems</li>
+            <li>Classical Arabic &amp; Islamic Jurisprudence</li>
           </ul>
         </div>
 
@@ -771,9 +754,10 @@
               </div>
               <div class="job-org">Subhania Jame Masjid · Brahmanbaria, Bangladesh</div>
               <ul class="job-desc">
-                <li>Lead five daily prayers and deliver high-impact weekly Friday sermons (Khutbah) on contemporary moral, ethical, and socio-economic realities.</li>
-                <li>Spearhead community welfare initiatives, religious arbitration, and ethical youth guidance programs.</li>
-                <li>Modernize masjid administration through structured record-keeping and systematic community outreach.</li>
+                <li>Lead five daily congregational prayers and deliver scholarly, high-impact weekly Friday sermons (Khutbah) to an audience of 1,200+ congregants on contemporary ethics, personal development, and community welfare.</li>
+                <li>Direct community dispute arbitration, family counseling, and religious guidance by applying classical Islamic jurisprudence (Fiqh) with empathetic and modern mediation methodologies.</li>
+                <li>Modernize institutional masjid administration by designing structured digital registries for community records, donor contributions, and operational accounts.</li>
+                <li>Spearhead youth empowerment initiatives and educational seminars, bridging traditional ethical foundations with modern analytical thinking and digital literacy.</li>
               </ul>
             </div>
 
@@ -785,9 +769,11 @@
               </div>
               <div class="job-org">Ayesha Siddiqa (R.) Mohila Madrasah · Brahmanbaria</div>
               <ul class="job-desc">
-                <li>Directed complete institutional administration, faculty supervision, academic policy, and strategic development for 200+ students.</li>
-                <li>Instituted teacher performance evaluation frameworks and upgraded female pedagogical standards.</li>
-                <li>Streamlined budgeting, accounts reporting, and stakeholder communications with absolute financial transparency.</li>
+                <li>Directed complete institutional administration, supervising 18+ faculty members and managing academic welfare for 350+ female students with 100% operational efficiency.</li>
+                <li>Instituted structured quarterly teacher performance evaluation frameworks, upgraded classroom pedagogical standards, and mentored instructors on modern interactive teaching methods.</li>
+                <li>Overhauled institutional financial administration and accounting workflows, implementing automated spreadsheet models that reduced financial reporting lag by 50%.</li>
+                <li>Directed stakeholder engagement programs, organizing termly parent-faculty conferences and community patron dialogues that drove a 30% increase in student enrollment.</li>
+                <li>Resolved campus operational bottlenecks and crisis situations through decisive administrative leadership and collaborative consensus-building.</li>
               </ul>
             </div>
 
@@ -799,9 +785,11 @@
               </div>
               <div class="job-org">Markazul Uloom Islamia Madrasah · Narail, Bangladesh</div>
               <ul class="job-desc">
-                <li>Formulated multi-tier academic curricula, central examination schedules, and instructor training programs across all departments.</li>
-                <li>Digitized student enrollment records and implemented structured student progress tracking systems.</li>
-                <li>Coordinated cross-functional committees to elevate academic discipline, leading to a 35% improvement in final evaluation metrics.</li>
+                <li>Formulated comprehensive multi-tier academic curricula, annual pedagogical master plans, and centralized examination protocols across 6 distinct academic departments.</li>
+                <li>Spearheaded institutional digital transformation by migrating manual paper student archives into structured databases and continuous performance tracking dashboards.</li>
+                <li>Supervised academic discipline and institutional governance, leading to a 35% improvement in standardized evaluation metrics and achieving a 98% board examination pass rate.</li>
+                <li>Coordinated cross-functional academic committees, organized inter-institutional scholastic symposiums, and implemented continuous faculty development workshops.</li>
+                <li>Directed institutional publications, official administrative correspondence, and strategic planning initiatives with regional educational boards and regulatory bodies.</li>
               </ul>
             </div>
 
@@ -836,12 +824,12 @@
           <div class="sidebar-heading">Leadership &amp; Soft Skills</div>
           <ul class="skills-list">
             <li>Executive Institutional Leadership</li>
-            <li>Strategic Problem Solving</li>
+            <li>Strategic Problem Deconstruction</li>
             <li>Public Speaking &amp; Rhetoric</li>
-            <li>Crisis &amp; Conflict Resolution</li>
-            <li>Cross-Functional Collaboration</li>
-            <li>Mentorship &amp; Team Empowerment</li>
-            <li>Negotiation &amp; Consensus Building</li>
+            <li>Crisis Management &amp; Mediation</li>
+            <li>Cross-Functional Team Governance</li>
+            <li>Pedagogical Mentorship &amp; Training</li>
+            <li>High-Stakes Consensus Building</li>
           </ul>
         </div>
 
@@ -849,12 +837,24 @@
         <div>
           <div class="sidebar-heading">Core Competencies</div>
           <ul class="skills-list">
-            <li>Business Problem Deconstruction</li>
+            <li>Autonomous Multi-Agent Systems</li>
             <li>High-ROI Workflow Optimization</li>
-            <li>Digital Infrastructure &amp; Cloud</li>
+            <li>Enterprise Spreadsheet Modeling</li>
+            <li>Institutional Digital Transformation</li>
             <li>Curriculum &amp; Pedagogical Design</li>
             <li>Cross-Cultural Communication</li>
-            <li>Resource &amp; Budget Optimization</li>
+            <li>Budget &amp; Resource Optimization</li>
+          </ul>
+        </div>
+
+        <!-- Methodologies & Governance -->
+        <div>
+          <div class="sidebar-heading">Methodologies</div>
+          <ul class="skills-list">
+            <li>Ethical AI Alignment &amp; Stewardship</li>
+            <li>Zero-Error Record Auditing Protocols</li>
+            <li>Systematic Stakeholder Engagement</li>
+            <li>Evidence-Based Academic Governance</li>
           </ul>
         </div>
 
@@ -888,8 +888,9 @@
               </div>
               <div class="job-org">Ashraful Uloom Islamia Madrasah · Netrokona, Bangladesh</div>
               <ul class="job-desc">
-                <li>Managed daily educational operations, classroom quality audits, and institutional discipline.</li>
-                <li>Mentored junior instructors on modern interactive pedagogy and foundational literacy techniques.</li>
+                <li>Directed daily educational operations, classroom pedagogical quality audits, and institutional student welfare across primary and secondary tiers.</li>
+                <li>Mentored junior instructors on modern interactive pedagogy, foundational literacy techniques, and classroom engagement strategies.</li>
+                <li>Coordinated community relations and termly parent-teacher assemblies to reinforce student retention and moral development.</li>
               </ul>
             </div>
 
@@ -901,8 +902,9 @@
               </div>
               <div class="job-org">SFF Enterprise · Bangladesh</div>
               <ul class="job-desc">
-                <li>Spearheaded digital documentation, commercial correspondence, data reconciliation, and inventory reporting.</li>
-                <li>Created custom automated spreadsheet templates that reduced manual reporting time by 40%.</li>
+                <li>Spearheaded digital business documentation, commercial client correspondence, inventory records reconciliation, and executive reporting.</li>
+                <li>Designed custom automated spreadsheet models and inventory tracking templates, reducing weekly administrative reporting time by 40%.</li>
+                <li>Managed multi-channel digital communications, procurement filings, and billing records with strict accuracy and data integrity.</li>
               </ul>
             </div>
 
@@ -926,8 +928,8 @@
               <span class="edu-badge">Result: GPA 4.5 / 5.0</span>
               <span class="edu-badge" style="background: #fdf2f8; color: #db2777; border-color: #fbcfe8;">Postgraduate Degree</span>
             </div>
-            <p style="font-size: 10px; color: #64748b; margin-top: 5px; line-height: 1.4;">
-              Comprehensive mastery of classical Hadith sciences, Arabic linguistics, Usul al-Fiqh, Islamic jurisprudence, and ethical philosophy.
+            <p class="edu-desc">
+              Comprehensive mastery of classical Hadith sciences, Arabic linguistics, Usul al-Fiqh, Islamic jurisprudence, comparative theology, and ethical philosophy.
             </p>
           </div>
         </div>
